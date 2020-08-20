@@ -9,3 +9,9 @@
 .awssld__container {
     height: 100%;
 }
+
+@media (min-width: 1400px) {
+ .awesome-slider {
+    height: 100vh;
+}   
+}

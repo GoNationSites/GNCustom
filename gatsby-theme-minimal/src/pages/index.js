@@ -51,13 +51,15 @@ const Index = ({data}) => {
       'https://res.cloudinary.com/gonation/image/upload/v1597941857/sites/mix-prime/logo-white.png';
     
     return (
-      <>
+      <Box sx={{ display: ['block', 'block', 'flex'] }}>
         <Flex
           sx={{
             justifyContent: 'center',
             alignItems: 'center',
-            height: 'calc(100vh - 200px)',
+            height: ['calc(100vh - 200px)', 'calc(100vh - 200px)', '100vh'],
             flexDirection: 'column',
+            width: ['100%', '100%', '75%'],
+            position: 'relative',
           }}>
           <Box
             sx={{
@@ -67,7 +69,7 @@ const Index = ({data}) => {
               top: 0,
               zIndex: 1,
               width: '100%',
-              height: 'calc(100vh - 200px)',
+              height: ['calc(100vh - 200px)', 'calc(100vh - 200px)', '100vh'],
             }}></Box>
           <Box
             sx={{
@@ -84,21 +86,38 @@ const Index = ({data}) => {
             <Image src={logo} alt='Mixed Prime'></Image>
           </Box>
         </Flex>
-        <ScrollLink spy={true} smooth={true} duration={500} to='bottom'>
-          <Box
-            sx={{ paddingY: 4, background: 'f7f7f7' }}>
-            <Text variant='heading' sx={{ textAlign: 'center', fontSize: 4, color: 'text' }}>
-              Choose A Location
-            </Text>
+
+        <Box
+          sx={{
+            width: ['100%', '100%', '25%'],
+            display: ['block', 'block', 'flex'],
+            flexDirection: 'column',
+          }}>
+          <ScrollLink spy={true} smooth={true} duration={500} to='bottom'>
+            <Box sx={{ paddingY: 4, background: 'f7f7f7' }}>
+              <Text
+                variant='heading'
+                sx={{ textAlign: 'center', fontSize: 4, color: 'text' }}>
+                Choose A Location
+              </Text>
+            </Box>
+          </ScrollLink>
+          <Box sx={{ height: ['auto', 'auto', '100%'] }}>
+            <Box sx={{ display: ['block', 'block', 'none'], height: ['auto', 'auto', '100%'] }}>
+              <LocationBoxes isMobile businesses={data.allSiteData.edges} />
+            </Box>
+            <Box sx={{ display: ['none', 'none', 'block'], height: ['auto', 'auto', '100%'] }}>
+              <LocationBoxes businesses={data.allSiteData.edges} />
+            </Box>
           </Box>
-        </ScrollLink>
-        <Box>
-          <LocationBoxes businesses={data.allSiteData.edges} />
         </Box>
-        <Element name="bottom">
-          <div ref={refContainer}></div>
-        </Element>
-      </>
+
+        <Box sx={{ display: ['block', 'block', 'none'] }}>
+          <Element name='bottom'>
+            <div ref={refContainer}></div>
+          </Element>
+        </Box>
+      </Box>
     );
 }
 

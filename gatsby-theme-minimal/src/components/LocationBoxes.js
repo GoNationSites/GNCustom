@@ -10,7 +10,7 @@ import Pin from './icons/Pin';
 
 import printAddress from '../helpers/printAddress';
 
-const LocationBoxes = ({ businesses }) => {
+const LocationBoxes = ({ businesses, isMobile }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const isOpen = i => activeIndex === i
@@ -20,7 +20,7 @@ const LocationBoxes = ({ businesses }) => {
       onClick={() => setActiveIndex(idx)}
       sx={{
         background: `linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),  url(${node.data.avatar.imageBaseUrl}/${node.data.avatar.imagePrefix})`,
-        height: isOpen(idx) ? '300px' : '125px',
+        height: isOpen(idx) ? ['300px', '300px', '50%'] : ['125px', '125px', '50%'],
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         transition: 'height .3s ease-in',
@@ -28,6 +28,7 @@ const LocationBoxes = ({ businesses }) => {
         flexWrap: 'wrap',
         padding: 3,
         justifyContent: 'space-between',
+        flex: '1',
       }}>
       <Box>
         <Text
@@ -46,7 +47,7 @@ const LocationBoxes = ({ businesses }) => {
         {isOpen(idx) ? <Down /> : <Up />}
         
       </Box>
-      {isOpen(idx) ? (
+      {isOpen(idx) || !isMobile ? (
         <Flex sx={{ width: '100%', color: 'white', flexWrap: 'wrap' }}>
           <Flex sx={{ alignItems: 'center', width: '50%', paddingY: 3 }}>
             <Phone />
