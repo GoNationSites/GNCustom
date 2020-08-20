@@ -1,6 +1,15 @@
 /** @jsx jsx */
 import { jsx, Box, Text, Flex, Image } from 'theme-ui'
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
+import {
+  Link as ScrollLink,
+  DirectLink,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from 'react-scroll';
 
 import AwesomeSlider from '../components/Slider/AwesomeSlider'
 import cloudinaryHelper from '../helpers/cloudinaryHelper'
@@ -8,6 +17,7 @@ import LocationBoxes from '../components/LocationBoxes'
 
 const Index = ({data}) => {
     const [slides, setSlides] = useState([])
+    const refContainer = useRef();
 
     useEffect(() => {
         const slidesMobile = [
@@ -74,12 +84,20 @@ const Index = ({data}) => {
             <Image src={logo} alt='Mixed Prime'></Image>
           </Box>
         </Flex>
-        <Box sx={{paddingY: 4, background: 'f7f7f7'}}>
-          <Text variant='heading' sx={{textAlign: 'center', fontSize: 4}}>Choose A Location</Text>
-        </Box>
+        <ScrollLink spy={true} smooth={true} duration={500} to='bottom'>
+          <Box
+            sx={{ paddingY: 4, background: 'f7f7f7' }}>
+            <Text variant='heading' sx={{ textAlign: 'center', fontSize: 4, color: 'text' }}>
+              Choose A Location
+            </Text>
+          </Box>
+        </ScrollLink>
         <Box>
-            <LocationBoxes businesses={data.allSiteData.edges} />
+          <LocationBoxes businesses={data.allSiteData.edges} />
         </Box>
+        <Element name="bottom">
+          <div ref={refContainer}></div>
+        </Element>
       </>
     );
 }
