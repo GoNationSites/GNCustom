@@ -46,7 +46,7 @@ const Index = ({data}) => {
           sx={{
             justifyContent: 'center',
             alignItems: 'center',
-            height: 'calc(100vh - 100px)',
+            height: 'calc(100vh - 200px)',
             flexDirection: 'column',
           }}>
           <Box
@@ -57,7 +57,7 @@ const Index = ({data}) => {
               top: 0,
               zIndex: 1,
               width: '100%',
-              height: 'calc(100vh - 100px)',
+              height: 'calc(100vh - 200px)',
             }}></Box>
           <Box
             sx={{
