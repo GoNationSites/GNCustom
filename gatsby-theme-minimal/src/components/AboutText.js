@@ -37,7 +37,7 @@ const AboutText = () => {
             }}>
             {site[0].node.data.desc.charAt(1)}
           </Text>
-          <Text sx={{ fontSize: 2, lineHeight: 2 }}>
+          <Text sx={{ fontSize: 2, lineHeight: 2, color: 'lightText' }}>
             {site[0].node.data.desc.substring(2, site[0].node.data.desc.length)}
           </Text>
         </Text>

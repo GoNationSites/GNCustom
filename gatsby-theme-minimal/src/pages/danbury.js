@@ -4,10 +4,41 @@ import PageTransition from 'gatsby-plugin-page-transitions';
 
 import React from 'react';
 
+import cloudinaryOptimize from '../helpers/cloudinaryHelper'
 import Layout from '../components/Layout'
 import AboutText from '../components/AboutText'
+import ContentShowcase from '../components/ContentShowcase';
+import cloudinaryHelper from '../helpers/cloudinaryHelper';
 
 const Danbury = () => {
+
+  const contentShowcaseData = [
+    {
+      img: cloudinaryHelper(
+        'https://res.cloudinary.com/gonation/image/upload/v1598039135/sites/mix-prime/showcase-1.jpg',
+        1200
+      ),
+      title: 'Title can go here',
+      txt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quis, asperiores esse.',
+      btn: {
+        title: 'View Menu',
+        link: '/menu',
+      },
+    },
+    {
+      img: cloudinaryHelper(
+        'https://res.cloudinary.com/gonation/image/upload/v1598039135/sites/mix-prime/showcase-2.jpg',
+        1200
+      ),
+      title: 'Some other title here',
+      txt: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi mollitia.',
+      btn: {
+        title: 'Learn More',
+        link: '/about',
+      },
+    },
+  ];
+
     return (
       <Layout>
         <PageTransition
@@ -23,9 +54,13 @@ const Danbury = () => {
             exiting: { left: '100%' },
           }}
           transitionTime={500}>
-              <Box sx={{maxWidth: '700px', margin: 'auto'}}>
+              <Box sx={{maxWidth: '730px', margin: 'auto'}}>
                  <AboutText></AboutText>
+
+                 <ContentShowcase data={contentShowcaseData} />
               </Box>
+
+              
           
         </PageTransition>
       </Layout>

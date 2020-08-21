@@ -23,6 +23,7 @@ export default {
     background: '#F7F9FA',
     primary: '#E03626',
     muted: '#69656A',
+    lightText: '#2a2a2a',
   },
   text: {
     heading: {
@@ -38,15 +39,35 @@ export default {
       background: 'transparent',
       border: '1px solid white',
       borderRadius: '3px',
-      width: '100%', 
-      fontFamily: "heading",
+      width: '100%',
+      fontFamily: 'heading',
       textTransform: 'uppercase',
       letterSpacing: '3px',
+      transition: 'all .4s!important',
       '&:hover': {
+        cursor: 'pointer',
         color: 'text',
         background: 'white',
         transition: 'all .4s!important',
-      }
+      },
+    },
+    black: {
+      background: 'transparent',
+      border: '1px solid',
+      borderColor: 'lightText',
+      borderRadius: '3px',
+      width: '100%',
+      fontFamily: 'heading',
+      textTransform: 'uppercase',
+      letterSpacing: '3px',
+      color: 'lightText',
+      transition: 'all .4s!important',
+      '&:hover': {
+        cursor: 'pointer',
+        color: 'white',
+        bg: 'lightText',
+        transition: 'all .4s!important',
+      },
     },
   },
   styles: {
@@ -58,9 +79,9 @@ export default {
         width: '100%',
       },
       a: {
-        color: 'white', 
-        textDecoration: 'none'
-      }
+        color: 'white',
+        textDecoration: 'none',
+      },
     },
     h1: {
       variant: 'text.heading',
