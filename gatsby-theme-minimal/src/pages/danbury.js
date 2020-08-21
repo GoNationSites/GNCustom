@@ -5,6 +5,7 @@ import PageTransition from 'gatsby-plugin-page-transitions';
 import React from 'react';
 
 import Layout from '../components/Layout'
+import AboutText from '../components/AboutText'
 
 const Danbury = () => {
     return (
@@ -22,9 +23,10 @@ const Danbury = () => {
             exiting: { left: '100%' },
           }}
           transitionTime={500}>
-          <Box as='section' sx={{ height: '100vh', bg: '#eee' }}>
-            Welcome to danbury
-          </Box>
+              <Box sx={{maxWidth: '700px', margin: 'auto'}}>
+                 <AboutText></AboutText>
+              </Box>
+          
         </PageTransition>
       </Layout>
     );
