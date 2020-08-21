@@ -38,6 +38,29 @@ const Index = ({data}) => {
      ),
    ];
 
+   const slidesDesktop = [
+     cloudinaryHelper(
+       'https://res.cloudinary.com/gonation/image/upload/v1598018071/sites/mix-prime/desktop-slide-1.jpg',
+       1900
+     ),
+     cloudinaryHelper(
+       'https://res.cloudinary.com/gonation/image/upload/v1598018069/sites/mix-prime/desktop-slide-2.jpg',
+       1900
+     ),
+     cloudinaryHelper(
+       'https://res.cloudinary.com/gonation/image/upload/v1598018070/sites/mix-prime/desktop-slide-3.jpg',
+       1900
+     ),
+     cloudinaryHelper(
+       'https://res.cloudinary.com/gonation/image/upload/v1598018069/sites/mix-prime/desktop-slide-4.jpg',
+       1900
+     ),
+     cloudinaryHelper(
+       'https://res.cloudinary.com/gonation/image/upload/v1598018070/sites/mix-prime/desktop-slide-5.jpg',
+       1900
+     ),
+   ];
+
 
 
     const logo =
@@ -73,6 +96,19 @@ const Index = ({data}) => {
               top: 0,
               width: '100%',
               height: '100%',
+              display: ['none', 'none', 'block'],
+            }}>
+            <AwesomeSlider slides={slidesDesktop} />
+          </Box>
+          <Box
+            sx={{
+              position: 'absolute',
+              zIndex: 0,
+              left: 0,
+              top: 0,
+              width: '100%',
+              height: '100%',
+              display: ['block', 'none', 'none'],
             }}>
             <AwesomeSlider slides={slidesMobile} />
           </Box>
@@ -88,7 +124,7 @@ const Index = ({data}) => {
             display: ['block', 'block', 'flex'],
             flexDirection: 'column',
           }}>
-        <ScrollLink spy={true} smooth={true} duration={500} to='bottom'>
+          <ScrollLink spy={true} smooth={true} duration={500} to='bottom'>
             <Box sx={{ paddingY: 4, background: 'f7f7f7' }}>
               <Text
                 variant='heading'
@@ -97,12 +133,19 @@ const Index = ({data}) => {
               </Text>
             </Box>
           </ScrollLink>
-        <Box sx={{ height: ['auto', 'auto', '100%'] }}>
-            <Box sx={{ display: ['block', 'block', 'none'], height: ['auto', 'auto', '100%'] }}>
-              
+          <Box sx={{ height: ['auto', 'auto', '100%'] }}>
+            <Box
+              sx={{
+                display: ['block', 'block', 'none'],
+                height: ['auto', 'auto', '100%'],
+              }}>
               <LocationBoxes isMobile businesses={data.allSiteData.edges} />
             </Box>
-            <Box sx={{ display: ['none', 'none', 'block'], height: ['auto', 'auto', '100%'] }}>
+            <Box
+              sx={{
+                display: ['none', 'none', 'block'],
+                height: ['auto', 'auto', '100%'],
+              }}>
               {console.log('mounting outsidee')}
               <LocationBoxes businesses={data.allSiteData.edges} />
             </Box>

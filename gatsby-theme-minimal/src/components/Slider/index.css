@@ -1,8 +1,25 @@
 
 .carousel .slider-wrapper.axis-horizontal .slider .slide.selected {
      animation-name: fadeIn;
-     animation-duration: 1.5s;
+     animation-duration: 2s;
      opacity: 1;
+     height: 100%;
+ }
+
+ .carousel {
+     height: 100%!important;
+ }
+
+ .carousel .slider-wrapper {
+     height: 100%!important;
+ }
+
+ .carousel .slider-wrapper .slider{
+     height: 100%!important;
+ }
+
+ .carousel .slider-wrapper.axis-horizontal .slider .slide {
+     height: 100%!important;
  }
 
 
@@ -22,4 +39,8 @@
 
  .fadeInRight {
    animation-name: fadeInRight;
+ }
+ .carousel-root {
+     height: 100%;
+     background: black;
  }

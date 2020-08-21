@@ -19,11 +19,13 @@ const LocationBoxes = ({ businesses, isMobile }) => {
 
   return businesses.map(({ node }, idx) => (
     <Flex
-    key={node.data.name}
+      key={node.data.name}
       onClick={() => setActiveIndex(idx)}
       sx={{
         background: `linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),  url(${node.data.avatar.imageBaseUrl}/${node.data.avatar.imagePrefix})`,
-        height: isOpen(idx) ? ['300px', '300px', '50%'] : ['125px', '125px', '50%'],
+        height: isOpen(idx)
+          ? ['300px', '300px', '50%']
+          : ['125px', '125px', '50%'],
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         transition: 'height .3s ease-in',
@@ -46,10 +48,7 @@ const LocationBoxes = ({ businesses, isMobile }) => {
           {node.data.city}
         </Text>
       </Box>
-      <Box>
-        {isOpen(idx) ? <Down /> : <Up />}
-        
-      </Box>
+      <Box>{isOpen(idx) ? <Down /> : <Up />}</Box>
       {isOpen(idx) || !isMobile ? (
         <Flex sx={{ width: '100%', color: 'white', flexWrap: 'wrap' }}>
           <Flex sx={{ alignItems: 'center', width: '50%', paddingY: 3 }}>
@@ -65,11 +64,10 @@ const LocationBoxes = ({ businesses, isMobile }) => {
           </Flex>
 
           <Flex sx={{ alignItems: 'center', width: '100%', paddingY: 3 }}>
-            
-
             <Link
-              to={`/${slugify(node.data.city), {lower: true}}`}
+              to={`/${slugify(node.data.city, { lower: true })}`}
               sx={{ display: 'block', width: '100%' }}>
+              {console.log(slugify(node.data.city), { lower: true })}
               <Button variant='white'>View Website</Button>
             </Link>
           </Flex>

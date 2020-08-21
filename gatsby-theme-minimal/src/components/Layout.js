@@ -1,0 +1,22 @@
+/** @jsx jsx */
+import { jsx, Box } from 'theme-ui';
+import React from 'react';
+
+import '../../../node_modules/animate.css'
+import './animate.css'
+
+import Navigation from './Navigation'
+import SmoothHero from './SmoothHero'
+
+const Layout = ({children, pageTitle, location}) => {
+    return (
+        <Box as="main">
+            <Navigation />
+            <SmoothHero />
+            {children}
+        </Box>
+    );
+}
+
+export default Layout;
+

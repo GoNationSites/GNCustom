@@ -15,9 +15,10 @@ const Slider = ({ slides }) => {
       infiniteLoop
       showArrows={false}
       showIndicators={false}
+      showThumbs={false}
       showStatus={false}
       interval={5000}
-      transitionTime={0}>
+      transitionTime={2}>
       {slides.map(slide => (
           <Box sx={{height: '100%', bg: 'black'}}>
             <Image
