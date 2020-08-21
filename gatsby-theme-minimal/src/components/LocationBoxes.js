@@ -2,6 +2,7 @@
 import { jsx, Box, Text, Flex, Button } from 'theme-ui';
 import React, { useState } from 'react';
 import {Link} from 'gatsby'
+import slugify from 'slugify'
 
 import Down from './icons/Down';
 import Up from './icons/Up';
@@ -15,8 +16,10 @@ const LocationBoxes = ({ businesses, isMobile }) => {
 
   const isOpen = i => activeIndex === i
 
+
   return businesses.map(({ node }, idx) => (
     <Flex
+    key={node.data.name}
       onClick={() => setActiveIndex(idx)}
       sx={{
         background: `linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),  url(${node.data.avatar.imageBaseUrl}/${node.data.avatar.imagePrefix})`,
@@ -62,8 +65,10 @@ const LocationBoxes = ({ businesses, isMobile }) => {
           </Flex>
 
           <Flex sx={{ alignItems: 'center', width: '100%', paddingY: 3 }}>
+            
+
             <Link
-              to={`/${node.data.city}`}
+              to={`/${slugify(node.data.city), {lower: true}}`}
               sx={{ display: 'block', width: '100%' }}>
               <Button variant='white'>View Website</Button>
             </Link>

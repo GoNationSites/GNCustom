@@ -1,38 +1,32 @@
-/** @jsx jsx */
-import { jsx, Box } from 'theme-ui'
-
 import React from 'react';
-import AwesomeSlider from 'react-awesome-slider';
-import withAutoplay from 'react-awesome-slider/dist/autoplay';
-import 'react-awesome-slider/dist/styles.css';
-
-import 'react-awesome-slider/dist/custom-animations/open-animation.css';
-import './index.css'
-
-
-const Slider = ({slides}) => {
-
-  const AutoplaySlider = withAutoplay(AwesomeSlider);
+import { jsx, Box, Image } from 'theme-ui';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import '../../../../node_modules/animate.css';
+import './index.css';
+import { Animated } from 'react-animated-css';
 
 
-
-    return (
-      <Box>
-        <AutoplaySlider
-          play={true}
-          cancelOnInteraction={false} // should stop playing on user interaction
-          interval={5000}
-          bullets={false}
-          organicArrows={false}
-          mobileTouch={false}
-          className='awesome-slider'
-          animation='openAnimation'>
-          {slides.map(slide => (
-            <div data-src={slide} />
-          ))}
-        </AutoplaySlider>
-      </Box>
-    );
-}
+const Slider = ({ slides }) => {
+  console.log('slides are: ', slides);
+  return (
+    <Carousel
+      autoPlay
+      infiniteLoop
+      showArrows={false}
+      showIndicators={false}
+      showStatus={false}
+      interval={5000}
+      transitionTime={0}>
+      {slides.map(slide => (
+          <Box sx={{height: '100%', bg: 'black'}}>
+            <Image
+              sx={{ height: '100%', objectFit: 'cover' }}
+              src={slide}></Image>
+          </Box>
+      ))}
+    </Carousel>
+  );
+};
 
 export default Slider;

@@ -1,17 +1,25 @@
-.awssld__content img{
-    object-fit: cover;
+
+.carousel .slider-wrapper.axis-horizontal .slider .slide.selected {
+     animation-name: fadeIn;
+     animation-duration: 1.5s;
+     opacity: 1;
+ }
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-.awesome-slider {
-    height: calc(100vh - 200px);
+.fadeIn {
+  animation-name: fadeIn;
 }
 
-.awssld__container {
-    height: 100%;
-}
-
-@media (min-width: 1400px) {
- .awesome-slider {
-    height: 100vh;
-}   
-}
+ .fadeInRight {
+   animation-name: fadeInRight;
+ }

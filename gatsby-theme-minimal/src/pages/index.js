@@ -3,55 +3,49 @@ import { jsx, Box, Text, Flex, Image } from 'theme-ui'
 import React, {useState, useEffect, useRef} from 'react';
 import {
   Link as ScrollLink,
-  DirectLink,
   Element,
-  Events,
   animateScroll as scroll,
-  scrollSpy,
-  scroller,
 } from 'react-scroll';
 
 import AwesomeSlider from '../components/Slider/AwesomeSlider'
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import cloudinaryHelper from '../helpers/cloudinaryHelper'
 import LocationBoxes from '../components/LocationBoxes'
 
 const Index = ({data}) => {
-    const [slides, setSlides] = useState([])
-    const refContainer = useRef();
+   const refContainer = useRef();
 
-    useEffect(() => {
-        const slidesMobile = [
-          cloudinaryHelper(
-            'https://res.cloudinary.com/gonation/image/upload/v1597940531/sites/mix-prime/mobile-slide-1.jpg',
-            900
-          ),
-          cloudinaryHelper(
-            'https://res.cloudinary.com/gonation/image/upload/v1597940532/sites/mix-prime/mobile-slide-2.jpg',
-            900
-          ),
-          cloudinaryHelper(
-            'https://res.cloudinary.com/gonation/image/upload/v1597940533/sites/mix-prime/mobile-slide-3.jpg',
-            900
-          ),
-          cloudinaryHelper(
-            'https://res.cloudinary.com/gonation/image/upload/v1597940532/sites/mix-prime/mobile-slide-4.jpg',
-            900
-          ),
-          cloudinaryHelper(
-            'https://res.cloudinary.com/gonation/image/upload/v1597940532/sites/mix-prime/mobile-slide-5.jpg',
-            900
-          ),
-        ];
+   const slidesMobile = [
+     cloudinaryHelper(
+       'https://res.cloudinary.com/gonation/image/upload/v1597940531/sites/mix-prime/mobile-slide-1.jpg',
+       900
+     ),
+     cloudinaryHelper(
+       'https://res.cloudinary.com/gonation/image/upload/v1597940532/sites/mix-prime/mobile-slide-2.jpg',
+       900
+     ),
+     cloudinaryHelper(
+       'https://res.cloudinary.com/gonation/image/upload/v1597940533/sites/mix-prime/mobile-slide-3.jpg',
+       900
+     ),
+     cloudinaryHelper(
+       'https://res.cloudinary.com/gonation/image/upload/v1597940532/sites/mix-prime/mobile-slide-4.jpg',
+       900
+     ),
+     cloudinaryHelper(
+       'https://res.cloudinary.com/gonation/image/upload/v1597940532/sites/mix-prime/mobile-slide-5.jpg',
+       900
+     ),
+   ];
 
-        setSlides(slidesMobile)
 
-    }, [])
 
     const logo =
       'https://res.cloudinary.com/gonation/image/upload/v1597941857/sites/mix-prime/logo-white.png';
     
     return (
       <Box sx={{ display: ['block', 'block', 'flex'] }}>
+        {console.log('once')}
         <Flex
           sx={{
             justifyContent: 'center',
@@ -78,8 +72,9 @@ const Index = ({data}) => {
               left: 0,
               top: 0,
               width: '100%',
+              height: '100%',
             }}>
-            <AwesomeSlider slides={slides} />
+            <AwesomeSlider slides={slidesMobile} />
           </Box>
 
           <Box sx={{ zIndex: 2 }}>
@@ -93,7 +88,7 @@ const Index = ({data}) => {
             display: ['block', 'block', 'flex'],
             flexDirection: 'column',
           }}>
-          <ScrollLink spy={true} smooth={true} duration={500} to='bottom'>
+        <ScrollLink spy={true} smooth={true} duration={500} to='bottom'>
             <Box sx={{ paddingY: 4, background: 'f7f7f7' }}>
               <Text
                 variant='heading'
@@ -102,11 +97,13 @@ const Index = ({data}) => {
               </Text>
             </Box>
           </ScrollLink>
-          <Box sx={{ height: ['auto', 'auto', '100%'] }}>
+        <Box sx={{ height: ['auto', 'auto', '100%'] }}>
             <Box sx={{ display: ['block', 'block', 'none'], height: ['auto', 'auto', '100%'] }}>
+              
               <LocationBoxes isMobile businesses={data.allSiteData.edges} />
             </Box>
             <Box sx={{ display: ['none', 'none', 'block'], height: ['auto', 'auto', '100%'] }}>
+              {console.log('mounting outsidee')}
               <LocationBoxes businesses={data.allSiteData.edges} />
             </Box>
           </Box>
