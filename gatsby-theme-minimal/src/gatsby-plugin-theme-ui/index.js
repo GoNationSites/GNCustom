@@ -42,6 +42,11 @@ export default {
       fontFamily: "heading",
       textTransform: 'uppercase',
       letterSpacing: '3px',
+      '&:hover': {
+        color: 'text',
+        background: 'white',
+        transition: 'all .4s!important',
+      }
     },
   },
   styles: {

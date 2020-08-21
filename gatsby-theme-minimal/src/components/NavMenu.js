@@ -7,6 +7,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 
 import NavMeta from './NavMeta';
+import VerticalRoutes from './VerticalRoutes'
 
 const NavMenu = ({ routes, open }) => {
   const data = useStaticQuery(graphql`
@@ -57,6 +58,7 @@ const NavMenu = ({ routes, open }) => {
       }}>
       <Flex
         sx={{
+          display: ['flex', 'flex', 'none'],
           paddingTop: 4,
           paddingY: 4,
           flexDirection: ['column', 'column', 'row'],
@@ -78,10 +80,13 @@ const NavMenu = ({ routes, open }) => {
               </Link>
             </Box>
           ))}
-        <Box sx={{ borderTop: '1px solid', borderColor: 'primary', pt: 2, mt: 5 }}>
+        <Box
+          sx={{ borderTop: '1px solid', borderColor: 'primary', pt: 2, mt: 5 }}>
           <NavMeta data={site} />
         </Box>
       </Flex>
+
+      <VerticalRoutes routes={routes} />
     </Animated>
   );
 };
