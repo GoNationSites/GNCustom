@@ -24,7 +24,7 @@ const AboutText = () => {
     );
     console.log('sdfsa', site[0].node.data.desc.charAt(1));
     return (
-      <Box sx={{ paddingY: 6 }}>
+      <Box sx={{ paddingY: [5, 5, 6], paddingX: [3, 3, 0] }}>
         <Text>
           <Text
             as='span'

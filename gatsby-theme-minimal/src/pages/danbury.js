@@ -8,6 +8,7 @@ import cloudinaryOptimize from '../helpers/cloudinaryHelper'
 import Layout from '../components/Layout'
 import AboutText from '../components/AboutText'
 import ContentShowcase from '../components/ContentShowcase';
+import MenuShowcaseSlider from '../components/MenuShowcaseSlider';
 import cloudinaryHelper from '../helpers/cloudinaryHelper';
 
 const Danbury = () => {
@@ -54,14 +55,13 @@ const Danbury = () => {
             exiting: { left: '100%' },
           }}
           transitionTime={500}>
-              <Box sx={{maxWidth: '730px', margin: 'auto'}}>
-                 <AboutText></AboutText>
+          <Box sx={{ maxWidth: '730px', margin: 'auto' }}>
+            <AboutText></AboutText>
 
-                 <ContentShowcase data={contentShowcaseData} />
-              </Box>
+            <ContentShowcase data={contentShowcaseData} />
+          </Box>
 
-              
-          
+          <MenuShowcaseSlider id='bzn-vBPQfZmCTC2V2Y_BpE6SPw' pl="1" />
         </PageTransition>
       </Layout>
     );
