@@ -117,7 +117,6 @@ const MenuShowcaseSlider = ({ id, pl }) => {
           }}>
           <Box
             sx={{
-              background: 'rgba(0,0,0,.1)',
               padding: 2,
               transition: 'all 2s!important',
             }}>

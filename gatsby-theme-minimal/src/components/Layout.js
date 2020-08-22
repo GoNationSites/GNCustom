@@ -9,6 +9,7 @@ import '../../../node_modules/slick-carousel/slick/slick-theme.css';
 
 import Navigation from './Navigation'
 import SmoothHero from './SmoothHero'
+import Footer from './Footer';
 
 const Layout = ({children, pageTitle, location}) => {
     return (
@@ -16,6 +17,7 @@ const Layout = ({children, pageTitle, location}) => {
             <Navigation />
             <SmoothHero />
             {children}
+            <Footer></Footer>
         </Box>
     );
 }

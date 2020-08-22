@@ -41,29 +41,29 @@ const Danbury = () => {
   ];
 
     return (
-      <Layout>
-        <PageTransition
-          defaultStyle={{
-            transition: 'left 500ms cubic-bezier(0.47, 0, 0.75, 0.72)',
-            left: '100%',
-            position: 'absolute',
-            width: '100%',
-          }}
-          transitionStyles={{
-            entering: { left: '0%' },
-            entered: { left: '0%' },
-            exiting: { left: '100%' },
-          }}
-          transitionTime={500}>
+      <PageTransition
+        defaultStyle={{
+          transition: 'left 500ms cubic-bezier(0.47, 0, 0.75, 0.72)',
+          left: '100%',
+          position: 'absolute',
+          width: '100%',
+        }}
+        transitionStyles={{
+          entering: { left: '0%' },
+          entered: { left: '0%' },
+          exiting: { left: '100%' },
+        }}
+        transitionTime={500}>
+        <Layout>
           <Box sx={{ maxWidth: '730px', margin: 'auto' }}>
             <AboutText></AboutText>
 
             <ContentShowcase data={contentShowcaseData} />
           </Box>
 
-          <MenuShowcaseSlider id='bzn-vBPQfZmCTC2V2Y_BpE6SPw' pl="1" />
-        </PageTransition>
-      </Layout>
+          <MenuShowcaseSlider id='bzn-vBPQfZmCTC2V2Y_BpE6SPw' pl='1' />
+        </Layout>
+      </PageTransition>
     );
 }
 

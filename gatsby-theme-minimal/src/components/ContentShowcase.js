@@ -12,10 +12,11 @@ const ContentShowcase = ({ data }) => {
         <Flex
           sx={{
             flexDirection: ['column', 'column', 'row'],
-            paddingY: 5,
+            paddingY: [3,4,5],
             alignItems: 'center',
+            paddingX: [3, 0, 0]
           }}>
-          <Box sx={{ width: '50%', order: idx == 1 ? 9 : 'unset' }}>
+          <Box sx={{ width: ['100%', '100%', '50%'], order: idx == 1 ? 9 : 'unset', marginTop: idx !== 0 ? 5 : 0 }}>
             <Zoom>
               <AspectImage
                 sx={{ height: '100%', width: '100%' }}
@@ -25,7 +26,7 @@ const ContentShowcase = ({ data }) => {
             </Zoom>
           </Box>
 
-          <Box sx={{ width: '50%', paddingX: 3 }}>
+          <Box sx={{ width: ['100%', '100%', '50%'], paddingX: 3 }}>
             <Fade
               left={idx === 1 ? true : false}
               right={idx === 0 ? true : false}>
@@ -34,8 +35,8 @@ const ContentShowcase = ({ data }) => {
                 variant='heading'
                 sx={{
                   color: 'primary',
-                  pl: idx === 0 ? 4 : 0,
-                  pr: idx === 1 ? 4 : 0,
+                  pl: [0,0, idx === 0 ? 4 : 0],
+                  pr: [0,0, idx === 1 ? 4 : 0],
                   pb: 3,
                   borderBottom: '1px solid',
                   borderColor: 'primary',
@@ -44,6 +45,7 @@ const ContentShowcase = ({ data }) => {
                   mb: 4,
                   zIndex: 3,
                   position: 'relative',
+                  marginTop: [4,4,0]
                 }}>
                 {el.title}
               </Text>

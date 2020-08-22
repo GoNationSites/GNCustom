@@ -86,7 +86,9 @@ const NavMenu = ({ routes, open }) => {
         </Box>
       </Flex>
 
-      <VerticalRoutes routes={routes} />
+      <Box sx={{display: ['none', 'none', 'block'], height: '100%'}}>
+        <VerticalRoutes routes={routes} />
+      </Box>
     </Animated>
   );
 };
