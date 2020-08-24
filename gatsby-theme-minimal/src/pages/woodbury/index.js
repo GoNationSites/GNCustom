@@ -4,14 +4,14 @@ import PageTransition from 'gatsby-plugin-page-transitions';
 
 import React from 'react';
 
-import cloudinaryOptimize from '../helpers/cloudinaryHelper'
-import Layout from '../components/Layout'
-import AboutText from '../components/AboutText'
-import ContentShowcase from '../components/ContentShowcase';
-import MenuShowcaseSlider from '../components/MenuShowcaseSlider';
-import cloudinaryHelper from '../helpers/cloudinaryHelper';
+import cloudinaryOptimize from '../../helpers/cloudinaryHelper'
+import Layout from '../../components/LayoutWoodbury';
+import AboutText from '../../components/AboutText'
+import ContentShowcase from '../../components/ContentShowcase';
+import MenuShowcaseSlider from '../../components/MenuShowcaseSlider';
+import cloudinaryHelper from '../../helpers/cloudinaryHelper';
 
-const Danbury = () => {
+const Woodbury = () => {
 
   const contentShowcaseData = [
     {
@@ -54,17 +54,17 @@ const Danbury = () => {
           exiting: { left: '100%' },
         }}
         transitionTime={500}>
-        <Layout pageTitle="home">
+        <Layout pageTitle='home'>
           <Box sx={{ maxWidth: '730px', margin: 'auto' }}>
-            <AboutText></AboutText>
+            <AboutText location="Woodbury"></AboutText>
 
             <ContentShowcase data={contentShowcaseData} />
           </Box>
 
-          <MenuShowcaseSlider id='bzn-vBPQfZmCTC2V2Y_BpE6SPw' pl='1' />
+          <MenuShowcaseSlider id='bzn-mmT_2ynbR4eGFehR2VEi8g' pl='1' />
         </Layout>
       </PageTransition>
     );
 }
 
-export default Danbury;
+export default Woodbury;

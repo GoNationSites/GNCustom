@@ -13,7 +13,7 @@ import ShoutCard from './ShoutCard'
 
 let jsonpAdapter = require('axios-jsonp');
 
-const Navigation = () => {
+const Navigation = ({location}) => {
     const [open, setOpen] = useState(false)
     const [shoutData, setShoutData] = useState(null);
     const [showShout, setShowShout] = useState(false)
@@ -29,10 +29,6 @@ const Navigation = () => {
         setShoutData(res.data);
       });
     }, []);
-
-    
-
-    
 
     const routes = [
       {
@@ -91,6 +87,63 @@ const Navigation = () => {
       },
     ];
 
+    const woodburyRoutes = [
+      {
+        name: 'Home',
+        route: 'woodbury',
+        img: cloudinaryHelper(
+          'https://res.cloudinary.com/gonation/image/upload/v1598035952/sites/mix-prime/home.jpg',
+          1000
+        ),
+        txt: 'Go Home',
+      },
+      {
+        name: 'About',
+        route: 'woodbury/about',
+        img: cloudinaryHelper(
+          'https://res.cloudinary.com/gonation/image/upload/v1598035878/sites/mix-prime/about.jpg',
+          1000
+        ),
+        txt: 'Learn More',
+      },
+      {
+        name: 'Menu',
+        route: 'woodbury/menu',
+        img: cloudinaryHelper(
+          'https://res.cloudinary.com/gonation/image/upload/v1598035876/sites/mix-prime/menu.jpg',
+          1000
+        ),
+        txt: 'View The Menu',
+      },
+      {
+        name: 'Events',
+        route: 'woodbury/events',
+        img: cloudinaryHelper(
+          'https://res.cloudinary.com/gonation/image/upload/v1598035877/sites/mix-prime/events.jpg',
+          1000
+        ),
+        txt: 'View Events',
+      },
+      {
+        name: 'Gallery',
+        route: 'woodbury/gallery',
+        img: cloudinaryHelper(
+          'https://res.cloudinary.com/gonation/image/upload/v1598035875/sites/mix-prime/gallery.jpg',
+          1000
+        ),
+        txt: 'explore the gallery',
+      },
+      {
+        name: 'Contact',
+        route: 'woodbury/contact',
+        img: cloudinaryHelper(
+          'https://res.cloudinary.com/gonation/image/upload/v1597940533/sites/mix-prime/mobile-slide-3.jpg',
+          1900
+        ),
+        txt: 'talk to us',
+      },
+    ];
+
     return (
       <>
         <Box
@@ -125,7 +178,8 @@ const Navigation = () => {
                 </Text>{' '}
                 <br />{' '}
                 <Text as='span' sx={{ fontSize: 0, color: '#fff' }}>
-                  <Link to="/woodbury">Danbury</Link>
+                  {location === 'Danbury' ? <Link to="/woodbury">Danbury</Link> : <Link to="/danbury">Woodbury</Link>}
+                  
                 </Text>
               </Text>
             </Box>
@@ -149,7 +203,7 @@ const Navigation = () => {
             </Flex>
           </Flex>
         </Box>
-        <NavMenu routes={routes} open={open}></NavMenu>
+        <NavMenu routes={location === 'Woodbury' ? woodburyRoutes : routes} open={open}></NavMenu>
         {showShout ? (
           <Box
             sx={{

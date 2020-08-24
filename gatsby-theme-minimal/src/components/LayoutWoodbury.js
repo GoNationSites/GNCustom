@@ -26,13 +26,10 @@ const Layout = ({ children, pageTitle, location }) => {
 
   return (
     <Box as='main'>
-      <Navigation location="Danbury" />
-      {pageTitle === 'about' ||
-      pageTitle === 'contact' 
-        ? ''
-        : renderHero()}
+      <Navigation location="Woodbury" />
+      {pageTitle === 'about' || pageTitle === 'contact' ? '' : renderHero()}
       {children}
-      <Footer location="Danbury"></Footer>
+      <Footer location="Woodbury"></Footer>
     </Box>
   );
 };

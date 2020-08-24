@@ -7,7 +7,7 @@ import SocialIcons from './SocialIcons';
 import NavMeta from './NavMeta';
 import cloudinaryOptimize from '../helpers/cloudinaryHelper';
 
-const Footer = ({ location = 'Danbury' }) => {
+const Footer = ({ location  }) => {
   const data = useStaticQuery(graphql`
     query FooterQuery {
       allSiteData {

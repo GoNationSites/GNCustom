@@ -3,7 +3,7 @@ import { jsx, Box, Text } from 'theme-ui'
 import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 
-const AboutText = () => {
+const AboutText = ({location}) => {
     const data = useStaticQuery(graphql`
       query AboutQuery {
         allSiteData {
@@ -20,9 +20,8 @@ const AboutText = () => {
     `);
 
     const site = data.allSiteData.edges.filter(
-      ({ node }) => node.data.city === 'Danbury'
+      ({ node }) => node.data.city === location
     );
-    console.log('sdfsa', site[0].node.data.desc.charAt(1));
     return (
       <Box sx={{ paddingY: [5, 5, 6], paddingX: [3, 3, 0] }}>
         <Text>
@@ -35,10 +34,11 @@ const AboutText = () => {
               fontFamily: 'heading',
               mt: '-60px',
             }}>
-            {site[0].node.data.desc.charAt(1)}
+
+            {location === 'Danbury' ? site[0].node.data.desc.charAt(1) : ''}
           </Text>
           <Text sx={{ fontSize: 2, lineHeight: 2, color: 'lightText' }}>
-            {site[0].node.data.desc.substring(2, site[0].node.data.desc.length)}
+            {location === 'Danbury' ? site[0].node.data.desc.substring(2, site[0].node.data.desc.length) : site[0].node.data.desc}
           </Text>
         </Text>
       </Box>
