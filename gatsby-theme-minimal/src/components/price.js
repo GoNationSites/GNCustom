@@ -3,7 +3,6 @@ import { jsx, Box, Flex, Text } from 'theme-ui';
 import React from 'react';
 
 const Price = ({ variants, withDollar, toSide }) => {
-  console.log('variants: ', variants);
   return (
     <Box>
       <Text as='span' sx={{ fontSize: 1 }}>

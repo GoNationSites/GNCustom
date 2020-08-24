@@ -33,9 +33,7 @@ const Gallery = () => {
     }, [])
 
     const normalizePhotos = data => {
-        console.log('dsfds', data)
         const photos = data.filter(el => el._id.includes('abm')).map(el => {
-            console.log(el)
             return el.photos
         })
         return photos.flat()
@@ -52,7 +50,6 @@ const Gallery = () => {
            adapter: jsonpAdapter,
          })
            .then(res => {
-               console.log('res.dat', res.data)
              setGalleryData({
                ...galleryData,
                albums: normalizePhotos(res.data),
@@ -60,7 +57,6 @@ const Gallery = () => {
              });
            })
            .catch(e => {
-             console.log('error : ', e);
              setGalleryData({ ...galleryData, isLoading: false });
            });
     };

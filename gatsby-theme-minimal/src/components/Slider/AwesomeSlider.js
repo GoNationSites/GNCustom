@@ -8,7 +8,6 @@ import { Animated } from 'react-animated-css';
 
 
 const Slider = ({ slides }) => {
-  console.log('slides are: ', slides);
   return (
     <Carousel
       autoPlay

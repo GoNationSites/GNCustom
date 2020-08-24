@@ -44,8 +44,6 @@ const AllIn = ({
     const { section } = menu;
     const parsedSection = splitSectionChildren(menu);
 
-    console.log('section: ', section, 'menu: ', menu);
-
     const hasParentRoot = () => section.parent_id === '_root';
 
     return (

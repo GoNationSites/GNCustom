@@ -29,7 +29,6 @@ const MenuShowcaseSlider = ({ id, pl }) => {
         );
 
         setItems(items)
-      console.log('res is: ', res);
     });
   }, []);
 
@@ -46,12 +45,12 @@ const MenuShowcaseSlider = ({ id, pl }) => {
 
   const handleAfterChange = idx => {
       setCurSlide(idx)
-    console.log('handling change ,', idx)
   }
 
   const getImage = itm => `${itm.imageBaseUrl}/${itm.imagePrefix}`
 
 //   console.log(items[curSlide])
+console.log('items: ', items)
 
   if(items.length) {
     return (

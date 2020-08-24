@@ -121,7 +121,6 @@ const DiscoverEvents = ({ bizName }) => {
   };
 
   const renderEvents = () => {
-    console.log(allEvents);
     return allEvents.map((event, idx) => (
       <Box sx={{ width: ['100%', '50%'], padding: 3 }}>
         <Flex sx={{ flexWrap: 'wrap' }}>
