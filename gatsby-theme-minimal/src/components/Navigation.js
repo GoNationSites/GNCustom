@@ -18,8 +18,15 @@ const Navigation = ({location}) => {
     const [shoutData, setShoutData] = useState(null);
     const [showShout, setShowShout] = useState(false)
 
+    const id = () => {
+      if(location === 'Danbury') {
+        return 'bzn-vBPQfZmCTC2V2Y_BpE6SPw';
+      }
+      else return 'bzn-mmT_2ynbR4eGFehR2VEi8g';
+    }
+
     const shoutURL =
-      'https://data.prod.gonation.com/profile/shoutsnew/bzn-vBPQfZmCTC2V2Y_BpE6SPw';
+      `https://data.prod.gonation.com/profile/shoutsnew/${id()}`;
 
     useEffect(() => {
       axios({

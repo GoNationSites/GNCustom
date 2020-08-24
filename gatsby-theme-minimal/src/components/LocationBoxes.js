@@ -67,14 +67,13 @@ const LocationBoxes = ({ businesses, isMobile }) => {
             <Link
               to={`/${slugify(node.data.city, { lower: true })}`}
               sx={{ display: 'block', width: '100%' }}>
-              {console.log(slugify(node.data.city), { lower: true })}
               <Button variant='white'>View Website</Button>
             </Link>
           </Flex>
 
           <Flex sx={{ alignItems: 'center', width: '100%', paddingY: 3 }}>
             <Link
-              to={`/${node.data.city}/menu`}
+              to={`/${slugify(node.data.city, {lower: true})}/menu`}
               sx={{ display: 'block', width: '100%' }}>
               <Button variant='white'>View Menu</Button>
             </Link>
