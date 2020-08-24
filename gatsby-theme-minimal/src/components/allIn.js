@@ -9,6 +9,7 @@ import {
   Element,
   animateScroll as scroll,
 } from 'react-scroll';
+import Lightbox from 'react-image-lightbox';
 
 const AllIn = ({
   menuData,
@@ -18,6 +19,10 @@ const AllIn = ({
   toggledSection,
 }) => {
   const [withDollar, setWithDollar] = useState(false);
+  const [lb, setLightbox] = useState({
+    isOpen: false,
+  });
+  const [mainSrc, setMainSrc] = useState('')
 
   // Takes Nested sections and and gets the nested child items and child sections
   const splitSectionChildren = section => {
@@ -68,6 +73,8 @@ const AllIn = ({
                 {parsedSection.childItems.map(({ item }) => {
                   return (
                     <MenuItem
+                    setLightbox={setLightbox}
+                    setMainSrc={setMainSrc}
                       type={'default'}
                       withDollar={withDollar}
                       item={item}
@@ -89,6 +96,14 @@ const AllIn = ({
   };
   return (
     <Box sx={{ maxWidth: '1400px', margin: 'auto', mt: [3, 4, 5] }}>
+      {lb.isOpen ? (
+        <Lightbox
+          mainSrc={mainSrc}
+          onCloseRequest={() => setLightbox({ isOpen: false })}
+        />
+      ) : (
+        ''
+      )}
       {renderMenu(menuData)}
     </Box>
   );

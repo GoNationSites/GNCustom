@@ -3,18 +3,16 @@ import { jsx, Box, Text, Flex } from 'theme-ui'
 
 import React, {useState} from "react"
 
-import Lightbox from 'react-image-lightbox';
+
 
 
 // import isNewWithinWeek from "../../helpers/isNewWithinWeek"
 import Price from "./price"
 import Camera from './icons/Camera'
 
-const MenuItem = ({ item, type, withDollar, hasMenuImages }) => {
+const MenuItem = ({ item, type, withDollar, hasMenuImages, setLightbox, setMainSrc }) => {
   const mainSrc = `${item.imageBaseUrl}/${item.imagePrefix}`;
-  const [lb, setLightbox] = useState({
-    isOpen: false,
-  })
+  
   const getMenuItemType = () => {
     switch (type) {
       case "someCase":
@@ -28,17 +26,14 @@ const MenuItem = ({ item, type, withDollar, hasMenuImages }) => {
 
   const calcRaveRants = item => item.raves / (item.raves + item.rants)
 
+  const handleCameraClick = () => {
+      setLightbox({isOpen: true})
+      setMainSrc(mainSrc)
+  }
+
 
   return (
     <>
-      {lb.isOpen ? (
-        <Lightbox
-          mainSrc={mainSrc}
-          onCloseRequest={() => setLightbox({ isOpen: false })}
-        />
-      ) : (
-        ''
-      )}
       <Box sx={{ width: ['100%', '50%', '33.333%'] }}>
         <Box sx={{ padding: 3, paddingX: 3 }}>
           <Flex>
@@ -46,13 +41,10 @@ const MenuItem = ({ item, type, withDollar, hasMenuImages }) => {
               {item.imagePrefix !==
               'gonation.data.prod/default/img-itm-cover-full.png' ? (
                 <Box
+                  tabIndex='1'
                   as='span'
                   sx={{ paddingRight: 2, cursor: 'pointer' }}
-                  onClick={() =>
-                    setLightbox({
-                      isOpen: true,
-                    })
-                  }>
+                  onClick={() => handleCameraClick()}>
                   <Camera />
                 </Box>
               ) : (

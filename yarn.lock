@@ -9944,6 +9944,11 @@ react-hamburger-menu@^1.2.1:
   resolved "https://registry.yarnpkg.com/react-hamburger-menu/-/react-hamburger-menu-1.2.1.tgz#bcaca08bf7d1ae96aa97553828765dce8f912eeb"
   integrity sha512-It5Jque8bx9lYn8q/NFtu9Ci20fBMsyunFSp06ZGgWXbMZlTFrN0IxKguGZ0igYQr6RvJ3S9CN3rTjrObmq/Cw==
 
+react-horizontal-scrolling-menu@^0.7.7:
+  version "0.7.7"
+  resolved "https://registry.yarnpkg.com/react-horizontal-scrolling-menu/-/react-horizontal-scrolling-menu-0.7.7.tgz#3c74c877b414fe4418d81a0cfe07eecf34b23657"
+  integrity sha512-NuxQDQYOCWx1cbkLtgrzDWgWF5uE62s48NR3ljmV92idCKEV75BFmv/Z77aTsUlCKdxPG379VB+jIjtcG2ncmA==
+
 react-hot-loader@^4.12.21:
   version "4.12.21"
   resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.12.21.tgz#332e830801fb33024b5a147d6b13417f491eb975"

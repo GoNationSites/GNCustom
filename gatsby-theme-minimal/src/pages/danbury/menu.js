@@ -6,6 +6,7 @@ import PageTransition from 'gatsby-plugin-page-transitions';
 import axios from 'axios';
 import jsonpAdapter from 'axios-jsonp';
 import Sticky from 'react-sticky-el';
+import ScrollMenu from 'react-horizontal-scrolling-menu';
 
 import * as Scroll from 'react-scroll';
 import {
@@ -62,13 +63,56 @@ const Menu = () => {
                   textDecoration: 'underline',
                 },
               }}>
-              <ScrollLink style={{color: '#111'}} to={sec.section.name} spy={true} smooth={true} duration={500} offset={-125} >{sec.section.name}</ScrollLink>
+              <ScrollLink
+                style={{ color: '#111' }}
+                to={sec.section.name}
+                spy={true}
+                smooth={true}
+                duration={500}
+                offset={-125}>
+                {sec.section.name}
+              </ScrollLink>
             </Text>
           </Box>
         ))}
       </Flex>
     </Sticky>
   );
+
+  const Menu = () => {
+    return (
+      
+          childSections.map(sec => (
+            <Box sx={{ marginX: 3, cursor: 'pointer' }}>
+              <Text
+                onClick={() => setToggledSection(sec.section.name)}
+                sx={{
+                  fontFamily: 'heading',
+                  textTransform: 'uppercase',
+                  letterSpacing: '3px',
+                  color: '#111!important',
+                  textDecoration:
+                    toggledSection === sec.section.name ? 'underline' : '',
+                  '&:hover': {
+                    textDecoration: 'underline',
+                  },
+                }}>
+                <ScrollLink
+                  style={{ color: '#111' }}
+                  to={sec.section.name}
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  offset={-125}>
+                  {sec.section.name}
+                </ScrollLink>
+              </Text>
+            </Box>
+          ))
+        
+      
+    );
+  };
 
   return (
     <PageTransition
@@ -88,7 +132,22 @@ const Menu = () => {
         <Box sx={{ paddingY: 5, paddingX: 2 }}>
           {menuData.inventory && childSections ? (
             <>
-              <RenderSectionTitles></RenderSectionTitles>
+              <Box sx={{ display: ['none', 'block', 'block'] }}>
+                <RenderSectionTitles></RenderSectionTitles>
+              </Box>
+              <Box sx={{ display: ['block', 'none', 'none'] }}>
+                <Sticky stickyStyle={{ zIndex: 999, top: '42px' }}>
+                  <Box
+                    sx={{
+                      justifyContent: 'center',
+                      paddingY: 3,
+                      background: 'white',
+                      borderBottom: '1px solid #eee',
+                    }}>
+                    <ScrollMenu data={Menu()}></ScrollMenu>
+                  </Box>
+                </Sticky>
+              </Box>
 
               <AllInOnce
                 menuData={menuData}
