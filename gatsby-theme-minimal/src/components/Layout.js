@@ -6,6 +6,7 @@ import '../../../node_modules/animate.css'
 import './animate.css'
 import '../../../node_modules/slick-carousel/slick/slick.css';
 import '../../../node_modules/slick-carousel/slick/slick-theme.css';
+import 'react-image-lightbox/style.css';
 
 import Navigation from './Navigation'
 import SmoothHero from './SmoothHero'

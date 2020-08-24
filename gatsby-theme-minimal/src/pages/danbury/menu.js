@@ -7,6 +7,16 @@ import axios from 'axios';
 import jsonpAdapter from 'axios-jsonp';
 import Sticky from 'react-sticky-el';
 
+import * as Scroll from 'react-scroll';
+import {
+  Link as ScrollLink,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from 'react-scroll';
+
 import Layout from '../../components/Layout';
 import splitSectionChildren from '../../helpers/splitSectionChildren';
 import AllInOnce from '../../components/allIn';
@@ -29,8 +39,14 @@ const Menu = () => {
   }, []);
 
   const RenderSectionTitles = () => (
-    <Sticky stickyStyle={{ zIndex: 999, top: '42px'}}>
-      <Flex  sx={{ justifyContent: 'center', paddingY: 3, background: 'white', borderBottom: '1px solid #eee' }}>
+    <Sticky stickyStyle={{ zIndex: 999, top: '42px' }}>
+      <Flex
+        sx={{
+          justifyContent: 'center',
+          paddingY: 3,
+          background: 'white',
+          borderBottom: '1px solid #eee',
+        }}>
         {childSections.map(sec => (
           <Box sx={{ marginX: 3, cursor: 'pointer' }}>
             <Text
@@ -39,14 +55,14 @@ const Menu = () => {
                 fontFamily: 'heading',
                 textTransform: 'uppercase',
                 letterSpacing: '3px',
+                color: '#111!important',
                 textDecoration:
                   toggledSection === sec.section.name ? 'underline' : '',
-                "&:hover": {
-                  textDecoration: 'underline'
-                }
-                
+                '&:hover': {
+                  textDecoration: 'underline',
+                },
               }}>
-              {sec.section.name}
+              <ScrollLink style={{color: '#111'}} to={sec.section.name} spy={true} smooth={true} duration={500} offset={-125} >{sec.section.name}</ScrollLink>
             </Text>
           </Box>
         ))}

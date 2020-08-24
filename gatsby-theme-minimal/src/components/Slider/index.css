@@ -44,3 +44,10 @@
      height: 100%;
      background: black;
  }
+
+ .ReactModal__Overlay {
+   z-index: 999999!important;
+ }
+ .ril-image-current {
+   width: auto;
+ }
