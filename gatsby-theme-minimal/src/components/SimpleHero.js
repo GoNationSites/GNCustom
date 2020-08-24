@@ -16,6 +16,10 @@ const SimpleHero = ({ pageTitle }) => {
       return cloudinaryOptimize(
         'https://res.cloudinary.com/gonation/image/upload/v1598291225/sites/mix-prime/danbury-events.jpg', 2000
       );
+      case 'gallery':
+        return cloudinaryOptimize(
+          'https://res.cloudinary.com/gonation/image/upload/v1598293244/sites/mix-prime/danbury-gallery.jpg', 2000
+        );
       default:
         return '';
     }
