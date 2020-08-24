@@ -75,7 +75,7 @@ const NavMenu = ({ routes, open }) => {
                   fontSize: 4,
                   fontWeight: 100,
                 }}
-                to={`${i.route}`}>
+                to={`/${i.route}`}>
                 {i.name}
               </Link>
             </Box>

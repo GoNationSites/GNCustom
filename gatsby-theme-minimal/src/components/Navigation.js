@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Box, Flex, Text } from 'theme-ui'
 import React, {useState, useEffect} from 'react';
+import {Link} from 'gatsby'
 import axios from 'axios';
 import HamburgerMenu from 'react-hamburger-menu';
 
@@ -105,7 +106,7 @@ const Navigation = () => {
           <Flex sx={{ alignItems: 'center', paddingX: 3 }}>
             <Box sx={{ width: '33%' }}>
               <Flex
-              onClick={() => setShowShout(!showShout)}
+                onClick={() => setShowShout(!showShout)}
                 sx={{ alignItems: 'center' }}
                 className='animate__animated animate__pulse animate__repeat-3	'>
                 <Announcement width={'25px'} />
@@ -117,12 +118,14 @@ const Navigation = () => {
             <Box
               sx={{ width: '33%', fontFamily: 'heading', textAlign: 'center' }}>
               <Text as='p' sx={{ fontSize: 1 }}>
-                <Text as='span' sx={{ textTransform: 'uppercase', color: '#fff' }}>
+                <Text
+                  as='span'
+                  sx={{ textTransform: 'uppercase', color: '#fff' }}>
                   Mixed Prime
                 </Text>{' '}
                 <br />{' '}
                 <Text as='span' sx={{ fontSize: 0, color: '#fff' }}>
-                   Danbury
+                  <Link to="/woodbury">Danbury</Link>
                 </Text>
               </Text>
             </Box>
@@ -147,8 +150,27 @@ const Navigation = () => {
           </Flex>
         </Box>
         <NavMenu routes={routes} open={open}></NavMenu>
-        {showShout ?  <Box sx={{position: 'fixed', zIndex: 99, top: '0', left: '0', paddingX: 4, width: '100%'  }}>{shoutData ? <ShoutCard setShowShout={setShowShout} data={shoutData}></ShoutCard> : ''}</Box> : ''}
-        
+        {showShout ? (
+          <Box
+            sx={{
+              position: 'fixed',
+              zIndex: 99,
+              top: '0',
+              left: '0',
+              paddingX: 4,
+              width: '100%',
+            }}>
+            {shoutData ? (
+              <ShoutCard
+                setShowShout={setShowShout}
+                data={shoutData}></ShoutCard>
+            ) : (
+              ''
+            )}
+          </Box>
+        ) : (
+          ''
+        )}
       </>
     );
 }
