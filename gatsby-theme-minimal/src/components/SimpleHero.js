@@ -12,6 +12,10 @@ const SimpleHero = ({ pageTitle }) => {
           'https://res.cloudinary.com/gonation/image/upload/v1598280072/sites/mix-prime/menu-hero.jpg',
           2000
         );
+      case 'events': 
+      return cloudinaryOptimize(
+        'https://res.cloudinary.com/gonation/image/upload/v1598291225/sites/mix-prime/danbury-events.jpg', 2000
+      );
       default:
         return '';
     }

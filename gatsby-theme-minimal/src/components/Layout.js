@@ -27,7 +27,10 @@ const Layout = ({ children, pageTitle, location }) => {
   return (
     <Box as='main'>
       <Navigation />
-      {pageTitle === 'about' || pageTitle === 'contact' ? '' : renderHero()}
+      {pageTitle === 'about' ||
+      pageTitle === 'contact' 
+        ? ''
+        : renderHero()}
       {children}
       <Footer></Footer>
     </Box>
