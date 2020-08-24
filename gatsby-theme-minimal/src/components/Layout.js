@@ -17,7 +17,7 @@ const Layout = ({ children, pageTitle, location }) => {
   const renderHero = () => (
     <>
       {pageTitle === 'home' ? (
-        <SmoothHero page={pageTitle} />
+        <SmoothHero page={pageTitle} location={'Danbury'} />
       ) : (
         <SimpleHero pageTitle={pageTitle}></SimpleHero>
       )}

@@ -1,113 +1,149 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text, } from 'theme-ui'
+import { jsx, Box, Flex, Text } from 'theme-ui';
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
 // Components
 import HeroSlider, {
   Slide,
   ButtonsNav,
   Nav,
-  OverlayContainer
+  OverlayContainer,
 } from 'hero-slider';
 
-import cloudinaryHelper from '../helpers/cloudinaryHelper'
+import printAddress from '../helpers/printAddress';
+import getGoogleStr from '../helpers/getGoogleStr';
 
-const SmoothHero = () => {
-    return (
-      <Box sx={{ position: 'relative' }}>
-        <HeroSlider
-          orientation='horizontal'
-          initialSlide={1}
-          style={{
-            color: '#FFF',
-          }}
-          settings={{
-            slidingDuration: 500,
-            slidingDelay: 500,
-            shouldAutoplay: true,
-            shouldDisplayButtons: false,
-            autoplayDuration: 12000,
-            height: '90vmin',
-          }}>
-          {/* <OverlayContainer  >
-        </OverlayContainer> */}
+import cloudinaryHelper from '../helpers/cloudinaryHelper';
 
-          <Slide
-            background={{
-              backgroundImage: cloudinaryHelper(
-                'https://res.cloudinary.com/gonation/image/upload/v1598018071/sites/mix-prime/desktop-slide-1.jpg',
-                2000
-              ),
-              backgroundAnimation: 'zoom',
-            }}
-          />
+const SmoothHero = ({ location }) => {
+  const data = useStaticQuery(graphql`
+    query smoothQuery {
+      allSiteData {
+        edges {
+          node {
+            data {
+              city
+              name
+              phone
+              slug
+              state
+              street
+              zip
+              links {
+                facebook
+                instagram
+                twitter
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
 
-          <Slide
-            background={{
-              backgroundImage: cloudinaryHelper(
-                'https://res.cloudinary.com/gonation/image/upload/v1598034772/sites/mix-prime/index-2.jpg',
-                2000
-              ),
-              backgroundAnimation: 'zoom',
-            }}
-          />
+  console.log('EDGES', data.allSiteData.edges);
+  const site = data.allSiteData.edges.filter(
+    el => el.node.data.city === location
+  )[0].node.data;
+  console.log('SmoothHero -> site', site);
 
-          <Slide
-            background={{
-              backgroundImage: cloudinaryHelper(
-                'https://res.cloudinary.com/gonation/image/upload/v1598034771/sites/mix-prime/index-1.jpg',
-                2000
-              ),
-              backgroundAnimation: 'zoom',
-            }}
-          />
-
-          {/* <Slide
-          navDescription='Moraine Lake - Canada'
+  return (
+    <Box sx={{ position: 'relative' }}>
+      <HeroSlider
+        orientation='horizontal'
+        initialSlide={1}
+        style={{
+          color: '#FFF',
+        }}
+        settings={{
+          slidingDuration: 500,
+          slidingDelay: 500,
+          shouldAutoplay: true,
+          shouldDisplayButtons: false,
+          autoplayDuration: 12000,
+          height: '90vmin',
+        }}>
+        <Slide
           background={{
-            backgroundImage: ,
+            backgroundImage: cloudinaryHelper(
+              'https://res.cloudinary.com/gonation/image/upload/v1598018071/sites/mix-prime/desktop-slide-1.jpg',
+              2000
+            ),
             backgroundAnimation: 'zoom',
           }}
-        /> */}
+        />
 
-          {/* <ButtonsNav
-          isNullAfterThreshold
-          position={{
-            top: 0,
-            left: '50%',
-            transform: 'translateX(-50%)',
+        <Slide
+          background={{
+            backgroundImage: cloudinaryHelper(
+              'https://res.cloudinary.com/gonation/image/upload/v1598034772/sites/mix-prime/index-2.jpg',
+              2000
+            ),
+            backgroundAnimation: 'zoom',
           }}
         />
-        <Nav /> */}
-        </HeroSlider>
-        <Flex
-          sx={{
-            position: 'absolute',
-            height: '100%',
-            width: '100%',
-            left: 0,
-            top: 0,
-            justifyContent: 'center',
-            alignItems: 'center',
-            zIndex: 3,
-          }}>
-          <Box sx={{ background: 'rgba(0,0,0,.4)', pb: [3,3,0] }}>
-            <img
-              src='https://res.cloudinary.com/gonation/image/upload/v1597941857/sites/mix-prime/logo-white.png'
-              alt='Mix Prime'
-            />
-            <Flex sx={{justifyContent: 'center', paddingX: 3, textTransform: 'uppercase', fontFamily: 'heading', textAlign: 'center', display: ['flex', 'none', 'none']}}>
-              <Box sx={{marginX: 3}}>
-                  <Text as="a">Call</Text>
-              </Box>
-              <Box sx={{marginX: 3}}>
-                <Text as="a">Directions</Text>
-              </Box>
-            </Flex>
-          </Box>
-        </Flex>
-      </Box>
-    );
-}
+
+        <Slide
+          background={{
+            backgroundImage: cloudinaryHelper(
+              'https://res.cloudinary.com/gonation/image/upload/v1598034771/sites/mix-prime/index-1.jpg',
+              2000
+            ),
+            backgroundAnimation: 'zoom',
+          }}
+        />
+      </HeroSlider>
+      <Flex
+        sx={{
+          position: 'absolute',
+          height: '100%',
+          width: '100%',
+          left: 0,
+          top: 0,
+          justifyContent: 'center',
+          alignItems: 'center',
+          zIndex: 3,
+        }}>
+        <Box sx={{ background: 'rgba(0,0,0,.4)', pb: [3, 3, 0] }}>
+          <img
+            src='https://res.cloudinary.com/gonation/image/upload/v1597941857/sites/mix-prime/logo-white.png'
+            alt='Mix Prime'
+          />
+          <Flex
+            sx={{
+              justifyContent: 'center',
+              paddingX: 3,
+              textTransform: 'uppercase',
+              fontFamily: 'heading',
+              textAlign: 'center',
+              display: ['flex', 'none', 'none'],
+            }}>
+            <Box sx={{ marginX: 3 }}>
+              <Text as='a' href={`tel:${site.phone}`}>
+                Call
+              </Text>
+            </Box>
+            <Box sx={{ marginX: 3 }}>
+              <Text
+                as='a'
+                target="_blank"
+                rel="noopener noreferrer"
+                href={getGoogleStr(
+                  site.name,
+                  site.street,
+                  site.city,
+                  site.zip,
+                  site.state
+                )}>
+                Directions
+              </Text>
+            </Box>
+          </Flex>
+        </Box>
+      </Flex>
+    </Box>
+  );
+};
 
 export default SmoothHero;
