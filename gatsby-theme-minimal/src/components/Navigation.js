@@ -36,7 +36,7 @@ const Navigation = () => {
     const routes = [
       {
         name: 'Home',
-        route: '/danbury',
+        route: 'danbury',
         img: cloudinaryHelper(
           'https://res.cloudinary.com/gonation/image/upload/v1598035952/sites/mix-prime/home.jpg',
           1000
@@ -99,7 +99,8 @@ const Navigation = () => {
             top: 0,
             width: '100%',
             zIndex: '999999',
-            bg: 'white',
+            bg: '#111',
+            py: 2,
           }}>
           <Flex sx={{ alignItems: 'center', paddingX: 3 }}>
             <Box sx={{ width: '33%' }}>
@@ -108,7 +109,7 @@ const Navigation = () => {
                 sx={{ alignItems: 'center' }}
                 className='animate__animated animate__pulse animate__repeat-3	'>
                 <Announcement width={'25px'} />
-                <Text as='span' sx={{ fontSize: 0, ml: 1 }}>
+                <Text as='span' sx={{ fontSize: 0, ml: 1, color: '#fff' }}>
                   New Shout
                 </Text>
               </Flex>
@@ -116,12 +117,12 @@ const Navigation = () => {
             <Box
               sx={{ width: '33%', fontFamily: 'heading', textAlign: 'center' }}>
               <Text as='p' sx={{ fontSize: 1 }}>
-                <Text as='span' sx={{ textTransform: 'uppercase' }}>
+                <Text as='span' sx={{ textTransform: 'uppercase', color: '#fff' }}>
                   Mixed Prime
                 </Text>{' '}
                 <br />{' '}
-                <Text as='span' sx={{ fontSize: 0 }}>
-                  Danbury
+                <Text as='span' sx={{ fontSize: 0, color: '#fff' }}>
+                   Danbury
                 </Text>
               </Text>
             </Box>
@@ -138,7 +139,7 @@ const Navigation = () => {
                 height={15}
                 strokeWidth={1}
                 rotate={0}
-                color='black'
+                color='#fff'
                 borderRadius={0}
                 animationDuration={0.5}
               />
