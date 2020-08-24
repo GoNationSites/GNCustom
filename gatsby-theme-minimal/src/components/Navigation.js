@@ -107,7 +107,7 @@ const Navigation = () => {
             <Box sx={{ width: '33%' }}>
               <Flex
                 onClick={() => setShowShout(!showShout)}
-                sx={{ alignItems: 'center' }}
+                sx={{ alignItems: 'center', cursor: 'pointer' }}
                 className='animate__animated animate__pulse animate__repeat-3	'>
                 <Announcement width={'25px'} />
                 <Text as='span' sx={{ fontSize: 0, ml: 1, color: '#fff' }}>

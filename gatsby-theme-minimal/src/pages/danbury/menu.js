@@ -40,7 +40,7 @@ const Menu = () => {
   }, []);
 
   const RenderSectionTitles = () => (
-    <Sticky stickyStyle={{ zIndex: 999, top: '42px' }}>
+    <Sticky stickyStyle={{ zIndex: 999, top: '58px' }}>
       <Flex
         sx={{
           justifyContent: 'center',
@@ -136,7 +136,7 @@ const Menu = () => {
                 <RenderSectionTitles></RenderSectionTitles>
               </Box>
               <Box sx={{ display: ['block', 'none', 'none'] }}>
-                <Sticky stickyStyle={{ zIndex: 999, top: '42px' }}>
+                <Sticky stickyStyle={{ zIndex: 999, top: '58px' }}>
                   <Box
                     sx={{
                       justifyContent: 'center',
