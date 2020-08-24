@@ -54,7 +54,7 @@ const Danbury = () => {
           exiting: { left: '100%' },
         }}
         transitionTime={500}>
-        <Layout>
+        <Layout pageTitle="home">
           <Box sx={{ maxWidth: '730px', margin: 'auto' }}>
             <AboutText></AboutText>
 

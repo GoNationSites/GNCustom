@@ -33,7 +33,6 @@ const SmoothHero = () => {
         </OverlayContainer> */}
 
           <Slide
-            navDescription='Hallstatt - Austria'
             background={{
               backgroundImage: cloudinaryHelper(
                 'https://res.cloudinary.com/gonation/image/upload/v1598018071/sites/mix-prime/desktop-slide-1.jpg',
@@ -44,7 +43,6 @@ const SmoothHero = () => {
           />
 
           <Slide
-            navDescription='Hvitserkur - Iceland'
             background={{
               backgroundImage: cloudinaryHelper(
                 'https://res.cloudinary.com/gonation/image/upload/v1598034772/sites/mix-prime/index-2.jpg',
@@ -55,7 +53,6 @@ const SmoothHero = () => {
           />
 
           <Slide
-            navDescription='Jacksonville - USA'
             background={{
               backgroundImage: cloudinaryHelper(
                 'https://res.cloudinary.com/gonation/image/upload/v1598034771/sites/mix-prime/index-1.jpg',

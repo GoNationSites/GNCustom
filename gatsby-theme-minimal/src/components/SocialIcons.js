@@ -19,6 +19,7 @@ const SocialIcons = ({
   iconFill = '#fff',
   links,
   slug,
+  justifyLeft,
 }) => {
   const getSocialIcon = social => {
     switch (social) {
@@ -35,18 +36,22 @@ const SocialIcons = ({
 
   const renderSocialIcons = () => (
     <>
-      {Object.keys(links).filter(el => el === 'facebook' && el === 'instagram' || el === 'twitter').map(
-        (social, idx) => 
-          links[social] && (
-            <a
-              style={idx === 0 ? { margin: 0 } : {}}
-              target='_blank'
-              rel='noopener noreferrer'
-              href={links[social]}>
-              {getSocialIcon(social)}
-            </a>
-          )
-      )}
+      {Object.keys(links)
+        .filter(
+          el => (el === 'facebook' && el === 'instagram') || el === 'twitter'
+        )
+        .map(
+          (social, idx) =>
+            links[social] && (
+              <a
+                style={idx === 0 ? { margin: 0 } : {}}
+                target='_blank'
+                rel='noopener noreferrer'
+                href={links[social]}>
+                {getSocialIcon(social)}
+              </a>
+            )
+        )}
       <a
         target='_blank'
         rel='noopener noreferrer'
@@ -56,7 +61,15 @@ const SocialIcons = ({
     </>
   );
 
-  return <Flex sx={{width: '100%', justifyContent: 'space-evenly'}}>{renderSocialIcons()}</Flex>;
+  return (
+    <Flex
+      sx={{
+        width: '100%',
+        justifyContent: justifyLeft ? 'flex-start' : 'space-evenly',
+      }}>
+      {renderSocialIcons()}
+    </Flex>
+  );
 };
 
 export default SocialIcons;

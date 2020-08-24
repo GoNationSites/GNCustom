@@ -2,26 +2,36 @@
 import { jsx, Box } from 'theme-ui';
 import React from 'react';
 
-import '../../../node_modules/animate.css'
-import './animate.css'
+import '../../../node_modules/animate.css';
+import './animate.css';
 import '../../../node_modules/slick-carousel/slick/slick.css';
 import '../../../node_modules/slick-carousel/slick/slick-theme.css';
 import 'react-image-lightbox/style.css';
 
-import Navigation from './Navigation'
-import SmoothHero from './SmoothHero'
+import Navigation from './Navigation';
+import SmoothHero from './SmoothHero';
 import Footer from './Footer';
+import SimpleHero from './SimpleHero';
 
-const Layout = ({children, pageTitle, location}) => {
-    return (
-        <Box as="main">
-            <Navigation />
-            <SmoothHero />
-            {children}
-            <Footer></Footer>
-        </Box>
-    );
-}
+const Layout = ({ children, pageTitle, location }) => {
+  const renderHero = () => (
+    <>
+      {pageTitle === 'home' ? (
+        <SmoothHero page={pageTitle} />
+      ) : (
+        <SimpleHero pageTitle={pageTitle}></SimpleHero>
+      )}
+    </>
+  );
+
+  return (
+    <Box as='main'>
+      <Navigation />
+      {pageTitle === 'about' || pageTitle === 'contact' ? '' : renderHero()}
+      {children}
+      <Footer></Footer>
+    </Box>
+  );
+};
 
 export default Layout;
-

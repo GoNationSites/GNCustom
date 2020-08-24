@@ -45,7 +45,7 @@ const Navigation = () => {
       },
       {
         name: 'About',
-        route: '/about',
+        route: 'danbury/about',
         img: cloudinaryHelper(
           'https://res.cloudinary.com/gonation/image/upload/v1598035878/sites/mix-prime/about.jpg',
           1000

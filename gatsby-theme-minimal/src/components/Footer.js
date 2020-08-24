@@ -1,42 +1,43 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text, Image } from 'theme-ui'
+import { jsx, Box, Flex, Text, Image } from 'theme-ui';
 import React from 'react';
-import {useStaticQuery, Link} from 'gatsby'
+import { useStaticQuery, Link } from 'gatsby';
 
-import SocialIcons from './SocialIcons'
+import SocialIcons from './SocialIcons';
 import NavMeta from './NavMeta';
-import cloudinaryOptimize from '../helpers/cloudinaryHelper'
+import cloudinaryOptimize from '../helpers/cloudinaryHelper';
 
-const Footer = ({location="Danbury"}) => {
-    const data = useStaticQuery(graphql`
-      query FooterQuery {
-        allSiteData {
-          edges {
-            node {
-              data {
-                city
-                name
-                phone
-                slug
-                state
-                street
-                zip
-                links {
-                  facebook
-                  instagram
-                  twitter
-                }
+const Footer = ({ location = 'Danbury' }) => {
+  const data = useStaticQuery(graphql`
+    query FooterQuery {
+      allSiteData {
+        edges {
+          node {
+            data {
+              city
+              name
+              phone
+              slug
+              state
+              street
+              zip
+              links {
+                facebook
+                instagram
+                twitter
               }
             }
           }
         }
       }
-    `);
+    }
+  `);
 
-    const site = data.allSiteData.edges.filter(
-      ({ node }) => node.data.city === location
-    );
-    return (
+  const site = data.allSiteData.edges.filter(
+    ({ node }) => node.data.city === location
+  );
+  return (
+    <>
       <Box
         as='footer'
         sx={{
@@ -69,7 +70,16 @@ const Footer = ({location="Danbury"}) => {
           </Box>
         </Box>
       </Box>
-    );
-}
+      <Box sx={{ background: 'black', paddingY: 2 }}>
+        <Box sx={{ maxWidth: '175px', margin: 'auto' }}>
+          <img
+            src='https://www.gonationsites.com/GNSE/gn-sites/images/gn-power-white.svg'
+            alt='GoNation'
+          />
+        </Box>
+      </Box>
+    </>
+  );
+};
 
 export default Footer;

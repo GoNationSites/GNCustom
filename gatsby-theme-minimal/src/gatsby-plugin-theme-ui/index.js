@@ -25,6 +25,32 @@ export default {
     muted: '#69656A',
     lightText: '#2a2a2a',
   },
+  forms: {
+    input: {
+      border: 0,
+      borderBottom: '1px solid',
+      borderColor: 'white!important',
+      borderRadius: 0,
+      color: 'white',
+      mb: 4,
+      '&::placeholder': {
+        // color: ${props =>
+        color: 'white',
+      },
+    },
+    textarea: {
+      borderRadius: '3px',
+      borderBottom: '1px solid',
+      borderColor: 'white',
+      borderRadius: 0,
+      fontFamily: 'body',
+      mb: 4,
+      '&::placeholder': {
+        // color: ${props =>
+        color: 'white',
+      },
+    },
+  },
   text: {
     heading: {
       fontFamily: 'heading',
