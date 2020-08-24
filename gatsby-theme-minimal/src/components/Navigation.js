@@ -54,7 +54,7 @@ const Navigation = () => {
       },
       {
         name: 'Menu',
-        route: '/menu',
+        route: 'danbury/menu',
         img: cloudinaryHelper(
           'https://res.cloudinary.com/gonation/image/upload/v1598035876/sites/mix-prime/menu.jpg',
           1000
@@ -63,7 +63,7 @@ const Navigation = () => {
       },
       {
         name: 'Events',
-        route: '/events',
+        route: 'danbury/events',
         img: cloudinaryHelper(
           'https://res.cloudinary.com/gonation/image/upload/v1598035877/sites/mix-prime/events.jpg',
           1000
@@ -72,7 +72,7 @@ const Navigation = () => {
       },
       {
         name: 'Gallery',
-        route: '/gallery',
+        route: 'danbury/gallery',
         img: cloudinaryHelper(
           'https://res.cloudinary.com/gonation/image/upload/v1598035875/sites/mix-prime/gallery.jpg',
           1000
@@ -81,7 +81,7 @@ const Navigation = () => {
       },
       {
         name: 'Contact',
-        route: '/contact',
+        route: 'danbury/contact',
         img: cloudinaryHelper(
           'https://res.cloudinary.com/gonation/image/upload/v1597940533/sites/mix-prime/mobile-slide-3.jpg',
           1900
