@@ -6,6 +6,7 @@ import {
   Element,
   animateScroll as scroll,
 } from 'react-scroll';
+import PageTransition from 'gatsby-plugin-page-transitions';
 
 import AwesomeSlider from '../components/Slider/AwesomeSlider'
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
@@ -67,97 +68,110 @@ const Index = ({data}) => {
       'https://res.cloudinary.com/gonation/image/upload/v1597941857/sites/mix-prime/logo-white.png';
     
     return (
-      <Box sx={{ display: ['block', 'block', 'flex'] }}>
-        {console.log('once')}
-        <Flex
-          sx={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: ['calc(100vh - 200px)', 'calc(100vh - 200px)', '100vh'],
-            flexDirection: 'column',
-            width: ['100%', '100%', '75%'],
-            position: 'relative',
-          }}>
-          <Box
+      <PageTransition
+        defaultStyle={{
+          transition: 'left 500ms cubic-bezier(0.47, 0, 0.75, 0.72)',
+          left: '100%',
+          position: 'absolute',
+          width: '100%',
+        }}
+        transitionStyles={{
+          entering: { left: '0%' },
+          entered: { left: '0%' },
+          exiting: { left: '100%' },
+        }}
+        transitionTime={500}>
+        <Box sx={{ display: ['block', 'block', 'flex'] }}>
+          <Flex
             sx={{
-              background: 'rgba(0,0,0,.3)',
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              zIndex: 1,
-              width: '100%',
+              justifyContent: 'center',
+              alignItems: 'center',
               height: ['calc(100vh - 200px)', 'calc(100vh - 200px)', '100vh'],
-            }}></Box>
-          <Box
-            sx={{
-              position: 'absolute',
-              zIndex: 0,
-              left: 0,
-              top: 0,
-              width: '100%',
-              height: '100%',
-              display: ['none', 'none', 'block'],
+              flexDirection: 'column',
+              width: ['100%', '100%', '75%'],
+              position: 'relative',
             }}>
-            <AwesomeSlider slides={slidesDesktop} />
-          </Box>
-          <Box
-            sx={{
-              position: 'absolute',
-              zIndex: 0,
-              left: 0,
-              top: 0,
-              width: '100%',
-              height: '100%',
-              display: ['block', 'none', 'none'],
-            }}>
-            <AwesomeSlider slides={slidesMobile} />
-          </Box>
-
-          <Box sx={{ zIndex: 2 }}>
-            <Image src={logo} alt='Mixed Prime'></Image>
-          </Box>
-        </Flex>
-
-        <Box
-          sx={{
-            width: ['100%', '100%', '25%'],
-            display: ['block', 'block', 'flex'],
-            flexDirection: 'column',
-          }}>
-          <ScrollLink spy={true} smooth={true} duration={500} to='bottom'>
-            <Box sx={{ paddingY: 4, background: 'f7f7f7' }}>
-              <Text
-                variant='heading'
-                sx={{ textAlign: 'center', fontSize: 4, color: 'text' }}>
-                Choose A Location
-              </Text>
-            </Box>
-          </ScrollLink>
-          <Box sx={{ height: ['auto', 'auto', '100%'] }}>
             <Box
               sx={{
-                display: ['block', 'block', 'none'],
-                height: ['auto', 'auto', '100%'],
-              }}>
-              <LocationBoxes isMobile businesses={data.allSiteData.edges} />
-            </Box>
+                background: 'rgba(0,0,0,.3)',
+                position: 'absolute',
+                left: 0,
+                top: 0,
+                zIndex: 1,
+                width: '100%',
+                height: ['calc(100vh - 200px)', 'calc(100vh - 200px)', '100vh'],
+              }}></Box>
             <Box
               sx={{
+                position: 'absolute',
+                zIndex: 0,
+                left: 0,
+                top: 0,
+                width: '100%',
+                height: '100%',
                 display: ['none', 'none', 'block'],
-                height: ['auto', 'auto', '100%'],
               }}>
-              {console.log('mounting outsidee')}
-              <LocationBoxes businesses={data.allSiteData.edges} />
+              <AwesomeSlider slides={slidesDesktop} />
+            </Box>
+            <Box
+              sx={{
+                position: 'absolute',
+                zIndex: 0,
+                left: 0,
+                top: 0,
+                width: '100%',
+                height: '100%',
+                display: ['block', 'none', 'none'],
+              }}>
+              <AwesomeSlider slides={slidesMobile} />
+            </Box>
+
+            <Box sx={{ zIndex: 2 }}>
+              <Image src={logo} alt='Mixed Prime'></Image>
+            </Box>
+          </Flex>
+
+          <Box
+            sx={{
+              width: ['100%', '100%', '25%'],
+              display: ['block', 'block', 'flex'],
+              flexDirection: 'column',
+            }}>
+            <ScrollLink spy={true} smooth={true} duration={500} to='bottom'>
+              <Box sx={{ paddingY: 4, background: 'f7f7f7' }}>
+                <Text
+                  variant='heading'
+                  sx={{ textAlign: 'center', fontSize: 4, color: 'text' }}>
+                  Choose A Location
+                </Text>
+              </Box>
+            </ScrollLink>
+            <Box sx={{ height: ['auto', 'auto', '100%'] }}>
+              <Box
+                sx={{
+                  display: ['block', 'block', 'none'],
+                  height: ['auto', 'auto', '100%'],
+                }}>
+                <LocationBoxes isMobile businesses={data.allSiteData.edges} />
+              </Box>
+              <Box
+                sx={{
+                  display: ['none', 'none', 'block'],
+                  height: ['auto', 'auto', '100%'],
+                }}>
+                {console.log('mounting outsidee')}
+                <LocationBoxes businesses={data.allSiteData.edges} />
+              </Box>
             </Box>
           </Box>
-        </Box>
 
-        <Box sx={{ display: ['block', 'block', 'none'] }}>
-          <Element name='bottom'>
-            <div ref={refContainer}></div>
-          </Element>
+          <Box sx={{ display: ['block', 'block', 'none'] }}>
+            <Element name='bottom'>
+              <div ref={refContainer}></div>
+            </Element>
+          </Box>
         </Box>
-      </Box>
+      </PageTransition>
     );
 }
 

@@ -24,6 +24,8 @@
     "react-reveal": "^1.2.2",
     "react-scroll": "^1.8.1",
     "react-slick": "^0.27.10",
+    "react-sticky": "^6.0.3",
+    "react-sticky-el": "^2.0.5",
     "slick-carousel": "^1.8.1",
     "slugify": "^1.4.5",
     "styled-components": "^5.1.1",
