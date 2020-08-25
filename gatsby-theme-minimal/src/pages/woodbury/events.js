@@ -56,7 +56,6 @@ const DiscoverEvents = ({ bizName }) => {
             )
         )
       );
-      // console.log("DiscoverEvents -> normalizeEvents(regEvents.concat(recEvents))", normalizeEvents(regEvents.concat(recEvents)))
       setActiveEvent(normalizeEvents(regEvents.concat(recEvents))[0]);
     }
   }, [regularEventData, recurringEventData]);

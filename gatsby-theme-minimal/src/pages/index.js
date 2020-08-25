@@ -159,7 +159,6 @@ const Index = ({data}) => {
                   display: ['none', 'none', 'block'],
                   height: ['auto', 'auto', '100%'],
                 }}>
-                {console.log('mounting outsidee')}
                 <LocationBoxes businesses={data.allSiteData.edges} />
               </Box>
             </Box>

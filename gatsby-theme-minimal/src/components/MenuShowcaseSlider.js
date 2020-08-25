@@ -49,9 +49,6 @@ const MenuShowcaseSlider = ({ id, pl }) => {
 
   const getImage = itm => `${itm.imageBaseUrl}/${itm.imagePrefix}`
 
-//   console.log(items[curSlide])
-console.log('items: ', items)
-
   if(items.length) {
     return (
       <Box

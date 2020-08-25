@@ -55,8 +55,6 @@ const Layout = ({ children, pageTitle, location }) => {
       }
     }
   `);
-
-  console.log('data: ', data.siteData.data)
   const site = data.siteData.data
 
   const renderHero = () => (
