@@ -8,14 +8,8 @@ import jsonpAdapter from 'axios-jsonp';
 import Sticky from 'react-sticky-el';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 
-import * as Scroll from 'react-scroll';
 import {
   Link as ScrollLink,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
 } from 'react-scroll';
 
 import Layout from '../../components/LayoutWoodbury';
@@ -25,7 +19,6 @@ import AllInOnce from '../../components/allIn';
 const Menu = () => {
   const [menuData, setMenuData] = useState({});
   const [childSections, setChildSections] = useState(null);
-  const [activeSection, setActiveSection] = useState(null);
   const [toggledSection, setToggledSection] = useState('all');
 
   useEffect(() => {

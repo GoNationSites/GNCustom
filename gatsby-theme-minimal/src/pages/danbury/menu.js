@@ -11,11 +11,7 @@ import ScrollMenu from 'react-horizontal-scrolling-menu';
 import * as Scroll from 'react-scroll';
 import {
   Link as ScrollLink,
-  Element,
-  Events,
   animateScroll as scroll,
-  scrollSpy,
-  scroller,
 } from 'react-scroll';
 
 import Layout from '../../components/Layout';
