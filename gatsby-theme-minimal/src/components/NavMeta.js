@@ -10,16 +10,49 @@ const NavMeta = ({data, isFooter}) => {
 
     if(isFooter) {
       return (
-        <Box sx={{fontFamily: 'heading'}}>
-          <Text sx={{ fontSize: [2,3,4], mb: 2 }}>Address: {printAddress(site)}</Text>
-          <Text sx={{ fontSize: [2,3,4] }}>Phone: {site.phone}</Text>
+        <Box sx={{ fontFamily: 'heading' }}>
+          <Text sx={{ fontSize: [2, 3, 4], mb: 2 }}>
+            Address:
+            <a
+              target='_blank'
+              rel='noreferrer noopener'
+              href={getGoogleStr(
+                site.name,
+                site.street,
+                site.city,
+                site.zip,
+                site.state
+              )}>
+              {printAddress(site)}
+            </a>
+          </Text>
+          <Text sx={{ fontSize: [2, 3, 4] }}>
+            <a href={`tel:${site.phone}`}>{site.phone}</a>
+          </Text>
         </Box>
       );
     }
     return (
       <Box>
-        <Text sx={{ fontSize: 1, mb: 2 }}>Address: {printAddress(site)}</Text>
-        <Text sx={{ fontSize: 1 }}>Phone: {site.phone}</Text>
+        <Text sx={{ fontSize: 1, mb: 2 }}>
+          Address:{' '}
+          <a
+            target='_blank'
+            rel='noreferrer noopener'
+            href={getGoogleStr(
+              site.name,
+              site.street,
+              site.city,
+              site.zip,
+              site.state
+            )}>
+            {printAddress(site)}
+          </a>
+        </Text>
+        <Text sx={{ fontSize: 1 }}>
+          Phone:
+          <a href={`tel:${site.phone}`}>{site.phone}</a>
+        </Text>
       </Box>
     );
 }

@@ -8,7 +8,18 @@ const FullAddress = ({data}) => {
     const site = data
     return (
       <Text sx={{ fontSize: 2, mb: 2 }}>
-        {printAddress(site)}
+        <a
+          target='_blank'
+          rel='noreferrer noopener'
+          href={getGoogleStr(
+            site.name,
+            site.street,
+            site.city,
+            site.zip,
+            site.state
+          )}>
+          {printAddress(site)}
+        </a>
       </Text>
     );
 }
