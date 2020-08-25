@@ -17,26 +17,13 @@ const Contact = () => {
 
   const id = 'bzn-mmT_2ynbR4eGFehR2VEi8g';
 
-//   useEffect(() => {
-//     axios({
-//       url: `https://data.prod.gonation.com/profile/getname/?profile_id=${id}`,
-//       adapter: jsonpAdapter,
-//     }).then(res => {
-//       setAboutData({
-//         ...about,
-//         aboutData: res.data,
-//         isLoading: false,
-//       });
-//     });
-//   }, []);
-
   return (
     <Layout pageTitle='contact'>
       <Box
         sx={{
           height: ['auto', '100vh'],
           backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${cloudinaryHelper(
-            'https://res.cloudinary.com/gonation/image/upload/v1598283356/sites/mix-prime/danbury-contact.jpg',
+            'https://res.cloudinary.com/gonation/image/upload/v1598360786/sites/mix-prime/woodbury-contact-bg.jpg',
             2000
           )})`,
           paddingX: 4,
@@ -55,12 +42,12 @@ const Contact = () => {
               textAlign: 'center',
               pt: [5, 0, 0],
               pb: [4, 0],
-              px: [1,3],
+              px: [1, 3],
             }}>
             <ContactForm />
           </Box>
           <Box sx={{ width: ['100%', '50%'], padding: 3, color: 'white' }}>
-            <ContactContent id={'bzn-vBPQfZmCTC2V2Y_BpE6SPw'} />
+            <ContactContent id={id} />
           </Box>
         </Flex>
       </Box>

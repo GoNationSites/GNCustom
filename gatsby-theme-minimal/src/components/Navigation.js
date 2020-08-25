@@ -99,7 +99,7 @@ const Navigation = ({location}) => {
         name: 'Home',
         route: 'woodbury',
         img: cloudinaryHelper(
-          'https://res.cloudinary.com/gonation/image/upload/v1598035952/sites/mix-prime/home.jpg',
+          'https://res.cloudinary.com/gonation/image/upload/v1598360972/sites/mix-prime/woodbury-home-route.jpg',
           1000
         ),
         txt: 'Go Home',
@@ -108,7 +108,7 @@ const Navigation = ({location}) => {
         name: 'About',
         route: 'woodbury/about',
         img: cloudinaryHelper(
-          'https://res.cloudinary.com/gonation/image/upload/v1598035878/sites/mix-prime/about.jpg',
+          'https://res.cloudinary.com/gonation/image/upload/v1598361104/sites/mix-prime/wood-about-route.jpg',
           1000
         ),
         txt: 'Learn More',
@@ -117,7 +117,7 @@ const Navigation = ({location}) => {
         name: 'Menu',
         route: 'woodbury/menu',
         img: cloudinaryHelper(
-          'https://res.cloudinary.com/gonation/image/upload/v1598035876/sites/mix-prime/menu.jpg',
+          'https://res.cloudinary.com/gonation/image/upload/v1598361073/sites/mix-prime/wood-menu-route.jpg',
           1000
         ),
         txt: 'View The Menu',
@@ -126,7 +126,7 @@ const Navigation = ({location}) => {
         name: 'Events',
         route: 'woodbury/events',
         img: cloudinaryHelper(
-          'https://res.cloudinary.com/gonation/image/upload/v1598035877/sites/mix-prime/events.jpg',
+          'https://res.cloudinary.com/gonation/image/upload/v1598360971/sites/mix-prime/woodbury-events-route.jpg',
           1000
         ),
         txt: 'View Events',
@@ -135,7 +135,7 @@ const Navigation = ({location}) => {
         name: 'Gallery',
         route: 'woodbury/gallery',
         img: cloudinaryHelper(
-          'https://res.cloudinary.com/gonation/image/upload/v1598035875/sites/mix-prime/gallery.jpg',
+          'https://res.cloudinary.com/gonation/image/upload/v1598360972/sites/mix-prime/woodbury-gallery-route.jpg',
           1000
         ),
         txt: 'explore the gallery',
@@ -144,7 +144,7 @@ const Navigation = ({location}) => {
         name: 'Contact',
         route: 'woodbury/contact',
         img: cloudinaryHelper(
-          'https://res.cloudinary.com/gonation/image/upload/v1597940533/sites/mix-prime/mobile-slide-3.jpg',
+          'https://res.cloudinary.com/gonation/image/upload/v1598360973/sites/mix-prime/woodbury-contact-route.jpg',
           1900
         ),
         txt: 'talk to us',
