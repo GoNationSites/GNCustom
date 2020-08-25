@@ -57,6 +57,7 @@ const About = () => {
               pb: [4, 0],
             }}>
             <Image
+            alt="About Mix Prime"
               sx={{ maxWidth: '400px' }}
               src={cloudinaryHelper(
                 'https://res.cloudinary.com/gonation/image/upload/v1598359982/sites/mix-prime/woodbury-about-1.jpg',

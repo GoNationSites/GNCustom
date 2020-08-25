@@ -131,7 +131,7 @@ const MenuShowcaseSlider = ({ id, pl }) => {
               items.map(({ item }) => {
                 return (
                   <Box sx={{ padding: 3 }}>
-                    <Image src={getImage(item)}></Image>
+                    <Image alt={item.name ? item.name : 'Mix Prime'} src={getImage(item)}></Image>
                   </Box>
                 );
               })}

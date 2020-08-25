@@ -124,7 +124,7 @@ const DiscoverEvents = ({ bizName }) => {
       <Box sx={{ width: ['100%', '50%'], padding: 3 }}>
         <Flex sx={{ flexWrap: 'wrap' }}>
           <Box sx={{ width: ['100%', '33%'] }}>
-            <Image src={event.image} />
+            <Image alt={event.name} src={event.image} />
           </Box>
 
           <Box sx={{ flex: ['auto', 1], paddingY: [3, 0] }}>

@@ -51,6 +51,7 @@ const About = () => {
           }}>
           <Box sx={{ width: ['100%', '44%', '55%'], textAlign: 'center', pt: [5, 0, 0], pb: [4,0] }}>
             <Image
+            alt={'About Mix Prime'}
             sx={{maxWidth: '400px', }}
               src={cloudinaryHelper(
                 'https://res.cloudinary.com/gonation/image/upload/v1598282284/sites/mix-prime/danbury-about-1.jpg', 900

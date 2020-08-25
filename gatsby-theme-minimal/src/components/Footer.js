@@ -57,6 +57,7 @@ const Footer = ({ location  }) => {
         dsfsa
         <Box sx={{ textAlign: 'center' }}>
           <Image
+          alt="Mix Prime"
             sx={{ maxWidth: '500px' }}
             src={
               'https://res.cloudinary.com/gonation/image/upload/v1597941857/sites/mix-prime/logo-white.png'

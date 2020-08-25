@@ -21,6 +21,7 @@ const Slider = ({ slides }) => {
       {slides.map(slide => (
           <Box sx={{height: '100%', bg: 'black'}}>
             <Image
+            alt="Mix Prime Content Showcase"
               sx={{ height: '100%', objectFit: 'cover' }}
               src={slide}></Image>
           </Box>

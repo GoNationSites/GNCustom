@@ -60,6 +60,7 @@ const ShoutCard = ({data, setShowShout}) => {
           }}>
           <Box>
             <Image
+            alt={data.shout.text}
               sx={{ width: '100%' }}
               src={
                 data.shout.image.isDefault ? getAvatar() : getShoutImage()
