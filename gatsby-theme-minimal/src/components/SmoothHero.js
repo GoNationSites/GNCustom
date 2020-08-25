@@ -97,6 +97,7 @@ const SmoothHero = ({ location }) => {
               backgroundImage: cloudinaryHelper(image, 2000),
               backgroundAnimation: 'zoom',
             }}
+            alt={"Mix Prime Menu And Venue Slider Showcase"}
           />
         ))}
       </HeroSlider>
