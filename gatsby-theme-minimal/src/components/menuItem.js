@@ -71,6 +71,7 @@ const MenuItem = ({ item, type, withDollar, hasMenuImages, setLightbox, setMainS
               </Text>
             </Box>
           </Flex>
+              <Text as="p" sx={{mt: 1}}>{item.desc}</Text>
         </Box>
       </Box>
     </>

@@ -127,7 +127,7 @@ const Index = ({data}) => {
             </Box>
 
             <Box sx={{ zIndex: 2 }}>
-              <Image src={logo} alt='Mixed Prime'></Image>
+              <Image src={logo} alt='Mix Prime'></Image>
             </Box>
           </Flex>
 

@@ -117,7 +117,7 @@ const Navigation = () => {
               <Text
                 as='span'
                 sx={{ textTransform: 'uppercase', color: '#fff' }}>
-                Mixed Prime
+                Mix Prime
               </Text>{' '}
               <br />{' '}
               <Text as='span' sx={{ fontSize: 0, color: '#fff' }}>
