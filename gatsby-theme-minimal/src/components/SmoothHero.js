@@ -48,6 +48,24 @@ const SmoothHero = ({ location }) => {
   )[0].node.data;
   console.log('SmoothHero -> site', site);
 
+  const images = () => {
+    if(site.city === 'Woodbury') {
+      return [
+        'https://res.cloudinary.com/gonation/image/upload/v1598359431/sites/mix-prime/woodbury-home-1.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1598359430/sites/mix-prime/woodbury-home-2.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1598359431/sites/mix-prime/woodbury-home-3.jpg',
+      ];
+      // return an array of Woodbury Images
+    } else {
+      // else return an array of Danbury Images
+      return [
+        'https://res.cloudinary.com/gonation/image/upload/v1598018071/sites/mix-prime/desktop-slide-1.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1598034772/sites/mix-prime/index-2.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1598034771/sites/mix-prime/index-1.jpg',
+      ];
+    }
+  }
+
   return (
     <Box sx={{ position: 'relative' }}>
       <HeroSlider
@@ -64,35 +82,17 @@ const SmoothHero = ({ location }) => {
           autoplayDuration: 12000,
           height: '90vmin',
         }}>
-        <Slide
-          background={{
-            backgroundImage: cloudinaryHelper(
-              'https://res.cloudinary.com/gonation/image/upload/v1598018071/sites/mix-prime/desktop-slide-1.jpg',
-              2000
-            ),
-            backgroundAnimation: 'zoom',
-          }}
-        />
-
-        <Slide
-          background={{
-            backgroundImage: cloudinaryHelper(
-              'https://res.cloudinary.com/gonation/image/upload/v1598034772/sites/mix-prime/index-2.jpg',
-              2000
-            ),
-            backgroundAnimation: 'zoom',
-          }}
-        />
-
-        <Slide
-          background={{
-            backgroundImage: cloudinaryHelper(
-              'https://res.cloudinary.com/gonation/image/upload/v1598034771/sites/mix-prime/index-1.jpg',
-              2000
-            ),
-            backgroundAnimation: 'zoom',
-          }}
-        />
+        {images().map(image => (
+          <Slide
+            background={{
+              backgroundImage: cloudinaryHelper(
+                image,
+                2000
+              ),
+              backgroundAnimation: 'zoom',
+            }}
+          />
+        ))}
       </HeroSlider>
       <Flex
         sx={{
@@ -127,8 +127,8 @@ const SmoothHero = ({ location }) => {
             <Box sx={{ marginX: 3 }}>
               <Text
                 as='a'
-                target="_blank"
-                rel="noopener noreferrer"
+                target='_blank'
+                rel='noopener noreferrer'
                 href={getGoogleStr(
                   site.name,
                   site.street,
