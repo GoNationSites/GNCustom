@@ -19,7 +19,7 @@ const Layout = ({ children, pageTitle, location }) => {
       {pageTitle === 'home' ? (
         <SmoothHero page={pageTitle} location='Woodbury' />
       ) : (
-        <SimpleHero pageTitle={pageTitle}></SimpleHero>
+        <SimpleHero location="Woodbury" pageTitle={pageTitle}></SimpleHero>
       )}
     </>
   );
