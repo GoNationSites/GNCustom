@@ -24,7 +24,7 @@ const Woodbury = () => {
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quis, asperiores esse.',
       btn: {
         title: 'View Menu',
-        link: '/menu',
+        link: 'woodbury/menu',
       },
     },
     {
@@ -37,7 +37,7 @@ const Woodbury = () => {
         'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi mollitia.',
       btn: {
         title: 'Learn More',
-        link: '/about',
+        link: 'woodbury/about',
       },
     },
   ];
