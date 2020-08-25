@@ -9,6 +9,8 @@
   },
   "workspaces": [
     "gatsby-theme-minimal",
-    "example"
+    "example",
+    "gonation-theme-custom",
+    "rooster"
   ]
 }

@@ -1,0 +1,14 @@
+{
+  "name": "gonation-theme-custom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ericSmith <eric@gonation.com> (@esmith)",
+  "license": "MIT",
+  "peerDependencies": {
+    "gatsby": "^2.6.0"
+  },
+  "dependencies": {
+    "gatsby-plugin-theme-ui": "^0.3.0",
+    "theme-ui": "^0.3.1"
+  }
+}

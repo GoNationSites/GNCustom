@@ -1,0 +1,17 @@
+{
+  "name": "rooster",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eric <eric@gonation.com> (@ericgonation)",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build"
+  },
+  "dependencies": {
+    "gatsby": "^2.24.47",
+    "gonation-theme-custom": "^1.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
