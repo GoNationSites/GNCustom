@@ -41,12 +41,9 @@ const SmoothHero = ({ location }) => {
       }
     }
   `);
-
-  console.log('EDGES', data.allSiteData.edges);
   const site = data.allSiteData.edges.filter(
     el => el.node.data.city === location
   )[0].node.data;
-  console.log('SmoothHero -> site', site);
 
   const images = () => {
     if(site.city === 'Woodbury') {
@@ -65,6 +62,18 @@ const SmoothHero = ({ location }) => {
       ];
     }
   }
+
+  const renderReservationButton = () => (
+    <Box sx={{ marginX: 3 }}>
+      <Text
+        as='a'
+        target='_blank'
+        rel='noopener noreferrer'
+        href='https://www.opentable.com/restref/client/?rid=141181&restref=141181&corrid=f6b19c54-a302-4aa3-b674-4111b5f2233c'>
+        Reservations
+      </Text>
+    </Box>
+  );
 
   return (
     <Box sx={{ position: 'relative' }}>
@@ -85,10 +94,7 @@ const SmoothHero = ({ location }) => {
         {images().map(image => (
           <Slide
             background={{
-              backgroundImage: cloudinaryHelper(
-                image,
-                2000
-              ),
+              backgroundImage: cloudinaryHelper(image, 2000),
               backgroundAnimation: 'zoom',
             }}
           />
@@ -139,6 +145,7 @@ const SmoothHero = ({ location }) => {
                 Directions
               </Text>
             </Box>
+            {location === 'Danbury' ? renderReservationButton() : ''}
           </Flex>
         </Box>
       </Flex>
