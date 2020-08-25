@@ -36,17 +36,23 @@ const Footer = ({ location  }) => {
   const site = data.allSiteData.edges.filter(
     ({ node }) => node.data.city === location
   );
+
+  const getFooterImg = () =>
+    location === 'Woodbury'
+      ? 'https://res.cloudinary.com/gonation/image/upload/v1598359781/sites/mix-prime/woodbury-footer.jpg'
+      : 'https://res.cloudinary.com/gonation/image/upload/v1598110795/sites/mix-prime/footer.jpg';
+
   return (
     <>
       <Box
         as='footer'
         sx={{
           minHeight: '600px',
-          backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${cloudinaryOptimize(
-            'https://res.cloudinary.com/gonation/image/upload/v1598110795/sites/mix-prime/footer.jpg',
+          backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${cloudinaryOptimize(getFooterImg(),
             2000
           )})`,
           backgroundSize: 'cover',
+          backgroundPosition: 'center'
         }}>
         dsfsa
         <Box sx={{ textAlign: 'center' }}>

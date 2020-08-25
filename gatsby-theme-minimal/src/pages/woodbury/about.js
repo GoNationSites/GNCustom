@@ -34,7 +34,7 @@ const About = () => {
     <Layout pageTitle='about'>
       <Box
         sx={{
-          height: ['auto','100vh'],
+          height: ['auto', '100vh'],
           backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${cloudinaryHelper(
             'https://res.cloudinary.com/gonation/image/upload/v1598281036/sites/mix-prime/danbury-about-hero.jpg',
             2000
@@ -47,13 +47,20 @@ const About = () => {
             alignItems: 'center',
             justifyContent: 'center',
             height: '100%',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
           }}>
-          <Box sx={{ width: ['100%', '44%', '55%'], textAlign: 'center', pt: [5, 0, 0], pb: [4,0] }}>
+          <Box
+            sx={{
+              width: ['100%', '44%', '55%'],
+              textAlign: 'center',
+              pt: [5, 0, 0],
+              pb: [4, 0],
+            }}>
             <Image
-            sx={{maxWidth: '400px', }}
+              sx={{ maxWidth: '400px' }}
               src={cloudinaryHelper(
-                'https://res.cloudinary.com/gonation/image/upload/v1598282284/sites/mix-prime/danbury-about-1.jpg', 900
+                'https://res.cloudinary.com/gonation/image/upload/v1598359982/sites/mix-prime/woodbury-about-1.jpg',
+                900
               )}
             />
           </Box>

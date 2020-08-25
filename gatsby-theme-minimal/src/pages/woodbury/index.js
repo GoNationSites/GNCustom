@@ -16,11 +16,12 @@ const Woodbury = () => {
   const contentShowcaseData = [
     {
       img: cloudinaryHelper(
-        'https://res.cloudinary.com/gonation/image/upload/v1598039135/sites/mix-prime/showcase-1.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1598359600/sites/mix-prime/woodbury-content-1.jpg',
         1200
       ),
       title: 'Title can go here',
-      txt: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quis, asperiores esse.',
+      txt:
+        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quis, asperiores esse.',
       btn: {
         title: 'View Menu',
         link: '/menu',
@@ -28,11 +29,12 @@ const Woodbury = () => {
     },
     {
       img: cloudinaryHelper(
-        'https://res.cloudinary.com/gonation/image/upload/v1598039135/sites/mix-prime/showcase-2.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1598359600/sites/mix-prime/woodbury-content-2.jpg',
         1200
       ),
       title: 'Some other title here',
-      txt: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi mollitia.',
+      txt:
+        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi mollitia.',
       btn: {
         title: 'Learn More',
         link: '/about',
@@ -58,7 +60,7 @@ const Woodbury = () => {
           <Box sx={{ maxWidth: '730px', margin: 'auto' }}>
             <AboutText location="Woodbury"></AboutText>
 
-            <ContentShowcase data={contentShowcaseData} />
+            <ContentShowcase  data={contentShowcaseData} />
           </Box>
 
           <MenuShowcaseSlider id='bzn-mmT_2ynbR4eGFehR2VEi8g' pl='1' />
