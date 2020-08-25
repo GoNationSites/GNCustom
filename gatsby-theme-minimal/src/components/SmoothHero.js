@@ -97,7 +97,7 @@ const SmoothHero = ({ location }) => {
               backgroundImage: cloudinaryHelper(image, 2000),
               backgroundAnimation: 'zoom',
             }}
-            alt={"Mix Prime Menu And Venue Slider Showcase"}
+            alt={'Mix Prime Menu And Venue Slider Showcase'}
           />
         ))}
       </HeroSlider>
@@ -114,7 +114,12 @@ const SmoothHero = ({ location }) => {
         }}>
         <Box sx={{ background: 'rgba(0,0,0,.4)', pb: [3, 3, 0] }}>
           <img
-            src='https://res.cloudinary.com/gonation/image/upload/v1597941857/sites/mix-prime/logo-white.png'
+          sx={{maxWidth: '600px'}}
+            src={
+              location === 'Danbury'
+                ? 'https://res.cloudinary.com/gonation/image/upload/v1597941857/sites/mix-prime/logo-white.png'
+                : 'https://res.cloudinary.com/gonation/image/upload/v1598370120/sites/mix-prime/prime-woodbury-white.png'
+            }
             alt='Mix Prime'
           />
           <Flex

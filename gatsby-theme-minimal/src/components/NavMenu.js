@@ -39,8 +39,7 @@ const NavMenu = ({ routes, open }) => {
     ({ node }) => node.data.city === 'Danbury'
   );
 
-  return (
-    <Animated
+  return open ? <Animated
       animationIn='slideInDown'
       animationOut='slideOutUp'
       isVisible={open}
@@ -89,8 +88,8 @@ const NavMenu = ({ routes, open }) => {
       <Box sx={{display: ['none', 'none', 'block'], height: '100%'}}>
         <VerticalRoutes routes={routes} />
       </Box>
-    </Animated>
-  );
+    </Animated> : ''
+  
 };
 
 export default NavMenu;

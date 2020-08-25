@@ -65,7 +65,7 @@ const Index = ({data}) => {
 
 
     const logo =
-      'https://res.cloudinary.com/gonation/image/upload/v1597941857/sites/mix-prime/logo-white.png';
+      'https://res.cloudinary.com/gonation/image/upload/v1598370120/sites/mix-prime/prime-basic.png';
     
     return (
       <PageTransition
@@ -127,7 +127,7 @@ const Index = ({data}) => {
             </Box>
 
             <Box sx={{ zIndex: 2 }}>
-              <Image src={logo} alt='Mix Prime'></Image>
+              <Image src={logo} sx={{maxWidth: '600px'}} alt='Mix Prime'></Image>
             </Box>
           </Flex>
 
