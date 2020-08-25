@@ -2,7 +2,6 @@
 import { jsx, Box, Flex, Text } from 'theme-ui';
 import React, { useState } from 'react';
 import MenuItem from './menuItem';
-import styled from 'styled-components';
 
 import {
   Link as ScrollLink,
