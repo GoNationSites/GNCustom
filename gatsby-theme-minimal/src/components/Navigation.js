@@ -198,7 +198,7 @@ const Navigation = ({ location }) => {
               color: 'white',
               alignItems: 'center',
             }}>
-            <Text
+              {location === 'Danbury' ? <Text
               sx={{
                 fontFamily: 'heading',
                 textTransform: 'uppercase',
@@ -214,7 +214,8 @@ const Navigation = ({ location }) => {
               rel='noopener noreferrer'
               href='https://www.opentable.com/restref/client/?rid=141181&restref=141181&corrid=f6b19c54-a302-4aa3-b674-4111b5f2233c'>
               Reserve A Table
-            </Text>
+            </Text> : ''}
+            
             <HamburgerMenu
               isOpen={open}
               menuClicked={() => setOpen(!open)}
