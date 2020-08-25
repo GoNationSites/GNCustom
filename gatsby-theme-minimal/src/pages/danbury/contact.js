@@ -10,25 +10,7 @@ import ContactForm from '../../components/ContactForm'
 import ContactContent from '../../components/ContactContent';
 
 const Contact = () => {
-//   const [about, setAboutData] = useState({
-//     aboutData: null,
-//     isLoading: true,
-//   });
-
   const id = 'bzn-vBPQfZmCTC2V2Y_BpE6SPw';
-
-//   useEffect(() => {
-//     axios({
-//       url: `https://data.prod.gonation.com/profile/getname/?profile_id=${id}`,
-//       adapter: jsonpAdapter,
-//     }).then(res => {
-//       setAboutData({
-//         ...about,
-//         aboutData: res.data,
-//         isLoading: false,
-//       });
-//     });
-//   }, []);
 
   return (
     <Layout pageTitle='contact'>
@@ -44,10 +26,11 @@ const Contact = () => {
         }}>
         <Flex
           sx={{
-            alignItems: 'center',
+            alignItems: 'flex-start',
             justifyContent: 'center',
             height: '100%',
             flexWrap: 'wrap',
+            marginTop: [2, 5, 6]
           }}>
           <Box
             sx={{
@@ -55,13 +38,21 @@ const Contact = () => {
               textAlign: 'center',
               pt: [5, 0, 0],
               pb: [4, 0],
-              px: [1,3],
+              px: [1, 3],
             }}>
             <ContactForm />
           </Box>
           <Box sx={{ width: ['100%', '50%'], padding: 3, color: 'white' }}>
             <ContactContent id={'bzn-vBPQfZmCTC2V2Y_BpE6SPw'} />
           </Box>
+          <iframe
+            src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11973.293546108933!2d-73.4996516!3d41.3887829!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5ba626896057d908!2sMIX%20PRIME%20STEAKHOUSE!5e0!3m2!1sen!2sus!4v1598366973547!5m2!1sen!2sus'
+            width='500px'
+            height='200'
+            frameborder='0'
+            allowfullscreen=''
+            aria-hidden='false'
+            tabindex='0'></iframe>
         </Flex>
       </Box>
     </Layout>

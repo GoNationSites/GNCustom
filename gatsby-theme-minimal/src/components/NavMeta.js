@@ -26,7 +26,7 @@ const NavMeta = ({data, isFooter}) => {
               {printAddress(site)}
             </a>
           </Text>
-          <Text sx={{ fontSize: [2, 3, 4] }}>
+          <Text sx={{ fontSize: [2, 3, 4], }}>
             <a href={`tel:${site.phone}`}>{site.phone}</a>
           </Text>
         </Box>
@@ -36,7 +36,9 @@ const NavMeta = ({data, isFooter}) => {
       <Box>
         <Text sx={{ fontSize: 1, mb: 2 }}>
           Address:{' '}
-          <a
+          <Text
+            as="a"
+            sx={{color: 'text'}}
             target='_blank'
             rel='noreferrer noopener'
             href={getGoogleStr(
@@ -47,11 +49,11 @@ const NavMeta = ({data, isFooter}) => {
               site.state
             )}>
             {printAddress(site)}
-          </a>
+          </Text>
         </Text>
-        <Text sx={{ fontSize: 1 }}>
+        <Text sx={{ fontSize: 1,  }}>
           Phone:
-          <a href={`tel:${site.phone}`}>{site.phone}</a>
+          <Text as="a" sx={{color: 'text'}} href={`tel:${site.phone}`}>{site.phone}</Text>
         </Text>
       </Box>
     );

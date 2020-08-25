@@ -49,6 +49,14 @@ const Contact = () => {
           <Box sx={{ width: ['100%', '50%'], padding: 3, color: 'white' }}>
             <ContactContent id={id} />
           </Box>
+          <iframe
+            src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11948.185629371286!2d-73.2025913!3d41.5249354!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9760255230bc060a!2sMIX%20Prime%20Steakhouse%2C%20Fish%20%26%20Sushi%20Bar!5e0!3m2!1sen!2sus!4v1598367149947!5m2!1sen!2sus'
+            width='500px'
+            height='200'
+            frameborder='0'
+            allowfullscreen=''
+            aria-hidden='false'
+            tabindex='0'></iframe>
         </Flex>
       </Box>
     </Layout>

@@ -101,12 +101,19 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
+      
+      div: {
+        outlineColor: 'transparent!important',
+      },
       img: {
         width: '100%',
       },
       a: {
         color: 'white',
         textDecoration: 'none',
+        '-webkit-tap-highlight-color': `rgba(255, 255, 255, 0)`,
+        '-webkit-tap-highlight-color': `transparent`, 
+        outline:` none !important`,
       },
     },
     h1: {

@@ -58,9 +58,10 @@ const Menu = () => {
                 '&:hover': {
                   textDecoration: 'underline',
                 },
+                outlineColor: 'transparent!important'
               }}>
               <ScrollLink
-                style={{ color: '#111' }}
+                style={{ color: '#111', outlineColor: 'transparent' }}
                 to={sec.section.name}
                 spy={true}
                 smooth={true}

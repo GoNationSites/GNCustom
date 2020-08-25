@@ -55,6 +55,7 @@ const Menu = () => {
                 '&:hover': {
                   textDecoration: 'underline',
                 },
+                outlineColor: 'transparent!important',
               }}>
               <ScrollLink
                 style={{ color: '#111' }}
