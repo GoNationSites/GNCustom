@@ -40,6 +40,7 @@ const Navigation = ({ routes, pageContext }) => {
         background: 'white',
         boxShadow: '0px -1px 12px rgba(0,0,0,.1)',
         position: 'fixed',
+        zIndex: 99,
         bottom: open ? '0px' : '-413px',
         width: ['100%', 'auto'],
         padding: 3,

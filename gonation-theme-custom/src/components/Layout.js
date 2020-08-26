@@ -7,7 +7,7 @@ import '../styles/animate.css';
 
 const Layout = ({ children, routes, pageContext }) => {
   return (
-    <Box as='main'>
+    <Box as='main' sx={{ marginRight: ['unset', '53px'] }}>
       <Navigation routes={routes} pageContext={pageContext} />
       {children}
     </Box>
