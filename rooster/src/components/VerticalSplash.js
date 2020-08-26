@@ -1,6 +1,8 @@
 /** @jsx jsx */
 import { jsx, Flex, Box, Text, Image } from 'theme-ui';
 import React, { useState } from 'react';
+import { Link } from 'gatsby';
+import slugify from 'slugify';
 
 import cloudinaryOptimize from '../helpers/cloudinaryOptimize';
 import printAddressString from '../helpers/printAddressString';
@@ -135,8 +137,22 @@ const VerticalSplash = ({ locations }) => {
                       fontWeight: 'bold',
                       textTransform: 'uppercase',
                     }}>
-                    <Text sx={{ mb: 2 }}>Enter The Website</Text>
-                    <Text>View The Menu</Text>
+                    <Text sx={{ mb: 2 }}>
+                      <Link
+                        sx={{ color: 'primary' }}
+                        to={`/${slugify(node.data.city, { lower: true })}`}>
+                        Enter The Website
+                      </Link>
+                    </Text>
+                    <Text>
+                      <Link
+                        sx={{ color: 'primary' }}
+                        to={`/${slugify(node.data.city, {
+                          lower: true,
+                        })}/menu`}>
+                        Enter The Menu
+                      </Link>
+                    </Text>
                   </Box>
                 </Box>
               </Flex>

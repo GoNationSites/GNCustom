@@ -117,7 +117,7 @@ export default {
       button: {
         background: 'orange',
         outlineColor: 'transparent!important',
-        outline: 'none'
+        outline: 'none',
       },
       div: {
         outlineColor: 'transparent!important',
@@ -126,7 +126,7 @@ export default {
         width: '100%',
       },
       a: {
-        color: 'white',
+        color: 'text',
         textDecoration: 'none',
         outline: ` none !important`,
       },
