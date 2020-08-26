@@ -129,6 +129,10 @@ export default {
         color: 'text',
         textDecoration: 'none',
         outline: ` none !important`,
+        '&:hover': {
+          color: 'primary',
+          transition: 'all .5s',
+        },
       },
     },
     h1: {

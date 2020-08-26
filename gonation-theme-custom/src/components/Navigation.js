@@ -40,39 +40,59 @@ const Navigation = ({ routes, pageContext }) => {
         background: 'white',
         boxShadow: '0px -1px 12px rgba(0,0,0,.1)',
         position: 'fixed',
-        bottom: open ? '0px' : '-450px',
-        width: '100%',
+        bottom: open ? '0px' : '-413px',
+        width: ['100%', 'auto'],
         padding: 3,
-        borderTopLeftRadius: '30px',
-        borderTopRightRadius: '30px',
+        borderTopLeftRadius: ['30px', 0],
+        borderTopRightRadius: ['30px', 0],
         transition: 'all .25s',
+        right: ['unset', !open ? '-352px' : '0'],
+        height: ['auto', '100vh'],
+        top: ['unset', 0],
+        display: ['block', 'flex'],
       }}>
       <Flex
         sx={{
           alignItems: 'center',
-          borderBottom: '2px solid',
+          borderBottom: ['2px solid', 'none'],
           borderColor: 'primary',
           pb: 3,
           mb: 3,
+          flexDirection: ['row', 'column'],
+          height: ['auto', '100%'],
+          justifyContent: ['unset', 'space-evenly'],
         }}>
-        <Box sx={{ flex: 1, textAlign: 'center' }}>
-          <ClickableAddress
-            data={pageContext.data}
-            title='Directions'
-            style={styleObj}
-          />
+        <Box sx={{ flex: 1, textAlign: 'center', order: ['unset', 0] }}>
+          <Box sx={{ display: ['block', 'none'] }}>
+            <ClickableAddress
+              data={pageContext.data}
+              title='Directions'
+              style={styleObj}
+            />
+          </Box>
         </Box>
 
-        <Box sx={{ flex: 1, textAlign: 'center' }}>
-          <Text sx={styleObj} as='a' href={`tel:${pageContext.data.phone}`}>
-            Call
-          </Text>
+        <Box
+          sx={{
+            flex: 1,
+            textAlign: 'center',
+            order: ['unset', 3],
+            display: ['block', 'flex'],
+            alignItems: 'center',
+          }}>
+          <Box sx={{ display: ['block', 'none'] }}>
+            <Text sx={styleObj} as='a' href={`tel:${pageContext.data.phone}`}>
+              Call
+            </Text>
+          </Box>
         </Box>
         <Flex
           sx={{
-            width: '25%',
+            width: ['25%', 'auto'],
             textAlign: 'center',
             justifyContent: 'center',
+            order: ['unset', 1],
+            cursor: 'pointer',
           }}>
           <HamburgerMenu
             isOpen={open}
@@ -88,40 +108,61 @@ const Navigation = ({ routes, pageContext }) => {
         </Flex>
       </Flex>
 
-      <Box>
+      <Box
+        sx={{
+          display: ['block', 'flex'],
+          flexDirection: 'column',
+          pl: [0, 4],
+        }}>
         {routes.map(route => (
           <Box sx={{ paddingY: 2 }}>
             <Text
               as='a'
               sx={{
                 color: 'text',
-                fontSize: 4,
+                fontSize: [3, 4, 5],
                 fontFamily: 'heading',
                 textTransform: 'uppercase',
               }}>
-              <Link to={`/${slugify(curCity, { lower: true })}${route.path}`}>
+              <Link
+                activeStyle={{ color: '#EE1C25' }}
+                sx={{
+                  '&:hover': {
+                    color: 'primary',
+                    transition: 'all .5s',
+                  },
+                }}
+                to={`/${slugify(curCity, { lower: true })}${route.path}`}>
                 {route.title}
               </Link>
             </Text>
           </Box>
         ))}
-        <Text sx={{ textAlign: 'center', fontSize: 1, my: 4 }}>
-          View a different location
-        </Text>
-        <Flex sx={{ justifyContent: 'center' }}>
-          {locations.allSiteData.edges.map(({ node }) => (
-            <Box sx={{ marginX: 3 }}>
-              <Text
-                variant='heading'
-                sx={{
-                  textTransform: 'uppercase',
-                  color: curCity === node.data.city ? 'primary' : 'text',
-                }}>
-                {node.data.city}
-              </Text>
-            </Box>
-          ))}
-        </Flex>
+
+        <Box sx={{ mt: ['unset', 'auto'] }}>
+          <Text sx={{ textAlign: ['center', 'left'], fontSize: 1, my: 4 }}>
+            View a different location
+          </Text>
+          <Flex sx={{ justifyContent: 'center' }}>
+            {locations.allSiteData.edges.map(({ node }, idx) => (
+              <Box sx={{ marginX: 3, marginLeft: idx === 0 ? 0 : 3 }}>
+                <Text
+                  variant='heading'
+                  sx={{
+                    textTransform: 'uppercase',
+                  }}>
+                  <Link
+                    sx={{
+                      color: curCity === node.data.city ? 'primary' : 'text',
+                    }}
+                    to={`/${slugify(node.data.city, { lower: true })}`}>
+                    {node.data.city}
+                  </Link>
+                </Text>
+              </Box>
+            ))}
+          </Flex>
+        </Box>
       </Box>
     </Box>
   );
