@@ -6,10 +6,8 @@ const crypto = require('crypto');
 exports.sourceNodes = async (
   { actions, createNodeId, createContentDigest }, options
 ) => {
-
   const { createNode } = actions;
   const businessIDs = options.businessIDs
-  console.log('fetching with ids: ', businessIDs)
 
     const fetchSiteData = async () => {
       const data = await Promise.all(
