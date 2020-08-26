@@ -3,7 +3,7 @@ import { jsx, Flex, Box, Text, Image, Button } from 'theme-ui';
 import React, { useState } from 'react';
 import { graphql, Link } from 'gatsby';
 
-import MobileSplash from '../components/MobileSplash';
+import MobileRevealSplash from '../components/MobileRevealSplash';
 import VerticalSplash from '../components/VerticalSplash';
 
 const Index = ({ data }) => {
@@ -13,14 +13,14 @@ const Index = ({ data }) => {
   return (
     <>
       <Box sx={{ display: ['block', 'none', 'none'] }}>
-        <MobileSplash
-          node={activeLocation}
+        <MobileRevealSplash
           locations={locations}
-          setActiveLocation={setActiveLocation}
-          activeLocation={activeLocation}
+          logo={
+            'https://res.cloudinary.com/gonation/image/upload/v1598377918/sites/red-rooster/logo-black.png'
+          }
         />
       </Box>
-      <Box sx={{display: ['none', 'block', 'block']}}>
+      <Box sx={{ display: ['none', 'block', 'block'] }}>
         <VerticalSplash locations={locations} />
       </Box>
     </>
