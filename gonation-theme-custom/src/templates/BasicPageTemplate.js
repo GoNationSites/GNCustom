@@ -13,6 +13,7 @@ import ButtonRow from '../components/ButtonRow';
 import ContactPage from '../components/ContactPage';
 import AboutPage from '../components/AboutPage';
 import EventsPage from '../components/EventsPage';
+import GalleryPage from '../components/GalleryPage';
 
 const BasicPageTemplate = ({ pageContext }) => {
   const { curPage, id } = pageContext;
@@ -35,8 +36,6 @@ const BasicPageTemplate = ({ pageContext }) => {
     switch (title) {
       case 'Menu':
         return <Menu id={id} poweredList='1' />;
-      case 'Gallery':
-        return <Gallery id={id} />;
       case 'Home':
         return (
           <>
@@ -74,7 +73,16 @@ const BasicPageTemplate = ({ pageContext }) => {
             id={id}
           />
         );
+      case 'Gallery':
+        return (
+          <GalleryPage
+            data={pageContext}
+            location={slugify(pageContext.data.city, { lower: true })}
+            id={id}
+          />
+        );
       default:
+        console.log('in default');
         return '';
     }
   };
