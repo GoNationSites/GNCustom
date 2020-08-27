@@ -15,7 +15,7 @@ const SimpleHero = ({ pageTitle, location }) => {
           lower: true,
         })}/${pageTitle}-hero.jpg`}
         fluid={{
-          maxWidth: '1900',
+          maxWidth: '2000',
         }}
         style={{ width: '100%', pointerEvents: 'none' }}
       />
