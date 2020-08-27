@@ -13,19 +13,19 @@ const HomeRenderer = ({ data, location }) => {
         alignItems: 'stretch',
         flexWrap: 'wrap',
       }}>
-      <Box sx={{ width: ['100%', '100%', '50%'], padding: 3 }}>
+      <Box sx={{ width: ['100%', '100%', '50%'], padding: [2, 3] }}>
         <Box
           sx={{
             border: '2px solid',
             borderColor: 'primary',
             borderRadius: '5px',
             padding: 4,
-            paddingX: 5,
+            paddingX: [3, 5],
             height: '100%',
             background: 'white',
           }}>
           <Zoom>
-            <Text as='h2' variant='heading' sx={{ fontSize: 6, mb: 3 }}>
+            <Text as='h2' variant='heading' sx={{ fontSize: [3, 4, 6], mb: 3 }}>
               About {data.data.name}
             </Text>
             <Text as='p' sx={{ lineHeight: 2 }}>

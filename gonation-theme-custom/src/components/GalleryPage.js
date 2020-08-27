@@ -68,7 +68,7 @@ const GalleryPage = ({ id }) => {
             gridGap: 4,
             gridTemplateColumns: 'repeat( auto-fill, minmax( 300px, 1fr ) )',
             gridAutoRows: '100px',
-            padding: 4,
+            padding: [2, 4],
           }}>
           {!galleryData.isLoading &&
             galleryData.albums.map((el, idx) => (

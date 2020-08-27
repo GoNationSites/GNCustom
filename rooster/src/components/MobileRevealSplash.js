@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx, Box, Image, Flex, Text } from 'theme-ui';
 import React, { useState } from 'react';
-
+import { Link } from 'gatsby';
 import Right from './icons/Right';
+import slugify from 'slugify';
 
 // takes in logo and an array of all location items
 const MobileRevealSplash = ({ logo, locations }) => {
@@ -16,14 +17,6 @@ const MobileRevealSplash = ({ logo, locations }) => {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
   });
-
-  const getActiveLocationStyle = node => {
-    if (node === activeLocation)
-      return {
-        transform: 'scaleX(2)',
-        // transform: 'scaleY(1.25)',
-      };
-  };
 
   return (
     <Box>
@@ -55,17 +48,20 @@ const MobileRevealSplash = ({ logo, locations }) => {
                 borderBottomLeftRadius: '30px',
 
                 transition: 'all 2s',
-                ...getActiveLocationStyle(business),
               }}>
-              <Flex sx={{ alignItems: 'center' }}>
-                <Text variant='heading' sx={{ fontSize: 2, fontWeight: '700' }}>
-                  {business.city}{' '}
-                </Text>
+              <Link to={`/${slugify(business.city, { lower: true })}`}>
+                <Flex sx={{ alignItems: 'center' }}>
+                  <Text
+                    variant='heading'
+                    sx={{ fontSize: 2, fontWeight: '700' }}>
+                    {business.city}{' '}
+                  </Text>
 
-                <Text as='span' sx={{ paddingLeft: 3 }}>
-                  <Right width='25px' fill={'#EE1C25'} />
-                </Text>
-              </Flex>
+                  <Text as='span' sx={{ paddingLeft: 3 }}>
+                    <Right width='25px' fill={'#EE1C25'} />
+                  </Text>
+                </Flex>
+              </Link>
             </Box>
           </Flex>
         ))}

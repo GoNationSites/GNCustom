@@ -17,6 +17,7 @@ const EventPills = ({ tags }) => {
             paddingY: 2,
             mr: 3,
             fontSize: 1,
+            mb: 3,
           }}>
           {tag}
         </Text>
