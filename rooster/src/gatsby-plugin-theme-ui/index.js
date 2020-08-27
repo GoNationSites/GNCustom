@@ -27,25 +27,26 @@ export default {
   forms: {
     input: {
       border: 0,
-      borderBottom: '1px solid',
-      borderColor: 'white!important',
-      borderRadius: 0,
-      color: 'white',
+      border: '1px solid',
+      borderColor: '#eee',
+      borderRadius: '5px',
+      color: 'text',
+      paddingY: 1,
       mb: 4,
       '&::placeholder': {
         // color: ${props =>
-        color: 'white',
+        color: '#ccc',
       },
     },
     textarea: {
-      borderBottom: '1px solid',
-      borderColor: 'white',
+      border: '1px solid',
+      borderColor: '#eee',
       borderRadius: 0,
       fontFamily: 'body',
       mb: 4,
       '&::placeholder': {
         // color: ${props =>
-        color: 'white',
+        color: '#ccc',
       },
     },
   },

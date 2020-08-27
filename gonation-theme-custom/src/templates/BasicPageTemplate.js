@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Box } from 'theme-ui';
 import React from 'react';
+import slugify from 'slugify';
 
 import Layout from '../components/Layout';
 import HomeHero from '../components/HomeHero';
@@ -9,6 +10,7 @@ import Menu from '../components/Menu';
 import HomeRenderer from '../components/HomeRenderer';
 import Gallery from '../components/Gallery';
 import ButtonRow from '../components/ButtonRow';
+import ContactPage from '../components/ContactPage';
 
 const BasicPageTemplate = ({ pageContext }) => {
   const { curPage, id } = pageContext;
@@ -46,6 +48,14 @@ const BasicPageTemplate = ({ pageContext }) => {
             </Box>
           </>
         );
+      case 'Contact':
+        return (
+          <ContactPage
+            data={pageContext}
+            location={slugify(pageContext.data.city, { lower: true })}
+            id={id}
+          />
+        );
       default:
         return '';
     }
@@ -55,7 +65,11 @@ const BasicPageTemplate = ({ pageContext }) => {
       {renderHero()}
       <Box sx={{ paddingY: 5, bg: 'background' }}>
         <Box sx={{ paddingY: 4, paddingX: 3 }}>
-          <Box sx={{ maxWidth: '1200px', margin: 'auto' }}>
+          <Box
+            sx={{
+              maxWidth: curPage.title !== 'Menu' ? '1200px' : '',
+              margin: 'auto',
+            }}>
             {renderComponent(curPage.title)}
           </Box>
         </Box>

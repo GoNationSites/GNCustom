@@ -95,6 +95,19 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
 
   const dualSiteData = await fetchSiteData();
 
+  const getGoogleMapLink = city => {
+    switch (city) {
+      case 'Ridgefield':
+        return 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11991.337072428223!2d-73.4973287!3d41.2907113!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9cccd74766f5848e!2sRed%20Rooster%20Pub!5e0!3m2!1sen!2sus!4v1598538003539!5m2!1sen!2sus';
+      case 'Wilton':
+        return 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12008.879098877222!2d-73.4323159!3d41.1951819!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9cc44549bf4d8d5f!2sRed%20Rooster%20Pub!5e0!3m2!1sen!2sus!4v1598537961680!5m2!1sen!2sus';
+      case 'Newtown':
+        return 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d23951.4094677391!2d-73.29578263605957!3d41.37568845737877!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x11a2ec9d9a19a311!2sRed%20Rooster%20Pub!5e0!3m2!1sen!2sus!4v1598538030564!5m2!1sen!2sus';
+      default:
+        return '';
+    }
+  };
+
   dualSiteData.forEach((item, idx) => {
     console.log('item is: ', item);
     pageArray.forEach(page => {
@@ -106,6 +119,7 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
           data: item.data,
           id: businessIDs[idx],
           pages: pageArray,
+          googleMapLink: getGoogleMapLink(item.data.city),
         },
       });
     });
