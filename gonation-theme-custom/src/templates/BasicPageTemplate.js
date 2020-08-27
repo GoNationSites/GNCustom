@@ -12,6 +12,7 @@ import Gallery from '../components/Gallery';
 import ButtonRow from '../components/ButtonRow';
 import ContactPage from '../components/ContactPage';
 import AboutPage from '../components/AboutPage';
+import EventsPage from '../components/EventsPage';
 
 const BasicPageTemplate = ({ pageContext }) => {
   const { curPage, id } = pageContext;
@@ -64,6 +65,15 @@ const BasicPageTemplate = ({ pageContext }) => {
             location={slugify(pageContext.data.city, { lower: true })}
           />
         );
+
+      case 'Events':
+        return (
+          <EventsPage
+            data={pageContext}
+            location={slugify(pageContext.data.city, { lower: true })}
+            id={id}
+          />
+        );
       default:
         return '';
     }
@@ -72,10 +82,13 @@ const BasicPageTemplate = ({ pageContext }) => {
     <Layout routes={routes} pageContext={pageContext}>
       {renderHero()}
       <Box sx={{ paddingY: 5, bg: 'background' }}>
-        <Box sx={{ paddingY: 4, paddingX: 3 }}>
+        <Box sx={{ paddingY: 4, paddingX: curPage.title === 'Events' ? 0 : 3 }}>
           <Box
             sx={{
-              maxWidth: curPage.title !== 'Menu' ? '1200px' : '',
+              maxWidth:
+                curPage.title !== 'Menu' && curPage.title !== 'Events'
+                  ? '1200px'
+                  : '',
               margin: 'auto',
             }}>
             {renderComponent(curPage.title)}
