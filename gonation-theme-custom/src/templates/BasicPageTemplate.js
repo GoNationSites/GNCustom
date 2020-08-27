@@ -11,6 +11,7 @@ import HomeRenderer from '../components/HomeRenderer';
 import Gallery from '../components/Gallery';
 import ButtonRow from '../components/ButtonRow';
 import ContactPage from '../components/ContactPage';
+import AboutPage from '../components/AboutPage';
 
 const BasicPageTemplate = ({ pageContext }) => {
   const { curPage, id } = pageContext;
@@ -54,6 +55,13 @@ const BasicPageTemplate = ({ pageContext }) => {
             data={pageContext}
             location={slugify(pageContext.data.city, { lower: true })}
             id={id}
+          />
+        );
+      case 'About':
+        return (
+          <AboutPage
+            data={pageContext}
+            location={slugify(pageContext.data.city, { lower: true })}
           />
         );
       default:
