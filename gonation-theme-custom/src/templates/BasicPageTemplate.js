@@ -6,6 +6,9 @@ import Layout from '../components/Layout';
 import HomeHero from '../components/HomeHero';
 import SimpleHero from '../components/SimpleHero';
 import Menu from '../components/Menu';
+import HomeRenderer from '../components/HomeRenderer';
+import Gallery from '../components/Gallery';
+import ButtonRow from '../components/ButtonRow';
 
 const BasicPageTemplate = ({ pageContext }) => {
   const { curPage, id } = pageContext;
@@ -28,6 +31,21 @@ const BasicPageTemplate = ({ pageContext }) => {
     switch (title) {
       case 'Menu':
         return <Menu id={id} poweredList='1' />;
+      case 'Gallery':
+        return <Gallery id={id} />;
+      case 'Home':
+        return (
+          <>
+            <HomeRenderer data={pageContext} location={pageContext.data.city} />
+            <Box sx={{ paddingY: 5 }}>
+              <ButtonRow
+                data={pageContext}
+                location={pageContext.data.city}
+                pages={['menu', 'gallery', 'contact']}
+              />
+            </Box>
+          </>
+        );
       default:
         return '';
     }
@@ -35,8 +53,12 @@ const BasicPageTemplate = ({ pageContext }) => {
   return (
     <Layout routes={routes} pageContext={pageContext}>
       {renderHero()}
-      <Box sx={{ paddingY: 5, bg: 'white' }}>
-        {renderComponent(curPage.title)}
+      <Box sx={{ paddingY: 5, bg: 'background' }}>
+        <Box sx={{ paddingY: 4, paddingX: 3 }}>
+          <Box sx={{ maxWidth: '1200px', margin: 'auto' }}>
+            {renderComponent(curPage.title)}
+          </Box>
+        </Box>
       </Box>
     </Layout>
   );
