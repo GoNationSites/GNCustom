@@ -4,7 +4,7 @@ import { jsx, Box, Text, Flex } from 'theme-ui';
 import React, { useState } from 'react';
 
 // import isNewWithinWeek from "../../helpers/isNewWithinWeek"
-import Price from './price';
+import Price from './Price';
 import Camera from './icons/Camera';
 
 const MenuItem = ({
