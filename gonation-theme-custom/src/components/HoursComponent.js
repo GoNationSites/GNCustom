@@ -7,6 +7,7 @@ import jsonpAdapter from 'axios-jsonp';
 const HoursComponent = ({ id }) => {
   const [hours, setHours] = useState(null);
   const [structuredHours, setStructuredHours] = useState(null);
+  const [hourLabels, setHourLabels] = useState(null);
 
   useEffect(() => {
     axios({
@@ -16,6 +17,29 @@ const HoursComponent = ({ id }) => {
       setHours(res.data.hours);
     });
   }, []);
+
+  const getUniqueNames = hours => {
+    const titles = Object.keys(hours).map(day => {
+      const uniqueNames = hours[day].reduce((acc, cur) => {
+        if (!acc.includes(cur.name)) {
+          return [...acc, cur.name];
+        }
+      }, []);
+      return [...uniqueNames];
+    });
+    return titles[0];
+  };
+
+  const buildHoursObj = labels => {};
+
+  useEffect(() => {
+    if (hours) {
+      const uniqueHours = getUniqueNames(hours);
+      buildHoursObj(uniqueHours);
+
+      console.log('HoursComponent -> uniqueHours', uniqueHours);
+    }
+  }, [hours]);
 
   return <div></div>;
 };
