@@ -6,6 +6,8 @@ import axios from 'axios';
 import moment from 'moment';
 import capitalize from '../../helpers/capitalize';
 import Lightbox from 'react-image-lightbox';
+import cloudinaryOptimize from '../../helpers/cloudinaryHelper';
+import EventPills from '../../components/eventPills';
 
 import Layout from '../../components/LayoutWoodbury';
 
@@ -121,26 +123,38 @@ const DiscoverEvents = ({ bizName }) => {
 
   const renderEvents = () => {
     return allEvents.map((event, idx) => (
-      <Box sx={{ width: ['100%', '50%'], padding: 3 }}>
-        <Flex sx={{ flexWrap: 'wrap' }}>
-          <Box sx={{ width: ['100%', '33%'] }}>
-            <Image alt={event.name} src={event.image} />
-          </Box>
-
-          <Box sx={{ flex: ['auto', 1], paddingY: [3, 0] }}>
-            <Box sx={{ paddingLeft: [0, 3], paddingRight: '1' }}>
-              <Text as='h4' sx={{ fontFamily: 'heading', fontSize: [3, 3, 4] }}>
-                {event.name}
-              </Text>
-              <Text as='p' sx={{ fontSize: [2, 2], color: 'lightText' }}>
-                {event.description}
-              </Text>
-              <Text as='p' sx={{fontSize: 1, color: 'lightText', mt: 3}}>{getEventTime(event)}</Text>
-              <Box>{renderCTAs(event.ctas)}</Box>
-            </Box>
-          </Box>
-        </Flex>
-      </Box>
+      <Flex sx={{ flexWrap: 'wrap' }}>
+        <Box
+          sx={{
+            width: ['100%', '100%', '33%'],
+            padding: [3, 4],
+            pt: 0,
+            mb: 4,
+          }}>
+          <Text
+            as='h4'
+            variant='heading'
+            sx={{ fontSize: [4, 5, 6], color: 'text' }}>
+            {event.name}
+          </Text>
+          <Text sx={{ mb: 3 }}>{event.description}</Text>
+          <Text sx={{ mb: 3 }}>{getEventTime(event)}</Text>
+          <EventPills tags={event.tags} />
+          {renderCTAs(event.ctas)}
+        </Box>
+        <Box sx={{ width: ['100%', '100%', '66%'] }}>
+          <img
+            onClick={() =>
+              setLightbox({
+                isOpen: true,
+                mainSrc: event.image,
+              })
+            }
+            src={cloudinaryOptimize(event.image, 1300)}
+            alt={event.name}
+          />
+        </Box>
+      </Flex>
     ));
   };
 
@@ -153,7 +167,7 @@ const DiscoverEvents = ({ bizName }) => {
           onCloseRequest={() => setLightbox({ isOpen: false })}></Lightbox>
       )} */}
 
-        <Flex sx={{ flexWrap: 'wrap' }}>{allEvents && renderEvents()}</Flex>
+        {allEvents && renderEvents()}
       </Box>
     </Layout>
   );
