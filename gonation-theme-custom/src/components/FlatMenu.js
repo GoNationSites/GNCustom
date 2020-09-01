@@ -107,9 +107,7 @@ const FlatMenu = ({
     <Box sx={{ maxWidth: '1400px', margin: 'auto', mt: [3, 4, 5] }}>
       {lb.isOpen ? (
         <Lightbox
-          imageCaption={
-            <Text sx={{ textAlign: 'center' }}>{lightbox.caption}</Text>
-          }
+          imageCaption={<Text sx={{ textAlign: 'center' }}>{lb.caption}</Text>}
           mainSrc={mainSrc}
           onCloseRequest={() => setLightbox({ isOpen: false })}
         />
