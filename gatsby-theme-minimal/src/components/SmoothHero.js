@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx, Box, Flex, Text } from 'theme-ui';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-
+import axios from 'axios';
+import jsonAdapter from 'axios-jsonp';
 // Components
 import HeroSlider, {
   Slide,
@@ -16,7 +17,10 @@ import getGoogleStr from '../helpers/getGoogleStr';
 
 import cloudinaryHelper from '../helpers/cloudinaryHelper';
 
+import ShoutCard from './ShoutCard';
+
 const SmoothHero = ({ location }) => {
+  const [shoutData, setShoutData] = useState(null);
   const data = useStaticQuery(graphql`
     query smoothQuery {
       allSiteData {
@@ -44,6 +48,23 @@ const SmoothHero = ({ location }) => {
   const site = data.allSiteData.edges.filter(
     el => el.node.data.city === location
   )[0].node.data;
+
+  const id = () => {
+    if (location === 'Danbury') {
+      return 'bzn-vBPQfZmCTC2V2Y_BpE6SPw';
+    } else return 'bzn-mmT_2ynbR4eGFehR2VEi8g';
+  };
+
+  const shoutURL = `https://data.prod.gonation.com/profile/shoutsnew/${id()}`;
+
+  useEffect(() => {
+    axios({
+      url: shoutURL,
+      adapter: jsonAdapter,
+    }).then(res => {
+      setShoutData(res.data);
+    });
+  }, []);
 
   const images = () => {
     if (site.city === 'Woodbury') {
@@ -153,6 +174,21 @@ const SmoothHero = ({ location }) => {
             </Box>
             {location === 'Danbury' ? renderReservationButton() : ''}
           </Flex>
+        </Box>
+        <Box
+          sx={{
+            position: 'absolute',
+            left: 4,
+            bottom: 6,
+            display: ['none', 'none', 'block'],
+          }}>
+          <Box sx={{ background: 'white' }}>
+            {shoutData && shoutData.shout ? (
+              <ShoutCard isHome data={shoutData}></ShoutCard>
+            ) : (
+              ''
+            )}
+          </Box>
         </Box>
       </Flex>
     </Box>

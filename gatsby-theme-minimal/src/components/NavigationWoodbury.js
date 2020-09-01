@@ -138,19 +138,16 @@ const Navigation = () => {
           <Box
             sx={{ width: '33%', fontFamily: 'heading', textAlign: 'center' }}>
             <Text as='p' sx={{ fontSize: 1 }}>
-              <Text
-                as='span'
-                sx={{ textTransform: 'uppercase', color: '#fff' }}>
+              <Link
+                sx={{ textTransform: 'uppercase', color: '#fff' }}
+                to='/woodbury'>
                 <Image
                   sx={{ maxWidth: '200px' }}
                   src='https://res.cloudinary.com/gonation/image/upload/v1598370120/sites/mix-prime/prime-basic.png'
                   alt='Mix Prime'
                 />
-              </Text>{' '}
+              </Link>{' '}
               <br />{' '}
-              <Text as='span' sx={{ fontSize: 0, color: '#fff' }}>
-                <Link to='/woodbury'>Danbury</Link>
-              </Text>
             </Text>
           </Box>
           <Flex
@@ -159,6 +156,9 @@ const Navigation = () => {
               textAlign: 'right',
               justifyContent: 'flex-end',
             }}>
+            <Text as='span' sx={{ fontSize: 0, color: '#fff', mr: 3 }}>
+              <Link to='/woodbury'>Danbury</Link>
+            </Text>
             <HamburgerMenu
               isOpen={open}
               menuClicked={() => setOpen(!open)}
