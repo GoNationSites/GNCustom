@@ -10,6 +10,8 @@ import {
 } from 'react-scroll';
 import Lightbox from 'react-image-lightbox';
 
+import './lbstyle.css';
+
 const AllIn = ({
   menuData,
   setModalActive,
@@ -20,8 +22,9 @@ const AllIn = ({
   const [withDollar, setWithDollar] = useState(false);
   const [lb, setLightbox] = useState({
     isOpen: false,
+    caption: '',
   });
-  const [mainSrc, setMainSrc] = useState('')
+  const [mainSrc, setMainSrc] = useState('');
 
   // Takes Nested sections and and gets the nested child items and child sections
   const splitSectionChildren = section => {
@@ -51,7 +54,7 @@ const AllIn = ({
           ''
         ) : (
           <>
-            <Box sx={{ paddingY: [2, 4, 4 ] }}>
+            <Box sx={{ paddingY: [2, 4, 4] }}>
               <Element name={section.name}>
                 <Text
                   as='h3'
@@ -59,19 +62,29 @@ const AllIn = ({
                   sx={{
                     textAlign: 'center',
                     fontSize: hasParentRoot() ? [3, 4, 5] : [2, 3, 4],
-                    marginBottom: hasParentRoot() ? [3, 4, 4] : [1,2,3],
+                    marginBottom: hasParentRoot() ? [3, 4, 4] : [1, 2, 3],
                   }}>
                   {section.name}
                 </Text>
               </Element>
 
-              <Text as="p" sx={{textAlign: 'center', mb: [3,3,4], fontSize: [1], maxWidth: '600px', margin: 'auto'}}>{section.desc}</Text>
+              <Text
+                as='p'
+                sx={{
+                  textAlign: 'center',
+                  mb: [3, 3, 4],
+                  fontSize: [1],
+                  maxWidth: '600px',
+                  margin: 'auto',
+                }}>
+                {section.desc}
+              </Text>
               <Flex sx={{ flexWrap: 'wrap' }}>
                 {parsedSection.childItems.map(({ item }) => {
                   return (
                     <MenuItem
-                    setLightbox={setLightbox}
-                    setMainSrc={setMainSrc}
+                      setLightbox={setLightbox}
+                      setMainSrc={setMainSrc}
                       type={'default'}
                       withDollar={withDollar}
                       item={item}
@@ -95,6 +108,7 @@ const AllIn = ({
     <Box sx={{ maxWidth: '1400px', margin: 'auto', mt: [3, 4, 5] }}>
       {lb.isOpen ? (
         <Lightbox
+          imageCaption={<Text>{lb.caption}</Text>}
           mainSrc={mainSrc}
           onCloseRequest={() => setLightbox({ isOpen: false })}
         />

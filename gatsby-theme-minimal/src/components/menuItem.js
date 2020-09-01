@@ -1,36 +1,40 @@
 /** @jsx jsx */
-import { jsx, Box, Text, Flex } from 'theme-ui'
+import { jsx, Box, Text, Flex } from 'theme-ui';
 
-import React, {useState} from "react"
-
-
-
+import React, { useState } from 'react';
 
 // import isNewWithinWeek from "../../helpers/isNewWithinWeek"
-import Price from "./price"
-import Camera from './icons/Camera'
+import Price from './price';
+import Camera from './icons/Camera';
 
-const MenuItem = ({ item, type, withDollar, hasMenuImages, setLightbox, setMainSrc }) => {
+const MenuItem = ({
+  item,
+  type,
+  withDollar,
+  hasMenuImages,
+  setLightbox,
+  setMainSrc,
+}) => {
   const mainSrc = `${item.imageBaseUrl}/${item.imagePrefix}`;
-  
+
   const getMenuItemType = () => {
     switch (type) {
-      case "someCase":
+      case 'someCase':
       default:
-        return 
+        return;
     }
-  }
+  };
 
   // When copying a menu, for some reason the string URL gets a -copy attached at the end of it. This function removes it.
-  const removeImageCopy = img => img.includes('copy') ? img.substring(0, img.length - 5) : img
+  const removeImageCopy = img =>
+    img.includes('copy') ? img.substring(0, img.length - 5) : img;
 
-  const calcRaveRants = item => item.raves / (item.raves + item.rants)
+  const calcRaveRants = item => item.raves / (item.raves + item.rants);
 
   const handleCameraClick = () => {
-      setLightbox({isOpen: true})
-      setMainSrc(mainSrc)
-  }
-
+    setLightbox({ isOpen: true, caption: item.name });
+    setMainSrc(mainSrc);
+  };
 
   return (
     <>
@@ -71,11 +75,13 @@ const MenuItem = ({ item, type, withDollar, hasMenuImages, setLightbox, setMainS
               </Text>
             </Box>
           </Flex>
-              <Text as="p" sx={{mt: 1}}>{item.desc}</Text>
+          <Text as='p' sx={{ mt: 1 }}>
+            {item.desc}
+          </Text>
         </Box>
       </Box>
     </>
   );
-}
+};
 
-export default MenuItem
+export default MenuItem;

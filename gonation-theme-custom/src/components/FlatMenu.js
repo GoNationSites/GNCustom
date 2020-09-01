@@ -20,6 +20,7 @@ const FlatMenu = ({
   const [withDollar, setWithDollar] = useState(false);
   const [lb, setLightbox] = useState({
     isOpen: false,
+    caption: '',
   });
   const [mainSrc, setMainSrc] = useState('');
 
@@ -106,6 +107,9 @@ const FlatMenu = ({
     <Box sx={{ maxWidth: '1400px', margin: 'auto', mt: [3, 4, 5] }}>
       {lb.isOpen ? (
         <Lightbox
+          imageCaption={
+            <Text sx={{ textAlign: 'center' }}>{lightbox.caption}</Text>
+          }
           mainSrc={mainSrc}
           onCloseRequest={() => setLightbox({ isOpen: false })}
         />
