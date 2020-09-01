@@ -7,7 +7,6 @@ import jsonpAdapter from 'axios-jsonp';
 const HoursComponent = ({ id }) => {
   const [hours, setHours] = useState(null);
   const [structuredHours, setStructuredHours] = useState(null);
-  const [hourLabels, setHourLabels] = useState(null);
 
   useEffect(() => {
     axios({
@@ -37,30 +36,48 @@ const HoursComponent = ({ id }) => {
     hours.filter(hour => hour.name === cur).length ? true : false;
 
   const getTimeBlock = label => {
-    console.log('label: ', label, 'hours: ', hours);
     const days = Object.keys(hours);
-    // loop through hours and filter just the ones with the same label
 
-    // we want to return an array of objects looking like:
-    // [
-    //  {days: [], time: ''}
-    // ]
-    //
     const sameHours = days.map(day => {
       return hours[day]
         .filter(hour => hour.name === label)
         .map(hour => {
           if (hour.name === label) {
             return {
-              days: [day],
+              day: day,
               hours: `${hour.open}-${hour.close}`,
             };
           }
         })[0];
     });
 
-    console.log('HoursComponent -> sameHours', sameHours);
-    sameHours.map(hour => console.log(hour));
+    let formattedHours = [];
+    sameHours.map((hour, idx) => {
+      if (idx === 0) {
+        formattedHours.push({
+          day: [hour.day],
+          hour: hour.hours,
+        });
+      } else {
+        const curHours = hour.hours;
+
+        formattedHours.filter(el =>
+          console.log('2 comparisons', el.hour, curHours)
+        );
+        if (formattedHours.filter(el => el.hour === curHours).length) {
+          formattedHours[0].day.push(hour.day);
+        } else {
+          console.log('in the else');
+          formattedHours.push({
+            day: [hour.day],
+            hour: hour.hours,
+          });
+        }
+        console.log(hour);
+      }
+    });
+    console.log('formatted hours: ', formattedHours);
+    return formattedHours[0];
   };
 
   // Takes an array of labels, and returns the new hours Array
@@ -79,6 +96,7 @@ const HoursComponent = ({ id }) => {
       }
       return acc;
     }, []);
+    setStructuredHours(hoursObj);
     console.log('HoursComponent -> hoursObj', hoursObj);
   };
 
@@ -89,7 +107,29 @@ const HoursComponent = ({ id }) => {
     }
   }, [hours]);
 
-  return <div></div>;
+  const displayDays = block => {
+    const days = block.timeBlock.day;
+    console.log('days are::::', days);
+    if (days.length === 7) {
+      return 'Every Day';
+    }
+    if (days.includes('sat') && days.includes('sun')) {
+      return 'Every Weekend';
+    }
+    return block.timeBlock.day.map(day => <span>{day}</span>);
+  };
+
+  const renderHours = () =>
+    structuredHours.map(block => (
+      <>
+        <h1>{block.name ? block.name : ''}</h1>
+        {displayDays(block)}
+
+        <p>{block.timeBlock.hour}</p>
+      </>
+    ));
+
+  return <div>{structuredHours ? renderHours() : ''}</div>;
 };
 
 export default HoursComponent;
