@@ -46,7 +46,7 @@ const SmoothHero = ({ location }) => {
   )[0].node.data;
 
   const images = () => {
-    if(site.city === 'Woodbury') {
+    if (site.city === 'Woodbury') {
       return [
         'https://res.cloudinary.com/gonation/image/upload/v1598359431/sites/mix-prime/woodbury-home-1.jpg',
         'https://res.cloudinary.com/gonation/image/upload/v1598359430/sites/mix-prime/woodbury-home-2.jpg',
@@ -61,7 +61,7 @@ const SmoothHero = ({ location }) => {
         'https://res.cloudinary.com/gonation/image/upload/v1598034771/sites/mix-prime/index-1.jpg',
       ];
     }
-  }
+  };
 
   const renderReservationButton = () => (
     <Box sx={{ marginX: 3 }}>
@@ -112,9 +112,9 @@ const SmoothHero = ({ location }) => {
           alignItems: 'center',
           zIndex: 3,
         }}>
-        <Box sx={{ background: 'rgba(0,0,0,.4)', pb: [3, 3, 0] }}>
+        <Box sx={{ background: 'rgba(0,0,0,.4)', pb: [3, 3, 0], mx: 3 }}>
           <img
-          sx={{maxWidth: '600px'}}
+            sx={{ maxWidth: '600px' }}
             src={
               location === 'Danbury'
                 ? 'https://res.cloudinary.com/gonation/image/upload/v1597941857/sites/mix-prime/logo-white.png'
