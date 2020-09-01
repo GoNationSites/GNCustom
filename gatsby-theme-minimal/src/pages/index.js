@@ -45,7 +45,7 @@ const Index = ({ data }) => {
       1900
     ),
     cloudinaryHelper(
-      'https://res.cloudinary.com/gonation/image/upload/v1598018071/sites/mix-prime/desktop-slide-1.jpg',
+      'https://res.cloudinary.com/gonation/image/upload/v1598359600/sites/mix-prime/woodbury-content-1.jpg',
       1900
     ),
     cloudinaryHelper(
