@@ -3,7 +3,7 @@ import { jsx, Box, Image } from 'theme-ui';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import '../../../../node_modules/animate.css';
-// import './index.css';
+import './index.css';
 import { Animated } from 'react-animated-css';
 
 const Slider = ({ slides }) => {

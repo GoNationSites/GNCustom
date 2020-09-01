@@ -1,53 +1,31 @@
-
 .carousel .slider-wrapper.axis-horizontal .slider .slide.selected {
-     animation-name: fadeIn;
-     animation-duration: 2s;
-     opacity: 1;
-     height: 100%;
- }
-
- .carousel {
-     height: 100%!important;
- }
-
- .carousel .slider-wrapper {
-     height: 100%!important;
- }
-
- .carousel .slider-wrapper .slider{
-     height: 100%!important;
- }
-
- .carousel .slider-wrapper.axis-horizontal .slider .slide {
-     height: 100%!important;
- }
-
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  opacity: 1;
+  height: 100%;
 }
 
-.fadeIn {
-  animation-name: fadeIn;
+.carousel {
+  height: 100% !important;
 }
 
- .fadeInRight {
-   animation-name: fadeInRight;
- }
- .carousel-root {
-     height: 100%;
-     background: black;
- }
+.carousel .slider-wrapper {
+  height: 100% !important;
+}
 
- .ReactModal__Overlay {
-   z-index: 999999!important;
- }
- .ril-image-current {
-   width: auto;
- }
+.carousel .slider-wrapper .slider {
+  height: 100% !important;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider .slide {
+  height: 100% !important;
+}
+
+.carousel-root {
+  height: 100%;
+}
+
+.ReactModal__Overlay {
+  z-index: 999999 !important;
+}
+.ril-image-current {
+  width: auto;
+}
