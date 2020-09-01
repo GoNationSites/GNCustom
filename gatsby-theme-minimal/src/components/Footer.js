@@ -7,7 +7,7 @@ import SocialIcons from './SocialIcons';
 import NavMeta from './NavMeta';
 import cloudinaryOptimize from '../helpers/cloudinaryHelper';
 
-const Footer = ({ location  }) => {
+const Footer = ({ location }) => {
   const data = useStaticQuery(graphql`
     query FooterQuery {
       allSiteData {
@@ -48,19 +48,20 @@ const Footer = ({ location  }) => {
         as='footer'
         sx={{
           minHeight: '600px',
-          backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${cloudinaryOptimize(getFooterImg(),
+          backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${cloudinaryOptimize(
+            getFooterImg(),
             2000
           )})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
         }}>
         dsfsa
         <Box sx={{ textAlign: 'center' }}>
           <Image
-          alt="Mix Prime"
+            alt='Mix Prime'
             sx={{ maxWidth: '500px' }}
             src={
-              'https://res.cloudinary.com/gonation/image/upload/v1597941857/sites/mix-prime/logo-white.png'
+              'https://res.cloudinary.com/gonation/image/upload/v1598969035/sites/red-rooster/logo-solid-white.png'
             }></Image>
         </Box>
         <Box>

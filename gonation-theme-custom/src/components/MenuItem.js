@@ -36,19 +36,24 @@ const MenuItem = ({
     setMainSrc(mainSrc);
   };
 
+  const isDefault =
+    item.imagePrefix !== 'gonation.data.prod/default/img-itm-cover-full.png'
+      ? true
+      : false;
+
   return (
     <>
       <Box sx={{ width: ['100%', '50%', '33.333%'] }}>
         <Box sx={{ padding: 3, paddingX: 3 }}>
-          <Flex>
+          <Flex
+            onClick={() => handleCameraClick()}
+            sx={{ cursor: isDefault ? 'pointer' : 'unset' }}>
             <Flex sx={{ flex: 1, alignItems: 'center' }}>
-              {item.imagePrefix !==
-              'gonation.data.prod/default/img-itm-cover-full.png' ? (
+              {isDefault ? (
                 <Box
                   tabIndex='1'
                   as='span'
-                  sx={{ paddingRight: 2, cursor: 'pointer' }}
-                  onClick={() => handleCameraClick()}>
+                  sx={{ paddingRight: 2, cursor: 'pointer' }}>
                   <Camera />
                 </Box>
               ) : (

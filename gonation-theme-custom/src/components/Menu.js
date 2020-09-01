@@ -103,7 +103,7 @@ const Menu = ({ id, poweredList = '1' }) => {
   };
 
   return (
-    <Box sx={{ paddingY: 5, paddingX: 2 }}>
+    <Box sx={{ paddingY: 5, paddingX: 2, pt: 0 }}>
       {menuData.inventory && childSections ? (
         <>
           <Box sx={{ display: ['none', 'block', 'block'] }}>

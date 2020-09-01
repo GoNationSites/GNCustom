@@ -22,7 +22,7 @@ const Footer = ({ routes, pageContext, footerBG }) => {
         <Image
           sx={{ maxWidth: '300px' }}
           src={
-            'https://res.cloudinary.com/gonation/image/upload/v1598377918/sites/red-rooster/logo-white.png'
+            'https://res.cloudinary.com/gonation/image/upload/v1598969035/sites/red-rooster/logo-solid-white.png'
           }
         />
       </Box>
