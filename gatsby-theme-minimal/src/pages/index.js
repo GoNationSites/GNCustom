@@ -1,15 +1,10 @@
 /** @jsx jsx */
 import { jsx, Box, Text, Flex, Image } from 'theme-ui';
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  Link as ScrollLink,
-  Element,
-  animateScroll as scroll,
-} from 'react-scroll';
+import { Link as ScrollLink, Element } from 'react-scroll';
 import PageTransition from 'gatsby-plugin-page-transitions';
 
 import AwesomeSlider from '../components/Slider/AwesomeSlider';
-import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import cloudinaryHelper from '../helpers/cloudinaryHelper';
 import LocationBoxes from '../components/LocationBoxes';
 
