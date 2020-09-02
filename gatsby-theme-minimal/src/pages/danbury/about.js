@@ -34,10 +34,11 @@ const About = () => {
       <Box
         sx={{
           height: ['auto', '100vh'],
-          backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${cloudinaryHelper(
-            'https://res.cloudinary.com/gonation/image/upload/v1598281036/sites/mix-prime/danbury-about-hero.jpg',
-            2000
-          )})`,
+          background: '#555',
+          // backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${cloudinaryHelper(
+          //   'https://res.cloudinary.com/gonation/image/upload/v1598281036/sites/mix-prime/danbury-about-hero.jpg',
+          //   2000
+          // )})`,
           paddingX: 4,
           paddingY: 3,
         }}>
@@ -71,17 +72,19 @@ const About = () => {
               {about.isLoading ? '' : about.aboutData.desc}
             </Text> */}
             <AboutText location='Danbury' whiteText />
-            <Flex sx={{ mt: [2, 3, 4] }}>
+            <Flex sx={{ mt: 2 }}>
               <Box sx={{ marginRight: [2, 3, 4] }}>
                 <Image
                   src='https://res.cloudinary.com/gonation/image/upload/v1599056333/sites/mix-prime/award-1.png'
                   alt='restaurant award'
+                  sx={{ maxWidth: '200px' }}
                 />
               </Box>
               <Box>
                 <Image
                   src='https://res.cloudinary.com/gonation/image/upload/v1599056333/sites/mix-prime/award-2.png'
                   alt='restaurant award'
+                  sx={{ maxWidth: '200px' }}
                 />
               </Box>
             </Flex>
