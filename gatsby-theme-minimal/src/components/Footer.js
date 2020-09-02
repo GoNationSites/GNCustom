@@ -142,7 +142,7 @@ const Footer = ({ location }) => {
       <Box sx={{ bg: 'black' }}>
         {location === 'Danbury' ? (
           <iframe
-            src='//lightwidget.com/widgets/f3c23c0072515353be475ab9975738e2.html'
+            src='https://cdn.lightwidget.com/widgets/f3c23c0072515353be475ab9975738e2.html'
             scrolling='no'
             allowtransparency='true'
             class='lightwidget-widget'
@@ -156,7 +156,7 @@ const Footer = ({ location }) => {
             }}></iframe>
         ) : (
           <iframe
-            src='//lightwidget.com/widgets/7c9b0c45a5b359878ab8917541f04100.html'
+            src='https://cdn.lightwidget.com/widgets/7c9b0c45a5b359878ab8917541f04100.html'
             scrolling='no'
             allowtransparency='true'
             class='lightwidget-widget'
