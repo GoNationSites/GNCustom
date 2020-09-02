@@ -6,14 +6,14 @@ import jsonpAdapter from 'axios-jsonp';
 
 import Layout from '../../components/LayoutWoodbury';
 import cloudinaryHelper from '../../helpers/cloudinaryHelper';
-import ContactForm from '../../components/ContactForm'
+import ContactForm from '../../components/ContactForm';
 import ContactContent from '../../components/ContactContent';
 
 const Contact = () => {
-//   const [about, setAboutData] = useState({
-//     aboutData: null,
-//     isLoading: true,
-//   });
+  //   const [about, setAboutData] = useState({
+  //     aboutData: null,
+  //     isLoading: true,
+  //   });
 
   const id = 'bzn-mmT_2ynbR4eGFehR2VEi8g';
 
@@ -38,7 +38,7 @@ const Contact = () => {
           }}>
           <Box
             sx={{
-              width: ['100%', '50%'],
+              width: ['100%', '25%'],
               textAlign: 'center',
               pt: [5, 0, 0],
               pb: [4, 0],
@@ -46,17 +46,19 @@ const Contact = () => {
             }}>
             <ContactForm />
           </Box>
-          <Box sx={{ width: ['100%', '50%'], padding: 3, color: 'white' }}>
+          <Box sx={{ width: ['100%', '30%'], padding: 3, color: 'white' }}>
             <ContactContent id={id} />
           </Box>
-          <iframe
-            src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11948.185629371286!2d-73.2025913!3d41.5249354!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9760255230bc060a!2sMIX%20Prime%20Steakhouse%2C%20Fish%20%26%20Sushi%20Bar!5e0!3m2!1sen!2sus!4v1598367149947!5m2!1sen!2sus'
-            width='500px'
-            height='200'
-            frameborder='0'
-            allowfullscreen=''
-            aria-hidden='false'
-            tabindex='0'></iframe>
+          <Box sx={{ flex: 1 }}>
+            <iframe
+              src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11948.185629371286!2d-73.2025913!3d41.5249354!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9760255230bc060a!2sMIX%20Prime%20Steakhouse%2C%20Fish%20%26%20Sushi%20Bar!5e0!3m2!1sen!2sus!4v1598367149947!5m2!1sen!2sus'
+              width='500px'
+              height='200'
+              frameborder='0'
+              allowfullscreen=''
+              aria-hidden='false'
+              tabindex='0'></iframe>
+          </Box>
         </Flex>
       </Box>
     </Layout>

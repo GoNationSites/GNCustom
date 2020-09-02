@@ -5,7 +5,7 @@ import axios from 'axios';
 import jsonpAdapter from 'axios-jsonp';
 
 import SocialIcons from './SocialIcons';
-import FullAddress from './FullAddress'
+import FullAddress from './FullAddress';
 import FullPhone from './FullPhone';
 
 const ContactContent = ({ id }) => {
@@ -28,7 +28,7 @@ const ContactContent = ({ id }) => {
   }, []);
 
   const renderData = () => (
-    <Box>
+    <Box sx={{ textAlign: ['left', 'center'] }}>
       <Box sx={{ mb: [3, 5] }}>
         <Text
           as='h4'
@@ -57,16 +57,14 @@ const ContactContent = ({ id }) => {
           Social:
         </Text>
         <SocialIcons
-          justifyLeft
+          justifyCenter
           links={contactData.contactData.links}
           slug={contactData.contactData.slug}></SocialIcons>
       </Box>
     </Box>
   );
 
-  return !contactData.isLoading ? renderData() : ''
-
-
+  return !contactData.isLoading ? renderData() : '';
 };
 
 export default ContactContent;
