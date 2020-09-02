@@ -6,7 +6,7 @@ import getGoogleStr from '../helpers/getGoogleStr';
 
 const FullPhone = ({ data }) => {
   return (
-    <Text sx={{ fontSize: 2 }}>
+    <Text>
       <a href={`tel:${data.phone}`}>{data.phone}</a>
     </Text>
   );

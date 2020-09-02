@@ -15,6 +15,9 @@ import HeroSlider, {
 import printAddress from '../helpers/printAddress';
 import getGoogleStr from '../helpers/getGoogleStr';
 
+import FullAddress from './FullAddress';
+import FullPhone from './FullPhone';
+
 import cloudinaryHelper from '../helpers/cloudinaryHelper';
 
 import ShoutCard from './ShoutCard';
@@ -79,7 +82,7 @@ const SmoothHero = ({ location }) => {
       return [
         'https://res.cloudinary.com/gonation/image/upload/v1598039135/sites/mix-prime/showcase-2.jpg',
         'https://res.cloudinary.com/gonation/image/upload/v1598034772/sites/mix-prime/index-2.jpg',
-        'https://res.cloudinary.com/gonation/image/upload/v1598034771/sites/mix-prime/index-1.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1598018069/sites/mix-prime/desktop-slide-4.jpg',
       ];
     }
   };
@@ -189,6 +192,34 @@ const SmoothHero = ({ location }) => {
               ''
             )}
           </Box>
+        </Box>
+
+        <Box
+          sx={{
+            position: 'absolute',
+            left: 0,
+            bottom: 0,
+            display: ['none', 'none', 'block'],
+            width: '100%',
+          }}>
+          <Flex
+            sx={{
+              justifyContent: 'space-between',
+              paddingY: 4,
+              paddingX: 4,
+              fontFamily: 'heading',
+              fontSize: 3,
+            }}>
+            <Flex>
+              <Box>
+                <FullAddress data={site} />
+              </Box>
+              <Box sx={{ ml: 4 }}>
+                <FullPhone data={site} />
+              </Box>
+            </Flex>
+            <Box>content right</Box>
+          </Flex>
         </Box>
       </Flex>
     </Box>
