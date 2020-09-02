@@ -220,7 +220,7 @@ const SmoothHero = ({ location }) => {
             bottom: 0,
             display: ['none', 'none', 'block'],
             width: '100%',
-            background: 'rgba(0,0,0,.2)',
+            background: 'rgba(0,0,0,.1)',
           }}>
           <Flex
             sx={{

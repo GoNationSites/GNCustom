@@ -174,7 +174,7 @@ const Navigation = ({ location }) => {
           top: 0,
           width: '100%',
           zIndex: '999999',
-          bg: navBackground ? '#111' : '#11111170',
+          bg: navBackground ? '#111' : 'rgba(0,0,0,.76)',
           transition: 'all .3s',
           py: 2,
         }}>
@@ -188,8 +188,8 @@ const Navigation = ({ location }) => {
               <Text
                 as='span'
                 sx={{
-                  fontSize: 0,
-                  ml: 1,
+                  fontSize: '14px',
+                  ml: '14px',
                   color: '#fff',
                   fontFamily: 'heading',
                 }}>
@@ -203,6 +203,8 @@ const Navigation = ({ location }) => {
               <Text
                 as='span'
                 sx={{
+                  fontSize: '16px',
+                  letterSpacing: '6px',
                   color: '#fff',
                   mr: 3,
                   fontFamily: 'heading',
@@ -237,6 +239,7 @@ const Navigation = ({ location }) => {
                   paddingY: 2,
                   '&:hover': {
                     textDecoration: 'underline',
+                    background: 'primary',
                     transition: 'all .5s',
                   },
                 }}
@@ -248,6 +251,28 @@ const Navigation = ({ location }) => {
               </Text>
             ) : (
               ''
+            )}
+
+            {location === 'Danbury' ? (
+              <Link
+                to='/danbury/menu'
+                sx={{
+                  fontFamily: 'heading',
+                  mr: 3,
+                  textTransform: 'uppercase',
+                }}>
+                Menu
+              </Link>
+            ) : (
+              <Link
+                to='/woodbury/menu'
+                sx={{
+                  fontFamily: 'heading',
+                  mr: 3,
+                  textTransform: 'uppercase',
+                }}>
+                Menu
+              </Link>
             )}
 
             <HamburgerMenu

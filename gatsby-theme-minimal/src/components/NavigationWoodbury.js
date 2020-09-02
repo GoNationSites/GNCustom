@@ -112,7 +112,7 @@ const Navigation = () => {
           top: 0,
           width: '100%',
           zIndex: '999999',
-          bg: navBackground ? '#111' : '#11111170',
+          bg: navBackground ? '#111' : 'rgba(0,0,0,.76)',
           transition: 'all .3s',
           py: 2,
         }}>
@@ -126,8 +126,8 @@ const Navigation = () => {
               <Text
                 as='span'
                 sx={{
-                  fontSize: 0,
-                  ml: 1,
+                  fontSize: '14px',
+                  ml: '14px',
                   color: '#fff',
                   fontFamily: 'heading',
                 }}>
@@ -141,7 +141,8 @@ const Navigation = () => {
               <Text
                 as='span'
                 sx={{
-                  fontSize: 0,
+                  fontSize: '16px',
+                  letterSpacing: '6px',
                   color: '#fff',
                   mr: 3,
                   textTransform: 'uppercase',
