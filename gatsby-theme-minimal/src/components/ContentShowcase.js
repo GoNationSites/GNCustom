@@ -56,7 +56,7 @@ const ContentShowcase = ({ data }) => {
               </Text>
               <Text
                 as='p'
-                sx={{ maxWidth: '200px', color: 'lightText', mb: 4 }}>
+                sx={{ maxWidth: '400px', color: 'lightText', mb: 4 }}>
                 {el.txt}
               </Text>
               <Box>
