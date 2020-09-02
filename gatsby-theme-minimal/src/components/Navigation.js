@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 import axios from 'axios';
 import HamburgerMenu from 'react-hamburger-menu';
 
-import Announcement from './icons/Announcement';
+import Announcement from './icons/Knife';
 import NavMenu from './NavMenu';
 import cloudinaryHelper from '../helpers/cloudinaryHelper';
 import ShoutCard from './ShoutCard';
@@ -193,23 +193,27 @@ const Navigation = ({ location }) => {
                   color: '#fff',
                   fontFamily: 'heading',
                 }}>
-                New Shout
+                NEW SHOUT
               </Text>
             </Flex>
           </Box>
           <Box
             sx={{ width: '33%', fontFamily: 'heading', textAlign: 'center' }}>
             <Text as='p' sx={{ fontSize: 1 }}>
-              <Link
-                sx={{ textTransform: 'uppercase', color: '#fff' }}
-                to='/danbury'>
-                <Image
-                  sx={{ maxWidth: '200px' }}
-                  src='https://res.cloudinary.com/gonation/image/upload/v1598370120/sites/mix-prime/prime-basic.png'
-                  alt='Mix Prime'
-                />
-              </Link>{' '}
-              <br />{' '}
+              <Text
+                as='span'
+                sx={{
+                  color: '#fff',
+                  mr: 3,
+                  fontFamily: 'heading',
+                  textTransform: 'uppercase',
+                }}>
+                {location === 'Danbury' ? (
+                  <Link to='/woodbury'>Danbury</Link>
+                ) : (
+                  <Link to='/danbury'>Woodbury</Link>
+                )}
+              </Text>
             </Text>
           </Box>
           <Flex
@@ -227,6 +231,10 @@ const Navigation = ({ location }) => {
                   textTransform: 'uppercase',
                   marginRight: 3,
                   display: ['none', 'inline'],
+                  border: '1px solid white',
+                  borderRadius: '3px',
+                  paddingX: [2, 4],
+                  paddingY: 2,
                   '&:hover': {
                     textDecoration: 'underline',
                     transition: 'all .5s',
@@ -241,16 +249,6 @@ const Navigation = ({ location }) => {
             ) : (
               ''
             )}
-
-            <Text
-              as='span'
-              sx={{ fontSize: 0, color: '#fff', mr: 3, fontFamily: 'heading' }}>
-              {location === 'Danbury' ? (
-                <Link to='/woodbury'>Danbury</Link>
-              ) : (
-                <Link to='/danbury'>Woodbury</Link>
-              )}
-            </Text>
 
             <HamburgerMenu
               isOpen={open}

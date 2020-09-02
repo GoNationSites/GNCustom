@@ -67,7 +67,7 @@ const Gallery = () => {
       ) : (
         ''
       )}
-      <Box sx={{ background: '#111' }}>
+      <Box sx={{ background: '#111', pt: 5 }}>
         <Grid
           sx={{
             gridGap: 4,

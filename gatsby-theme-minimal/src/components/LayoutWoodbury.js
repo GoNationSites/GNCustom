@@ -13,10 +13,9 @@ import Navigation from './Navigation';
 import SmoothHero from './SmoothHero';
 import Footer from './Footer';
 import SimpleHero from './SimpleHero';
-import SEO from './SEO'
+import SEO from './SEO';
 
 const Layout = ({ children, pageTitle, location }) => {
-
   const data = useStaticQuery(graphql`
     query metaQuery {
       siteData(data: { city: { eq: "Woodbury" } }) {
@@ -55,14 +54,14 @@ const Layout = ({ children, pageTitle, location }) => {
       }
     }
   `);
-  const site = data.siteData.data
+  const site = data.siteData.data;
 
   const renderHero = () => (
     <>
       {pageTitle === 'home' ? (
         <SmoothHero page={pageTitle} location='Woodbury' />
       ) : (
-        <SimpleHero location="Woodbury" pageTitle={pageTitle}></SimpleHero>
+        <SimpleHero location='Woodbury' pageTitle={pageTitle}></SimpleHero>
       )}
     </>
   );
@@ -72,7 +71,11 @@ const Layout = ({ children, pageTitle, location }) => {
       <SEO siteMetaData={site} pageTitle={pageTitle} />
       <Box as='main'>
         <Navigation location='Woodbury' />
-        {pageTitle === 'about' || pageTitle === 'contact' ? '' : renderHero()}
+        {pageTitle === 'about' ||
+        pageTitle === 'contact' ||
+        pageTitle === 'gallery'
+          ? ''
+          : renderHero()}
         {children}
         <Footer location='Woodbury'></Footer>
       </Box>

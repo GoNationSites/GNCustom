@@ -71,7 +71,11 @@ const Layout = ({ children, pageTitle, location }) => {
       <SEO siteMetaData={site} pageTitle={pageTitle} />
       <Box as='main'>
         <Navigation location='Danbury' />
-        {pageTitle === 'about' || pageTitle === 'contact' ? '' : renderHero()}
+        {pageTitle === 'about' ||
+        pageTitle === 'contact' ||
+        pageTitle === 'gallery'
+          ? ''
+          : renderHero()}
         {children}
         <Footer location='Danbury'></Footer>
       </Box>

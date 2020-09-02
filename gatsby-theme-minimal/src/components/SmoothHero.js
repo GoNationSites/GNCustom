@@ -200,7 +200,7 @@ const SmoothHero = ({ location }) => {
           sx={{
             position: 'absolute',
             left: 5,
-            bottom: 7,
+            bottom: 6,
             display: ['none', 'none', 'block'],
           }}>
           <Box sx={{ background: 'white' }}>
