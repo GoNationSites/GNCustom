@@ -9,10 +9,7 @@ import Sticky from 'react-sticky-el';
 import ScrollMenu from 'react-horizontal-scrolling-menu';
 
 import * as Scroll from 'react-scroll';
-import {
-  Link as ScrollLink,
-  animateScroll as scroll,
-} from 'react-scroll';
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 import Layout from '../../components/Layout';
 import splitSectionChildren from '../../helpers/splitSectionChildren';
@@ -58,7 +55,7 @@ const Menu = () => {
                 '&:hover': {
                   textDecoration: 'underline',
                 },
-                outlineColor: 'transparent!important'
+                outlineColor: 'transparent!important',
               }}>
               <ScrollLink
                 style={{ color: '#111', outlineColor: 'transparent' }}
@@ -77,38 +74,33 @@ const Menu = () => {
   );
 
   const Menu = () => {
-    return (
-      
-          childSections.map(sec => (
-            <Box sx={{ marginX: 3, cursor: 'pointer' }}>
-              <Text
-                onClick={() => setToggledSection(sec.section.name)}
-                sx={{
-                  fontFamily: 'heading',
-                  textTransform: 'uppercase',
-                  letterSpacing: '3px',
-                  color: '#111!important',
-                  textDecoration:
-                    toggledSection === sec.section.name ? 'underline' : '',
-                  '&:hover': {
-                    textDecoration: 'underline',
-                  },
-                }}>
-                <ScrollLink
-                  style={{ color: '#111' }}
-                  to={sec.section.name}
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  offset={-125}>
-                  {sec.section.name}
-                </ScrollLink>
-              </Text>
-            </Box>
-          ))
-        
-      
-    );
+    return childSections.map(sec => (
+      <Box sx={{ marginX: 3, cursor: 'pointer' }}>
+        <Text
+          onClick={() => setToggledSection(sec.section.name)}
+          sx={{
+            fontFamily: 'heading',
+            textTransform: 'uppercase',
+            letterSpacing: '3px',
+            color: '#111!important',
+            textDecoration:
+              toggledSection === sec.section.name ? 'underline' : '',
+            '&:hover': {
+              textDecoration: 'underline',
+            },
+          }}>
+          <ScrollLink
+            style={{ color: '#111' }}
+            to={sec.section.name}
+            spy={true}
+            smooth={true}
+            duration={500}
+            offset={-125}>
+            {sec.section.name}
+          </ScrollLink>
+        </Text>
+      </Box>
+    ));
   };
 
   return (
@@ -126,7 +118,7 @@ const Menu = () => {
       }}
       transitionTime={500}>
       <Layout pageTitle='menu'>
-        <Box sx={{ paddingY: 5, paddingX: 2 }}>
+        <Box sx={{ paddingY: 5, paddingX: 2, pt: 0 }}>
           {menuData.inventory && childSections ? (
             <>
               <Box sx={{ display: ['none', 'block', 'block'] }}>
