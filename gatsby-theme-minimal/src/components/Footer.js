@@ -173,7 +173,7 @@ const Footer = ({ location }) => {
       <Box
         as='footer'
         sx={{
-          minHeight: '600px',
+          py: [3, 4, 5],
           background: 'black',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -183,7 +183,7 @@ const Footer = ({ location }) => {
             alt='Mix Prime'
             sx={{ maxWidth: '300px' }}
             src={
-              'https://res.cloudinary.com/gonation/image/upload/v1598969035/sites/red-rooster/logo-solid-white.png'
+              'https://res.cloudinary.com/gonation/image/upload/v1598370120/sites/mix-prime/prime-basic.png'
             }></Image>
         </Box>
         <Box>
