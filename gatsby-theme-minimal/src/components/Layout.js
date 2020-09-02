@@ -73,7 +73,8 @@ const Layout = ({ children, pageTitle, location }) => {
         <Navigation location='Danbury' />
         {pageTitle === 'about' ||
         pageTitle === 'contact' ||
-        pageTitle === 'gallery'
+        pageTitle === 'gallery' ||
+        pageTitle === 'careers'
           ? ''
           : renderHero()}
         {children}

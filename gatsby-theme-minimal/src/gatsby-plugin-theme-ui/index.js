@@ -38,6 +38,10 @@ export default {
         color: 'white',
       },
     },
+    career: {
+      border: '1px solid #eee',
+      borderColor: '#eee',
+    },
     textarea: {
       borderRadius: '3px',
       borderBottom: '1px solid',
@@ -58,6 +62,11 @@ export default {
       fontWeight: 'heading',
       textTransform: 'uppercase',
       letterSpacing: '3px',
+    },
+    label: {
+      fontSize: 1,
+      fontWeight: 'bold',
+      color: 'text',
     },
   },
   buttons: {
@@ -101,7 +110,7 @@ export default {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      
+
       div: {
         outlineColor: 'transparent!important',
       },
@@ -112,8 +121,8 @@ export default {
         color: 'white',
         textDecoration: 'none',
         '-webkit-tap-highlight-color': `rgba(255, 255, 255, 0)`,
-        '-webkit-tap-highlight-color': `transparent`, 
-        outline:` none !important`,
+        '-webkit-tap-highlight-color': `transparent`,
+        outline: ` none !important`,
       },
     },
     h1: {

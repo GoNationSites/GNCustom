@@ -210,12 +210,12 @@ const Footer = ({ location }) => {
           {location === 'Danbury'
             ? routes.map(route => (
                 <Box sx={{ marginX: 3, mb: [3, 0] }}>
-                  <Link to={route.route}>{route.name}</Link>
+                  <Link to={`/${route.route}`}>{route.name}</Link>
                 </Box>
               ))
             : woodburyRoutes.map(route => (
                 <Box sx={{ marginX: 3, mb: [3, 0] }}>
-                  <Link to={route.route}>{route.name}</Link>
+                  <Link to={`/${route.route}`}>{route.name}</Link>
                 </Box>
               ))}
         </Flex>
