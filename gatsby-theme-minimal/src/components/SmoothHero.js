@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Box, Flex, Text } from 'theme-ui';
 import React, { useState, useEffect } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import axios from 'axios';
 import jsonAdapter from 'axios-jsonp';
 // Components
@@ -99,6 +99,24 @@ const SmoothHero = ({ location }) => {
     </Box>
   );
 
+  const routes = [
+    {
+      path: '/parties',
+      name: 'Parties',
+      isExternal: false,
+    },
+    {
+      path: '/gift-cards',
+      name: 'Gift Cards',
+      isExternal: false,
+    },
+    {
+      path: '/careers',
+      name: 'Careers',
+      isExternal: false,
+    },
+  ];
+
   return (
     <Box sx={{ position: 'relative' }}>
       <HeroSlider
@@ -181,8 +199,8 @@ const SmoothHero = ({ location }) => {
         <Box
           sx={{
             position: 'absolute',
-            left: 4,
-            bottom: 6,
+            left: 5,
+            bottom: 7,
             display: ['none', 'none', 'block'],
           }}>
           <Box sx={{ background: 'white' }}>
@@ -201,6 +219,7 @@ const SmoothHero = ({ location }) => {
             bottom: 0,
             display: ['none', 'none', 'block'],
             width: '100%',
+            background: 'rgba(0,0,0,.2)',
           }}>
           <Flex
             sx={{
@@ -218,7 +237,28 @@ const SmoothHero = ({ location }) => {
                 <FullPhone data={site} />
               </Box>
             </Flex>
-            <Box>content right</Box>
+            <Flex sx={{ textTransform: 'uppercase' }}>
+              {routes.map(route => {
+                if (route.isExternal) {
+                  return (
+                    <Box sx={{ paddingX: 4 }}>
+                      <Text
+                        as='a'
+                        href={route.path}
+                        target='_blank'
+                        rel='noopener noreferrer'>
+                        {route.name}
+                      </Text>
+                    </Box>
+                  );
+                } else
+                  return (
+                    <Flex sx={{ paddingX: 4 }}>
+                      <Link to={route.path}>{route.name}</Link>{' '}
+                    </Flex>
+                  );
+              })}
+            </Flex>
           </Flex>
         </Box>
       </Flex>
