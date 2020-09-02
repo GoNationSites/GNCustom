@@ -238,8 +238,7 @@ const Navigation = ({ location }) => {
                   paddingX: [2, 4],
                   paddingY: 2,
                   '&:hover': {
-                    textDecoration: 'underline',
-                    background: 'primary',
+                    bg: 'primary',
                     transition: 'all .5s',
                   },
                 }}
