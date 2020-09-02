@@ -11,6 +11,7 @@ import HeroSlider, {
   Nav,
   OverlayContainer,
 } from 'hero-slider';
+import slugify from 'slugify';
 
 import printAddress from '../helpers/printAddress';
 import getGoogleStr from '../helpers/getGoogleStr';
@@ -100,18 +101,18 @@ const SmoothHero = ({ location }) => {
   );
 
   const routes = [
+    // {
+    //   path: '/parties',
+    //   name: 'Parties',
+    //   isExternal: false,
+    // },
+    // {
+    //   path: '/gift-cards',
+    //   name: 'Gift Cards',
+    //   isExternal: false,
+    // },
     {
-      path: '/parties',
-      name: 'Parties',
-      isExternal: false,
-    },
-    {
-      path: '/gift-cards',
-      name: 'Gift Cards',
-      isExternal: false,
-    },
-    {
-      path: '/careers',
+      path: `/${slugify(site.city, { lower: true })}/careers`,
       name: 'Careers',
       isExternal: false,
     },
