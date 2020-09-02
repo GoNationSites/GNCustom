@@ -55,9 +55,10 @@ const Woodbury = () => {
       }}
       transitionTime={500}>
       <Layout pageTitle='home'>
-        <Box sx={{ maxWidth: '1200px', margin: 'auto' }}>
+        <Box sx={{ maxWidth: '900px', margin: 'auto' }}>
           <AboutText location='Woodbury'></AboutText>
-
+        </Box>
+        <Box sx={{ maxWidth: '1200px', margin: 'auto' }}>
           <ContentShowcase data={contentShowcaseData} />
         </Box>
 

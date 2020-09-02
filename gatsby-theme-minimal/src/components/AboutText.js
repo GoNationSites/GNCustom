@@ -35,7 +35,7 @@ const AboutText = ({ location, whiteText }) => {
             mt: '-60px',
             color: whiteText ? 'white' : 'text',
           }}>
-          {location === 'Danbury' ? site[0].node.data.desc.charAt(1) : ''}
+          {site[0].node.data.desc.charAt(0)}
         </Text>
         {console.log(site[0])}
         <Text
@@ -44,9 +44,7 @@ const AboutText = ({ location, whiteText }) => {
             lineHeight: 2,
             color: whiteText ? 'white' : 'lightText',
           }}>
-          {location === 'Danbury'
-            ? site[0].node.data.desc.substring(2, site[0].node.data.desc.length)
-            : site[0].node.data.desc}
+          {site[0].node.data.desc.substring(1, site[0].node.data.desc.length)}
         </Text>
       </Text>
     </Box>
