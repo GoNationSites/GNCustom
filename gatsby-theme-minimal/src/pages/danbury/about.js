@@ -5,6 +5,7 @@ import axios from 'axios';
 import jsonpAdapter from 'axios-jsonp';
 
 import Layout from '../../components/Layout';
+import AboutText from '../../components/AboutText';
 import cloudinaryHelper from '../../helpers/cloudinaryHelper';
 
 const About = () => {
@@ -64,11 +65,12 @@ const About = () => {
             />
           </Box>
           <Box sx={{ flex: ['auto', 1, 1] }}>
-            <Text
+            {/* <Text
               as='p'
               sx={{ fontSize: [2, 3], lineHeight: 2, color: 'white' }}>
               {about.isLoading ? '' : about.aboutData.desc}
-            </Text>
+            </Text> */}
+            <AboutText location='Danbury' whiteText />
             <Flex sx={{ mt: [2, 3, 4] }}>
               <Box sx={{ marginRight: [2, 3, 4] }}>
                 <Image
