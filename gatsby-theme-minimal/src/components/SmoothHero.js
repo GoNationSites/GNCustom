@@ -106,11 +106,11 @@ const SmoothHero = ({ location }) => {
     //   name: 'Parties',
     //   isExternal: false,
     // },
-    // {
-    //   path: '/gift-cards',
-    //   name: 'Gift Cards',
-    //   isExternal: false,
-    // },
+    {
+      path: '(203) 825-4444',
+      name: 'Gift Cards',
+      isExternal: true,
+    },
     {
       path: `/${slugify(site.city, { lower: true })}/careers`,
       name: 'Careers',
@@ -245,8 +245,7 @@ const SmoothHero = ({ location }) => {
                     <Box sx={{ paddingX: 4 }}>
                       <Text
                         as='a'
-                        href={route.path}
-                        target='_blank'
+                        href={`tel:${route.path}`}
                         rel='noopener noreferrer'>
                         {route.name}
                       </Text>
