@@ -12,11 +12,16 @@ const ContentShowcase = ({ data }) => {
         <Flex
           sx={{
             flexDirection: ['column', 'column', 'row'],
-            paddingY: [3,4,5],
+            paddingY: [3, 4, 5],
             alignItems: 'center',
-            paddingX: [3, 0, 0]
+            paddingX: [3, 0, 0],
           }}>
-          <Box sx={{ width: ['100%', '100%', '50%'], order: idx == 1 ? 9 : 'unset', marginTop: idx !== 0 ? 5 : 0 }}>
+          <Box
+            sx={{
+              width: ['100%', '100%', '50%'],
+              order: idx == 1 ? 9 : 'unset',
+              marginTop: idx !== 0 ? 5 : 0,
+            }}>
             <Zoom>
               <AspectImage
                 sx={{ height: '100%', width: '100%' }}
@@ -34,9 +39,9 @@ const ContentShowcase = ({ data }) => {
                 as='h3'
                 variant='heading'
                 sx={{
-                  color: 'primary',
-                  pl: [0,0, idx === 0 ? 4 : 0],
-                  pr: [0,0, idx === 1 ? 4 : 0],
+                  color: 'text',
+                  pl: [0, 0, idx === 0 ? 4 : 0],
+                  pr: [0, 0, idx === 1 ? 4 : 0],
                   pb: 3,
                   borderBottom: '1px solid',
                   borderColor: 'primary',
@@ -45,7 +50,7 @@ const ContentShowcase = ({ data }) => {
                   mb: 4,
                   zIndex: 3,
                   position: 'relative',
-                  marginTop: [4,4,0]
+                  marginTop: [4, 4, 0],
                 }}>
                 {el.title}
               </Text>
@@ -56,7 +61,20 @@ const ContentShowcase = ({ data }) => {
               </Text>
               <Box>
                 <Link to={`/${el.btn.link}`}>
-                  <Button variant='black' sx={{ width: 'auto' }}>
+                  <Button
+                    variant='black'
+                    sx={{
+                      width: 'auto',
+                      paddingX: [4, 5],
+                      paddingY: [2, 3],
+                      background: 'black',
+                      color: 'white',
+                      '&:hover': {
+                        background: 'transparent',
+                        color: 'text',
+                        transition: 'all .3s',
+                      },
+                    }}>
                     {el.btn.title}
                   </Button>
                 </Link>
