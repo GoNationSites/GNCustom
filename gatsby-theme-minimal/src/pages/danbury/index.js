@@ -1,7 +1,7 @@
 /** @jsx jsx */
-import { jsx, Box } from 'theme-ui';
+import { jsx, Box, Flex, Button, Text } from 'theme-ui';
 import PageTransition from 'gatsby-plugin-page-transitions';
-
+import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 
 import cloudinaryOptimize from '../../helpers/cloudinaryHelper';
@@ -11,7 +11,37 @@ import ContentShowcase from '../../components/ContentShowcase';
 import MenuShowcaseSlider from '../../components/MenuShowcaseSlider';
 import cloudinaryHelper from '../../helpers/cloudinaryHelper';
 
+import FullAddress from '../../components/FullAddress';
+import FullPhone from '../../components/FullPhone';
+
 const Danbury = () => {
+  const data = useStaticQuery(graphql`
+    query danburyHome {
+      allSiteData {
+        edges {
+          node {
+            data {
+              city
+              name
+              phone
+              slug
+              state
+              street
+              zip
+              links {
+                facebook
+                instagram
+                twitter
+              }
+            }
+          }
+        }
+      }
+    }
+  `);
+  const site = data.allSiteData.edges.filter(
+    el => el.node.data.city === 'Woodbury'
+  )[0].node.data;
   const contentShowcaseData = [
     {
       img: cloudinaryHelper(
@@ -56,6 +86,23 @@ const Danbury = () => {
       transitionTime={500}>
       <Layout pageTitle='home'>
         <Box sx={{ maxWidth: '730px', margin: 'auto' }}>
+          <Flex
+            sx={{ display: ['flex', 'none'], flexWrap: 'wrap', padding: 2 }}>
+            <Box sx={{ flex: '1 1 50%', pr: 2 }}>
+              <Button variant='blackTransparent'>
+                <FullPhone data={site} st={{ color: '#111!important' }} />
+              </Button>
+            </Box>
+            <Box sx={{ flex: '1 1 50%', pl: 2 }}>
+              <Button variant='blackTransparent'>
+                <FullAddress
+                  data={site}
+                  text='Directions'
+                  st={{ color: '#111!important' }}
+                />
+              </Button>
+            </Box>
+          </Flex>
           <AboutText location='Danbury'></AboutText>
         </Box>
         <Box sx={{ maxWidth: '1200px', margin: 'auto' }}>

@@ -104,6 +104,18 @@ export default {
         transition: 'all .4s!important',
       },
     },
+    blackTransparent: {
+      background: 'transparent',
+      border: '1px solid',
+      borderColor: 'lightText',
+      borderRadius: '3px',
+      width: '100%',
+      fontFamily: 'heading',
+      textTransform: 'uppercase',
+      letterSpacing: '3px',
+      color: 'text',
+      transition: 'all .4s!important',
+    },
   },
   styles: {
     root: {

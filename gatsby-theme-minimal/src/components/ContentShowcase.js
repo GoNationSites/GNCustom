@@ -64,9 +64,9 @@ const ContentShowcase = ({ data }) => {
                   <Button
                     variant='black'
                     sx={{
-                      width: 'auto',
+                      width: ['100%', 'auto'],
                       paddingY: '19px',
-                      paddingX: '119px',
+                      paddingX: ['40px', '119px'],
                       background: 'black',
                       color: 'white',
                       '&:hover': {

@@ -4,11 +4,14 @@ import React from 'react';
 import printAddress from '../helpers/printAddress';
 import getGoogleStr from '../helpers/getGoogleStr';
 
-const FullAddress = ({ data }) => {
+const FullAddress = ({ data, text, st }) => {
+  console.log('style: ', st);
   const site = data;
   return (
-    <Text sx={{}}>
-      <a
+    <Text>
+      <Text
+        as='a'
+        sx={st}
         target='_blank'
         rel='noreferrer noopener'
         href={getGoogleStr(
@@ -18,8 +21,8 @@ const FullAddress = ({ data }) => {
           site.zip,
           site.state
         )}>
-        {printAddress(site)}
-      </a>
+        {text ? text : printAddress(site)}
+      </Text>
     </Text>
   );
 };

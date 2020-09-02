@@ -54,7 +54,7 @@ const Navigation = () => {
         'https://res.cloudinary.com/gonation/image/upload/v1598035952/sites/mix-prime/home.jpg',
         1000
       ),
-      txt: 'Go Home',
+      txt: 'Visit Home Page',
     },
     {
       name: 'About',
@@ -72,7 +72,7 @@ const Navigation = () => {
         'https://res.cloudinary.com/gonation/image/upload/v1598035876/sites/mix-prime/menu.jpg',
         1000
       ),
-      txt: 'View The Menu',
+      txt: 'Steaks, seafood & more',
     },
     {
       name: 'Events',
@@ -81,7 +81,7 @@ const Navigation = () => {
         'https://res.cloudinary.com/gonation/image/upload/v1598035877/sites/mix-prime/events.jpg',
         1000
       ),
-      txt: 'View Events',
+      txt: 'View Specials & Promotions',
     },
     {
       name: 'Gallery',
@@ -90,7 +90,7 @@ const Navigation = () => {
         'https://res.cloudinary.com/gonation/image/upload/v1598035875/sites/mix-prime/gallery.jpg',
         1000
       ),
-      txt: 'explore the gallery',
+      txt: 'Inside Look',
     },
     {
       name: 'Contact',

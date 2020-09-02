@@ -4,31 +4,27 @@ import React, { useEffect, useState } from 'react';
 
 import Slider from 'react-slick';
 import axios from 'axios';
-import cloudinaryOptimize from '../helpers/cloudinaryHelper'
-
+import cloudinaryOptimize from '../helpers/cloudinaryHelper';
 
 let jsonpAdapter = require('axios-jsonp');
 
 const MenuShowcaseSlider = ({ id, pl }) => {
-    const [items, setItems] = useState([])
-    const [curSlide, setCurSlide] = useState(0)
+  const [items, setItems] = useState([]);
+  const [curSlide, setCurSlide] = useState(0);
   useEffect(() => {
     axios({
       url: `https://data.prod.gonation.com/pl/get?profile_id=${id}&powerlistId=powered-list-${pl}`,
       adapter: jsonpAdapter,
     }).then(res => {
-        const items = res.data[0].inventory.filter(
-          (el) => {
-              return (
-                el.item &&
-                el.item.imagePrefix !==
-                  'gonation.data.prod/default/img-itm-cover-full.png'
-              );
-          } 
-          
+      const items = res.data[0].inventory.filter(el => {
+        return (
+          el.item &&
+          el.item.imagePrefix !==
+            'gonation.data.prod/default/img-itm-cover-full.png'
         );
+      });
 
-        setItems(items)
+      setItems(items);
     });
   }, []);
 
@@ -44,12 +40,12 @@ const MenuShowcaseSlider = ({ id, pl }) => {
   };
 
   const handleAfterChange = idx => {
-      setCurSlide(idx)
-  }
+    setCurSlide(idx);
+  };
 
-  const getImage = itm => `${itm.imageBaseUrl}/${itm.imagePrefix}`
+  const getImage = itm => `${itm.imageBaseUrl}/${itm.imagePrefix}`;
 
-  if(items.length) {
+  if (items.length) {
     return (
       <Box
         sx={{
@@ -76,7 +72,7 @@ const MenuShowcaseSlider = ({ id, pl }) => {
             width: '100%',
             height: '100%',
             zIndex: 0,
-            background: 'rgba(0,0,0,.6)',
+            background: 'rgba(0,0,0,.3)',
           }}></div>
         <Box
           sx={{
@@ -131,7 +127,9 @@ const MenuShowcaseSlider = ({ id, pl }) => {
               items.map(({ item }) => {
                 return (
                   <Box sx={{ padding: 3 }}>
-                    <Image alt={item.name ? item.name : 'Mix Prime'} src={getImage(item)}></Image>
+                    <Image
+                      alt={item.name ? item.name : 'Mix Prime'}
+                      src={getImage(item)}></Image>
                   </Box>
                 );
               })}
@@ -140,7 +138,7 @@ const MenuShowcaseSlider = ({ id, pl }) => {
       </Box>
     );
   }
-  return <Box> </Box>
+  return <Box> </Box>;
 };
 
 export default MenuShowcaseSlider;

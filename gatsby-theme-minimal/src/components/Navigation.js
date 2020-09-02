@@ -59,7 +59,7 @@ const Navigation = ({ location }) => {
         'https://res.cloudinary.com/gonation/image/upload/v1598035952/sites/mix-prime/home.jpg',
         1000
       ),
-      txt: 'Go Home',
+      txt: 'Visit Home Page',
     },
     {
       name: 'About',
@@ -77,7 +77,7 @@ const Navigation = ({ location }) => {
         'https://res.cloudinary.com/gonation/image/upload/v1598035876/sites/mix-prime/menu.jpg',
         1000
       ),
-      txt: 'View The Menu',
+      txt: 'Steaks, seafood & more',
     },
     {
       name: 'Events',
@@ -86,7 +86,7 @@ const Navigation = ({ location }) => {
         'https://res.cloudinary.com/gonation/image/upload/v1598035877/sites/mix-prime/events.jpg',
         1000
       ),
-      txt: 'View Events',
+      txt: 'View Specials & Promotions',
     },
     {
       name: 'Gallery',
@@ -95,7 +95,7 @@ const Navigation = ({ location }) => {
         'https://res.cloudinary.com/gonation/image/upload/v1598035875/sites/mix-prime/gallery.jpg',
         1000
       ),
-      txt: 'explore the gallery',
+      txt: 'Inside Look',
     },
     {
       name: 'Contact',
@@ -116,7 +116,7 @@ const Navigation = ({ location }) => {
         'https://res.cloudinary.com/gonation/image/upload/v1598360972/sites/mix-prime/woodbury-home-route.jpg',
         1000
       ),
-      txt: 'Go Home',
+      txt: 'Visit Home Page',
     },
     {
       name: 'About',
@@ -134,7 +134,7 @@ const Navigation = ({ location }) => {
         'https://res.cloudinary.com/gonation/image/upload/v1598361073/sites/mix-prime/wood-menu-route.jpg',
         1000
       ),
-      txt: 'View The Menu',
+      txt: 'Steaks, seafood & more',
     },
     {
       name: 'Events',
@@ -143,7 +143,7 @@ const Navigation = ({ location }) => {
         'https://res.cloudinary.com/gonation/image/upload/v1598360971/sites/mix-prime/woodbury-events-route.jpg',
         1000
       ),
-      txt: 'View Events',
+      txt: 'View Specials & Promotions',
     },
     {
       name: 'Gallery',
@@ -152,7 +152,7 @@ const Navigation = ({ location }) => {
         'https://res.cloudinary.com/gonation/image/upload/v1598360972/sites/mix-prime/woodbury-gallery-route.jpg',
         1000
       ),
-      txt: 'explore the gallery',
+      txt: 'Inside Look',
     },
     {
       name: 'Contact',
@@ -192,6 +192,7 @@ const Navigation = ({ location }) => {
                   ml: '14px',
                   color: '#fff',
                   fontFamily: 'heading',
+                  display: ['none', 'block'],
                 }}>
                 NEW SHOUT
               </Text>
@@ -233,6 +234,7 @@ const Navigation = ({ location }) => {
                   fontFamily: 'heading',
                   mr: 3,
                   textTransform: 'uppercase',
+                  display: ['none', 'inline'],
                 }}>
                 Menu
               </Link>
@@ -243,6 +245,7 @@ const Navigation = ({ location }) => {
                   fontFamily: 'heading',
                   mr: 3,
                   textTransform: 'uppercase',
+                  display: ['none', 'inline'],
                 }}>
                 Menu
               </Link>

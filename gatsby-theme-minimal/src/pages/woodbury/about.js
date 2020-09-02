@@ -40,6 +40,7 @@ const About = () => {
           // )})`,
           paddingX: 4,
           paddingY: 3,
+          pb: [5, 3],
         }}>
         <Flex
           sx={{

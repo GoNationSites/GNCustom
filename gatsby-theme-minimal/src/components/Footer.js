@@ -74,12 +74,12 @@ const Footer = ({ location }) => {
     {
       name: 'Events',
       route: 'danbury/events',
-      txt: 'View Events',
+      txt: 'View Specials & Promotions',
     },
     {
       name: 'Gallery',
       route: 'danbury/gallery',
-      txt: 'explore the gallery',
+      txt: 'Inside Look',
     },
     {
       name: 'Contact',
@@ -115,12 +115,12 @@ const Footer = ({ location }) => {
     {
       name: 'Events',
       route: 'woodbury/events',
-      txt: 'View Events',
+      txt: 'View Specials & Promotions',
     },
     {
       name: 'Gallery',
       route: 'woodbury/gallery',
-      txt: 'explore the gallery',
+      txt: 'Inside Look',
     },
     {
       name: 'Contact',

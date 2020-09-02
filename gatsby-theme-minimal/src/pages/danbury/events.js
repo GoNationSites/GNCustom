@@ -160,7 +160,7 @@ const DiscoverEvents = ({ bizName }) => {
 
   return (
     <Layout pageTitle='events'>
-      <Box sx={{ paddingY: ['2', '3'], paddingX: 2 }}>
+      <Box sx={{ paddingY: ['4', '3'], paddingX: 2 }}>
         {/* {lightBox.isOpen && (
         <Lightbox
           mainSrc={lightBox.mainSrc}

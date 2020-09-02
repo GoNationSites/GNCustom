@@ -1,13 +1,12 @@
 import { jsx, Box, Text } from 'theme-ui';
 import React from 'react';
 
-import printAddress from '../helpers/printAddress';
-import getGoogleStr from '../helpers/getGoogleStr';
-
-const FullPhone = ({ data }) => {
+const FullPhone = ({ data, st }) => {
   return (
     <Text>
-      <a href={`tel:${data.phone}`}>{data.phone}</a>
+      <Text as='a' sx={st} href={`tel:${data.phone}`}>
+        {data.phone}
+      </Text>
     </Text>
   );
 };

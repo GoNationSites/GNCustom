@@ -73,7 +73,7 @@ const SmoothHero = ({ location }) => {
   const images = () => {
     if (site.city === 'Woodbury') {
       return [
-        'https://res.cloudinary.com/gonation/image/upload/v1598359431/sites/mix-prime/woodbury-home-1.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1598018069/sites/mix-prime/desktop-slide-4.jpg',
         'https://res.cloudinary.com/gonation/image/upload/v1598359430/sites/mix-prime/woodbury-home-2.jpg',
         'https://res.cloudinary.com/gonation/image/upload/v1598359431/sites/mix-prime/woodbury-home-3.jpg',
       ];
@@ -132,6 +132,8 @@ const SmoothHero = ({ location }) => {
           shouldAutoplay: true,
           shouldDisplayButtons: false,
           autoplayDuration: 12000,
+          // height: ['80vh', '90vh'],
+          // height: ['800px', '90vh'],
           height: '90vmin',
         }}>
         {images().map(image => (
@@ -157,7 +159,7 @@ const SmoothHero = ({ location }) => {
         }}>
         <Box sx={{ background: 'rgba(0,0,0,.4)', pb: [3, 3, 0], mx: 3 }}>
           <img
-            sx={{ maxWidth: '600px' }}
+            sx={{ maxWidth: ['300px', '600px'] }}
             src={
               location === 'Danbury'
                 ? 'https://res.cloudinary.com/gonation/image/upload/v1597941857/sites/mix-prime/logo-white.png'
@@ -173,29 +175,7 @@ const SmoothHero = ({ location }) => {
               fontFamily: 'heading',
               textAlign: 'center',
               display: ['flex', 'none', 'none'],
-            }}>
-            <Box sx={{ marginX: 3 }}>
-              <Text as='a' href={`tel:${site.phone}`}>
-                Call
-              </Text>
-            </Box>
-            <Box sx={{ marginX: 3 }}>
-              <Text
-                as='a'
-                target='_blank'
-                rel='noopener noreferrer'
-                href={getGoogleStr(
-                  site.name,
-                  site.street,
-                  site.city,
-                  site.zip,
-                  site.state
-                )}>
-                Directions
-              </Text>
-            </Box>
-            {location === 'Danbury' ? renderReservationButton() : ''}
-          </Flex>
+            }}></Flex>
         </Box>
         <Box
           sx={{

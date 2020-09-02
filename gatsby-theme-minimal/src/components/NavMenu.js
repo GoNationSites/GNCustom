@@ -7,7 +7,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 
 import NavMeta from './NavMeta';
-import VerticalRoutes from './VerticalRoutes'
+import VerticalRoutes from './VerticalRoutes';
 
 const NavMenu = ({ routes, open }) => {
   const data = useStaticQuery(graphql`
@@ -39,14 +39,15 @@ const NavMenu = ({ routes, open }) => {
     ({ node }) => node.data.city === 'Danbury'
   );
 
-  return open ? <Animated
+  return open ? (
+    <Animated
       animationIn='slideInDown'
       animationOut='slideOutUp'
       isVisible={open}
       style={{
         height: '100vh',
         position: 'fixed',
-        top: '42px',
+        top: 0,
         zIndex: 99,
         height: '100vh',
         position: 'fixed',
@@ -58,10 +59,10 @@ const NavMenu = ({ routes, open }) => {
       <Flex
         sx={{
           display: ['flex', 'flex', 'none'],
-          paddingTop: 4,
           paddingY: 4,
           flexDirection: ['column', 'column', 'row'],
           marginX: 4,
+          pt: 5,
         }}>
         {routes.length &&
           routes.map(i => (
@@ -85,11 +86,13 @@ const NavMenu = ({ routes, open }) => {
         </Box>
       </Flex>
 
-      <Box sx={{display: ['none', 'none', 'block'], height: '100%'}}>
+      <Box sx={{ display: ['none', 'none', 'block'], height: '100%' }}>
         <VerticalRoutes routes={routes} />
       </Box>
-    </Animated> : ''
-  
+    </Animated>
+  ) : (
+    ''
+  );
 };
 
 export default NavMenu;
