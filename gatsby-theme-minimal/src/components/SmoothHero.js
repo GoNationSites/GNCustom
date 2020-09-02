@@ -225,10 +225,11 @@ const SmoothHero = ({ location }) => {
           <Flex
             sx={{
               justifyContent: 'space-between',
-              paddingY: 4,
+              paddingY: '15px',
               paddingX: 4,
               fontFamily: 'heading',
-              fontSize: 3,
+              fontSize: '18px',
+              letterSpacing: '.3px!important',
             }}>
             <Flex>
               <Box>

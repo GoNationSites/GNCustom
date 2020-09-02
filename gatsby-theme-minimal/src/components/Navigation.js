@@ -227,32 +227,6 @@ const Navigation = ({ location }) => {
               alignItems: 'center',
             }}>
             {location === 'Danbury' ? (
-              <Text
-                sx={{
-                  fontFamily: 'heading',
-                  textTransform: 'uppercase',
-                  marginRight: 3,
-                  display: ['none', 'inline'],
-                  border: '1px solid white',
-                  borderRadius: '3px',
-                  paddingX: [2, 4],
-                  paddingY: 2,
-                  '&:hover': {
-                    bg: 'primary',
-                    transition: 'all .5s',
-                  },
-                }}
-                as='a'
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://www.opentable.com/restref/client/?rid=141181&restref=141181&corrid=f6b19c54-a302-4aa3-b674-4111b5f2233c'>
-                Reserve A Table
-              </Text>
-            ) : (
-              ''
-            )}
-
-            {location === 'Danbury' ? (
               <Link
                 to='/danbury/menu'
                 sx={{
@@ -272,6 +246,32 @@ const Navigation = ({ location }) => {
                 }}>
                 Menu
               </Link>
+            )}
+            {location === 'Danbury' ? (
+              <Text
+                sx={{
+                  fontFamily: 'heading',
+                  textTransform: 'uppercase',
+                  marginRight: 3,
+                  display: ['none', 'inline'],
+                  border: '1px solid white',
+                  borderRadius: '3px',
+                  paddingX: [2, 4],
+                  paddingY: 2,
+                  '&:hover': {
+                    bg: 'primary',
+                    borderColor: 'primary',
+                    transition: 'all .5s',
+                  },
+                }}
+                as='a'
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.opentable.com/restref/client/?rid=141181&restref=141181&corrid=f6b19c54-a302-4aa3-b674-4111b5f2233c'>
+                Reserve A Table
+              </Text>
+            ) : (
+              ''
             )}
 
             <HamburgerMenu

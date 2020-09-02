@@ -47,6 +47,8 @@ const ShoutCard = ({ data, setShowShout, isHome }) => {
               mt: 6,
               maxWidth: '320px',
               marginX: 'auto',
+              borderBottom: '2px solid',
+              borderColor: 'primary',
             }}>
             <Box>
               <Image
@@ -91,6 +93,8 @@ const ShoutCard = ({ data, setShowShout, isHome }) => {
           mt: 6,
           maxWidth: '320px',
           marginX: 'auto',
+          borderBottom: '2px solid',
+          borderColor: 'primary',
         }}>
         <Box>
           <Image
