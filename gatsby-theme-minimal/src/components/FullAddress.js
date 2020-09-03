@@ -5,7 +5,6 @@ import printAddress from '../helpers/printAddress';
 import getGoogleStr from '../helpers/getGoogleStr';
 
 const FullAddress = ({ data, text, st }) => {
-  console.log('style: ', st);
   const site = data;
   return (
     <Text>

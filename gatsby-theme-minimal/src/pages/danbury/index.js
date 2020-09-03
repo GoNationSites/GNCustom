@@ -107,14 +107,14 @@ const Danbury = () => {
               </Button>
             </Box>
             <Box sx={{ flex: '1 1 100%', pt: 2 }}>
-              <Button variant='blackTransparent'>
+              <Button variant='blackFull'>
                 <Text
                   as='a'
-                  sx={{ color: '#111' }}
+                  sx={{ color: 'white' }}
                   target='_blank'
                   rel='noopener noreferrer'
                   href='https://www.opentable.com/r/mix-prime-steakhouse-fish-and-sushi-bar-woodbury'>
-                  Reservation
+                  Make A Reservation
                 </Text>
               </Button>
             </Box>

@@ -116,6 +116,18 @@ export default {
       color: 'text',
       transition: 'all .4s!important',
     },
+    blackFull: {
+      bg: 'text',
+      color: 'white',
+      border: '2px solid',
+      borderColor: '2px',
+      borderRadius: '3px',
+      fontFamily: 'heading',
+      textTransform: 'uppercase',
+      transition: 'all .3s',
+      width: '100%',
+      paddingY: 2,
+    },
   },
   styles: {
     root: {

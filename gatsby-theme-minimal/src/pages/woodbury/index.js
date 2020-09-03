@@ -108,14 +108,14 @@ const Woodbury = () => {
               </Button>
             </Box>
             <Box sx={{ flex: '1 1 100%', pt: 2 }}>
-              <Button variant='blackTransparent'>
+              <Button variant='blackFull'>
                 <Text
                   as='a'
-                  sx={{ color: '#111' }}
+                  sx={{ color: 'white' }}
                   target='_blank'
                   rel='noopener noreferrer'
                   href='https://www.opentable.com/restref/client/?rid=141181&restref=141181&corrid=f6b19c54-a302-4aa3-b674-4111b5f2233c'>
-                  Reservation
+                  Make A Reservation
                 </Text>
               </Button>
             </Box>

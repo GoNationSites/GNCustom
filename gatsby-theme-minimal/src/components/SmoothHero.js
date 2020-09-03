@@ -75,7 +75,7 @@ const SmoothHero = ({ location }) => {
       return [
         'https://res.cloudinary.com/gonation/image/upload/v1598359431/sites/mix-prime/woodbury-home-3.jpg',
         'https://res.cloudinary.com/gonation/image/upload/v1598018069/sites/mix-prime/desktop-slide-4.jpg',
-        'https://res.cloudinary.com/gonation/image/upload/v1598359430/sites/mix-prime/woodbury-home-2.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1599093019/sites/mix-prime/tuna_tartare_9.jpg',
       ];
       // return an array of Woodbury Images
     } else {

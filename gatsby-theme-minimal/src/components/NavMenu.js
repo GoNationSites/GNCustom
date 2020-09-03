@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex, Box } from 'theme-ui';
+import { jsx, Flex, Box, Text } from 'theme-ui';
 import { Link } from 'gatsby';
 import { Animated } from 'react-animated-css';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -63,6 +63,7 @@ const NavMenu = ({ routes, open, location }) => {
           flexDirection: ['column', 'column', 'row'],
           marginX: 4,
           pt: 5,
+          height: '100%',
         }}>
         {routes.length &&
           routes.map(i => (
@@ -83,6 +84,20 @@ const NavMenu = ({ routes, open, location }) => {
         <Box
           sx={{ borderTop: '1px solid', borderColor: 'primary', pt: 2, mt: 5 }}>
           <NavMeta data={site} />
+        </Box>
+        <Box sx={{ mt: 'auto' }}>
+          <Box sx={{ maxWidth: '175px', margin: 'auto' }}>
+            <Text
+              as='a'
+              href='https://www.gonation.com/'
+              rel='noopener noreferrer'
+              target='_blank'>
+              <img
+                src='https://www.gonationsites.com/GNSE/gn-sites/images/gn-power-black.svg'
+                alt='GoNation'
+              />
+            </Text>
+          </Box>
         </Box>
       </Flex>
 
