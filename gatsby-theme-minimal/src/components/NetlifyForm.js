@@ -152,7 +152,7 @@ const NetlifyForm = () => {
               <Radio
                 name='no'
                 value={'no'}
-                checked={hasLicense ? false : true}
+                checked={!hasLicense ? true : false}
                 onClick={() => setHasLicense(false)}
               />
               No
@@ -176,7 +176,7 @@ const NetlifyForm = () => {
               <Radio
                 name='no'
                 value={'no'}
-                checked={eligible ? false : true}
+                checked={!eligible ? true : false}
                 onClick={() => setEligible(false)}
               />
               No

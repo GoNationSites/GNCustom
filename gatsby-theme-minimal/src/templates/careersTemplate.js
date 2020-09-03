@@ -18,7 +18,13 @@ const CareersTemplate = () => {
               )}
             />
           </Box>
-          <Box sx={{ flex: 1, color: 'white', paddingX: [2, 3, 4] }}>
+          <Box
+            sx={{
+              flex: 1,
+              color: 'white',
+              paddingX: [2, 3, 4],
+              py: [4, 4, 4],
+            }}>
             <Text variant='heading' sx={{ fontSize: [3, 4, 6], mb: 3 }}>
               Careers
             </Text>

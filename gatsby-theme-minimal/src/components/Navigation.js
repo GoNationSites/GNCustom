@@ -222,6 +222,13 @@ const Navigation = ({ location }) => {
                 )}
               </Text>
             </Text>
+            <Text sx={{ fontSize: 0, color: 'white' }}>
+              {location === 'Danbury' ? (
+                <Link to='/woodbury'>Change location</Link>
+              ) : (
+                <Link to='/danbury'>Change location</Link>
+              )}
+            </Text>
           </Box>
           <Flex
             sx={{
