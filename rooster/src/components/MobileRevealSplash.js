@@ -5,6 +5,9 @@ import { Link } from 'gatsby';
 import Right from './icons/Right';
 import slugify from 'slugify';
 
+import ClickableAddress from '../components/ClickableAddress';
+import ClickablePhone from '../components/ClickablePhone';
+
 // takes in logo and an array of all location items
 const MobileRevealSplash = ({ logo, locations }) => {
   const [activeLocation, setActiveLocation] = useState(null);
@@ -17,6 +20,17 @@ const MobileRevealSplash = ({ logo, locations }) => {
     backgroundPosition: 'center',
     backgroundSize: 'cover',
   });
+
+  const handleLocationClick = business => {
+    setActiveLocation(business);
+  };
+
+  const callDirStyle = {
+    color: 'text',
+    fontSize: 1,
+    fontFamily: 'heading',
+    textTransform: 'uppercase',
+  };
 
   return (
     <Box>
@@ -37,6 +51,7 @@ const MobileRevealSplash = ({ logo, locations }) => {
               ...getBG(business.cover),
               alignItems: 'center',
               justifyContent: 'flex-end',
+              mb: 3,
             }}>
             <Box
               sx={{
@@ -46,10 +61,9 @@ const MobileRevealSplash = ({ logo, locations }) => {
                 paddingX: 3,
                 borderTopLeftRadius: '30px',
                 borderBottomLeftRadius: '30px',
-
                 transition: 'all 2s',
               }}>
-              <Link to={`/${slugify(business.city, { lower: true })}`}>
+              <Text as='a' onClick={() => handleLocationClick(business)}>
                 <Flex sx={{ alignItems: 'center' }}>
                   <Text
                     variant='heading'
@@ -60,11 +74,54 @@ const MobileRevealSplash = ({ logo, locations }) => {
                   <Text as='span' sx={{ paddingLeft: 3 }}>
                     <Right width='25px' fill={'#EE1C25'} />
                   </Text>
+                  <Flex
+                    sx={{
+                      width: activeLocation === business ? '220px' : '0',
+                      overflow: 'hidden',
+                      justifyContent: 'space-evenly',
+                      transition: 'width .3s',
+                      alignItems: 'center',
+                    }}>
+                    <Text as='span' sx={callDirStyle}>
+                      <ClickablePhone data={business} title='Call' />
+                    </Text>
+                    <Text as='span' sx={callDirStyle}>
+                      <ClickableAddress data={business} title='Directions' />
+                    </Text>
+                    <Text as='span' sx={{ ...callDirStyle }}>
+                      <Link to={`/${slugify(business.city, { lower: true })}`}>
+                        Website
+                      </Link>
+                    </Text>
+                  </Flex>
                 </Flex>
-              </Link>
+              </Text>
             </Box>
           </Flex>
         ))}
+        <Flex
+          sx={{
+            justifyContent: 'space-between',
+            paddingX: 1,
+          }}>
+          <Box>
+            <Text as='p' variant='heading'>
+              Red Rooster {new Date().getFullYear()}
+            </Text>
+          </Box>
+          <Box>
+            <a
+              href='https://www.gonation.com/'
+              target='_blank'
+              rel='noopener noreferrer'>
+              <Image
+                sx={{ maxWidth: ['200px', '225px'] }}
+                src='https://www.gonationsites.com/GNSE/gn-sites/images/gn-power-black.svg'
+                alt='GoNation'
+              />
+            </a>
+          </Box>
+        </Flex>
       </Flex>
     </Box>
   );
