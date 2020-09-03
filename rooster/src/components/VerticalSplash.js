@@ -21,8 +21,8 @@ const VerticalSplash = ({ locations }) => {
         position: 'relative',
         paddingY: 5,
         paddingX: 4,
-        backgroundColor: '#000',
-        backgroundImage: `url("https://www.transparenttextures.com/patterns/tileable-wood-colored.png")`,
+        backgroundColor: '#fff',
+        // backgroundImage: `url("https://www.transparenttextures.com/patterns/tileable-wood-colored.png")`,
         /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
       }}>
       <Box
@@ -34,7 +34,7 @@ const VerticalSplash = ({ locations }) => {
           pointerEvents: 'none',
         }}>
         <Box sx={{ textAlign: 'center', pt: 6 }}>
-          <Text
+          {/* <Text
             variant='heading'
             sx={{
               fontSize: [3, 7, 8],
@@ -43,7 +43,7 @@ const VerticalSplash = ({ locations }) => {
               mt: 1,
             }}>
             Red Rooster Pub
-          </Text>
+          </Text> */}
           <Text
             sx={{
               display: hoveredLocation !== null ? 'none' : 'block',
