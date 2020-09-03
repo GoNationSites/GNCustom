@@ -108,10 +108,12 @@ const Woodbury = () => {
               </Button>
             </Box>
             <Box sx={{ flex: '1 1 100%', pt: '8px' }}>
-              <Button variant='blackFull' sx={{ border: 'none!important' }}>
+              <Button
+                variant='blackFull'
+                sx={{ border: 'none!important', py: '10px' }}>
                 <Text
                   as='a'
-                  sx={{ color: 'white' }}
+                  sx={{ color: 'white', letterSpacing: '.75px' }}
                   target='_blank'
                   rel='noopener noreferrer'
                   href='https://www.opentable.com/restref/client/?rid=141181&restref=141181&corrid=f6b19c54-a302-4aa3-b674-4111b5f2233c'>
