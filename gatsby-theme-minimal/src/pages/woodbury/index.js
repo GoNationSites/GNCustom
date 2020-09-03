@@ -91,7 +91,11 @@ const Woodbury = () => {
             sx={{ display: ['flex', 'none'], flexWrap: 'wrap', padding: 2 }}>
             <Box sx={{ flex: '1 1 50%', pr: 2 }}>
               <Button variant='blackTransparent'>
-                <FullPhone data={site} st={{ color: '#111!important' }} />
+                <FullPhone
+                  txt='Call'
+                  data={site}
+                  st={{ color: '#111!important' }}
+                />
               </Button>
             </Box>
             <Box sx={{ flex: '1 1 50%', pl: 2 }}>

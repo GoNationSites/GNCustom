@@ -62,8 +62,8 @@ const MenuItem = ({
               <Text
                 variant='heading'
                 sx={{
-                  letterSpacing: 1,
-                  fontSize: [2, 3],
+                  letterSpacing: [0, 1],
+                  fontSize: [3],
                   paddingRight: [1, 2],
                   textTransform: 'none',
                 }}>
@@ -80,7 +80,7 @@ const MenuItem = ({
               </Text>
             </Box>
           </Flex>
-          <Text as='p' sx={{ mt: 1 }}>
+          <Text as='p' sx={{ mt: 1, color: '#555' }}>
             {item.desc}
           </Text>
         </Box>

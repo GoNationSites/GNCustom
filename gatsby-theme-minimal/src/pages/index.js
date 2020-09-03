@@ -51,6 +51,10 @@ const Index = ({ data }) => {
       'https://res.cloudinary.com/gonation/image/upload/v1598018070/sites/mix-prime/desktop-slide-3.jpg',
       1900
     ),
+    cloudinaryHelper(
+      'https://res.cloudinary.com/gonation/image/upload/v1598359600/sites/mix-prime/woodbury-content-2.jpg',
+      1900
+    ),
 
     //  cloudinaryHelper(
     //    'https://res.cloudinary.com/gonation/image/upload/v1598018070/sites/mix-prime/desktop-slide-5.jpg',

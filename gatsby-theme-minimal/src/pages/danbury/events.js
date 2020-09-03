@@ -128,7 +128,7 @@ const DiscoverEvents = ({ bizName }) => {
           sx={{
             width: ['100%', '100%', '33%'],
             padding: [3, 4],
-            pt: 0,
+
             mb: 4,
           }}>
           <Text

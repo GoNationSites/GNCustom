@@ -43,7 +43,7 @@ const VerticalRoutes = ({ routes }) => {
               variant='heading'
               sx={{
                 color: 'white',
-                fontWeight: 'bold',
+                fontWeight: '300',
                 fontSize: 4,
                 textTransform: 'uppercase',
                 textAlign: 'center',
@@ -54,7 +54,16 @@ const VerticalRoutes = ({ routes }) => {
               <Box
                 sx={{ textAlign: 'center', mt: 3, transition: 'all ease-in' }}>
                 <Link to={`/${route.route}`}>
-                  <Button variant='white' sx={{ cursor: 'pointer' }}>
+                  <Button
+                    variant='white'
+                    sx={{
+                      cursor: 'pointer',
+                      '&:hover': {
+                        bg: 'primary',
+                        color: 'white',
+                        transition: 'all .3',
+                      },
+                    }}>
                     {route.txt}
                   </Button>
                 </Link>

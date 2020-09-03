@@ -60,6 +60,11 @@ const Gallery = () => {
     <Layout pageTitle='gallery'>
       {lightbox.isOpen ? (
         <Lightbox
+          onCloseRequest={() =>
+            setLightbox({
+              isOpen: false,
+            })
+          }
           mainSrc={cloudinaryBuilder(
             galleryData.albums[lightbox.photoIndex].imageUrl,
             1800

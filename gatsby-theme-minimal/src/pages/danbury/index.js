@@ -90,7 +90,11 @@ const Danbury = () => {
             sx={{ display: ['flex', 'none'], flexWrap: 'wrap', padding: 2 }}>
             <Box sx={{ flex: '1 1 50%', pr: 2 }}>
               <Button variant='blackTransparent'>
-                <FullPhone data={site} st={{ color: '#111!important' }} />
+                <FullPhone
+                  data={site}
+                  txt='Call'
+                  st={{ color: '#111!important' }}
+                />
               </Button>
             </Box>
             <Box sx={{ flex: '1 1 50%', pl: 2 }}>
@@ -100,6 +104,18 @@ const Danbury = () => {
                   text='Directions'
                   st={{ color: '#111!important' }}
                 />
+              </Button>
+            </Box>
+            <Box sx={{ flex: '1 1 100%', pt: 2 }}>
+              <Button variant='blackTransparent'>
+                <Text
+                  as='a'
+                  sx={{ color: '#111' }}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href='https://www.opentable.com/r/mix-prime-steakhouse-fish-and-sushi-bar-woodbury'>
+                  Reservation
+                </Text>
               </Button>
             </Box>
           </Flex>

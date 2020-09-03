@@ -179,7 +179,7 @@ const Navigation = ({ location }) => {
           py: 2,
         }}>
         <Flex sx={{ alignItems: 'center', paddingX: 3 }}>
-          <Box sx={{ width: '33%' }}>
+          <Box sx={{ width: ['20%', '33%'] }}>
             <Flex
               onClick={() => setShowShout(!showShout)}
               sx={{ alignItems: 'center', cursor: 'pointer' }}
@@ -199,7 +199,11 @@ const Navigation = ({ location }) => {
             </Flex>
           </Box>
           <Box
-            sx={{ width: '33%', fontFamily: 'heading', textAlign: 'center' }}>
+            sx={{
+              width: ['60%', '33%'],
+              fontFamily: 'heading',
+              textAlign: 'center',
+            }}>
             <Text as='p' sx={{ fontSize: 1 }}>
               <Text
                 as='span'
@@ -207,7 +211,7 @@ const Navigation = ({ location }) => {
                   fontSize: '16px',
                   letterSpacing: '6px',
                   color: '#fff',
-                  mr: 3,
+                  // mr: 3,
                   fontFamily: 'heading',
                   textTransform: 'uppercase',
                 }}>
@@ -221,7 +225,7 @@ const Navigation = ({ location }) => {
           </Box>
           <Flex
             sx={{
-              width: '33%',
+              width: ['20%', '33%'],
               textAlign: 'right',
               justifyContent: 'flex-end',
               color: 'white',
@@ -274,13 +278,34 @@ const Navigation = ({ location }) => {
                 Reserve A Table
               </Text>
             ) : (
-              ''
+              <Text
+                sx={{
+                  fontFamily: 'heading',
+                  textTransform: 'uppercase',
+                  marginRight: 3,
+                  display: ['none', 'inline'],
+                  border: '1px solid white',
+                  borderRadius: '3px',
+                  paddingX: [2, 4],
+                  paddingY: 2,
+                  '&:hover': {
+                    bg: 'primary',
+                    borderColor: 'primary',
+                    transition: 'all .5s',
+                  },
+                }}
+                as='a'
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.opentable.com/r/mix-prime-steakhouse-fish-and-sushi-bar-woodbury'>
+                Reserve A Table
+              </Text>
             )}
 
             <HamburgerMenu
               isOpen={open}
               menuClicked={() => setOpen(!open)}
-              width={18}
+              width={30}
               height={15}
               strokeWidth={1}
               rotate={0}
@@ -292,6 +317,7 @@ const Navigation = ({ location }) => {
         </Flex>
       </Box>
       <NavMenu
+        location={location}
         routes={location === 'Woodbury' ? woodburyRoutes : routes}
         open={open}></NavMenu>
       {showShout ? (

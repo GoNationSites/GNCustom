@@ -9,7 +9,7 @@ import React from 'react';
 import NavMeta from './NavMeta';
 import VerticalRoutes from './VerticalRoutes';
 
-const NavMenu = ({ routes, open }) => {
+const NavMenu = ({ routes, open, location }) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       allSiteData {
@@ -36,7 +36,7 @@ const NavMenu = ({ routes, open }) => {
   `);
 
   const site = data.allSiteData.edges.filter(
-    ({ node }) => node.data.city === 'Danbury'
+    ({ node }) => node.data.city === location
   );
 
   return open ? (
