@@ -19,7 +19,7 @@ const Index = ({ data }) => {
     cloudinaryHelper(
       'https://res.cloudinary.com/gonation/image/upload/v1597940532/sites/mix-prime/mobile-slide-2.jpg',
       900
-    ),woo
+    ),
     cloudinaryHelper(
       'https://res.cloudinary.com/gonation/image/upload/v1597940533/sites/mix-prime/mobile-slide-3.jpg',
       900
