@@ -26,7 +26,7 @@ const SocialIcons = ({
       case 'facebook':
         return <Facebook fill={iconFill} width={iconWidth} />;
       case 'instagram':
-        return <Instagram fill={iconFill} width={iconWidth} />;
+        return <Instagram fill={iconFill} width={'iconWidth'} />;
       case 'twitter':
         return <Twitter fill={iconFill} width={iconWidth} />;
       default:
@@ -52,7 +52,7 @@ const SocialIcons = ({
         target='_blank'
         rel='noopener noreferrer'
         href={`https://gonation.com/place/${slug}/pulse`}>
-        <Guy color={iconFill} height={'20px'} width={iconWidth} />
+        <Guy color={iconFill} height={'30px'} width={'30px'} />
       </a>
     </>
   );
