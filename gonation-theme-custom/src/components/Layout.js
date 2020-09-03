@@ -4,9 +4,10 @@ import React from 'react';
 import Navigation from './Navigation';
 
 import '../styles/animate.css';
-import 'react-image-lightbox/style.css';
 import Footer from './Footer';
 import cloudinaryOptimize from '../helpers/cloudinaryHelper';
+import 'react-image-lightbox/style.css';
+import './index.css';
 
 const Layout = ({ children, routes, pageContext }) => {
   const footerBG = () =>

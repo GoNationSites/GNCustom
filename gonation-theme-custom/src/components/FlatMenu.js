@@ -59,9 +59,11 @@ const FlatMenu = ({
                   variant='heading'
                   sx={{
                     textAlign: 'center',
-                    fontSize: hasParentRoot() ? [3, 4, 5] : [2, 3, 4],
-                    marginBottom: hasParentRoot() ? [3, 4, 4] : [1, 2, 3],
+                    fontSize: hasParentRoot() ? [3, 4, 5] : [3, 4, 5],
+                    marginBottom: hasParentRoot() ? [3, 4, 4] : [3, 4, 4],
                     color: 'primary',
+                    letterSpacing: '2px',
+                    fontWeight: 'bold',
                   }}>
                   {section.name}
                 </Text>

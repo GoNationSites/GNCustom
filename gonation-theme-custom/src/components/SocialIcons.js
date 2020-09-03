@@ -29,27 +29,23 @@ const SocialIcons = ({
 
   const renderSocialIcons = () => (
     <>
-      {Object.keys(links)
-        .filter(
-          el => (el === 'facebook' && el === 'instagram') || el === 'twitter'
-        )
-        .map(
-          (social, idx) =>
-            links[social] && (
-              <a
-                style={idx === 0 ? { margin: 0 } : {}}
-                target='_blank'
-                rel='noopener noreferrer'
-                href={links[social]}>
-                {getSocialIcon(social)}
-              </a>
-            )
-        )}
+      {Object.keys(links).map(
+        (social, idx) =>
+          links[social] && (
+            <a
+              style={idx === 0 ? { margin: 0 } : {}}
+              target='_blank'
+              rel='noopener noreferrer'
+              href={links[social]}>
+              {getSocialIcon(social)}
+            </a>
+          )
+      )}
       <a
         target='_blank'
         rel='noopener noreferrer'
         href={`https://gonation.com/place/${slug}/pulse`}>
-        <Guy color={iconFill} height={'20px'} width={iconWidth} />
+        <Guy color={iconFill} height={'30px'} width={'30px'} />
       </a>
     </>
   );

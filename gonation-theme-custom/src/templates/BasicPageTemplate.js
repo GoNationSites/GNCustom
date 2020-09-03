@@ -89,8 +89,18 @@ const BasicPageTemplate = ({ pageContext }) => {
   return (
     <Layout routes={routes} pageContext={pageContext}>
       {renderHero()}
-      <Box sx={{ paddingY: 5, bg: 'background' }}>
-        <Box sx={{ paddingY: 4, paddingX: curPage.title === 'Events' ? 0 : 3 }}>
+      <Box
+        sx={{
+          paddingY: 5,
+          bg: 'background',
+          pt: curPage.title === 'Menu' ? 0 : 'unset',
+        }}>
+        <Box
+          sx={{
+            paddingY: 4,
+            paddingX: curPage.title === 'Events' ? 0 : 3,
+            pt: curPage.title === 'Menu' ? 0 : 'unset',
+          }}>
           <Box
             sx={{
               maxWidth:

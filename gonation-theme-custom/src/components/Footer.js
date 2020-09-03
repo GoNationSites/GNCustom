@@ -27,10 +27,12 @@ const Footer = ({ routes, pageContext, footerBG }) => {
         />
       </Box>
       <Box sx={{ textAlign: 'center', mb: [3, 3] }}>
-        <SocialIcons
-          links={pageContext.data.links}
-          slug={pageContext.data.slug}
-        />
+        <Box sx={{ maxWidth: '300px', margin: 'auto' }}>
+          <SocialIcons
+            links={pageContext.data.links}
+            slug={pageContext.data.slug}
+          />
+        </Box>
       </Box>
       <Box sx={{ mb: [3, 3] }}>
         <ClickableAddress

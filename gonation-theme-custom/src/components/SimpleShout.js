@@ -3,6 +3,7 @@ import { jsx, Box, Flex, Text, Image } from 'theme-ui';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import jsonpAdapter from 'axios-jsonp';
+import moment from 'moment';
 
 const SimpleShout = ({ id }) => {
   const [shout, setShout] = useState(null);
@@ -20,39 +21,50 @@ const SimpleShout = ({ id }) => {
 
   if (shout && shout.shout) {
     return (
-      <Box
+      <Flex
         sx={{
           color: 'white',
-          background: '#0000000f',
-          paddingY: 4,
-          paddingX: [0, 4],
+          // paddingY: 4,
+          paddingX: [0],
           maxWidth: '600px',
+          alignItems: 'stretch',
+          borderLeft: '4px solid',
+          borderColor: 'primary',
+          bg: 'rgba(0,0,0,.4)',
+          height: '100%',
         }}>
-        <Text
-          variant='heading'
-          as='h3'
-          sx={{ fontSize: 5, fontWeight: 'bold', letterSpacing: '3px' }}>
-          Recent Shout
-        </Text>
-        <Text as='p' sx={{ fontSize: 3 }}>
-          {shout.shout.text}
-        </Text>
-        {!shout.shout.image.isDefault ? (
-          <Box sx={{ pt: 4 }}>
-            <Image
-              sx={{
-                width: ['130px', '175px'],
-                height: ['130px', '175px'],
-                borderRadius: '9999px',
-                border: '2px solid white',
-              }}
-              src={`${shout.imageBaseUrl}/${shout.shout.image.image.cloudinaryId}`}
-            />
-          </Box>
-        ) : (
-          ''
-        )}
-      </Box>
+        <Box sx={{ width: '33%', height: '100%' }}>
+          {!shout.shout.image.isDefault ? (
+            <Box sx={{ height: '100%' }}>
+              <Image
+                sx={{ height: '100%', objectFit: 'cover' }}
+                src={`${shout.imageBaseUrl}/${shout.shout.image.image.cloudinaryId}`}
+              />
+            </Box>
+          ) : (
+            ''
+          )}
+        </Box>
+        <Box sx={{ flex: 1, padding: [3, 4] }}>
+          <Text
+            variant='heading'
+            as='h3'
+            sx={{
+              fontSize: [3, 4],
+              fontWeight: 'bold',
+              letterSpacing: '3px',
+              mb: 2,
+            }}>
+            Recent Shout
+          </Text>
+          <Text as='p' sx={{ fontSize: [1, 2], mb: 2 }}>
+            {shout.shout.text}
+          </Text>
+          <Text sx={{ fontSize: [0, 1] }}>
+            {moment(shout.shout.createdAt).fromNow()}
+          </Text>
+        </Box>
+      </Flex>
     );
   } else return '';
 };

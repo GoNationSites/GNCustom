@@ -1,6 +1,7 @@
 import { jsx, Box, Flex, Text, Image } from 'theme-ui';
 import React from 'react';
 import HeroSlider, { Slide } from 'hero-slider';
+import { Link } from 'gatsby';
 
 import cloudinaryHelper from '../helpers/cloudinaryHelper';
 import SimpleShout from '../components/SimpleShout';
@@ -51,6 +52,7 @@ const HomeHero = ({ withShout, id, location }) => {
           padding: 2,
           paddingX: 3,
           flexDirection: 'column',
+          paddingTop: 4,
         }}>
         <Flex sx={{ mb: 4, flexDirection: 'column', alignItems: 'flex-start' }}>
           <Text
@@ -63,19 +65,30 @@ const HomeHero = ({ withShout, id, location }) => {
               textTransform: 'uppercase',
               width: '100%',
               textAlign: 'right',
-              paddingRight: 3,
+              paddingRight: 5,
             }}>
             {location}
+            <br />{' '}
+            <Text
+              as='span'
+              sx={{ fontSize: 0, fontWeight: '400', color: 'white' }}>
+              <Link to='/' style={{ color: 'white' }}>
+                Change Location
+              </Link>
+            </Text>
           </Text>
+
           <Image
-            sx={{ maxWidth: ['175px', '225px', '250px'] }}
+            sx={{ maxWidth: ['125px', '225px', '250px'] }}
             src={
               'https://res.cloudinary.com/gonation/image/upload/v1598969035/sites/red-rooster/logo-solid-white.png'
             }
             alt='Red Rooster'
           />
         </Flex>
-        <Box>{withShout ? <SimpleShout id={id} /> : ''}</Box>
+        <Box sx={{ mt: [5, 6] }}>
+          {withShout ? <SimpleShout id={id} /> : ''}
+        </Box>
         <Box sx={{ mt: 'auto' }}>
           <Text
             variant='heading'

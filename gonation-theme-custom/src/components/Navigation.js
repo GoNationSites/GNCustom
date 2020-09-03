@@ -128,6 +128,7 @@ const Navigation = ({ routes, pageContext }) => {
               <Link
                 activeStyle={{ color: '#EE1C25' }}
                 sx={{
+                  fontWeight: 'bold',
                   '&:hover': {
                     color: 'primary',
                     transition: 'all .5s',
