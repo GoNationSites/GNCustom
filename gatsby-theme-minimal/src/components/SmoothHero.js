@@ -134,7 +134,8 @@ const SmoothHero = ({ location }) => {
           autoplayDuration: 12000,
           // height: ['80vh', '90vh'],
           // height: ['800px', '90vh'],
-          height: '90vmin',
+          // height: ['90vmin'],
+          height: '90vh',
         }}>
         {images().map(image => (
           <Slide

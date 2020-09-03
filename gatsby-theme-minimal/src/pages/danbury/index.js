@@ -106,7 +106,7 @@ const Danbury = () => {
                 />
               </Button>
             </Box>
-            <Box sx={{ flex: '1 1 100%', pt: 2 }}>
+            <Box sx={{ flex: '1 1 100%', pt: 3 }}>
               <Button variant='blackFull'>
                 <Text
                   as='a'
