@@ -107,8 +107,8 @@ const Woodbury = () => {
                 />
               </Button>
             </Box>
-            <Box sx={{ flex: '1 1 100%', pt: 3 }}>
-              <Button variant='blackFull'>
+            <Box sx={{ flex: '1 1 100%', pt: '8px' }}>
+              <Button variant='blackFull' sx={{ border: 'none!important' }}>
                 <Text
                   as='a'
                   sx={{ color: 'white' }}
