@@ -87,7 +87,7 @@ const BasicPageTemplate = ({ pageContext }) => {
     }
   };
   return (
-    <Layout routes={routes} pageContext={pageContext}>
+    <Layout pageTitle={curPage.title} routes={routes} pageContext={pageContext}>
       {renderHero()}
       <Box
         sx={{
