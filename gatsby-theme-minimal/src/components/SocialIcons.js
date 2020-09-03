@@ -26,7 +26,7 @@ const SocialIcons = ({
       case 'facebook':
         return <Facebook fill={iconFill} width={iconWidth} />;
       case 'instagram':
-        return <Instagram fill={iconFill} width={'iconWidth'} />;
+        return <Instagram fill={iconFill} width={iconWidth} />;
       case 'twitter':
         return <Twitter fill={iconFill} width={iconWidth} />;
       default:

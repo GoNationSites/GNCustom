@@ -63,6 +63,8 @@ const AllIn = ({
                     textAlign: 'center',
                     fontSize: hasParentRoot() ? [3, 4, 5] : [2, 3, 4],
                     marginBottom: hasParentRoot() ? [3, 4, 4] : [1, 2, 3],
+                    borderBottom: '1px solid black',
+                    pb: 1,
                   }}>
                   {section.name}
                 </Text>

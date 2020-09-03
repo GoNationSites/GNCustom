@@ -58,8 +58,10 @@ const VerticalRoutes = ({ routes }) => {
                     variant='white'
                     sx={{
                       cursor: 'pointer',
+                      bg: 'black',
+                      color: 'white',
                       '&:hover': {
-                        bg: 'primary',
+                        bg: 'transparent',
                         color: 'white',
                         transition: 'all .3',
                       },
