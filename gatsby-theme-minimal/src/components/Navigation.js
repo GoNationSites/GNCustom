@@ -222,7 +222,15 @@ const Navigation = ({ location }) => {
                 )}
               </Text>
             </Text>
-            <Text sx={{ fontSize: 0, color: 'white' }}>
+            <Text
+              sx={{
+                fontSize: 0,
+                color: 'rgba(255,255,255,.6)',
+                letterSpacing: '.75px',
+                a: {
+                  color: 'rgba(255,255,255,.6)',
+                },
+              }}>
               {location === 'Danbury' ? (
                 <Link to='/woodbury'>Change location</Link>
               ) : (

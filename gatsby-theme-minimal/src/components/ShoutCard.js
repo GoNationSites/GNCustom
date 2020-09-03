@@ -46,7 +46,7 @@ const ShoutCard = ({ data, setShowShout, isHome }) => {
               zIndex: 999999,
               mt: 6,
               maxWidth: '320px',
-              margin: '128px auto',
+              margin: '80px auto',
               borderBottom: '2px solid',
               borderColor: 'primary',
               boxShadow: `1px 3px 20px 2px rgba(0,0,0,0)`,
