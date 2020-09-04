@@ -35,7 +35,13 @@ const SimpleShout = ({ id }) => {
           borderTopRightRadius: '30px',
           borderBottomRightRadius: '30px',
         }}>
-        <Box sx={{ width: '33%', height: '100%', minHeight: '155px' }}>
+        <Box
+          sx={{
+            width: '33%',
+            height: '100%',
+            minHeight: '195px',
+            display: 'flex',
+          }}>
           {!shout.shout.image.isDefault ? (
             <Box sx={{ height: '100%' }}>
               <Image
