@@ -150,7 +150,6 @@ const Menu = ({ id, poweredList = '1' }) => {
               </Box>
             </Sticky>
           </Box>
-
           <FlatMenu
             // menuData={menuData}
             menuData={toggledSection === 'all' ? menuData : toggledSection}
