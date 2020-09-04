@@ -52,6 +52,7 @@ const MobileRevealSplash = ({ logo, locations }) => {
               alignItems: 'center',
               justifyContent: 'flex-end',
               mb: 3,
+              overflow: 'hidden',
             }}>
             <Box
               sx={{
@@ -62,6 +63,9 @@ const MobileRevealSplash = ({ logo, locations }) => {
                 borderTopLeftRadius: '30px',
                 borderBottomLeftRadius: '30px',
                 transition: 'all 2s',
+                position: 'relative',
+                left: activeLocation === business ? 0 : '234px',
+                transition: 'all .3s',
               }}>
               <Text as='a' onClick={() => handleLocationClick(business)}>
                 <Flex sx={{ alignItems: 'center' }}>
@@ -76,7 +80,7 @@ const MobileRevealSplash = ({ logo, locations }) => {
                   </Text>
                   <Flex
                     sx={{
-                      width: activeLocation === business ? '220px' : '0',
+                      width: '220px',
                       overflow: 'hidden',
                       justifyContent: 'space-evenly',
                       transition: 'width .3s',
