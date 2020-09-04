@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import jsonpAdapter from 'axios-jsonp';
 
-const HoursComponent = ({ id }) => {
+const HoursComponent = ({ id, location }) => {
   const [hours, setHours] = useState(null);
   const [structuredHours, setStructuredHours] = useState(null);
 
@@ -119,15 +119,107 @@ const HoursComponent = ({ id }) => {
     return block.timeBlock.day.map(day => <span>{day}</span>);
   };
 
-  const renderHours = () =>
-    structuredHours.map(block => (
-      <>
-        <h1>{block.name ? block.name : ''}</h1>
-        {displayDays(block)}
+  const renderRoosterHours = () => {
+    if (location === 'newtown') {
+      return (
+        <>
+          <Box sx={{ pb: 3 }}>
+            <Text as='h3' variant='heading'>
+              Monday, Tuesday, Wednesday, Thursday, Sunday
+            </Text>
+            <Text as='p'>11:00 AM - 10:00 PM</Text>
+          </Box>
+          <Box>
+            <Text as='h3' variant='heading'>
+              Friday, Saturday
+            </Text>
+            <Text as='p'>11:00 AM - 11:00 PM</Text>
+          </Box>
+        </>
+      );
+    }
 
-        <p>{block.timeBlock.hour}</p>
-      </>
-    ));
+    if (location === 'ridgefield') {
+      return (
+        <>
+          <Box sx={{ pb: 3 }}>
+            <Text as='h2' variant='heading' sx={{ mb: 3 }}>
+              Kitchen
+            </Text>
+            <Text as='h3' variant='heading'>
+              Monday, Tuesday, Wednesday, Thursday
+            </Text>
+            <Text sx={{ mb: 3 }} as='p'>
+              11:30 AM - 10:00 PM
+            </Text>
+
+            <Text as='h3' variant='heading'>
+              Friday, Saturday
+            </Text>
+            <Text sx={{ mb: 3 }} as='p'>
+              11:30 AM - 11:00 PM
+            </Text>
+
+            <Text as='h3' variant='heading'>
+              Sunday
+            </Text>
+            <Text sx={{ mb: 3 }} as='p'>
+              11:30 AM - 9:00 PM
+            </Text>
+          </Box>
+
+          <Box sx={{ pb: 3 }}>
+            <Text as='h2' variant='heading' sx={{ mb: 3 }}>
+              Bar
+            </Text>
+            <Text as='h3' variant='heading'>
+              Monday, Tuesday, Wednesday, Sunday
+            </Text>
+            <Text sx={{ mb: 3 }} as='p'>
+              11:30 AM - 11:00 PM
+            </Text>
+
+            <Text as='h3' variant='heading'>
+              Thursday
+            </Text>
+            <Text sx={{ mb: 3 }} as='p'>
+              11:30 AM - 9:00 PM
+            </Text>
+
+            <Text as='h3' variant='heading'>
+              Friday, Saturday
+            </Text>
+            <Text sx={{ mb: 3 }} as='p'>
+              11:30 AM - 2:00 AM
+            </Text>
+          </Box>
+        </>
+      );
+    }
+
+    if (location === 'wilton') {
+      return (
+        <>
+          <Box sx={{ pb: 3 }}>
+            <Text as='h3' variant='heading'>
+              Monday, Tuesday, Wednesday, Thursday, Sunday
+            </Text>
+            <Text as='p'>11:00 AM - 10:00 PM</Text>
+          </Box>
+          <Box>
+            <Text as='h3' variant='heading'>
+              Friday, Saturday
+            </Text>
+            <Text as='p'>11:00 AM - 10:00 PM</Text>
+          </Box>
+        </>
+      );
+    }
+  };
+
+  const renderHours = () => {
+    return renderRoosterHours();
+  };
 
   return <div>{structuredHours ? renderHours() : ''}</div>;
 };

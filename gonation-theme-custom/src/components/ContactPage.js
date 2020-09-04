@@ -111,10 +111,10 @@ const ContactPage = ({ data, location, id }) => {
               borderRadius: '5px',
               height: '100%',
             }}>
-            <Text variant='heading' sx={{ fontSize: 4 }}>
+            <Text variant='heading' sx={{ fontSize: 4, mb: 3 }}>
               Hours
             </Text>
-            <HoursComponent id={id} />
+            <HoursComponent id={id} location={location} />
           </Box>
         </Box>
       </Flex>
