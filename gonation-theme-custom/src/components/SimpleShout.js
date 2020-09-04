@@ -39,13 +39,16 @@ const SimpleShout = ({ id }) => {
           sx={{
             width: '33%',
             height: '100%',
-            minHeight: '195px',
-            display: 'flex',
           }}>
           {!shout.shout.image.isDefault ? (
             <Box sx={{ height: '100%' }}>
               <Image
-                sx={{ height: '100%', objectFit: 'cover' }}
+                sx={{
+                  height: '100%',
+                  objectFit: 'cover',
+                  minHeight: '195px',
+                  display: 'flex',
+                }}
                 src={`${shout.imageBaseUrl}/${shout.shout.image.image.cloudinaryId}`}
               />
             </Box>
