@@ -48,7 +48,7 @@ const HomeHero = ({ withShout, id, location }) => {
           zIndex: 3,
           left: 0,
           top: 0,
-          background: 'rgba(0,0,0,.3)',
+          background: 'rgba(0,0,0,.2)',
           padding: 2,
           paddingX: 3,
           flexDirection: 'column',
@@ -60,12 +60,13 @@ const HomeHero = ({ withShout, id, location }) => {
               color: 'white',
               ml: 3,
               fontFamily: 'heading',
-              fontSize: 1,
-              fontWeight: 600,
+              fontSize: [2, 3],
+              fontWeight: 'bold',
               textTransform: 'uppercase',
               width: '100%',
               textAlign: 'right',
               paddingRight: 5,
+              mb: 0,
             }}>
             {location}
             <br />{' '}

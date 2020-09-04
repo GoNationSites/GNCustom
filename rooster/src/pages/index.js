@@ -12,7 +12,13 @@ const Index = ({ data }) => {
 
   return (
     <>
-      <Box sx={{ display: ['block', 'none', 'none'] }}>
+      <Box
+        sx={{
+          display: ['block', 'none', 'none'],
+          backgroundColor: '#ffffff',
+          backgroundImage: `url("https://www.transparenttextures.com/patterns/concrete-wall-3.png")`,
+          height: '100vh',
+        }}>
         <MobileRevealSplash
           locations={locations}
           logo={

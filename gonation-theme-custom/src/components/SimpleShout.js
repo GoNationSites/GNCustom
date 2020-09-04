@@ -23,15 +23,17 @@ const SimpleShout = ({ id }) => {
     return (
       <Flex
         sx={{
-          color: 'white',
+          color: 'black',
           // paddingY: 4,
           paddingX: [0],
           maxWidth: '600px',
           alignItems: 'stretch',
           borderLeft: '4px solid',
           borderColor: 'primary',
-          bg: 'rgba(0,0,0,.4)',
+          bg: 'white',
           height: '100%',
+          borderTopRightRadius: '30px',
+          borderBottomRightRadius: '30px',
         }}>
         <Box sx={{ width: '33%', height: '100%' }}>
           {!shout.shout.image.isDefault ? (
@@ -60,7 +62,7 @@ const SimpleShout = ({ id }) => {
           <Text as='p' sx={{ fontSize: [1, 2], mb: 2 }}>
             {shout.shout.text}
           </Text>
-          <Text sx={{ fontSize: [0, 1] }}>
+          <Text sx={{ fontSize: [0, 1], color: 'primary' }}>
             {moment(shout.shout.createdAt).fromNow()}
           </Text>
         </Box>

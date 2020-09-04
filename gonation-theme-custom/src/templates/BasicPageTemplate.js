@@ -93,13 +93,13 @@ const BasicPageTemplate = ({ pageContext }) => {
         sx={{
           paddingY: 5,
           bg: 'background',
-          pt: curPage.title === 'Menu' ? 0 : 'unset',
+          pt: curPage.title === 'Menu' ? 0 : [4, 5],
         }}>
         <Box
           sx={{
             paddingY: 4,
             paddingX: curPage.title === 'Events' ? 0 : 3,
-            pt: curPage.title === 'Menu' ? 0 : 'unset',
+            pt: curPage.title === 'Menu' ? 0 : 4,
           }}>
           <Box
             sx={{

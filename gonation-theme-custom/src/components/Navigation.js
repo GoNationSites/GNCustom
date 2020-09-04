@@ -38,7 +38,7 @@ const Navigation = ({ routes, pageContext }) => {
     <Box
       sx={{
         background: 'white',
-        boxShadow: '0px -1px 12px rgba(0,0,0,.1)',
+        boxShadow: '0px -1px 12px rgba(0,0,0,.48)',
         position: 'fixed',
         zIndex: 99,
         bottom: open ? '0px' : '-413px',

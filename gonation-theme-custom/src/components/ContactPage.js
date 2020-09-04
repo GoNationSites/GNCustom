@@ -73,10 +73,11 @@ const ContactPage = ({ data, location, id }) => {
             <Text as='h4' variant='heading' sx={{ fontSize: 3 }}>
               Social
             </Text>
-            <Text as='p' sx={{ mb: 3 }}>
+            <Text as='p' sx={{ mb: 3, maxWidth: '200px', marginRight: 'auto' }}>
               <SocialIcons
                 links={data.data.links}
                 slug={data.data.slug}
+                push
                 justifyLeft
               />
             </Text>

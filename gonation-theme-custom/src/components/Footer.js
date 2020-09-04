@@ -12,7 +12,8 @@ const Footer = ({ routes, pageContext, footerBG }) => {
       as='footer'
       sx={{
         padding: 4,
-        backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${footerBG})`,
+        backgroundColor: '#ffffff',
+        backgroundImage: `url("https://www.transparenttextures.com/patterns/concrete-wall-3.png")`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         textAlign: 'center',
@@ -29,6 +30,7 @@ const Footer = ({ routes, pageContext, footerBG }) => {
       <Box sx={{ textAlign: 'center', mb: [3, 3] }}>
         <Box sx={{ maxWidth: '300px', margin: 'auto' }}>
           <SocialIcons
+            iconFill='#000'
             links={pageContext.data.links}
             slug={pageContext.data.slug}
           />
@@ -37,13 +39,13 @@ const Footer = ({ routes, pageContext, footerBG }) => {
       <Box sx={{ mb: [3, 3] }}>
         <ClickableAddress
           data={pageContext.data}
-          style={{ color: 'white', fontFamily: 'heading', fontSize: [3] }}
+          style={{ color: 'black', fontFamily: 'heading', fontSize: [3] }}
         />
       </Box>
       <Box sx={{ mb: [3, 3] }}>
         <ClickablePhone
           tel={pageContext.data.phone}
-          style={{ color: 'white', fontFamily: 'heading', fontSize: 3 }}
+          style={{ color: 'black', fontFamily: 'heading', fontSize: 3 }}
         />
       </Box>
       <Box>
@@ -53,7 +55,7 @@ const Footer = ({ routes, pageContext, footerBG }) => {
           rel='noopener noreferrer'>
           <Image
             sx={{ maxWidth: ['200px', '225px'] }}
-            src='https://www.gonationsites.com/GNSE/gn-sites/images/gn-power-white.svg'
+            src='https://www.gonationsites.com/GNSE/gn-sites/images/gn-power-black.svg'
             alt='GoNation'
           />
         </a>

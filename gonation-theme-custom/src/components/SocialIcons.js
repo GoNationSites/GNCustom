@@ -13,6 +13,7 @@ const SocialIcons = ({
   links,
   slug,
   justifyLeft,
+  push,
 }) => {
   const getSocialIcon = social => {
     switch (social) {
@@ -33,7 +34,9 @@ const SocialIcons = ({
         (social, idx) =>
           links[social] && (
             <a
-              style={idx === 0 ? { margin: 0 } : {}}
+              style={
+                idx === 0 ? { margin: 0 } : { marginRight: push ? '20px' : 0 }
+              }
               target='_blank'
               rel='noopener noreferrer'
               href={links[social]}>

@@ -2,6 +2,7 @@
 import { jsx, Box, Text, Flex, Image } from 'theme-ui';
 
 import React from 'react';
+import { Link } from 'gatsby';
 import slugify from 'slugify';
 import cloudinaryOptimize from '../helpers/cloudinaryHelper';
 import Img from 'react-cloudinary-lazy-image';
@@ -28,17 +29,42 @@ const SimpleHero = ({ pageTitle, location }) => {
           left: 0,
           padding: 3,
         }}>
+        <Text
+          sx={{
+            color: 'white',
+            ml: 3,
+            fontFamily: 'heading',
+            fontSize: [2, 3],
+            fontWeight: 'bold',
+            textTransform: 'uppercase',
+            width: '100%',
+            textAlign: 'right',
+            paddingRight: 5,
+            mb: 0,
+          }}>
+          {location}
+          <br />{' '}
+          <Text
+            as='span'
+            sx={{ fontSize: 0, fontWeight: '400', color: 'white' }}>
+            <Link to='/' style={{ color: 'white' }}>
+              Change Location
+            </Link>
+          </Text>
+        </Text>
         <Flex sx={{ flexDirection: 'column', height: '100%' }}>
           <Box>
-            <Image
-              sx={{ maxWidth: ['175px', '225px', '250px'] }}
-              src={
-                'https://res.cloudinary.com/gonation/image/upload/v1598969035/sites/red-rooster/logo-solid-white.png'
-              }
-              alt='Red Rooster'
-            />
+            <Link to={`/${slugify(location, { lower: true })}`}>
+              <Image
+                sx={{ maxWidth: ['175px', '225px', '250px'] }}
+                src={
+                  'https://res.cloudinary.com/gonation/image/upload/v1598969035/sites/red-rooster/logo-solid-white.png'
+                }
+                alt='Red Rooster'
+              />
+            </Link>
           </Box>
-          <Box sx={{ marginTop: 'auto' }}>
+          <Box sx={{ marginTop: 'auto', mb: [4, 5] }}>
             <Text
               variant='heading'
               sx={{ color: 'white', fontSize: [6, 7, 8] }}>
