@@ -24,6 +24,8 @@ const FlatMenu = ({
   });
   const [mainSrc, setMainSrc] = useState('');
 
+  console.log('inside of flat menu');
+
   // Takes Nested sections and and gets the nested child items and child sections
   const splitSectionChildren = section => {
     return section.inventory.reduce(
@@ -106,18 +108,22 @@ const FlatMenu = ({
     );
   };
   return (
-    <Box sx={{ maxWidth: '1400px', margin: 'auto', mt: [3, 4, 5] }}>
-      {lb.isOpen ? (
-        <Lightbox
-          imageCaption={<Text sx={{ textAlign: 'center' }}>{lb.caption}</Text>}
-          mainSrc={mainSrc}
-          onCloseRequest={() => setLightbox({ isOpen: false })}
-        />
-      ) : (
-        ''
-      )}
-      {renderMenu(menuData)}
-    </Box>
+    <Element name='top'>
+      <Box sx={{ maxWidth: '1400px', margin: 'auto', mt: [3, 4, 5] }}>
+        {lb.isOpen ? (
+          <Lightbox
+            imageCaption={
+              <Text sx={{ textAlign: 'center' }}>{lb.caption}</Text>
+            }
+            mainSrc={mainSrc}
+            onCloseRequest={() => setLightbox({ isOpen: false })}
+          />
+        ) : (
+          ''
+        )}
+        {renderMenu(menuData)}
+      </Box>
+    </Element>
   );
 };
 

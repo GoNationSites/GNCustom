@@ -20,16 +20,29 @@ const Menu = ({ id, poweredList = '1' }) => {
   const [activeSection, setActiveSection] = useState(null);
   const [toggledSection, setToggledSection] = useState('all');
 
+  console.log('mounted...');
+
   useEffect(() => {
+    console.log('in effect');
     axios({
       url: `https://data.prod.gonation.com/pl/get?profile_id=${id}&powerlistId=powered-list-${poweredList}`,
       adapter: jsonpAdapter,
-    }).then(res => {
-      setMenuData(res.data[0]);
-      const { childSections } = splitSectionChildren(res.data[0]);
-      setChildSections(childSections);
-    });
+    })
+      .then(res => {
+        console.log('Making a request: ', res.data);
+        setMenuData(res.data[0]);
+        const { childSections } = splitSectionChildren(res.data[0]);
+        setChildSections(childSections);
+      })
+      .catch(e => {
+        console.log('an error occured... ', e);
+      });
   }, []);
+
+  const handleSectionClick = sec => {
+    console.log('handling section click...');
+    setToggledSection(sec);
+  };
 
   const RenderSectionTitles = () => (
     <Sticky stickyStyle={{ zIndex: 999, top: '0' }}>
@@ -41,9 +54,8 @@ const Menu = ({ id, poweredList = '1' }) => {
           borderBottom: '1px solid #eee',
         }}>
         {childSections.map(sec => (
-          <Box sx={{ marginX: 3, cursor: 'pointer' }}>
+          <Box key={sec.section.name} sx={{ marginX: 3, cursor: 'pointer' }}>
             <Text
-              onClick={() => setToggledSection(sec.section.name)}
               sx={{
                 fontFamily: 'heading',
                 textTransform: 'uppercase',
@@ -57,8 +69,9 @@ const Menu = ({ id, poweredList = '1' }) => {
                 outlineColor: 'transparent!important',
               }}>
               <ScrollLink
-                style={{ color: '#111', outlineColor: 'transparent' }}
-                to={sec.section.name}
+                onClick={() => handleSectionClick(sec)}
+                style={{ color: '#111' }}
+                to={'top'}
                 spy={true}
                 smooth={true}
                 duration={500}
@@ -74,9 +87,11 @@ const Menu = ({ id, poweredList = '1' }) => {
 
   const Menu = () => {
     return childSections.map(sec => (
-      <Box sx={{ marginX: 3, cursor: 'pointer' }}>
+      <Box
+        sx={{ marginX: 3, cursor: 'pointer' }}
+        // onClick={() => setToggledSection(sec.section.name)}
+      >
         <Text
-          onClick={() => setToggledSection(sec.section.name)}
           sx={{
             fontFamily: 'heading',
             textTransform: 'uppercase',
@@ -102,10 +117,15 @@ const Menu = ({ id, poweredList = '1' }) => {
     ));
   };
 
+  const handleSelect = () => {
+    console.log('damn');
+  };
+
   return (
     <Box sx={{ paddingY: 5, paddingX: 2, pt: 0 }}>
       {menuData.inventory && childSections ? (
         <>
+          {console.log('in render method')}
           <Box sx={{ display: ['none', 'block', 'block'] }}>
             <RenderSectionTitles></RenderSectionTitles>
           </Box>
@@ -122,13 +142,20 @@ const Menu = ({ id, poweredList = '1' }) => {
               </Box>
             </Sticky>
           </Box>
+          {console.log(
+            'menu data looks like: ',
+            menuData,
+            'section data looks like : ',
+            toggledSection
+          )}
 
           <FlatMenu
-            menuData={menuData}
+            // menuData={menuData}
+            menuData={toggledSection === 'all' ? menuData : toggledSection}
             toggledSection={toggledSection}></FlatMenu>
         </>
       ) : (
-        ''
+        'Loading'
       )}
     </Box>
   );
