@@ -40,7 +40,7 @@ const MobileRevealSplash = ({ logo, locations }) => {
           height: 'calc(100vh - 70px)',
           padding: 2,
         }}>
-        <Box sx={{ height: '25%', padding: 2 }}>
+        <Box sx={{ height: '25%', padding: 2, textAlign: 'center' }}>
           <Image src={logo} sx={{ height: '100%', width: 'auto' }}></Image>
         </Box>
         {businessLocations.map(business => (
