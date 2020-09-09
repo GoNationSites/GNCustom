@@ -172,6 +172,8 @@ const VerticalSplash = ({ locations }) => {
           background: 'white',
           justifyContent: 'space-between',
           paddingX: 3,
+          flexDirection: 'column',
+          alignItems: 'center',
         }}>
         <Box>
           <Text as='p' variant='heading'>

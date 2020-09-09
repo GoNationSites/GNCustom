@@ -64,20 +64,20 @@ const MobileRevealSplash = ({ logo, locations }) => {
                 borderBottomLeftRadius: '30px',
                 transition: 'all 2s',
                 position: 'relative',
-                left: activeLocation === business ? 0 : '234px',
+                left: activeLocation === business ? 0 : '230px',
                 transition: 'all .3s',
               }}>
               <Text as='a' onClick={() => handleLocationClick(business)}>
                 <Flex sx={{ alignItems: 'center' }}>
                   <Text
                     variant='heading'
-                    sx={{ fontSize: 2, fontWeight: '700' }}>
+                    sx={{ fontSize: 2, fontWeight: '700', pr: '3rem' }}>
                     {business.city}{' '}
                   </Text>
 
-                  <Text as='span' sx={{ paddingLeft: 3, pr: '2rem' }}>
+                  {/* <Text as='span' sx={{ paddingLeft: 3 }}>
                     <Right width='25px' fill={'#EE1C25'} />
-                  </Text>
+                  </Text> */}
                   <Flex
                     sx={{
                       width: '220px',
@@ -107,6 +107,8 @@ const MobileRevealSplash = ({ logo, locations }) => {
           sx={{
             justifyContent: 'space-between',
             paddingX: 1,
+            flexDirection: 'column',
+            alignItems: 'center',
           }}>
           <Box>
             <Text as='p' variant='heading'>
