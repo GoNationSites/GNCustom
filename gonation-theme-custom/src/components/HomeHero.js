@@ -80,7 +80,7 @@ const HomeHero = ({ withShout, id, location }) => {
           </Text>
 
           <Image
-            sx={{ maxWidth: ['125px', '225px', '250px'] }}
+            sx={{ maxWidth: ['175px', '225px', '250px'], mt: ['-3rem', 0] }}
             src={
               'https://res.cloudinary.com/gonation/image/upload/v1598969035/sites/red-rooster/logo-solid-white.png'
             }
