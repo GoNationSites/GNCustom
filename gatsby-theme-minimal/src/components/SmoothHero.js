@@ -73,7 +73,7 @@ const SmoothHero = ({ location }) => {
   const images = () => {
     if (site.city === 'Woodbury') {
       return [
-        'https://res.cloudinary.com/gonation/image/upload/v1598359431/sites/mix-prime/woodbury-home-3.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1598360972/sites/mix-prime/woodbury-home-route.jpg',
         'https://res.cloudinary.com/gonation/image/upload/v1598018069/sites/mix-prime/desktop-slide-4.jpg',
         'https://res.cloudinary.com/gonation/image/upload/v1599093019/sites/mix-prime/tuna_tartare_9.jpg',
       ];
@@ -155,18 +155,19 @@ const SmoothHero = ({ location }) => {
           left: 0,
           top: 0,
           justifyContent: 'center',
-          alignItems: 'center',
+          alignItems: 'flex-start',
           zIndex: 3,
+          pt: 5,
         }}>
         <Box
           sx={{
             background: 'rgba(0,0,0,.4)',
-            pb: [3, 3, 0],
-            pt: [3, 3, 0],
+            pb: [1, 2, 0],
+            pt: [1, 2, 0],
             mx: 3,
           }}>
           <img
-            sx={{ maxWidth: ['300px', '600px'] }}
+            sx={{ maxWidth: ['300px', '500px'] }}
             src={
               location === 'Danbury'
                 ? 'https://res.cloudinary.com/gonation/image/upload/v1597941857/sites/mix-prime/logo-white.png'

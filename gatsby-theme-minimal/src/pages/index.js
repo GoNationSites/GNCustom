@@ -36,11 +36,11 @@ const Index = ({ data }) => {
 
   const slidesDesktop = [
     cloudinaryHelper(
-      'https://res.cloudinary.com/gonation/image/upload/v1598018069/sites/mix-prime/desktop-slide-4.jpg',
+      'https://res.cloudinary.com/gonation/image/upload/v1599683155/sites/mix-prime/desktop-slide-4.jpg',
       1900
     ),
     cloudinaryHelper(
-      'https://res.cloudinary.com/gonation/image/upload/v1598359600/sites/mix-prime/woodbury-content-1.jpg',
+      'https://res.cloudinary.com/gonation/image/upload/v1598018070/sites/mix-prime/desktop-slide-3.jpg',
       1900
     ),
     cloudinaryHelper(

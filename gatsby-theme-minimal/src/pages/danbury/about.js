@@ -61,7 +61,7 @@ const About = () => {
               alt={'About Mix Prime'}
               sx={{ maxWidth: '400px' }}
               src={cloudinaryHelper(
-                'https://res.cloudinary.com/gonation/image/upload/v1598282284/sites/mix-prime/danbury-about-1.jpg',
+                'https://res.cloudinary.com/gonation/image/upload/v1599680093/sites/mix-prime/danbury-about-1.jpg',
                 900
               )}
             />

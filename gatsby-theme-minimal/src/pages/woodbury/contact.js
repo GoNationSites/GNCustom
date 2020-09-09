@@ -34,7 +34,7 @@ const Contact = () => {
         sx={{
           height: ['auto'],
           backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${cloudinaryHelper(
-            'https://res.cloudinary.com/gonation/image/upload/v1598360786/sites/mix-prime/woodbury-contact-bg.jpg',
+            'https://res.cloudinary.com/gonation/image/upload/v1599684296/sites/mix-prime/woodbury-contact-bg.jpg',
             2000
           )})`,
           paddingX: 4,
@@ -71,6 +71,8 @@ const Contact = () => {
               frameborder='0'
               allowfullscreen=''
               aria-hidden='false'
+              width='100%'
+              style={{ width: '100%' }}
               tabindex='0'></iframe>
           </Box>
         </Flex>
