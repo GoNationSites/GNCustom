@@ -75,7 +75,7 @@ const MobileRevealSplash = ({ logo, locations }) => {
                     {business.city}{' '}
                   </Text>
 
-                  <Text as='span' sx={{ paddingLeft: 3 }}>
+                  <Text as='span' sx={{ paddingLeft: 3, pr: '2rem' }}>
                     <Right width='25px' fill={'#EE1C25'} />
                   </Text>
                   <Flex
