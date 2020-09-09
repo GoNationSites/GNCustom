@@ -50,7 +50,7 @@ const HomeRenderer = ({ data, location }) => {
             background: 'white',
           }}>
           <Zoom>
-            <Text as='p' sx={{ lineHeight: 2 }}>
+            <Text as='p' sx={{ lineHeight: 1.75 }}>
               {data.data.desc}
             </Text>
           </Zoom>
