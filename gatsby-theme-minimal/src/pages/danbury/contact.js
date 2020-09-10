@@ -53,7 +53,7 @@ const Contact = () => {
               pb: [4, 0],
               px: [1, 3],
             }}>
-            <ContactForm />
+            <ContactForm location='Danbury' />
           </Box>
           <Box sx={{ width: ['100%', '30%'], padding: 3, color: 'white' }}>
             <ContactContent id={'bzn-vBPQfZmCTC2V2Y_BpE6SPw'} />

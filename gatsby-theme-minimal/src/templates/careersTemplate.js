@@ -5,7 +5,7 @@ import React from 'react';
 import cloudinaryOptimize from '../helpers/cloudinaryHelper';
 import NetlifyForm from '../components/NetlifyForm';
 
-const CareersTemplate = () => {
+const CareersTemplate = ({ location }) => {
   return (
     <Box sx={{ background: 'black', py: 5, pt: [0, 6] }}>
       <Box sx={{ maxWidth: '1200px', margin: 'auto' }}>
@@ -56,7 +56,7 @@ const CareersTemplate = () => {
                 padding: [2, 3, 4],
                 borderRadius: '13px',
               }}>
-              <NetlifyForm />
+              <NetlifyForm location={location} />
             </Box>
           </Box>
         </Flex>

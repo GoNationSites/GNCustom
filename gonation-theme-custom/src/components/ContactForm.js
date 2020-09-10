@@ -2,11 +2,11 @@
 import { jsx, Input, Textarea, Button, Box } from 'theme-ui';
 import React from 'react';
 
-const ContactForm = () => {
+const ContactForm = ({ location }) => {
   const inputStyle = {};
   return (
     <form
-      name='Contact Form'
+      name={`Red Rooster ${location} Contact Form`}
       method='POST'
       data-netlify='true'
       data-netlify-honeypot='bot-field'>

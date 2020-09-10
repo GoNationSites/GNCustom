@@ -13,13 +13,13 @@ import {
 } from 'theme-ui';
 import React, { useState } from 'react';
 
-const NetlifyForm = () => {
+const NetlifyForm = ({ location }) => {
   const [hasLicense, setHasLicense] = useState(true);
   const [eligible, setEligible] = useState(true);
 
   return (
     <form
-      name='Careers Form'
+      name={`${location} Careers Form`}
       method='POST'
       data-netlify='true'
       data-netlify-honeypot='bot-field'>

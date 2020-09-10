@@ -93,7 +93,7 @@ const ContactPage = ({ data, location, id }) => {
             <Text variant='heading' sx={{ fontSize: 4, mb: 3 }}>
               Get in touch
             </Text>
-            <ContactForm />
+            <ContactForm location={location} />
           </Box>
         </Box>
         <Box
