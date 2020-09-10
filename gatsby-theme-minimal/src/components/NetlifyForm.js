@@ -19,7 +19,7 @@ const NetlifyForm = () => {
 
   return (
     <form
-      name='Contact Form'
+      name='Careers Form'
       method='POST'
       data-netlify='true'
       data-netlify-honeypot='bot-field'>
