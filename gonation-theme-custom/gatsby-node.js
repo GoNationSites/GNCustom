@@ -79,6 +79,12 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
       path: '/contact',
       template: '',
     },
+    // {
+    //   title: 'Uber Eats',
+    //   path:
+    //     'https://www.ubereats.com/connecticut/food-delivery/red-rooster-pub-newtown/nVk1BEWIQ6qwAlCHPcsD2A',
+    //   template: '',
+    // },
   ];
   const businessIDs = options.businessIDs;
 

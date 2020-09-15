@@ -34,6 +34,14 @@ const Navigation = ({ routes, pageContext }) => {
     letterSpacing: '2px',
     fontSize: 1,
   };
+
+  const getHeight = () => {
+    if (curCity === 'Newtown') {
+      return '-456px';
+    }
+    return '-413px';
+  };
+
   return (
     <Box
       sx={{
@@ -41,7 +49,7 @@ const Navigation = ({ routes, pageContext }) => {
         boxShadow: '0px -1px 12px rgba(0,0,0,.48)',
         position: 'fixed',
         zIndex: 99,
-        bottom: open ? '0px' : '-413px',
+        bottom: open ? '0px' : getHeight(),
         width: ['100%', 'auto'],
         padding: 3,
         borderTopLeftRadius: ['30px', 0],
@@ -140,6 +148,31 @@ const Navigation = ({ routes, pageContext }) => {
             </Text>
           </Box>
         ))}
+        {curCity === 'Newtown' ? (
+          <Box sx={{ paddingY: 2 }}>
+            <Text
+              sx={{
+                fontWeight: 'bold',
+                fontFamily: 'heading',
+                color: 'text',
+                fontSize: [3, 4, 5],
+                fontFamily: 'heading',
+                textTransform: 'uppercase',
+                '&:hover': {
+                  color: 'primary',
+                  transition: 'all .5s',
+                },
+              }}
+              rel='noopener noreferrer'
+              as='a'
+              href='https://www.ubereats.com/connecticut/food-delivery/red-rooster-pub-newtown/nVk1BEWIQ6qwAlCHPcsD2A'
+              target='_blank'>
+              Uber Eats
+            </Text>
+          </Box>
+        ) : (
+          ''
+        )}
 
         <Box sx={{ mt: ['unset', 'auto'] }}>
           <Text sx={{ textAlign: ['center', 'left'], fontSize: 1, my: 4 }}>
