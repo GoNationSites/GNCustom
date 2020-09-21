@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "barrel";
+    src: url("./font/OldBarrel\ Regular.woff") format("woff"),
+        /* Pretty Modern Browsers */ url("./font/OldBarrel\ Regular.otf") format("otf");
+}
+
+@font-face {
+    font-family: "salted";
+    src: url("./font/salted.otf") format("otf"), /* Pretty Modern Browsers */ url("./font/salted.ttf") format("ttf");
+}
+body,
+html {
+    margin: 0;
+    font-family: "barrel", sans-serif;
+}
+
+.Dropdown-placeholder {
+    font-size: 2rem;
+}
