@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Text, Box, Flex } from "@theme-ui/components"
 import ListBullet from "./ListBullet"
 const Price = ({ variants, withDollar, toSide }) => {
   const renderPrices = () =>

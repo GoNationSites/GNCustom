@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Text, Box, Flex } from "@theme-ui/components"
 const Price = ({ variants, withDollar, toSide }) => (
   <MenuPriceContainer>
     {variants[0].labelTitle ? (
