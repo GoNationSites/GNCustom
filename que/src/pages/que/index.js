@@ -53,8 +53,9 @@ const Index = () => {
       case "Main Menu":
         return (
           <Menu
+            key="Main"
             poweredListID={"powered-list-1"}
-            mode={"cellsThenAllInOnce"}
+            mode={"allInOnce"}
             noBack
           />
         )
@@ -63,8 +64,9 @@ const Index = () => {
           <>
             <span></span>
             <Menu
+              key="Drinks"
               poweredListID={"powered-list-2"}
-              mode={"cellsThenAllInOnce"}
+              mode={"allInOnce"}
               noBack
             />
           </>
@@ -74,23 +76,25 @@ const Index = () => {
         return (
           <>
             <span></span>
-            <Menu poweredListID={"powered-list-3"} mode={"allInOnce"} noBack />
+            <Menu
+              key="Brunch"
+              poweredListID={"powered-list-3"}
+              mode={"allInOnce"}
+              noBack
+            />
           </>
         )
-
-      // case "Happy Hour":
-      //   return (
-      //     <>
-      //       <span></span>
-      //       <Menu poweredListID={"powered-list-4"} mode={"allInOnce"} noBack />
-      //     </>
-      //   )
 
       case "Catering":
         return (
           <>
             <span></span>
-            <Menu poweredListID={"powered-list-5"} mode={"allInOnce"} noBack />
+            <Menu
+              key="Catering"
+              poweredListID={"powered-list-5"}
+              mode={"allInOnce"}
+              noBack
+            />
           </>
         )
 
@@ -98,7 +102,12 @@ const Index = () => {
         return (
           <>
             <span></span>
-            <Menu poweredListID={"powered-list-6"} mode={"allInOnce"} noBack />
+            <Menu
+              key="Family"
+              poweredListID={"powered-list-6"}
+              mode={"allInOnce"}
+              noBack
+            />
           </>
         )
 
