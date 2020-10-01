@@ -37,14 +37,27 @@ const Navigation = ({ routes, pageContext }) => {
 
   const getHeight = () => {
     if (curCity === 'Newtown') {
-      return '-456px';
+      return '-501';
     }
     return '-413px';
   };
 
+  const getDoordashLink = () => {
+    switch (curCity) {
+      case 'Newtown':
+        return 'https://www.doordash.com/store/red-rooster-pub-newtown-588921/en-US/?pickup=true';
+      case 'Ridgefield':
+        return 'https://www.doordash.com/store/red-rooster-pub-ridgefield-588921/en-US';
+      case 'Wilton':
+        return 'https://www.doordash.com/store/red-rooster-pub-wilton-1102750/en-US';
+    }
+  };
+
   return (
     <Box
+      onClick={() => setOpen(!open)}
       sx={{
+        cursor: 'pointer!important',
         background: 'white',
         boxShadow: '0px -1px 12px rgba(0,0,0,.48)',
         position: 'fixed',
@@ -173,6 +186,28 @@ const Navigation = ({ routes, pageContext }) => {
         ) : (
           ''
         )}
+
+        <Box sx={{ paddingY: 2 }}>
+          <Text
+            sx={{
+              fontWeight: 'bold',
+              fontFamily: 'heading',
+              color: 'text',
+              fontSize: [3, 4, 5],
+              fontFamily: 'heading',
+              textTransform: 'uppercase',
+              '&:hover': {
+                color: 'primary',
+                transition: 'all .5s',
+              },
+            }}
+            rel='noopener noreferrer'
+            as='a'
+            href={getDoordashLink()}
+            target='_blank'>
+            DoorDash
+          </Text>
+        </Box>
 
         <Box sx={{ mt: ['unset', 'auto'] }}>
           <Text sx={{ textAlign: ['center', 'left'], fontSize: 1, my: 4 }}>

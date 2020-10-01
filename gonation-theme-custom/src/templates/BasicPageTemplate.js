@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box } from 'theme-ui';
+import { jsx, Box, Flex, Text } from 'theme-ui';
 import React from 'react';
 import slugify from 'slugify';
 
@@ -14,6 +14,7 @@ import ContactPage from '../components/ContactPage';
 import AboutPage from '../components/AboutPage';
 import EventsPage from '../components/EventsPage';
 import GalleryPage from '../components/GalleryPage';
+import OnlineOrdering from '../components/OnlineOrdering';
 
 const BasicPageTemplate = ({ pageContext }) => {
   const { curPage, id } = pageContext;
@@ -40,6 +41,23 @@ const BasicPageTemplate = ({ pageContext }) => {
         return (
           <>
             <HomeRenderer data={pageContext} location={pageContext.data.city} />
+            <Flex
+              as='section'
+              sx={{
+                padding: [2, 3, 5],
+                background: 'white',
+                mt: [4, 5, 6],
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'column',
+              }}>
+              <Text
+                as='h3'
+                sx={{ color: 'primary', fontSize: [3, 4, 5], mb: [3, 4] }}>
+                Order Online
+              </Text>
+              <OnlineOrdering location={pageContext.data.city} />
+            </Flex>
             <Box sx={{ paddingY: 5 }}>
               <ButtonRow
                 data={pageContext}

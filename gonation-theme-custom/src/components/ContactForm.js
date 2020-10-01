@@ -19,6 +19,14 @@ const ContactForm = ({ location }) => {
         placeholder='Email'
         sx={inputStyle}
       />
+      <Input
+        type='phone'
+        name='phone'
+        id='phone'
+        placeholder='Phone'
+        required
+        sx={inputStyle}
+      />
       <Textarea name='message' id='message' rows='6' placeholder='Message' />
       <Box sx={{ textAlign: 'center' }}>
         <Button variant=''>Submit</Button>

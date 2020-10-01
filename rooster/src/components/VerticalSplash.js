@@ -17,7 +17,7 @@ const VerticalSplash = ({ locations }) => {
     <>
       <Flex
         sx={{
-          height: '97vh',
+          height: '100vh',
           backgroundColor: 'black',
           position: 'relative',
           paddingY: 5,
@@ -53,7 +53,7 @@ const VerticalSplash = ({ locations }) => {
                 transition: 'display 3.25s',
               }}>
               <Image
-                sx={{ maxWidth: '200px' }}
+                sx={{ maxWidth: '240px' }}
                 src={cloudinaryOptimize(
                   'https://res.cloudinary.com/gonation/image/upload/v1598377918/sites/red-rooster/logo-black.png',
                   420
@@ -67,8 +67,8 @@ const VerticalSplash = ({ locations }) => {
             onMouseLeave={() => setHoveredLocation(null)}
             sx={{
               flex: 1,
-              height: '80%',
-              marginTop: 'auto',
+              height: '70%',
+              marginTop: 7,
               backgroundImage: getBg(node),
               backgroundPosition: 'center',
               backgroundSize: 'cover',
@@ -171,8 +171,7 @@ const VerticalSplash = ({ locations }) => {
         sx={{
           background: 'white',
           justifyContent: 'space-between',
-          paddingX: 3,
-          flexDirection: 'column',
+          paddingX: 5,
           alignItems: 'center',
         }}>
         <Box>

@@ -11,7 +11,8 @@ const HomeHero = ({ withShout, id, location }) => {
     'https://res.cloudinary.com/gonation/image/upload/v1598460315/sites/red-rooster/ridgefield/Group_Food_Photos_17.jpg',
     'https://res.cloudinary.com/gonation/image/upload/v1598460315/sites/red-rooster/ridgefield/Butternut_Squash_Pizza_10.jpg',
     'https://res.cloudinary.com/gonation/image/upload/v1598460035/sites/red-rooster/ridgefield/Chopped_Cobb_Salad_7.jpg',
-    'https://res.cloudinary.com/gonation/image/upload/v1598460315/sites/red-rooster/ridgefield/Dining_Room_6.jpg',
+    // 'https://res.cloudinary.com/gonation/image/upload/v1598460315/sites/red-rooster/ridgefield/Dining_Room_6.jpg',
+    'https://res.cloudinary.com/gonation/image/upload/v1601503161/sites/red-rooster/hero-4.jpg',
   ];
 
   return (

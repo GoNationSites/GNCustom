@@ -30,20 +30,22 @@ const SocialIcons = ({
 
   const renderSocialIcons = () => (
     <>
-      {Object.keys(links).map(
-        (social, idx) =>
-          links[social] && (
-            <a
-              style={
-                idx === 0 ? { margin: 0 } : { marginRight: push ? '20px' : 0 }
-              }
-              target='_blank'
-              rel='noopener noreferrer'
-              href={links[social]}>
-              {getSocialIcon(social)}
-            </a>
-          )
-      )}
+      {Object.keys(links)
+        .filter(link => link !== 'website')
+        .map(
+          (social, idx) =>
+            links[social] && (
+              <a
+                style={
+                  idx === 0 ? { margin: 0 } : { marginRight: push ? '20px' : 0 }
+                }
+                target='_blank'
+                rel='noopener noreferrer'
+                href={links[social]}>
+                {getSocialIcon(social)}
+              </a>
+            )
+        )}
       <a
         target='_blank'
         rel='noopener noreferrer'

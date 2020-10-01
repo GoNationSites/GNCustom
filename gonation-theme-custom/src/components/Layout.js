@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Flex } from 'theme-ui';
+import { jsx, Box, Flex, Text } from 'theme-ui';
 import React, { useEffect } from 'react';
 import slugify from 'slugify';
 import Navigation from './Navigation';
@@ -10,6 +10,7 @@ import cloudinaryOptimize from '../helpers/cloudinaryHelper';
 import 'react-image-lightbox/style.css';
 import './index.css';
 import SEO from './SEO';
+import OtherLocationsBox from '../components/OtherLocationsBox';
 
 const Layout = ({ children, routes, pageContext, pageTitle }) => {
   useEffect(() => {
@@ -84,6 +85,23 @@ const Layout = ({ children, routes, pageContext, pageTitle }) => {
       <SEO pageTitle={pageTitle} siteMetaData={pageContext.data} />
       <Navigation routes={routes} pageContext={pageContext} />
       {children}
+
+      <Box>
+        <OtherLocationsBox />
+      </Box>
+      <Box>
+        <Text
+          as='h4'
+          variant='title'
+          sx={{
+            fontSize: [3, 4, 6],
+            textAlign: 'center',
+            mb: [2, 3, 4],
+            fontFamily: 'heading',
+          }}>
+          @{`redroosterpub${location}`}
+        </Text>
+      </Box>
 
       {renderInstagramWidget()}
       <Footer routes={routes} pageContext={pageContext} footerBG={footerBG()} />
