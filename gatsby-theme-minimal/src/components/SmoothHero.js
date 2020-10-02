@@ -74,7 +74,7 @@ const SmoothHero = ({ location }) => {
     if (site.city === 'Woodbury') {
       return [
         'https://res.cloudinary.com/gonation/image/upload/v1601652432/sites/mix-prime/399A8129.jpg',
-        // 'https://res.cloudinary.com/gonation/image/upload/v1598018069/sites/mix-prime/desktop-slide-4.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1601671552/sites/mix-prime/hero.jpg',
         'https://res.cloudinary.com/gonation/image/upload/v1599093019/sites/mix-prime/tuna_tartare_9.jpg',
       ];
       // return an array of Woodbury Images

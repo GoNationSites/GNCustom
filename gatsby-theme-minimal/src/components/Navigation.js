@@ -122,7 +122,7 @@ const Navigation = ({ location }) => {
       name: 'About',
       route: 'woodbury/about',
       img: cloudinaryHelper(
-        'https://res.cloudinary.com/gonation/image/upload/v1598361104/sites/mix-prime/wood-about-route.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1601671566/sites/mix-prime/about-navigation.jpg',
         1000
       ),
       txt: 'Learn More',
@@ -158,7 +158,7 @@ const Navigation = ({ location }) => {
       name: 'Contact',
       route: 'woodbury/contact',
       img: cloudinaryHelper(
-        'https://res.cloudinary.com/gonation/image/upload/v1598360973/sites/mix-prime/woodbury-contact-route.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1601671530/sites/mix-prime/contact-in-nav.jpg',
         1900
       ),
       txt: 'talk to us',
