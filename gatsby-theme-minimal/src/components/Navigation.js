@@ -174,7 +174,7 @@ const Navigation = ({ location }) => {
           top: 0,
           width: '100%',
           zIndex: '999999',
-          bg: navBackground ? '#111' : 'rgba(0,0,0,.76)',
+          bg: navBackground ? '#fff' : '#fff',
           transition: 'all .3s',
           py: 2,
         }}>
@@ -190,7 +190,7 @@ const Navigation = ({ location }) => {
                 sx={{
                   fontSize: '14px',
                   ml: '14px',
-                  color: '#fff',
+                  color: '#111',
                   fontFamily: 'heading',
                   display: ['none', 'block'],
                 }}>
@@ -210,25 +210,29 @@ const Navigation = ({ location }) => {
                 sx={{
                   fontSize: '16px',
                   letterSpacing: '6px',
-                  color: '#fff',
+                  color: '#111',
                   // mr: 3,
                   fontFamily: 'heading',
                   textTransform: 'uppercase',
                 }}>
                 {location === 'Danbury' ? (
-                  <Link to='/woodbury'>Danbury</Link>
+                  <Link sx={{ color: '#111' }} to='/woodbury'>
+                    Danbury
+                  </Link>
                 ) : (
-                  <Link to='/danbury'>Woodbury</Link>
+                  <Link sx={{ color: '#111' }} to='/danbury'>
+                    Woodbury
+                  </Link>
                 )}
               </Text>
             </Text>
             <Text
               sx={{
                 fontSize: 0,
-                color: 'rgba(255,255,255,.6)',
+                color: '#111',
                 letterSpacing: '.75px',
                 a: {
-                  color: 'rgba(255,255,255,.6)',
+                  color: '#111',
                 },
               }}>
               {location === 'Danbury' ? (
@@ -243,7 +247,7 @@ const Navigation = ({ location }) => {
               width: ['20%', '33%'],
               textAlign: 'right',
               justifyContent: 'flex-end',
-              color: 'white',
+              color: '#111',
               alignItems: 'center',
             }}>
             {location === 'Danbury' ? (
@@ -252,6 +256,7 @@ const Navigation = ({ location }) => {
                 sx={{
                   fontFamily: 'heading',
                   mr: 3,
+                  color: '#111',
                   textTransform: 'uppercase',
                   display: ['none', 'inline'],
                 }}>
@@ -263,6 +268,7 @@ const Navigation = ({ location }) => {
                 sx={{
                   fontFamily: 'heading',
                   mr: 3,
+                  color: '#111',
                   textTransform: 'uppercase',
                   display: ['none', 'inline'],
                 }}>
@@ -280,6 +286,7 @@ const Navigation = ({ location }) => {
                   borderRadius: '3px',
                   paddingX: [2, 4],
                   paddingY: 2,
+                  color: '#111',
                   '&:hover': {
                     bg: 'primary',
                     borderColor: 'primary',
@@ -303,6 +310,7 @@ const Navigation = ({ location }) => {
                   borderRadius: '3px',
                   paddingX: [2, 4],
                   paddingY: 2,
+                  color: '#111',
                   '&:hover': {
                     bg: 'primary',
                     borderColor: 'primary',
@@ -324,7 +332,7 @@ const Navigation = ({ location }) => {
               height={15}
               strokeWidth={1}
               rotate={0}
-              color='#fff'
+              color='#111'
               borderRadius={0}
               animationDuration={0.5}
             />
