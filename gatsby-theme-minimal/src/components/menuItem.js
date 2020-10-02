@@ -80,7 +80,7 @@ const MenuItem = ({
               </Text>
             </Box>
           </Flex>
-          <Text as='p' sx={{ mt: 1, color: '#555' }}>
+          <Text as='p' sx={{ mt: 1, color: 'white' }}>
             {item.desc}
           </Text>
         </Box>

@@ -33,7 +33,7 @@ const About = () => {
       <Box
         sx={{
           height: ['auto', '100vh'],
-          background: '#555',
+          background: 'white',
           // backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${cloudinaryHelper(
           //   'https://res.cloudinary.com/gonation/image/upload/v1598281036/sites/mix-prime/danbury-about-hero.jpg',
           //   2000
@@ -68,7 +68,7 @@ const About = () => {
           <Box sx={{ flex: ['auto', 1, 1] }}>
             <Text
               as='p'
-              sx={{ fontSize: [2, 3], lineHeight: 2, color: 'white' }}>
+              sx={{ fontSize: [2, 3], lineHeight: 2, color: '#111' }}>
               {about.isLoading ? '' : about.aboutData.desc}
             </Text>
             <Flex sx={{ mt: [2, 3, 4] }}>

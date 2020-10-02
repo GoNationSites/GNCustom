@@ -177,6 +177,7 @@ const Navigation = ({ location }) => {
           bg: navBackground ? '#fff' : '#fff',
           transition: 'all .3s',
           py: 2,
+          borderBottom: '1px solid #eee',
         }}>
         <Flex sx={{ alignItems: 'center', paddingX: 3 }}>
           <Box sx={{ width: ['20%', '33%'] }}>
