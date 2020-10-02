@@ -5,7 +5,7 @@ import React from 'react';
 import printAddress from '../helpers/printAddress';
 import getGoogleStr from '../helpers/getGoogleStr';
 
-const NavMeta = ({ data, isFooter }) => {
+const NavMeta = ({ data, isFooter, style }) => {
   const site = data[0].node.data;
 
   if (isFooter) {
@@ -13,6 +13,7 @@ const NavMeta = ({ data, isFooter }) => {
       <Box sx={{ fontFamily: 'heading' }}>
         <Text sx={{ fontSize: [2, 3], mb: 2 }}>
           <a
+            sx={style}
             target='_blank'
             rel='noreferrer noopener'
             href={getGoogleStr(
@@ -26,7 +27,9 @@ const NavMeta = ({ data, isFooter }) => {
           </a>
         </Text>
         <Text sx={{ fontSize: [2, 3, 4] }}>
-          <a href={`tel:${site.phone}`}>{site.phone}</a>
+          <a sx={style} href={`tel:${site.phone}`}>
+            {site.phone}
+          </a>
         </Text>
       </Box>
     );

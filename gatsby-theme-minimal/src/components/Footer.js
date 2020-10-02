@@ -52,8 +52,8 @@ const Footer = ({ location }) => {
 
   const getFooterImg = () =>
     location === 'Woodbury'
-      ? 'https://res.cloudinary.com/gonation/image/upload/v1598359781/sites/mix-prime/woodbury-footer.jpg'
-      : 'https://res.cloudinary.com/gonation/image/upload/v1598110795/sites/mix-prime/footer.jpg';
+      ? 'https://res.cloudinary.com/gonation/image/upload/v1598110699/sites/mix-prime/logo-black.png'
+      : 'https://res.cloudinary.com/gonation/image/upload/v1598110699/sites/mix-prime/logo-black.png';
 
   const routes = [
     {
@@ -139,7 +139,7 @@ const Footer = ({ location }) => {
 
   return (
     <>
-      <Box sx={{ bg: 'black' }}>
+      <Box sx={{ bg: 'white' }}>
         {location === 'Danbury' ? (
           <iframe
             src='https://cdn.lightwidget.com/widgets/f3c23c0072515353be475ab9975738e2.html'
@@ -150,7 +150,7 @@ const Footer = ({ location }) => {
               width: '100%',
               border: 0,
               overflow: 'hidden',
-              background: 'black',
+              background: 'white',
               padding: '0!important',
               margin: '0!important',
             }}></iframe>
@@ -164,7 +164,7 @@ const Footer = ({ location }) => {
               width: '100%',
               border: 0,
               overflow: 'hidden',
-              background: 'black',
+              background: 'white',
               padding: '0!important',
               margin: '0!important',
             }}></iframe>
@@ -174,29 +174,31 @@ const Footer = ({ location }) => {
         as='footer'
         sx={{
           py: [3, 4, 5],
-          background: 'black',
+          background: 'white',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          color: '#111',
         }}>
         <Box sx={{ textAlign: 'center' }}>
           <Image
             alt='Mix Prime'
             sx={{ maxWidth: '300px' }}
             src={
-              'https://res.cloudinary.com/gonation/image/upload/v1598370120/sites/mix-prime/prime-basic.png'
+              'https://res.cloudinary.com/gonation/image/upload/v1598110699/sites/mix-prime/logo-black.png'
             }></Image>
         </Box>
         <Box>
           <SocialIcons
+            iconFill={'#111'}
             links={site[0].node.data.links}
             slug={site[0].node.data.slug}></SocialIcons>
           <Box
             sx={{
               textAlign: 'center',
-              color: 'white',
+              color: '#111!important',
               mt: 4,
             }}>
-            <NavMeta isFooter data={site} />
+            <NavMeta isFooter data={site} style={{ color: '#111' }} />
           </Box>
         </Box>
         <Flex
@@ -206,16 +208,21 @@ const Footer = ({ location }) => {
             mt: 3,
             fontFamily: 'heading',
             textTransform: 'uppercase',
+            color: '#111',
           }}>
           {location === 'Danbury'
             ? routes.map(route => (
                 <Box sx={{ marginX: 3, mb: [3, 0] }}>
-                  <Link to={`/${route.route}`}>{route.name}</Link>
+                  <Link sx={{ color: '#111' }} to={`/${route.route}`}>
+                    {route.name}
+                  </Link>
                 </Box>
               ))
             : woodburyRoutes.map(route => (
                 <Box sx={{ marginX: 3, mb: [3, 0] }}>
-                  <Link to={`/${route.route}`}>{route.name}</Link>
+                  <Link sx={{ color: '#111' }} to={`/${route.route}`}>
+                    {route.name}
+                  </Link>
                 </Box>
               ))}
         </Flex>
