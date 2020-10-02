@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Button, Text } from 'theme-ui';
+import { jsx, Box, Flex, Button, Text, Image } from 'theme-ui';
 import PageTransition from 'gatsby-plugin-page-transitions';
 import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
@@ -10,6 +10,7 @@ import AboutText from '../../components/AboutText';
 import ContentShowcase from '../../components/ContentShowcase';
 import MenuShowcaseSlider from '../../components/MenuShowcaseSlider';
 import cloudinaryHelper from '../../helpers/cloudinaryHelper';
+import doordash from '../../components/icons/doordash-logo.png';
 
 import FullAddress from '../../components/FullAddress';
 import FullPhone from '../../components/FullPhone';
@@ -50,7 +51,7 @@ const Danbury = () => {
       ),
       title: 'Voted the best steakhouse for a reason',
       txt:
-        'Taste a difference at mix prime with hand selected steaks, mouth watering sushi and craft cocktails. ',
+        'Taste a difference at mix prime with hand selected steaks, mouth watering seafood and craft cocktails. ',
       btn: {
         title: 'View Menu',
         link: 'danbury/menu',
@@ -122,6 +123,14 @@ const Danbury = () => {
             </Box>
           </Flex>
           <AboutText location='Danbury'></AboutText>
+        </Box>
+        <Box sx={{ textAlign: 'center' }}>
+          <a
+            href='https://www.doordash.com/store/max-40-restaurant-and-bar-danbury-147354/en-US'
+            target='_blank'
+            rel='noopener noreferrer'>
+            <Image sx={{ maxWidth: '300px' }} src={doordash} />
+          </a>
         </Box>
         <Box sx={{ maxWidth: '1200px', margin: 'auto' }}>
           <ContentShowcase data={contentShowcaseData} />

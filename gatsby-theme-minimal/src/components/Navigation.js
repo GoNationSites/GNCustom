@@ -56,7 +56,7 @@ const Navigation = ({ location }) => {
       name: 'Home',
       route: 'danbury',
       img: cloudinaryHelper(
-        'https://res.cloudinary.com/gonation/image/upload/v1598035952/sites/mix-prime/home.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1601650514/sites/mix-prime/399A8526.jpg',
         1000
       ),
       txt: 'Visit Home Page',
@@ -101,7 +101,7 @@ const Navigation = ({ location }) => {
       name: 'Contact',
       route: 'danbury/contact',
       img: cloudinaryHelper(
-        'https://res.cloudinary.com/gonation/image/upload/v1597940533/sites/mix-prime/mobile-slide-3.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1601650700/sites/mix-prime/399A8268.jpg',
         1900
       ),
       txt: 'talk to us',
@@ -277,29 +277,52 @@ const Navigation = ({ location }) => {
               </Link>
             )}
             {location === 'Danbury' ? (
-              <Text
-                sx={{
-                  fontFamily: 'heading',
-                  textTransform: 'uppercase',
-                  marginRight: 3,
-                  display: ['none', 'inline'],
-                  border: '1px solid white',
-                  borderRadius: '3px',
-                  paddingX: [2, 4],
-                  paddingY: 2,
-                  color: '#111',
-                  '&:hover': {
-                    bg: 'primary',
-                    borderColor: 'primary',
-                    transition: 'all .5s',
-                  },
-                }}
-                as='a'
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://www.opentable.com/restref/client/?rid=141181&restref=141181&corrid=f6b19c54-a302-4aa3-b674-4111b5f2233c'>
-                Reserve A Table
-              </Text>
+              <>
+                <Text
+                  sx={{
+                    fontFamily: 'heading',
+                    textTransform: 'uppercase',
+                    display: ['none', 'inline'],
+                    border: '1px solid white',
+                    borderRadius: '3px',
+                    paddingX: [2, 4],
+                    paddingY: 2,
+                    paddingRight: 0,
+                    color: '#111',
+                    '&:hover': {
+                      color: 'primary',
+                      transition: 'all .5s',
+                    },
+                  }}
+                  as='a'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href='https://www.doordash.com/store/max-40-restaurant-and-bar-danbury-147354/en-US'>
+                  Doordash
+                </Text>
+                <Text
+                  sx={{
+                    fontFamily: 'heading',
+                    textTransform: 'uppercase',
+                    marginRight: 3,
+                    display: ['none', 'inline'],
+                    border: '1px solid white',
+                    borderRadius: '3px',
+                    paddingX: [2, 4],
+                    paddingY: 2,
+                    color: '#111',
+                    '&:hover': {
+                      color: 'primary',
+                      transition: 'all .5s',
+                    },
+                  }}
+                  as='a'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href='https://www.opentable.com/restref/client/?rid=141181&restref=141181&corrid=f6b19c54-a302-4aa3-b674-4111b5f2233c'>
+                  Reserve A Table
+                </Text>
+              </>
             ) : (
               <Text
                 sx={{
@@ -313,8 +336,7 @@ const Navigation = ({ location }) => {
                   paddingY: 2,
                   color: '#111',
                   '&:hover': {
-                    bg: 'primary',
-                    borderColor: 'primary',
+                    bg: 'color',
                     transition: 'all .5s',
                   },
                 }}

@@ -126,7 +126,7 @@ const DiscoverEvents = ({ bizName }) => {
       <Flex sx={{ flexWrap: 'wrap' }}>
         <Box
           sx={{
-            width: ['100%', '100%', '33%'],
+            width: ['100%', '100%', '45%'],
             padding: [3, 4],
           }}>
           <Text
@@ -140,7 +140,7 @@ const DiscoverEvents = ({ bizName }) => {
           <EventPills tags={event.tags} />
           {renderCTAs(event.ctas)}
         </Box>
-        <Box sx={{ width: ['100%', '100%', '66%'] }}>
+        <Box sx={{ width: ['100%', '100%', '55%'] }}>
           <img
             onClick={() =>
               setLightbox({

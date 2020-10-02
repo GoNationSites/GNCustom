@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Button, Text } from 'theme-ui';
+import { jsx, Box, Flex, Button, Text, Image } from 'theme-ui';
 import PageTransition from 'gatsby-plugin-page-transitions';
 
 import React from 'react';
@@ -10,6 +10,7 @@ import AboutText from '../../components/AboutText';
 import ContentShowcase from '../../components/ContentShowcase';
 import MenuShowcaseSlider from '../../components/MenuShowcaseSlider';
 import cloudinaryHelper from '../../helpers/cloudinaryHelper';
+import doordash from '../../components/icons/doordash-logo.png';
 
 import FullAddress from '../../components/FullAddress';
 import FullPhone from '../../components/FullPhone';
@@ -46,7 +47,7 @@ const Woodbury = () => {
   const contentShowcaseData = [
     {
       img: cloudinaryHelper(
-        'https://res.cloudinary.com/gonation/image/upload/v1598359600/sites/mix-prime/woodbury-content-1.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1601652385/sites/mix-prime/Screen_Shot_2020-10-02_at_11.25.29_AM.png',
         1200
       ),
       title: 'Voted the best steakhouse for a reason',
@@ -123,6 +124,11 @@ const Woodbury = () => {
             </Box>
           </Flex>
           <AboutText location='Woodbury'></AboutText>
+        </Box>
+        <Box sx={{ textAlign: 'center' }}>
+          <a href='' target='_blank' rel='noopener noreferrer'>
+            <Image sx={{ maxWidth: '300px' }} src={doordash} />
+          </a>
         </Box>
         <Box sx={{ maxWidth: '1200px', margin: 'auto' }}>
           <ContentShowcase data={contentShowcaseData} />

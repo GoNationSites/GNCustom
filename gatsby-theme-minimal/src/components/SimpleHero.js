@@ -10,7 +10,7 @@ const SimpleHero = ({ pageTitle, location }) => {
       switch (pageTitle) {
         case 'menu':
           return cloudinaryOptimize(
-            'https://res.cloudinary.com/gonation/image/upload/v1598360531/sites/mix-prime/woodbury-menu-hero.jpg',
+            'https://res.cloudinary.com/gonation/image/upload/v1601652088/sites/mix-prime/399A8104.jpg',
             2000
           );
         case 'events':

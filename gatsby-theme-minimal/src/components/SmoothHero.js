@@ -73,8 +73,8 @@ const SmoothHero = ({ location }) => {
   const images = () => {
     if (site.city === 'Woodbury') {
       return [
-        'https://res.cloudinary.com/gonation/image/upload/v1598360972/sites/mix-prime/woodbury-home-route.jpg',
-        'https://res.cloudinary.com/gonation/image/upload/v1598018069/sites/mix-prime/desktop-slide-4.jpg',
+        'https://res.cloudinary.com/gonation/image/upload/v1601652432/sites/mix-prime/399A8129.jpg',
+        // 'https://res.cloudinary.com/gonation/image/upload/v1598018069/sites/mix-prime/desktop-slide-4.jpg',
         'https://res.cloudinary.com/gonation/image/upload/v1599093019/sites/mix-prime/tuna_tartare_9.jpg',
       ];
       // return an array of Woodbury Images
@@ -82,7 +82,7 @@ const SmoothHero = ({ location }) => {
       // else return an array of Danbury Images
       return [
         'https://res.cloudinary.com/gonation/image/upload/v1599093274/sites/mix-prime/steak_15.jpg',
-        'https://res.cloudinary.com/gonation/image/upload/v1598359600/sites/mix-prime/woodbury-content-2.jpg',
+        // 'https://res.cloudinary.com/gonation/image/upload/v1598359600/sites/mix-prime/woodbury-content-2.jpg',
         'https://res.cloudinary.com/gonation/image/upload/v1599093393/sites/mix-prime/steak_1.jpg',
       ];
     }
