@@ -73,6 +73,7 @@ const Layout = ({ children, pageTitle, location }) => {
         <Navigation location='Danbury' />
         {pageTitle === 'about' ||
         pageTitle === 'contact' ||
+        pageTitle === 'parties' ||
         pageTitle === 'gallery' ||
         pageTitle === 'careers'
           ? ''
