@@ -44,21 +44,11 @@ const MenuItem = ({
   return (
     <>
       <Box sx={{ width: ['100%', '50%', '33.333%'] }}>
-        <Box sx={{ padding: 3, paddingX: 3 }}>
+        <Box sx={{ padding: 2, paddingX: 3 }}>
           <Flex
             onClick={() => handleCameraClick()}
             sx={{ cursor: isDefault ? 'pointer' : 'unset' }}>
             <Flex sx={{ flex: 1, alignItems: 'center' }}>
-              {isDefault ? (
-                <Box
-                  tabIndex='1'
-                  as='span'
-                  sx={{ paddingRight: 2, cursor: 'pointer' }}>
-                  <Camera />
-                </Box>
-              ) : (
-                ''
-              )}
               <Text
                 variant='heading'
                 sx={{
@@ -69,6 +59,16 @@ const MenuItem = ({
                 }}>
                 {item.name}
               </Text>
+              {isDefault ? (
+                <Box
+                  tabIndex='1'
+                  as='span'
+                  sx={{ paddingRight: 2, cursor: 'pointer' }}>
+                  <Camera />
+                </Box>
+              ) : (
+                ''
+              )}
             </Flex>
             <Box>
               <Text>
@@ -80,7 +80,7 @@ const MenuItem = ({
               </Text>
             </Box>
           </Flex>
-          <Text as='p' sx={{ mt: 1, color: 'white' }}>
+          <Text as='p' sx={{ mt: 1, color: '#111' }}>
             {item.desc}
           </Text>
         </Box>
