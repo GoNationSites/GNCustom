@@ -29,8 +29,12 @@ const AllIn = ({ menuData, setModalActive, onBackClick, noBack }) => {
         {/* header with section name and description */}
 
         <MenuContainer>
-          <MenuSectionTitle>{section.name}</MenuSectionTitle>
-          <MenuSectionDescription>{section.desc}</MenuSectionDescription>
+          <MenuSectionTitle className={`${section.name}`}>
+            {section.name}
+          </MenuSectionTitle>
+          <MenuSectionDescription className={`${section.name}-desc`}>
+            {section.desc}
+          </MenuSectionDescription>
           <MenuItemsContainer>
             {parsedSection.childItems.map(({ item }) => {
               return (

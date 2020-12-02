@@ -10,14 +10,17 @@ import MenuSectionContext from "../../context/MenuSectionContext"
 import MenuSectionsDropdown from "./MenuSectionsDropdown"
 import splitSectionChildren from "../helpers/splitSectionChildren"
 
-export default function Food({ poweredListID, mode, noBack }) {
+export default function Food({
+  poweredListID,
+  mode,
+  noBack,
+  gonationID = "bzn-RX6J48-DRp_PyZSrURTQBQ",
+}) {
   const [menuData, setMenuData] = useState({})
   const [childSections, setChildSections] = useState(null)
   const [activeSection, setActiveSection] = useState(null)
   const [modalActive, setModalActive] = useState("")
   const [dropdownOpen, toggleDropdown] = useState(false)
-
-  const id = "bzn-RX6J48-DRp_PyZSrURTQBQ"
 
   //   const poweredListID = "powered-list-4"
 
@@ -26,7 +29,7 @@ export default function Food({ poweredListID, mode, noBack }) {
   // Fetch the menu data when the template renders.
   useEffect(() => {
     axios({
-      url: `https://data.prod.gonation.com/pl/get?profile_id=${id}&powerlistId=${poweredListID}`,
+      url: `https://data.prod.gonation.com/pl/get?profile_id=${gonationID}&powerlistId=${poweredListID}`,
       adapter: jsonpAdapter,
     }).then(res => {
       setMenuData(res.data[0])
@@ -105,7 +108,7 @@ export default function Food({ poweredListID, mode, noBack }) {
           ""
         )}
 
-        <MenuWrapper>
+        <MenuWrapper className={gonationID}>
           {menuData && menuData.section ? getRenderType() : ""}
         </MenuWrapper>
       </MenuSectionContext.Provider>

@@ -1,19 +1,26 @@
-@font-face {
-    font-family: "barrel";
-    src: url("./font/OldBarrel\ Regular.woff") format("woff"),
-        /* Pretty Modern Browsers */ url("./font/OldBarrel\ Regular.otf") format("otf");
-}
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
 
-@font-face {
-    font-family: "salted";
-    src: url("./font/salted.otf") format("otf"), /* Pretty Modern Browsers */ url("./font/salted.ttf") format("ttf");
-}
 body,
 html {
     margin: 0;
-    font-family: "barrel", sans-serif;
+    font-family: 'PT Serif', serif;
+
 }
 
 .Dropdown-placeholder {
     font-size: 2rem;
+}
+
+.bzn-Yi5jWTSiR1qvn3_7S2aYsg  p {
+    color: white;
+    text-shadow: none;    
+}
+
+.bzn-Yi5jWTSiR1qvn3_7S2aYsg .menu-item-container p {
+    color: #111;
+}
+
+
+.bzn-Yi5jWTSiR1qvn3_7S2aYsg .menuItem__MenuItemName-iqhser {
+    color: #ed1c24!important;
 }

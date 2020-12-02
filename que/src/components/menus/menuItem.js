@@ -65,7 +65,7 @@ const MenuItem = ({ item, type, withDollar, hasMenuImages }) => {
       ) : (
         ""
       )}
-      <MenuItemContentContainer>
+      <MenuItemContentContainer className="menu-item-container">
         {item.variants.length && item.variants[0].label === "" ? (
           <NamePriceContainer>
             <MenuItemName>{item.name}</MenuItemName>
