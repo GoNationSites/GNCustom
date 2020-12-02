@@ -10,12 +10,12 @@ import {
   Flex,
   Label,
   Radio,
-} from 'theme-ui';
-import React, { useState } from 'react';
+} from 'theme-ui'
+import React, { useState } from 'react'
 
 const NetlifyForm = ({ location }) => {
-  const [hasLicense, setHasLicense] = useState(true);
-  const [eligible, setEligible] = useState(true);
+  const [hasLicense, setHasLicense] = useState(true)
+  const [eligible, setEligible] = useState(true)
 
   return (
     <form
@@ -46,7 +46,7 @@ const NetlifyForm = ({ location }) => {
           }}
           type='hidden'
           name='form-name'
-          value='careers'
+          value={`${location} Careers Form`}
         />
 
         <Box sx={{ paddingY: 3 }}>
@@ -206,7 +206,7 @@ const NetlifyForm = ({ location }) => {
         <Button variant='black'>Submit</Button>
       </Box>
     </form>
-  );
-};
+  )
+}
 
-export default NetlifyForm;
+export default NetlifyForm
