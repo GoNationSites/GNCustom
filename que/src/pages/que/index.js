@@ -126,7 +126,6 @@ const Index = () => {
           value={selectedMenu}
           placeholder="Select a menu"
         />
-        {console.log("selected menu is: ", selectedMenu)}
         <MenuWrap>{renderMenuSelection(selectedMenu)}</MenuWrap>
       </Page>
       <GonationLogo>
