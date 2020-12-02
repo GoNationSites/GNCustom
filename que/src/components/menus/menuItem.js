@@ -68,7 +68,7 @@ const MenuItem = ({ item, type, withDollar, hasMenuImages }) => {
       <MenuItemContentContainer className="menu-item-container">
         {item.variants.length && item.variants[0].label === "" ? (
           <NamePriceContainer>
-            <MenuItemName>{item.name}</MenuItemName>
+            <MenuItemName className="menu-item">{item.name}</MenuItemName>
             <Price withDollar={withDollar} variants={item.variants} toSide />
           </NamePriceContainer>
         ) : (

@@ -15,6 +15,7 @@ export default function Food({
   mode,
   noBack,
   gonationID = "bzn-RX6J48-DRp_PyZSrURTQBQ",
+  testProp,
 }) {
   const [menuData, setMenuData] = useState({})
   const [childSections, setChildSections] = useState(null)
@@ -27,6 +28,15 @@ export default function Food({
   //   const mode = "cellsThenAllInOnce"
 
   // Fetch the menu data when the template renders.
+  console.log(
+    "id recieved",
+    gonationID,
+    "poweredlist recieved: ",
+    poweredListID,
+    mode,
+    noBack,
+    testProp
+  )
   useEffect(() => {
     axios({
       url: `https://data.prod.gonation.com/pl/get?profile_id=${gonationID}&powerlistId=${poweredListID}`,

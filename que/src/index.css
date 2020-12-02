@@ -24,3 +24,19 @@ html {
 .bzn-Yi5jWTSiR1qvn3_7S2aYsg .menuItem__MenuItemName-iqhser {
     color: #ed1c24!important;
 }
+
+
+.romanacci  p {
+    color: white;
+    text-shadow: none;    
+}
+
+.romanacci .menu-item-container p {
+    color: #111;
+}
+
+/* cghage */
+.romanacci .menuItem__MenuItemName-iqhser, 
+.romanacci .menu-item{
+    color: #ed1c24!important;
+}
