@@ -1,36 +1,36 @@
 /** @jsx jsx */
-import { jsx, Box, Image, Flex, Text } from 'theme-ui';
-import React, { useState } from 'react';
-import { Link } from 'gatsby';
-import Right from './icons/Right';
-import slugify from 'slugify';
+import { jsx, Box, Image, Flex, Text } from 'theme-ui'
+import React, { useState } from 'react'
+import { Link } from 'gatsby'
+import Right from './icons/Right'
+import slugify from 'slugify'
 
-import ClickableAddress from '../components/ClickableAddress';
-import ClickablePhone from '../components/ClickablePhone';
+import ClickableAddress from '../components/ClickableAddress'
+import ClickablePhone from '../components/ClickablePhone'
 
 // takes in logo and an array of all location items
 const MobileRevealSplash = ({ logo, locations }) => {
-  const [activeLocation, setActiveLocation] = useState(null);
+  const [activeLocation, setActiveLocation] = useState(null)
   const businessLocations = locations[0].node
     ? locations.map(({ node }) => node.data)
-    : locations;
+    : locations
 
   const getBG = cover => ({
     background: `url(${cover.imageBaseUrl}/${cover.imagePrefix})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-  });
+  })
 
   const handleLocationClick = business => {
-    setActiveLocation(business);
-  };
+    setActiveLocation(business)
+  }
 
   const callDirStyle = {
     color: 'text',
     fontSize: 1,
     fontFamily: 'heading',
     textTransform: 'uppercase',
-  };
+  }
 
   return (
     <Box>
@@ -64,7 +64,7 @@ const MobileRevealSplash = ({ logo, locations }) => {
                 borderBottomLeftRadius: '30px',
                 transition: 'all 2s',
                 position: 'relative',
-                left: activeLocation === business ? 0 : '230px',
+                left: activeLocation === business ? 0 : 'calc(10vw + 164px)',
                 transition: 'all .3s',
               }}>
               <Text as='a' onClick={() => handleLocationClick(business)}>
@@ -130,7 +130,7 @@ const MobileRevealSplash = ({ logo, locations }) => {
         </Flex>
       </Flex>
     </Box>
-  );
-};
+  )
+}
 
-export default MobileRevealSplash;
+export default MobileRevealSplash
