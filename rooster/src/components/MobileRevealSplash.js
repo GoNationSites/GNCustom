@@ -27,7 +27,7 @@ const MobileRevealSplash = ({ logo, locations }) => {
 
   const callDirStyle = {
     color: 'text',
-    fontSize: 1,
+    fontSize: '0.8rem',
     fontFamily: 'heading',
     textTransform: 'uppercase',
   }
@@ -59,19 +59,26 @@ const MobileRevealSplash = ({ logo, locations }) => {
                 color: 'text',
                 bg: 'background',
                 paddingY: 3,
-                paddingX: 3,
+                paddingX: 2,
                 borderTopLeftRadius: '30px',
                 borderBottomLeftRadius: '30px',
                 transition: 'all 2s',
                 position: 'relative',
-                left: activeLocation === business ? 0 : 'calc(10vw + 164px)',
+                width: '300px',
+                transform: 'translateX(100%)',
+                left: activeLocation === business ? '-300px' : '-120px',
                 transition: 'all .3s',
               }}>
               <Text as='a' onClick={() => handleLocationClick(business)}>
                 <Flex sx={{ alignItems: 'center' }}>
                   <Text
                     variant='heading'
-                    sx={{ fontSize: 2, fontWeight: '700', pr: '3rem' }}>
+                    sx={{
+                      fontSize: '1rem',
+                      fontWeight: '700',
+                      // pr: '3rem',
+                      width: '140px',
+                    }}>
                     {business.city}{' '}
                   </Text>
 
@@ -81,6 +88,7 @@ const MobileRevealSplash = ({ logo, locations }) => {
                   <Flex
                     sx={{
                       width: '220px',
+                      margin: '0 0 0 auto',
                       overflow: 'hidden',
                       justifyContent: 'space-evenly',
                       transition: 'width .3s',
