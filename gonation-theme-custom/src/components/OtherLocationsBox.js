@@ -1,22 +1,22 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text, Image, Button } from 'theme-ui';
-import React from 'react';
+import { jsx, Box, Flex, Text, Image, Button } from 'theme-ui'
+import React from 'react'
 
 const OtherLocationsBox = () => {
   const roosterLogo =
-    'https://res.cloudinary.com/gonation/image/upload/v1598969035/sites/red-rooster/logo-solid-white.png';
+    'https://res.cloudinary.com/gonation/image/upload/v1598969035/sites/red-rooster/logo-solid-white.png'
 
   const mixPrimeLogo =
-    'https://res.cloudinary.com/gonation/image/upload/v1598110699/sites/mix-prime/logo-black.png';
+    'https://res.cloudinary.com/gonation/image/upload/v1598110699/sites/mix-prime/logo-black.png'
 
   const logoStyle = {
     maxWidth: '300px',
-  };
+  }
 
   const buttonStyle = {
     fontWeight: 'bold',
     textTransform: 'uppercase',
-  };
+  }
 
   const renderRoosterLocations = () => (
     <Flex sx={{ justifyContent: 'center', flexDirection: ['column', 'row'] }}>
@@ -42,7 +42,7 @@ const OtherLocationsBox = () => {
         </a>
       </Box>
     </Flex>
-  );
+  )
 
   const renderMixLocations = () => (
     <Flex
@@ -67,7 +67,7 @@ const OtherLocationsBox = () => {
         </a>
       </Box>
     </Flex>
-  );
+  )
 
   return (
     <Box sx={{ padding: 3 }}>
@@ -84,7 +84,7 @@ const OtherLocationsBox = () => {
           <Image sx={logoStyle} src={roosterLogo} alt='Red Rooster'></Image>
           {renderRoosterLocations()}
         </Box>
-        <Box
+        {/* <Box
           sx={{
             padding: [3, 4, 5],
             textAlign: 'center',
@@ -93,10 +93,10 @@ const OtherLocationsBox = () => {
           }}>
           <Image sx={logoStyle} src={mixPrimeLogo} alt='Mix Prime'></Image>
           {renderMixLocations()}
-        </Box>
+        </Box> */}
       </Flex>
     </Box>
-  );
-};
+  )
+}
 
-export default OtherLocationsBox;
+export default OtherLocationsBox

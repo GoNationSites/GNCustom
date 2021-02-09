@@ -88,13 +88,17 @@ const HomeHero = ({ withShout, id, location }) => {
             alt='Red Rooster'
           />
         </Flex>
-        <Box sx={{ mt: [5, 6] }}>
+        <Box sx={{ mt: ['auto', 'auto'] }}>
           {withShout ? <SimpleShout id={id} /> : ''}
         </Box>
         <Box sx={{ mt: 'auto' }}>
           <Text
             variant='heading'
-            sx={{ fontSize: 8, display: ['none', 'inline'], color: 'white' }}>
+            sx={{
+              fontSize: [4, 6, '80px'],
+              display: ['none', 'inline'],
+              color: 'white',
+            }}>
             The Best Night In Town
           </Text>
         </Box>
