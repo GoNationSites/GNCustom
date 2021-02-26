@@ -23,7 +23,7 @@ img {
 `
 
 export const theme = {
-  primary: `rgb(0, 86, 125)`,
+  primary: `#c38133`,
   secondary: `rgb(202, 54, 37)`,
   tertiary: `rgb(202, 54, 37)`,
   dark: `#231f20`,
@@ -48,6 +48,7 @@ export const theme = {
     tablet: "768px",
     desktop: "1024px",
     desktopL: "1440px",
+    desktopXL: "2300px",
   },
   custom: {
     navHeight: "95.88px",

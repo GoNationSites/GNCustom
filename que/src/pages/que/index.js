@@ -14,9 +14,12 @@ import AccordionMenu from "../../components/AccordionMenu"
 const Page = styled.section`
   padding: 1rem;
   padding-top: 2.5rem;
-  background: url("https://www.transparenttextures.com/patterns/stucco.png");
+  /* background: url("https://www.transparenttextures.com/patterns/stucco.png"); */
+
+  background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+  background-color: #3b1800;
   /* font-family: "Arial", sans-serif; */
-  padding: 2rem 1.5rem;
+  padding: 2rem 0rem;
   @media (min-width: 1024px) {
     padding-top: 2rem;
   }

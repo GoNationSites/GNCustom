@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import { Card, Accordion, Button } from "react-bootstrap"
-import MenuItem from "./menus/menuItem"
+import MenuItem from "./menus/menuItemAlt"
+import { theme } from "../globalStyles"
 
 const AccordionMenu = ({ menuData }) => {
   const parentSectionLength = menuData[0].inventory.filter(itm => itm.section)
@@ -10,10 +11,6 @@ const AccordionMenu = ({ menuData }) => {
   const parentSectionTitles = menuData[0].inventory
     .filter(inv => inv.section)
     .map(inv => (inv.section ? inv.section.name : null))
-  console.log(
-    "🚀 ~ file: AccordionMenu.js ~ line 13 ~ AccordionMenu ~ parentSectionTitles",
-    parentSectionTitles
-  )
 
   // Takes Nested sections and and gets the nested child items and child sections
   const splitSectionChildren = section => {
@@ -34,20 +31,48 @@ const AccordionMenu = ({ menuData }) => {
   const renderMenu = (menu, nested, idx) => {
     const { section } = menu
     const parsedSection = splitSectionChildren(menu)
-    console.log("comparing ", parentSectionTitles, "with", section.name)
 
     //  render the menu if it's a parent section create a new card / accordion child, else render the menu directly inside
     return (
       <>
         {parentSectionTitles.includes(section.name) ? (
-          <Card>
-            <Card.Header>
-              <Accordion.Toggle as={Button} variant="link" eventKey={idx + 1}>
+          <Card style={{ border: "none", margin: "1rem" }}>
+            <Card.Header
+              style={{
+                background: theme.primary,
+                color: "white",
+                display: "flex",
+                justifyContent: "center",
+                border: "none",
+                boxShadow: "none",
+              }}
+            >
+              <Accordion.Toggle
+                as={Button}
+                variant="link"
+                eventKey={idx + 1}
+                style={{
+                  color: "white",
+                  fontWeight: "800",
+                  fontSize: "1.25rem",
+                }}
+              >
                 {section.name}
               </Accordion.Toggle>
             </Card.Header>
-            <Accordion.Collapse eventKey={idx + 1}>
-              <Card.Body>
+            <Accordion.Collapse
+              eventKey={idx + 1}
+              style={{
+                backgroundImage: `url('https://www.transparenttextures.com/patterns/stucco.png')`,
+                backgroundColor: "#fffbf4",
+              }}
+            >
+              <Card.Body
+                style={{
+                  padding: `1rem 0 0 0`,
+                  border: `3px solid ${theme.primary}`,
+                }}
+              >
                 <MenuSectionDescription className={`${section.name}-desc`}>
                   {section.desc}
                 </MenuSectionDescription>
@@ -70,22 +95,25 @@ const AccordionMenu = ({ menuData }) => {
             </Accordion.Collapse>
           </Card>
         ) : (
-          <Card.Body>
+          <Card.Body style={{ padding: 0 }}>
+            <MenuSectionTitle>{section.name}</MenuSectionTitle>
             <MenuSectionDescription className={`${section.name}-desc`}>
               {section.desc}
             </MenuSectionDescription>
-            <p>{section.name}</p>
+
             <MenuItemsContainer>
-              {parsedSection.childItems.map(({ item }) => {
-                return (
-                  <MenuItem
-                    type={"default"}
-                    withDollar={false}
-                    item={item}
-                    // setModalActive={setModalActive}
-                  />
-                )
-              })}
+              {section.name.length
+                ? parsedSection.childItems.map(({ item }) => {
+                    return (
+                      <MenuItem
+                        type={"default"}
+                        withDollar={false}
+                        item={item}
+                        // setModalActive={setModalActive}
+                      />
+                    )
+                  })
+                : ""}
             </MenuItemsContainer>
             {parsedSection.childSections.map((childSection, idx) =>
               renderMenu(childSection, true, idx)
@@ -101,36 +129,17 @@ const AccordionMenu = ({ menuData }) => {
 
 export default AccordionMenu
 
-const BackToMenuBtn = styled.button`
-  background-color: ${props =>
-    props.theme.secondary ? props.theme.secondary : "black"};
-  color: white;
-  border: none;
-  margin-left: 0.5rem;
-  cursor: pointer;
-  justify-content: center;
-  padding-bottom: calc(0.5rem - 1px);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: calc(0.5rem - 1px);
-  text-align: center;
-  white-space: nowrap;
-`
-
-const AllInContainer = styled.div``
-const MenuContainer = styled.div``
 const MenuSectionTitle = styled.p`
-  font-size: 2rem;
+  font-size: 2.25rem;
   text-align: center;
   margin: 0 2rem 2rem 2rem;
-  color: ${props => (props.theme.primary ? props.theme.primary : "black")};
+  color: #c38133;
   margin-bottom: 1rem;
-  text-shadow: 3px 3px 0px #c38133;
+  font-weight: bold;
 `
 const MenuItemsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: stretch;
 `
 
@@ -139,4 +148,6 @@ const MenuSectionDescription = styled.p`
   color: #111;
   margin-bottom: 1.25rem;
   padding: 0 1rem;
+  max-width: 900px;
+  margin: auto;
 `
