@@ -5,8 +5,6 @@ import MenuItem from "./menus/menuItemAlt"
 import { theme } from "../globalStyles"
 
 const AccordionMenu = ({ menuData }) => {
-  const parentSectionLength = menuData[0].inventory.filter(itm => itm.section)
-    .length
   //   create a function that tracks root sections.
   const parentSectionTitles = menuData[0].inventory
     .filter(inv => inv.section)
