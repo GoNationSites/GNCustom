@@ -1,18 +1,25 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Dropdown from "react-dropdown"
-import "react-dropdown/style.css"
-import "../../index.css"
+import axios from "axios"
+import jsonpAdapter from "axios-jsonp"
 
-// import Layout from "../components/Layout"
+import "react-dropdown/style.css"
+import "bootstrap/dist/css/bootstrap.min.css"
+
+import "../../index.css"
 import Menu from "../../components/menus/Menu"
+import AccordionMenu from "../../components/AccordionMenu"
 
 const Page = styled.section`
   padding: 1rem;
   padding-top: 2.5rem;
-  background: url("https://www.transparenttextures.com/patterns/stucco.png");
+  /* background: url("https://www.transparenttextures.com/patterns/stucco.png"); */
+
+  background-image: url("https://www.transparenttextures.com/patterns/soft-wallpaper.png");
+  background-color: #3b1800;
   /* font-family: "Arial", sans-serif; */
-  padding: 2rem 1.5rem;
+  padding: 2rem 0rem;
   @media (min-width: 1024px) {
     padding-top: 2rem;
   }
@@ -38,95 +45,75 @@ const GonationLogo = styled.div`
   }
 `
 
+const Logo = styled.img`
+  max-width: 300px;
+  width: 100%;
+`
+
+const Header = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
 const Index = () => {
-  const [selectedMenu, setSelectedMenu] = useState("Main Menu")
-  const options = [
-    "Main Menu",
-    "Drinks",
-    "Brunch",
-    "Family Style Menu",
-    "Catering",
-  ]
+  const [menuData, setMenuData] = useState([])
+  const [bizData, setBizData] = useState(null)
+  const gonationId = "bzn-RX6J48-DRp_PyZSrURTQBQ"
+  const pl = "8"
 
-  const renderMenuSelection = () => {
-    switch (selectedMenu) {
-      case "Main Menu":
-        return (
-          <Menu
-            key="Main"
-            poweredListID={"powered-list-1"}
-            mode={"allInOnce"}
-            noBack
-          />
-        )
-      case "Drinks":
-        return (
-          <>
-            <span></span>
-            <Menu
-              key="Drinks"
-              poweredListID={"powered-list-2"}
-              mode={"allInOnce"}
-              noBack
-            />
-          </>
-        )
+  useEffect(() => {
+    async function fetchData() {
+      const { data } = await fetchMenu(gonationId, pl)
+      const aboutData = await fetchBusiness(gonationId)
+      setBizData(aboutData.data)
+      setMenuData(data)
+    }
+    fetchData()
+    return () => {}
+  }, [])
 
-      case "Brunch":
-        return (
-          <>
-            <span></span>
-            <Menu
-              key="Brunch"
-              poweredListID={"powered-list-3"}
-              mode={"allInOnce"}
-              noBack
-            />
-          </>
-        )
+  const fetchMenu = (id, pl) => {
+    try {
+      return axios({
+        url: `https://data.prod.gonation.com/pl/get?profile_id=${id}&powerlistId=powered-list-${pl}`,
+        adapter: jsonpAdapter,
+      })
+    } catch (e) {
+      console.error("Error when fetching menu data: ", e, "color: red")
+    }
+  }
 
-      case "Catering":
-        return (
-          <>
-            <span></span>
-            <Menu
-              key="Catering"
-              poweredListID={"powered-list-5"}
-              mode={"allInOnce"}
-              noBack
-            />
-          </>
-        )
-
-      case "Family Style Menu":
-        return (
-          <>
-            <span></span>
-            <Menu
-              key="Family"
-              poweredListID={"powered-list-6"}
-              mode={"allInOnce"}
-              noBack
-            />
-          </>
-        )
-
-      default:
-        return ""
+  const fetchBusiness = id => {
+    try {
+      return axios({
+        url: `https://data.prod.gonation.com/profile/getname/?profile_id=${id}`,
+        adapter: jsonpAdapter,
+      })
+    } catch (e) {
+      console.error("Error when fetching menu data: ", e, "color: red")
     }
   }
 
   return (
     <>
       <Page>
-        <Title>Select a menu</Title>
-        <Dropdown
-          options={options}
-          onChange={({ value }) => setSelectedMenu(value)}
-          value={selectedMenu}
-          placeholder="Select a menu"
-        />
-        <MenuWrap>{renderMenuSelection(selectedMenu)}</MenuWrap>
+        <Header>
+          {bizData && bizData.avatar !== null ? (
+            <Logo
+              src={`${bizData.avatar.imageBaseUrl}/${bizData.avatar.imagePrefix}`}
+            />
+          ) : (
+            ""
+          )}
+        </Header>
+
+        <MenuWrap>
+          {menuData.length ? (
+            <AccordionMenu menuData={menuData}></AccordionMenu>
+          ) : (
+            ""
+          )}
+        </MenuWrap>
       </Page>
       <GonationLogo>
         <img
