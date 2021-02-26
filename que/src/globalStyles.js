@@ -29,7 +29,6 @@ export const theme = {
   dark: `#231f20`,
   light: `rgb(196, 191, 182)`,
 
-  //optional extras but not really used yet
   sizes: {
     XXS: `0.25rem`,
     XS: `0.5rem`,
