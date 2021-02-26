@@ -17,6 +17,13 @@ const ContactForm = ({ location }) => {
       <Input type='text' name='name' id='name' placeholder='Name' />
       <Input type='email' name='email' id='email' placeholder='Email' />
       <Input
+        type='phone'
+        name='phone'
+        id='phone'
+        placeholder='Phone'
+        required
+      />
+      <Input
         type='text'
         sx={{ display: 'none !important' }}
         name='location'
@@ -24,7 +31,13 @@ const ContactForm = ({ location }) => {
         value={location}
         placeholder={location}
       />
-      <Textarea name='message' id='message' rows='6' placeholder='Message' />
+      <Textarea
+        name='message'
+        id='message'
+        rows='6'
+        placeholder='Message'
+        sx={{ color: 'white' }}
+      />
       <Button variant='white'>Submit</Button>
     </form>
   )

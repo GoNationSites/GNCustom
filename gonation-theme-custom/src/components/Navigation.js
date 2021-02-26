@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text } from 'theme-ui';
-import React, { useState } from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import slugify from 'slugify';
-import HamburgerMenu from 'react-hamburger-menu';
-import { Animated } from 'react-animated-css';
+import { jsx, Box, Flex, Text } from 'theme-ui'
+import React, { useState } from 'react'
+import { useStaticQuery, graphql, Link } from 'gatsby'
+import slugify from 'slugify'
+import HamburgerMenu from 'react-hamburger-menu'
+import { Animated } from 'react-animated-css'
 
-import ClickableAddress from './ClickableAddress';
+import ClickableAddress from './ClickableAddress'
 
 const Navigation = ({ routes, pageContext }) => {
   const locations = useStaticQuery(graphql`
@@ -21,11 +21,11 @@ const Navigation = ({ routes, pageContext }) => {
         }
       }
     }
-  `);
+  `)
 
-  const curCity = pageContext.data.city;
+  const curCity = pageContext.data.city
 
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   const styleObj = {
     color: 'text',
     fontWeight: '700',
@@ -33,25 +33,27 @@ const Navigation = ({ routes, pageContext }) => {
     fontFamily: 'heading',
     letterSpacing: '2px',
     fontSize: 1,
-  };
+  }
 
   const getHeight = () => {
     if (curCity === 'Newtown') {
-      return '-501';
+      return '-501px'
+    } else if (curCity === 'Ridgefield') {
+      return '-455px'
     }
-    return '-413px';
-  };
+    return '-455px'
+  }
 
   const getDoordashLink = () => {
     switch (curCity) {
       case 'Newtown':
-        return 'https://www.doordash.com/store/red-rooster-pub-newtown-588921/en-US/?pickup=true';
+        return 'https://www.doordash.com/store/red-rooster-pub-newtown-588921/en-US/?pickup=true'
       case 'Ridgefield':
-        return 'https://www.doordash.com/store/red-rooster-pub-ridgefield-588921/en-US';
+        return 'https://www.doordash.com/store/red-rooster-pub-ridgefield-588921/en-US'
       case 'Wilton':
-        return 'https://www.doordash.com/store/red-rooster-pub-wilton-1102750/en-US';
+        return 'https://www.doordash.com/store/red-rooster-pub-wilton-1102750/en-US'
     }
-  };
+  }
 
   return (
     <Box
@@ -235,7 +237,7 @@ const Navigation = ({ routes, pageContext }) => {
         </Box>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

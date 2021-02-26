@@ -1,10 +1,10 @@
-import { jsx, Box, Flex, Text, Image } from 'theme-ui';
-import React from 'react';
-import HeroSlider, { Slide } from 'hero-slider';
-import { Link } from 'gatsby';
+import { jsx, Box, Flex, Text, Image } from 'theme-ui'
+import React from 'react'
+import HeroSlider, { Slide } from 'hero-slider'
+import { Link } from 'gatsby'
 
-import cloudinaryHelper from '../helpers/cloudinaryHelper';
-import SimpleShout from '../components/SimpleShout';
+import cloudinaryHelper from '../helpers/cloudinaryHelper'
+import SimpleShout from '../components/SimpleShout'
 
 const HomeHero = ({ withShout, id, location }) => {
   const ridgefieldPhotos = [
@@ -13,7 +13,7 @@ const HomeHero = ({ withShout, id, location }) => {
     'https://res.cloudinary.com/gonation/image/upload/v1598460035/sites/red-rooster/ridgefield/Chopped_Cobb_Salad_7.jpg',
     // 'https://res.cloudinary.com/gonation/image/upload/v1598460315/sites/red-rooster/ridgefield/Dining_Room_6.jpg',
     'https://res.cloudinary.com/gonation/image/upload/v1601503161/sites/red-rooster/hero-4.jpg',
-  ];
+  ]
 
   return (
     <Box sx={{ position: 'relative' }}>
@@ -66,7 +66,7 @@ const HomeHero = ({ withShout, id, location }) => {
               textTransform: 'uppercase',
               width: '100%',
               textAlign: 'right',
-              paddingRight: 5,
+              paddingRight: [4, 5],
               mb: 0,
             }}>
             {location}
@@ -88,19 +88,23 @@ const HomeHero = ({ withShout, id, location }) => {
             alt='Red Rooster'
           />
         </Flex>
-        <Box sx={{ mt: [5, 6] }}>
+        <Box sx={{ mt: ['auto', 'auto'] }}>
           {withShout ? <SimpleShout id={id} /> : ''}
         </Box>
         <Box sx={{ mt: 'auto' }}>
           <Text
             variant='heading'
-            sx={{ fontSize: 8, display: ['none', 'inline'], color: 'white' }}>
+            sx={{
+              fontSize: [4, 6, '80px'],
+              display: ['none', 'inline'],
+              color: 'white',
+            }}>
             The Best Night In Town
           </Text>
         </Box>
       </Flex>
     </Box>
-  );
-};
+  )
+}
 
-export default HomeHero;
+export default HomeHero

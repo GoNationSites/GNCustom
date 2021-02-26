@@ -1,36 +1,36 @@
 /** @jsx jsx */
-import { jsx, Box, Image, Flex, Text } from 'theme-ui';
-import React, { useState } from 'react';
-import { Link } from 'gatsby';
-import Right from './icons/Right';
-import slugify from 'slugify';
+import { jsx, Box, Image, Flex, Text } from 'theme-ui'
+import React, { useState } from 'react'
+import { Link } from 'gatsby'
+import Right from './icons/Right'
+import slugify from 'slugify'
 
-import ClickableAddress from '../components/ClickableAddress';
-import ClickablePhone from '../components/ClickablePhone';
+import ClickableAddress from '../components/ClickableAddress'
+import ClickablePhone from '../components/ClickablePhone'
 
 // takes in logo and an array of all location items
 const MobileRevealSplash = ({ logo, locations }) => {
-  const [activeLocation, setActiveLocation] = useState(null);
+  const [activeLocation, setActiveLocation] = useState(null)
   const businessLocations = locations[0].node
     ? locations.map(({ node }) => node.data)
-    : locations;
+    : locations
 
   const getBG = cover => ({
     background: `url(${cover.imageBaseUrl}/${cover.imagePrefix})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-  });
+  })
 
   const handleLocationClick = business => {
-    setActiveLocation(business);
-  };
+    setActiveLocation(business)
+  }
 
   const callDirStyle = {
     color: 'text',
-    fontSize: 1,
+    fontSize: '0.8rem',
     fontFamily: 'heading',
     textTransform: 'uppercase',
-  };
+  }
 
   return (
     <Box>
@@ -59,19 +59,26 @@ const MobileRevealSplash = ({ logo, locations }) => {
                 color: 'text',
                 bg: 'background',
                 paddingY: 3,
-                paddingX: 3,
+                paddingX: 2,
                 borderTopLeftRadius: '30px',
                 borderBottomLeftRadius: '30px',
                 transition: 'all 2s',
                 position: 'relative',
-                left: activeLocation === business ? 0 : '230px',
+                width: '300px',
+                transform: 'translateX(100%)',
+                left: activeLocation === business ? '-300px' : '-120px',
                 transition: 'all .3s',
               }}>
               <Text as='a' onClick={() => handleLocationClick(business)}>
                 <Flex sx={{ alignItems: 'center' }}>
                   <Text
                     variant='heading'
-                    sx={{ fontSize: 2, fontWeight: '700', pr: '3rem' }}>
+                    sx={{
+                      fontSize: '1rem',
+                      fontWeight: '700',
+                      // pr: '3rem',
+                      width: '140px',
+                    }}>
                     {business.city}{' '}
                   </Text>
 
@@ -81,6 +88,7 @@ const MobileRevealSplash = ({ logo, locations }) => {
                   <Flex
                     sx={{
                       width: '220px',
+                      margin: '0 0 0 auto',
                       overflow: 'hidden',
                       justifyContent: 'space-evenly',
                       transition: 'width .3s',
@@ -130,7 +138,7 @@ const MobileRevealSplash = ({ logo, locations }) => {
         </Flex>
       </Flex>
     </Box>
-  );
-};
+  )
+}
 
-export default MobileRevealSplash;
+export default MobileRevealSplash
