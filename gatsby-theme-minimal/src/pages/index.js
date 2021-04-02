@@ -1,15 +1,15 @@
 /** @jsx jsx */
-import { jsx, Box, Text, Flex, Image } from 'theme-ui';
-import React, { useState, useEffect, useRef } from 'react';
-import { Link as ScrollLink, Element } from 'react-scroll';
-import PageTransition from 'gatsby-plugin-page-transitions';
+import { jsx, Box, Text, Flex, Image } from 'theme-ui'
+import React, { useState, useEffect, useRef } from 'react'
+import { Link as ScrollLink, Element } from 'react-scroll'
+import PageTransition from 'gatsby-plugin-page-transitions'
 
-import AwesomeSlider from '../components/Slider/AwesomeSlider';
-import cloudinaryHelper from '../helpers/cloudinaryHelper';
-import LocationBoxes from '../components/LocationBoxes';
+import AwesomeSlider from '../components/Slider/AwesomeSlider'
+import cloudinaryHelper from '../helpers/cloudinaryHelper'
+import LocationBoxes from '../components/LocationBoxes'
 
 const Index = ({ data }) => {
-  const refContainer = useRef();
+  const refContainer = useRef()
 
   const slidesMobile = [
     cloudinaryHelper(
@@ -32,7 +32,7 @@ const Index = ({ data }) => {
     //   'https://res.cloudinary.com/gonation/image/upload/v1597940532/sites/mix-prime/mobile-slide-5.jpg',
     //   900
     // ),
-  ];
+  ]
 
   const slidesDesktop = [
     cloudinaryHelper(
@@ -60,10 +60,10 @@ const Index = ({ data }) => {
     //    'https://res.cloudinary.com/gonation/image/upload/v1598018070/sites/mix-prime/desktop-slide-5.jpg',
     //    1900
     //  ),
-  ];
+  ]
 
   const logo =
-    'https://res.cloudinary.com/gonation/image/upload/v1598370120/sites/mix-prime/prime-basic.png';
+    'https://res.cloudinary.com/gonation/image/upload/v1598370120/sites/mix-prime/prime-basic.png'
 
   return (
     <PageTransition
@@ -172,10 +172,10 @@ const Index = ({ data }) => {
         </Box>
       </Box>
     </PageTransition>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index
 
 export const query = graphql`
   {
@@ -251,4 +251,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

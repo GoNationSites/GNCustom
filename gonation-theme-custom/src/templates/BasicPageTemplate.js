@@ -1,26 +1,26 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text } from 'theme-ui';
-import React from 'react';
-import slugify from 'slugify';
+import { jsx, Box, Flex, Text, Heading, Link, Image } from 'theme-ui'
+import React from 'react'
+import slugify from 'slugify'
 
-import Layout from '../components/Layout';
-import HomeHero from '../components/HomeHero';
-import SimpleHero from '../components/SimpleHero';
-import Menu from '../components/Menu';
-import HomeRenderer from '../components/HomeRenderer';
-import Gallery from '../components/Gallery';
-import ButtonRow from '../components/ButtonRow';
-import ContactPage from '../components/ContactPage';
-import AboutPage from '../components/AboutPage';
-import EventsPage from '../components/EventsPage';
-import GalleryPage from '../components/GalleryPage';
-import OnlineOrdering from '../components/OnlineOrdering';
+import Layout from '../components/Layout'
+import HomeHero from '../components/HomeHero'
+import SimpleHero from '../components/SimpleHero'
+import Menu from '../components/Menu'
+import HomeRenderer from '../components/HomeRenderer'
+import Gallery from '../components/Gallery'
+import ButtonRow from '../components/ButtonRow'
+import ContactPage from '../components/ContactPage'
+import AboutPage from '../components/AboutPage'
+import EventsPage from '../components/EventsPage'
+import GalleryPage from '../components/GalleryPage'
+import OnlineOrdering from '../components/OnlineOrdering'
 
 const BasicPageTemplate = ({ pageContext }) => {
-  const { curPage, id } = pageContext;
+  const { curPage, id } = pageContext
   const renderHero = () => {
     if (curPage.title === 'Home') {
-      return <HomeHero withShout id={id} location={pageContext.data.city} />;
+      return <HomeHero withShout id={id} location={pageContext.data.city} />
     } else
       return (
         <SimpleHero
@@ -28,15 +28,15 @@ const BasicPageTemplate = ({ pageContext }) => {
           location={pageContext.data.city}
           pageTitle={curPage.title}
         />
-      );
-  };
+      )
+  }
 
-  const routes = pageContext.pages;
+  const routes = pageContext.pages
 
   const renderComponent = title => {
     switch (title) {
       case 'Menu':
-        return <Menu id={id} poweredList='1' />;
+        return <Menu id={id} poweredList='1' />
       case 'Home':
         return (
           <>
@@ -64,9 +64,45 @@ const BasicPageTemplate = ({ pageContext }) => {
                 location={pageContext.data.city}
                 pages={['menu', 'gallery', 'contact']}
               />
+
+              <Box
+                sx={{
+                  backgroundImage:
+                    "url('https://res.cloudinary.com/gonation/image/upload/v1617388779/sites/mix-prime/serving-ct-image.jpg')",
+                  backgroundSize: 'cover',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  padding: '25vh 2rem',
+                  color: 'white',
+                }}>
+                <Heading sx={{ marginBottom: '1rem' }}>
+                  Red Rooster is serving CT
+                </Heading>
+                <Text sx={{ marginBottom: '2rem' }}>
+                  Find out how local business are vital to the economy
+                </Text>
+
+                <Link
+                  href='https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fservingconnecticut.com%2f&c=E,1,hA45iW0GZJdGWU2_lp0BOlPA2MbuJCyCSHBrRznoiP5v2BNJNsn5x0h4ADkZlBLeOHr2HP5RMLme4LozPT9vTxNK1gc3p9-xVDwmWt19f7h14J2cmx2_Ag,,&typo=1'
+                  target='_blank'>
+                  <Image
+                    sx={{
+                      maxWidth: '300px',
+                      transition: 'all ease-in-out 0.5s',
+                      ':hover': {
+                        transform: 'scale(1.2)',
+                      },
+                    }}
+                    src='https://res.cloudinary.com/gonation/image/upload/v1617388067/sites/mix-prime/logo-hero.png'
+                    alt='reseturants serving connecticut'
+                  />
+                </Link>
+              </Box>
             </Box>
           </>
-        );
+        )
       case 'Contact':
         return (
           <ContactPage
@@ -74,14 +110,14 @@ const BasicPageTemplate = ({ pageContext }) => {
             location={slugify(pageContext.data.city, { lower: true })}
             id={id}
           />
-        );
+        )
       case 'About':
         return (
           <AboutPage
             data={pageContext}
             location={slugify(pageContext.data.city, { lower: true })}
           />
-        );
+        )
 
       case 'Events':
         return (
@@ -90,7 +126,7 @@ const BasicPageTemplate = ({ pageContext }) => {
             location={slugify(pageContext.data.city, { lower: true })}
             id={id}
           />
-        );
+        )
       case 'Gallery':
         return (
           <GalleryPage
@@ -98,12 +134,12 @@ const BasicPageTemplate = ({ pageContext }) => {
             location={slugify(pageContext.data.city, { lower: true })}
             id={id}
           />
-        );
+        )
       default:
-        console.log('in default');
-        return '';
+        console.log('in default')
+        return ''
     }
-  };
+  }
   return (
     <Layout pageTitle={curPage.title} routes={routes} pageContext={pageContext}>
       {renderHero()}
@@ -132,7 +168,7 @@ const BasicPageTemplate = ({ pageContext }) => {
         </Box>
       </Box>
     </Layout>
-  );
-};
+  )
+}
 
-export default BasicPageTemplate;
+export default BasicPageTemplate
