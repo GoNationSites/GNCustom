@@ -46,9 +46,7 @@ const Footer = ({ location }) => {
     };
   });
 
-  const site = data.allSiteData.edges.filter(
-    ({ node }) => node.data.city === location
-  );
+  const site = data.allSiteData.edges.filter(({ node }) => node.data.city === location);
 
   const getFooterImg = () =>
     location === 'Woodbury'
@@ -142,10 +140,10 @@ const Footer = ({ location }) => {
       <Box sx={{ bg: 'white' }}>
         {location === 'Danbury' ? (
           <iframe
-            src='https://cdn.lightwidget.com/widgets/f3c23c0072515353be475ab9975738e2.html'
-            scrolling='no'
-            allowtransparency='true'
-            class='lightwidget-widget'
+            src="https://cdn.lightwidget.com/widgets/f3c23c0072515353be475ab9975738e2.html"
+            scrolling="no"
+            allowtransparency="true"
+            className="lightwidget-widget"
             style={{
               width: '100%',
               border: 0,
@@ -156,10 +154,10 @@ const Footer = ({ location }) => {
             }}></iframe>
         ) : (
           <iframe
-            src='https://cdn.lightwidget.com/widgets/7c9b0c45a5b359878ab8917541f04100.html'
-            scrolling='no'
-            allowtransparency='true'
-            class='lightwidget-widget'
+            src="https://cdn.lightwidget.com/widgets/7c9b0c45a5b359878ab8917541f04100.html"
+            scrolling="no"
+            allowtransparency="true"
+            className="lightwidget-widget"
             style={{
               width: '100%',
               border: 0,
@@ -171,7 +169,7 @@ const Footer = ({ location }) => {
         )}
       </Box>
       <Box
-        as='footer'
+        as="footer"
         sx={{
           py: [3, 4, 5],
           background: 'white',
@@ -179,14 +177,44 @@ const Footer = ({ location }) => {
           backgroundPosition: 'center',
           color: '#111',
         }}>
-        <Box sx={{ textAlign: 'center' }}>
+        <Flex sx={{ textAlign: 'center', justifyContent: 'center' }}>
           <Image
-            alt='Mix Prime'
+            alt="Mix Prime"
             sx={{ maxWidth: '300px' }}
             src={
               'https://res.cloudinary.com/gonation/image/upload/v1598110699/sites/mix-prime/logo-black.png'
             }></Image>
-        </Box>
+          {location === 'Danbury' ? (
+            <>
+              {' '}
+              <link href="https://awards.infcdn.net/rect_v2.css" rel="stylesheet" />
+              <div
+                id="rest_v2"
+                onclick="if(event.target.nodeName.toLowerCase() != 'a') {window.open(this.querySelector('.sq_center').href);return 0;}">
+                {' '}
+                <div className="rb_flex rb_top">
+                  {' '}
+                  <span className="rb_hat"></span> <span className="rb_type f12">Recommended</span>{' '}
+                </div>{' '}
+                <a
+                  href="https://restaurantguru.com/Max-40-Danbury"
+                  className="rb_center f16"
+                  target="_blank">
+                  MIX PRIME STEAKHOUSE
+                </a>{' '}
+                <div className="rb_flex">
+                  {' '}
+                  <a href="https://restaurantguru.com" className="rb_bot" target="_blank">
+                    Restaurant Guru
+                  </a>{' '}
+                  <div>2021</div>{' '}
+                </div>
+              </div>{' '}
+            </>
+          ) : (
+            ''
+          )}
+        </Flex>
         <Box>
           <SocialIcons
             iconFill={'#111'}
@@ -231,8 +259,8 @@ const Footer = ({ location }) => {
       <Box sx={{ background: 'black', paddingY: 2 }}>
         <Box sx={{ maxWidth: '175px', margin: 'auto' }}>
           <img
-            src='https://www.gonationsites.com/GNSE/gn-sites/images/gn-power-white.svg'
-            alt='GoNation'
+            src="https://www.gonationsites.com/GNSE/gn-sites/images/gn-power-white.svg"
+            alt="GoNation"
           />
         </Box>
       </Box>
