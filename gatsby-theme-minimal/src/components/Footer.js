@@ -191,7 +191,6 @@ const Footer = ({ location }) => {
               <div
                 id="rest_v2"
                 onclick="if(event.target.nodeName.toLowerCase() != 'a') {window.open(this.querySelector('.sq_center').href);return 0;}">
-                {' '}
                 <div className="rb_flex rb_top">
                   {' '}
                   <span className="rb_hat"></span> <span className="rb_type f12">Recommended</span>{' '}
