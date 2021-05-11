@@ -1,19 +1,19 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Button, Text, Image } from 'theme-ui';
-import PageTransition from 'gatsby-plugin-page-transitions';
+import { jsx, Box, Flex, Button, Text, Image, Heading, Link } from 'theme-ui'
+import PageTransition from 'gatsby-plugin-page-transitions'
 
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import cloudinaryOptimize from '../../helpers/cloudinaryHelper';
-import Layout from '../../components/LayoutWoodbury';
-import AboutText from '../../components/AboutText';
-import ContentShowcase from '../../components/ContentShowcase';
-import MenuShowcaseSlider from '../../components/MenuShowcaseSlider';
-import cloudinaryHelper from '../../helpers/cloudinaryHelper';
-import doordash from '../../components/icons/doordash-logo.png';
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import cloudinaryOptimize from '../../helpers/cloudinaryHelper'
+import Layout from '../../components/LayoutWoodbury'
+import AboutText from '../../components/AboutText'
+import ContentShowcase from '../../components/ContentShowcase'
+import MenuShowcaseSlider from '../../components/MenuShowcaseSlider'
+import cloudinaryHelper from '../../helpers/cloudinaryHelper'
+import doordash from '../../components/icons/doordash-logo.png'
 
-import FullAddress from '../../components/FullAddress';
-import FullPhone from '../../components/FullPhone';
+import FullAddress from '../../components/FullAddress'
+import FullPhone from '../../components/FullPhone'
 
 const Woodbury = () => {
   const data = useStaticQuery(graphql`
@@ -39,10 +39,10 @@ const Woodbury = () => {
         }
       }
     }
-  `);
+  `)
   const site = data.allSiteData.edges.filter(
     el => el.node.data.city === 'Woodbury'
-  )[0].node.data;
+  )[0].node.data
 
   const contentShowcaseData = [
     {
@@ -70,7 +70,7 @@ const Woodbury = () => {
         link: 'woodbury/events',
       },
     },
-  ];
+  ]
 
   return (
     <PageTransition
@@ -135,9 +135,42 @@ const Woodbury = () => {
         </Box>
 
         <MenuShowcaseSlider id='bzn-mmT_2ynbR4eGFehR2VEi8g' pl='1' />
+
+        <Box
+          className='testin'
+          sx={{
+            backgroundImage:
+              "url('https://res.cloudinary.com/gonation/image/upload/v1617388779/sites/mix-prime/serving-ct-image.jpg')",
+            backgroundSize: 'cover',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '25vh 2rem',
+            color: 'white',
+          }}>
+          <Heading sx={{ marginBottom: '1rem' }}>
+            Mix prime is serving CT
+          </Heading>
+          <Text sx={{ marginBottom: '2rem' }}>
+            Find out how local business are vital to the economy
+          </Text>
+
+          <Link
+            href='https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fservingconnecticut.com%2f&c=E,1,hA45iW0GZJdGWU2_lp0BOlPA2MbuJCyCSHBrRznoiP5v2BNJNsn5x0h4ADkZlBLeOHr2HP5RMLme4LozPT9vTxNK1gc3p9-xVDwmWt19f7h14J2cmx2_Ag,,&typo=1'
+            target='_blank'>
+            <Image
+              sx={{
+                maxWidth: '300px',
+              }}
+              src='https://res.cloudinary.com/gonation/image/upload/v1617388067/sites/mix-prime/logo-hero.png'
+              alt='reseturants serving connecticut'
+            />
+          </Link>
+        </Box>
       </Layout>
     </PageTransition>
-  );
-};
+  )
+}
 
-export default Woodbury;
+export default Woodbury
