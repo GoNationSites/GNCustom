@@ -17,6 +17,8 @@
     "react-hamburger-menu": "^1.2.1",
     "react-image-lightbox": "^5.1.1",
     "slugify": "^1.4.5",
-    "theme-ui": "^0.3.1"
+    "theme-ui": "^0.3.1",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5"
   }
 }
