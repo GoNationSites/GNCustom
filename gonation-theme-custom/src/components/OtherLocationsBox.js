@@ -23,7 +23,7 @@ const OtherLocationsBox = () => {
       <Box sx={{ paddingX: 3, paddingY: 2 }}>
         <a href='https://www.redroosterct.com/ridgefield'>
           <Button sx={buttonStyle} variant='filll'>
-            Ridigefield
+            Ridgefield
           </Button>
         </a>
       </Box>
@@ -50,7 +50,8 @@ const OtherLocationsBox = () => {
         justifyContent: 'center',
         marginTop: 'auto',
         flexDirection: ['column', 'row'],
-      }}>
+      }}
+    >
       <Box sx={{ paddingX: 3, paddingY: 2 }}>
         <a href='https://www.mixprimesteakhouse.com/danbury'>
           <Button sx={buttonStyle} variant='filll'>
@@ -79,7 +80,8 @@ const OtherLocationsBox = () => {
           justifyContent: 'center',
           flexDirection: ['column', 'row'],
           alignItems: 'center',
-        }}>
+        }}
+      >
         <Box sx={{ padding: [3, 4, 5], textAlign: 'center' }}>
           <Image sx={logoStyle} src={roosterLogo} alt='Red Rooster'></Image>
           {renderRoosterLocations()}
