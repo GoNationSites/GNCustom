@@ -1,4 +1,4 @@
-import { jsx, Box, Flex, Text, Image } from 'theme-ui'
+import { Box, Flex, Text, Image } from 'theme-ui'
 import React from 'react'
 import HeroSlider, { Slide } from 'hero-slider'
 import { Link } from 'gatsby'
@@ -30,8 +30,9 @@ const HomeHero = ({ withShout, id, location }) => {
           shouldDisplayButtons: false,
           autoplayDuration: 12000,
           height: '99vh',
-        }}>
-        {ridgefieldPhotos.map(photo => (
+        }}
+      >
+        {ridgefieldPhotos.map((photo) => (
           <Slide
             background={{
               backgroundImage: cloudinaryHelper(photo, 2000),
@@ -54,7 +55,8 @@ const HomeHero = ({ withShout, id, location }) => {
           paddingX: 3,
           flexDirection: 'column',
           paddingTop: 4,
-        }}>
+        }}
+      >
         <Flex sx={{ mb: 4, flexDirection: 'column', alignItems: 'flex-start' }}>
           <Text
             sx={{
@@ -68,12 +70,14 @@ const HomeHero = ({ withShout, id, location }) => {
               textAlign: 'right',
               paddingRight: [4, 5],
               mb: 0,
-            }}>
+            }}
+          >
             {location}
             <br />{' '}
             <Text
               as='span'
-              sx={{ fontSize: 0, fontWeight: '400', color: 'white' }}>
+              sx={{ fontSize: 0, fontWeight: '400', color: 'white' }}
+            >
               <Link to='/' style={{ color: 'white' }}>
                 Change Location
               </Link>
@@ -98,7 +102,8 @@ const HomeHero = ({ withShout, id, location }) => {
               fontSize: [4, 6, '80px'],
               display: ['none', 'inline'],
               color: 'white',
-            }}>
+            }}
+          >
             The Best Night In Town
           </Text>
         </Box>

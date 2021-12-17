@@ -9,6 +9,8 @@
     "build": "gatsby build"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
     "gatsby": "^2.24.47",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gonation-theme-custom": "^1.0.0",
