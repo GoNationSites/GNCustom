@@ -59,19 +59,18 @@ const HoursComponent = ({ id, location }) => {
           hour: hour.hours,
         });
       } else {
-        const curHours = hour.hours;
+        const curHours = hour;
 
-        formattedHours.filter(el =>
-          console.log('2 comparisons', el.hour, curHours)
-        );
         if (formattedHours.filter(el => el.hour === curHours).length) {
           formattedHours[0].day.push(hour.day);
         } else {
           console.log('in the else');
-          formattedHours.push({
-            day: [hour.day],
-            hour: hour.hours,
-          });
+          if (hours.day) {
+            formattedHours.push({
+              day: [hour.day],
+              hour: hour.hours,
+            });
+          }
         }
         console.log(hour);
       }
@@ -124,16 +123,31 @@ const HoursComponent = ({ id, location }) => {
       return (
         <>
           <Box sx={{ pb: 3 }}>
-            <Text as='h3' variant='heading'>
-              Monday, Tuesday, Wednesday, Thursday, Sunday
+            <Text as="h3" variant="heading">
+              Hours Of Operation
             </Text>
-            <Text as='p'>11:00 AM - 10:00 PM</Text>
+            <Text as="h3" variant="heading">
+              Monday - Sunday
+            </Text>
+            <Text as="p">11:30 AM - TIL</Text>
           </Box>
-          <Box>
-            <Text as='h3' variant='heading'>
-              Friday, Saturday
+          <Box sx={{ pb: 3 }}>
+            <Text as="h3" variant="heading">
+              Kitchen Hours
             </Text>
-            <Text as='p'>11:00 AM - 11:00 PM</Text>
+            <Text as="h3" variant="heading">
+              Monday - Sunday
+            </Text>
+            <Text as="p">11:00 AM - 10:00 PM</Text>
+          </Box>
+          <Box sx={{ pb: 3 }}>
+            <Text as="h3" variant="heading">
+              Brunch Hours
+            </Text>
+            <Text as="h3" variant="heading">
+              Sunday
+            </Text>
+            <Text as="p">11:00 AM - 3:00 PM</Text>
           </Box>
         </>
       );
@@ -143,53 +157,53 @@ const HoursComponent = ({ id, location }) => {
       return (
         <>
           <Box sx={{ pb: 3 }}>
-            <Text as='h2' variant='heading' sx={{ mb: 3 }}>
+            <Text as="h2" variant="heading" sx={{ mb: 3 }}>
               Kitchen
             </Text>
-            <Text as='h3' variant='heading'>
+            <Text as="h3" variant="heading">
               Monday, Tuesday, Wednesday, Thursday
             </Text>
-            <Text sx={{ mb: 3 }} as='p'>
+            <Text sx={{ mb: 3 }} as="p">
               11:30 AM - 10:00 PM
             </Text>
 
-            <Text as='h3' variant='heading'>
+            <Text as="h3" variant="heading">
               Friday, Saturday
             </Text>
-            <Text sx={{ mb: 3 }} as='p'>
+            <Text sx={{ mb: 3 }} as="p">
               11:30 AM - 11:00 PM
             </Text>
 
-            <Text as='h3' variant='heading'>
+            <Text as="h3" variant="heading">
               Sunday
             </Text>
-            <Text sx={{ mb: 3 }} as='p'>
+            <Text sx={{ mb: 3 }} as="p">
               11:30 AM - 9:00 PM
             </Text>
           </Box>
 
           <Box sx={{ pb: 3 }}>
-            <Text as='h2' variant='heading' sx={{ mb: 3 }}>
+            <Text as="h2" variant="heading" sx={{ mb: 3 }}>
               Bar
             </Text>
-            <Text as='h3' variant='heading'>
+            <Text as="h3" variant="heading">
               Monday, Tuesday, Wednesday, Sunday
             </Text>
-            <Text sx={{ mb: 3 }} as='p'>
+            <Text sx={{ mb: 3 }} as="p">
               11:30 AM - 11:00 PM
             </Text>
 
-            <Text as='h3' variant='heading'>
+            <Text as="h3" variant="heading">
               Thursday
             </Text>
-            <Text sx={{ mb: 3 }} as='p'>
+            <Text sx={{ mb: 3 }} as="p">
               11:30 AM - 9:00 PM
             </Text>
 
-            <Text as='h3' variant='heading'>
+            <Text as="h3" variant="heading">
               Friday, Saturday
             </Text>
-            <Text sx={{ mb: 3 }} as='p'>
+            <Text sx={{ mb: 3 }} as="p">
               11:30 AM - 2:00 AM
             </Text>
           </Box>
@@ -201,16 +215,16 @@ const HoursComponent = ({ id, location }) => {
       return (
         <>
           <Box sx={{ pb: 3 }}>
-            <Text as='h3' variant='heading'>
+            <Text as="h3" variant="heading">
               Monday, Tuesday, Wednesday, Thursday, Sunday
             </Text>
-            <Text as='p'>11:00 AM - 10:00 PM</Text>
+            <Text as="p">11:00 AM - 10:00 PM</Text>
           </Box>
           <Box>
-            <Text as='h3' variant='heading'>
+            <Text as="h3" variant="heading">
               Friday, Saturday
             </Text>
-            <Text as='p'>11:00 AM - 10:00 PM</Text>
+            <Text as="p">11:00 AM - 10:00 PM</Text>
           </Box>
         </>
       );

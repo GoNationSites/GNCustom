@@ -4,7 +4,6 @@ import { jsx, Text } from 'theme-ui';
 import React from 'react';
 
 const ClickablePhone = ({ title, data }) => {
-  console.log('data is', data);
   const { phone } = data;
 
   return (
