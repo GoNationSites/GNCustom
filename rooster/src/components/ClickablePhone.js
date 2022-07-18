@@ -3,10 +3,13 @@ import { jsx, Text } from 'theme-ui';
 
 import React from 'react';
 
-const ClickablePhone = ({ tel, title, style }) => {
+const ClickablePhone = ({ title, data }) => {
+  console.log('data is', data);
+  const { phone } = data;
+
   return (
-    <Text as='a' sx={style} href={`tel:${tel}`}>
-      {title ? title : tel}
+    <Text as="a" href={`tel:${phone}`}>
+      {title ? title : phone}
     </Text>
   );
 };

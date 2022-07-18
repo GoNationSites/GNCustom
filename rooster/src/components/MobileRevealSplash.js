@@ -1,36 +1,38 @@
 /** @jsx jsx */
-import { jsx, Box, Image, Flex, Text } from 'theme-ui'
-import React, { useState } from 'react'
-import { Link } from 'gatsby'
-import Right from './icons/Right'
-import slugify from 'slugify'
+import { jsx, Box, Image, Flex, Text } from 'theme-ui';
+import React, { useState } from 'react';
+import { Link } from 'gatsby';
+import Right from './icons/Right';
+import slugify from 'slugify';
 
-import ClickableAddress from '../components/ClickableAddress'
-import ClickablePhone from '../components/ClickablePhone'
+import ClickableAddress from '../components/ClickableAddress';
+import ClickablePhone from '../components/ClickablePhone';
 
 // takes in logo and an array of all location items
 const MobileRevealSplash = ({ logo, locations }) => {
-  const [activeLocation, setActiveLocation] = useState(null)
+  const [activeLocation, setActiveLocation] = useState(null);
   const businessLocations = locations[0].node
     ? locations.map(({ node }) => node.data)
-    : locations
+    : locations;
+
+  console.log(businessLocations, 'BLocation');
 
   const getBG = cover => ({
     background: `url(${cover.imageBaseUrl}/${cover.imagePrefix})`,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-  })
+  });
 
   const handleLocationClick = business => {
-    setActiveLocation(business)
-  }
+    setActiveLocation(business);
+  };
 
   const callDirStyle = {
     color: 'text',
     fontSize: '0.8rem',
     fontFamily: 'heading',
     textTransform: 'uppercase',
-  }
+  };
 
   return (
     <Box>
@@ -39,7 +41,8 @@ const MobileRevealSplash = ({ logo, locations }) => {
           flexDirection: 'column',
           height: 'calc(100vh - 70px)',
           padding: 2,
-        }}>
+        }}
+      >
         <Box sx={{ height: '25%', padding: 2, textAlign: 'center' }}>
           <Image src={logo} sx={{ height: '100%', width: 'auto' }}></Image>
         </Box>
@@ -53,7 +56,8 @@ const MobileRevealSplash = ({ logo, locations }) => {
               justifyContent: 'flex-end',
               mb: 3,
               overflow: 'hidden',
-            }}>
+            }}
+          >
             <Box
               sx={{
                 color: 'text',
@@ -64,21 +68,23 @@ const MobileRevealSplash = ({ logo, locations }) => {
                 borderBottomLeftRadius: '30px',
                 transition: 'all 2s',
                 position: 'relative',
-                width: '300px',
+                width: '355px',
                 transform: 'translateX(100%)',
-                left: activeLocation === business ? '-300px' : '-120px',
+                left: activeLocation === business ? '-355px' : '-120px',
                 transition: 'all .3s',
-              }}>
-              <Text as='a' onClick={() => handleLocationClick(business)}>
+              }}
+            >
+              <Text as="a" onClick={() => handleLocationClick(business)}>
                 <Flex sx={{ alignItems: 'center' }}>
                   <Text
-                    variant='heading'
+                    variant="heading"
                     sx={{
                       fontSize: '1rem',
                       fontWeight: '700',
                       // pr: '3rem',
                       width: '140px',
-                    }}>
+                    }}
+                  >
                     {business.city}{' '}
                   </Text>
 
@@ -87,20 +93,22 @@ const MobileRevealSplash = ({ logo, locations }) => {
                   </Text> */}
                   <Flex
                     sx={{
-                      width: '220px',
+                      //   width: '220px',
+                      width: '100%',
                       margin: '0 0 0 auto',
                       overflow: 'hidden',
                       justifyContent: 'space-evenly',
                       transition: 'width .3s',
                       alignItems: 'center',
-                    }}>
-                    <Text as='span' sx={callDirStyle}>
-                      <ClickablePhone data={business} title='Call' />
+                    }}
+                  >
+                    <Text as="span" sx={callDirStyle}>
+                      <ClickablePhone data={business} title="Call" />
                     </Text>
-                    <Text as='span' sx={callDirStyle}>
-                      <ClickableAddress data={business} title='Directions' />
+                    <Text as="span" sx={callDirStyle}>
+                      <ClickableAddress data={business} title="Directions" />
                     </Text>
-                    <Text as='span' sx={{ ...callDirStyle }}>
+                    <Text as="span" sx={{ ...callDirStyle }}>
                       <Link to={`/${slugify(business.city, { lower: true })}`}>
                         Website
                       </Link>
@@ -117,28 +125,30 @@ const MobileRevealSplash = ({ logo, locations }) => {
             paddingX: 1,
             flexDirection: 'column',
             alignItems: 'center',
-          }}>
+          }}
+        >
           <Box>
-            <Text as='p' variant='heading'>
+            <Text as="p" variant="heading">
               Red Rooster {new Date().getFullYear()}
             </Text>
           </Box>
           <Box>
             <a
-              href='https://www.gonation.com/'
-              target='_blank'
-              rel='noopener noreferrer'>
+              href="https://www.gonation.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 sx={{ maxWidth: ['200px', '225px'] }}
-                src='https://www.gonationsites.com/GNSE/gn-sites/images/gn-power-black.svg'
-                alt='GoNation'
+                src="https://www.gonationsites.com/GNSE/gn-sites/images/gn-power-black.svg"
+                alt="GoNation"
               />
             </a>
           </Box>
         </Flex>
       </Flex>
     </Box>
-  )
-}
+  );
+};
 
-export default MobileRevealSplash
+export default MobileRevealSplash;
