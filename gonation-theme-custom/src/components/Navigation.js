@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text } from 'theme-ui'
-import React, { useState } from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
-import slugify from 'slugify'
-import HamburgerMenu from 'react-hamburger-menu'
-import { Animated } from 'react-animated-css'
+import { jsx, Box, Flex, Text } from 'theme-ui';
+import React, { useState } from 'react';
+import { useStaticQuery, graphql, Link } from 'gatsby';
+import slugify from 'slugify';
+import HamburgerMenu from 'react-hamburger-menu';
+import { Animated } from 'react-animated-css';
 
-import ClickableAddress from './ClickableAddress'
+import ClickableAddress from './ClickableAddress';
 
 const Navigation = ({ routes, pageContext }) => {
   const locations = useStaticQuery(graphql`
@@ -21,11 +21,11 @@ const Navigation = ({ routes, pageContext }) => {
         }
       }
     }
-  `)
+  `);
 
-  const curCity = pageContext.data.city
+  const curCity = pageContext.data.city;
 
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
   const styleObj = {
     color: 'text',
     fontWeight: '700',
@@ -33,27 +33,27 @@ const Navigation = ({ routes, pageContext }) => {
     fontFamily: 'heading',
     letterSpacing: '2px',
     fontSize: 1,
-  }
+  };
 
   const getHeight = () => {
     if (curCity === 'Newtown') {
-      return '-501px'
+      return '-501px';
     } else if (curCity === 'Ridgefield') {
-      return '-455px'
+      return '-455px';
     }
-    return '-455px'
-  }
+    return '-455px';
+  };
 
   const getDoordashLink = () => {
     switch (curCity) {
       case 'Newtown':
-        return 'https://www.doordash.com/store/red-rooster-pub-newtown-588921/en-US/?pickup=true'
+        return 'https://www.doordash.com/store/red-rooster-pub-newtown-588921/en-US/?pickup=true';
       case 'Ridgefield':
-        return 'https://www.doordash.com/store/red-rooster-pub-ridgefield-588921/en-US'
+        return 'https://www.doordash.com/store/red-rooster-pub-ridgefield-588921/en-US';
       case 'Wilton':
-        return 'https://www.doordash.com/store/red-rooster-pub-wilton-1102750/en-US'
+        return 'https://www.doordash.com/store/red-rooster-pub-wilton-1102750/en-US';
     }
-  }
+  };
 
   return (
     <Box
@@ -74,7 +74,8 @@ const Navigation = ({ routes, pageContext }) => {
         height: ['auto', '100vh'],
         top: ['unset', 0],
         display: ['block', 'flex'],
-      }}>
+      }}
+    >
       <Flex
         sx={{
           alignItems: 'center',
@@ -85,12 +86,13 @@ const Navigation = ({ routes, pageContext }) => {
           flexDirection: ['row', 'column'],
           height: ['auto', '100%'],
           justifyContent: ['unset', 'space-evenly'],
-        }}>
+        }}
+      >
         <Box sx={{ flex: 1, textAlign: 'center', order: ['unset', 0] }}>
           <Box sx={{ display: ['block', 'none'] }}>
             <ClickableAddress
               data={pageContext.data}
-              title='Directions'
+              title="Directions"
               style={styleObj}
             />
           </Box>
@@ -103,9 +105,10 @@ const Navigation = ({ routes, pageContext }) => {
             order: ['unset', 3],
             display: ['block', 'flex'],
             alignItems: 'center',
-          }}>
+          }}
+        >
           <Box sx={{ display: ['block', 'none'] }}>
-            <Text sx={styleObj} as='a' href={`tel:${pageContext.data.phone}`}>
+            <Text sx={styleObj} as="a" href={`tel:${pageContext.data.phone}`}>
               Call
             </Text>
           </Box>
@@ -117,7 +120,8 @@ const Navigation = ({ routes, pageContext }) => {
             justifyContent: 'center',
             order: ['unset', 1],
             cursor: 'pointer',
-          }}>
+          }}
+        >
           <HamburgerMenu
             isOpen={open}
             menuClicked={() => setOpen(!open)}
@@ -125,7 +129,7 @@ const Navigation = ({ routes, pageContext }) => {
             height={15}
             strokeWidth={2}
             rotate={0}
-            color='#EE1C25'
+            color="#EE1C25"
             borderRadius={0}
             animationDuration={0.5}
           />
@@ -137,17 +141,19 @@ const Navigation = ({ routes, pageContext }) => {
           display: ['block', 'flex'],
           flexDirection: 'column',
           pl: [0, 4],
-        }}>
+        }}
+      >
         {routes.map(route => (
           <Box sx={{ paddingY: 2 }}>
             <Text
-              as='a'
+              as="a"
               sx={{
                 color: 'text',
                 fontSize: [3, 4, 5],
                 fontFamily: 'heading',
                 textTransform: 'uppercase',
-              }}>
+              }}
+            >
               <Link
                 activeStyle={{ color: '#EE1C25' }}
                 sx={{
@@ -157,7 +163,8 @@ const Navigation = ({ routes, pageContext }) => {
                     transition: 'all .5s',
                   },
                 }}
-                to={`/${slugify(curCity, { lower: true })}${route.path}`}>
+                to={`/${slugify(curCity, { lower: true })}${route.path}`}
+              >
                 {route.title}
               </Link>
             </Text>
@@ -178,11 +185,38 @@ const Navigation = ({ routes, pageContext }) => {
                   transition: 'all .5s',
                 },
               }}
-              rel='noopener noreferrer'
-              as='a'
-              href='https://www.ubereats.com/connecticut/food-delivery/red-rooster-pub-newtown/nVk1BEWIQ6qwAlCHPcsD2A'
-              target='_blank'>
+              rel="noopener noreferrer"
+              as="a"
+              href="https://www.ubereats.com/connecticut/food-delivery/red-rooster-pub-newtown/nVk1BEWIQ6qwAlCHPcsD2A"
+              target="_blank"
+            >
               Uber Eats
+            </Text>
+          </Box>
+        ) : (
+          ''
+        )}
+
+        {curCity === 'Newtown' ? (
+          <Box sx={{ paddingY: 2 }}>
+            <Text
+              sx={{
+                fontWeight: 'bold',
+                fontFamily: 'heading',
+                color: 'text',
+                fontSize: [3, 4, 5],
+                fontFamily: 'heading',
+                textTransform: 'uppercase',
+                '&:hover': {
+                  color: 'primary',
+                  transition: 'all .5s',
+                },
+              }}
+              rel="noopener noreferrer"
+              as="a"
+              href="/newtown/#hours"
+            >
+              Hours
             </Text>
           </Box>
         ) : (
@@ -203,10 +237,11 @@ const Navigation = ({ routes, pageContext }) => {
                 transition: 'all .5s',
               },
             }}
-            rel='noopener noreferrer'
-            as='a'
+            rel="noopener noreferrer"
+            as="a"
             href={getDoordashLink()}
-            target='_blank'>
+            target="_blank"
+          >
             DoorDash
           </Text>
         </Box>
@@ -219,15 +254,17 @@ const Navigation = ({ routes, pageContext }) => {
             {locations.allSiteData.edges.map(({ node }, idx) => (
               <Box sx={{ marginX: 3, marginLeft: idx === 0 ? 0 : 3 }}>
                 <Text
-                  variant='heading'
+                  variant="heading"
                   sx={{
                     textTransform: 'uppercase',
-                  }}>
+                  }}
+                >
                   <Link
                     sx={{
                       color: curCity === node.data.city ? 'primary' : 'text',
                     }}
-                    to={`/${slugify(node.data.city, { lower: true })}`}>
+                    to={`/${slugify(node.data.city, { lower: true })}`}
+                  >
                     {node.data.city}
                   </Link>
                 </Text>
@@ -237,7 +274,7 @@ const Navigation = ({ routes, pageContext }) => {
         </Box>
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
