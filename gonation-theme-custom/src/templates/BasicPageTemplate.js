@@ -167,7 +167,7 @@ const BasicPageTemplate = ({ pageContext }) => {
             as="h3"
             variant="heading"
           >
-            Monday - Saturday
+            Monday - Sunday
           </Text>
           <Text sx={hoursText} as="p">
             11:30 AM - TIL
@@ -193,7 +193,7 @@ const BasicPageTemplate = ({ pageContext }) => {
             as="h3"
             variant="heading"
           >
-            Friday - Saturday
+            Friday & Saturday
           </Text>
           <Text sx={hoursText} as="p">
             11:30 AM - 11:00 PM
@@ -214,6 +214,15 @@ const BasicPageTemplate = ({ pageContext }) => {
             11:00 AM - 3:00 PM
           </Text>
         </Box>
+        <Text
+          sx={{
+            fontSize: '1.25rem',
+            fontWeight: 'bold',
+            color: 'primary',
+          }}
+        >
+          Last seating for the kitchen -- 30 minutes prior to closing.
+        </Text>
       </section>
     );
   };
