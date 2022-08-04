@@ -172,6 +172,16 @@ const BasicPageTemplate = ({ pageContext }) => {
           <Text sx={hoursText} as="p">
             11:30 AM - TIL
           </Text>
+          <Text
+            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
+            as="h3"
+            variant="heading"
+          >
+            Sunday
+          </Text>
+          <Text sx={hoursText} as="p">
+            11:00 AM - TIL
+          </Text>
         </Box>
         <Box sx={{ pb: 3 }}>
           <Text sx={titleStyle} as="h3" variant="heading">
@@ -198,10 +208,21 @@ const BasicPageTemplate = ({ pageContext }) => {
           <Text sx={hoursText} as="p">
             11:30 AM - 11:00 PM
           </Text>
+
+          <Text
+            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
+            as="h3"
+            variant="heading"
+          >
+            Sunday
+          </Text>
+          <Text sx={hoursText} as="p">
+            11:00 AM - 10:00 PM
+          </Text>
         </Box>
         <Box sx={{ pb: 3 }}>
           <Text sx={titleStyle} as="h3" variant="heading">
-            Brunch Hours
+            Brunch Served From
           </Text>
           <Text
             sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
