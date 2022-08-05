@@ -167,7 +167,7 @@ const BasicPageTemplate = ({ pageContext }) => {
             as="h3"
             variant="heading"
           >
-            Monday - Sunday
+            Monday - Saturday
           </Text>
           <Text sx={hoursText} as="p">
             11:30 AM - TIL
