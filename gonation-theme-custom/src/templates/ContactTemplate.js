@@ -15,7 +15,7 @@ import GalleryPage from '../components/GalleryPage';
 import OnlineOrdering from '../components/OnlineOrdering';
 import cloudinaryOptimize from '../helpers/cloudinaryHelper';
 
-const BasicPageTemplate = ({ pageContext }) => {
+const ContactTemplate = ({ pageContext }) => {
   const { curPage, id } = pageContext;
   const renderHero = () => {
     if (curPage.title === 'Home') {
@@ -108,14 +108,14 @@ const BasicPageTemplate = ({ pageContext }) => {
             </Box>
           </>
         );
-      //   case 'Contact':
-      //     return (
-      //       <ContactPage
-      //         data={pageContext}
-      //         location={slugify(pageContext.data.city, { lower: true })}
-      //         id={id}
-      //       />
-      //     );
+      case 'Contact':
+        return (
+          <ContactPage
+            data={pageContext}
+            location={slugify(pageContext.data.city, { lower: true })}
+            id={id}
+          />
+        );
       case 'About':
         return (
           <AboutPage
@@ -274,7 +274,11 @@ const BasicPageTemplate = ({ pageContext }) => {
               margin: 'auto',
             }}
           >
-            {renderComponent(curPage.title)}
+            <ContactPage
+              data={pageContext}
+              location={slugify(pageContext.data.city, { lower: true })}
+              id={id}
+            />
           </Box>
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -285,4 +289,4 @@ const BasicPageTemplate = ({ pageContext }) => {
   );
 };
 
-export default BasicPageTemplate;
+export default ContactTemplate;

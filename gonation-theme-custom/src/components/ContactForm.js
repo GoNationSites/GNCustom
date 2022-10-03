@@ -7,29 +7,36 @@ const ContactForm = ({ location }) => {
   return (
     <form
       name={`Red Rooster ${location} Contact Form`}
-      method='POST'
-      data-netlify='true'
-      data-netlify-honeypot='bot-field'>
-      <Input type='hidden' name='form-name' value='contact' />
-      <Input name='name' id='name' placeholder='Name' sx={inputStyle} />
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
       <Input
-        type='email'
-        name='email'
-        id='email'
-        placeholder='Email'
+        type="hidden"
+        name="form-name"
+        value={`Red Rooster ${location} Contact Form`}
+      />
+      <Input name="name" id="name" placeholder="Name" sx={inputStyle} />
+      <Input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Email"
         sx={inputStyle}
       />
       <Input
-        type='phone'
-        name='phone'
-        id='phone'
-        placeholder='Phone'
+        type="phone"
+        name="phone"
+        id="phone"
+        placeholder="Phone"
         required
         sx={inputStyle}
       />
-      <Textarea name='message' id='message' rows='6' placeholder='Message' />
+      <Textarea name="message" id="message" rows="6" placeholder="Message" />
       <Box sx={{ textAlign: 'center' }}>
-        <Button variant=''>Submit</Button>
+        <Button type="submit" variant="">
+          Submit
+        </Button>
       </Box>
     </form>
   );
