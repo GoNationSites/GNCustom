@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Box, Flex, Text, Heading, Link, Image } from 'theme-ui';
+import { jsx, Box, Flex, Text, Heading, Link, Image } from 'theme-ui';
 import React from 'react';
 import slugify from 'slugify';
 import Layout from '../components/Layout';
