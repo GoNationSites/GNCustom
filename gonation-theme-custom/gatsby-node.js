@@ -115,11 +115,9 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
   };
 
   dualSiteData.forEach((item, idx) => {
-    console.log('item is: ', item);
     pageArray.forEach(page => {
       if (page.path.includes('contact')) {
         // ! Hacky. We check to see if it's a contact page, and statically generatre a template that does NOT use any dynamic rendering
-        console.log('!!@!!!!');
 
         createPage({
           path: `/${slugify(item.data.city, { lower: true })}${page.path}`,

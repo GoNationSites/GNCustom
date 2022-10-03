@@ -9,7 +9,6 @@ const ContactForm = ({ location }) => {
       name={`Red Rooster ${location} Contact Form`}
       method="POST"
       data-netlify="true"
-      data-netlify-honeypot="bot-field"
     >
       <Input
         type="hidden"

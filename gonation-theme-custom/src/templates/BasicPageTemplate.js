@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import { Box, Flex, Text, Heading, Link, Image } from 'theme-ui';
 import React from 'react';
 import slugify from 'slugify';
@@ -6,7 +7,6 @@ import HomeHero from '../components/HomeHero';
 import SimpleHero from '../components/SimpleHero';
 import Menu from '../components/Menu';
 import HomeRenderer from '../components/HomeRenderer';
-import Gallery from '../components/Gallery';
 import ButtonRow from '../components/ButtonRow';
 import ContactPage from '../components/ContactPage';
 import AboutPage from '../components/AboutPage';
