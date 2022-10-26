@@ -40,7 +40,9 @@ const Woodbury = () => {
       }
     }
   `);
-  const site = data.allSiteData.edges.filter(el => el.node.data.city === 'Woodbury')[0].node.data;
+  const site = data.allSiteData.edges.filter(
+    el => el.node.data.city === 'Woodbury'
+  )[0].node.data;
 
   const contentShowcaseData = [
     {
@@ -87,18 +89,28 @@ const Woodbury = () => {
     >
       <Layout pageTitle="home">
         <Box sx={{ maxWidth: '900px', margin: 'auto' }}>
-          <Flex sx={{ display: ['flex', 'none'], flexWrap: 'wrap', padding: 2 }}>
+          <Flex
+            sx={{ display: ['flex', 'none'], flexWrap: 'wrap', padding: 2 }}
+          >
             <Box sx={{ flex: '1 1 50%', pr: 2 }}>
               <Button variant="blackTransparent">
-                <FullPhone txt="Call" data={site} st={{ color: '#111!important' }} />
+                <FullPhone
+                  txt="Call"
+                  data={site}
+                  st={{ color: '#111!important' }}
+                />
               </Button>
             </Box>
             <Box sx={{ flex: '1 1 50%', pl: 2 }}>
               <Button variant="blackTransparent">
-                <FullAddress data={site} text="Directions" st={{ color: '#111!important' }} />
+                <FullAddress
+                  data={site}
+                  text="Directions"
+                  st={{ color: '#111!important' }}
+                />
               </Button>
             </Box>
-            <Box sx={{ flex: '1 1 100%', pt: '8px' }}>
+            {/* <Box sx={{ flex: '1 1 100%', pt: '8px' }}>
               <Button variant="blackFull" sx={{ border: 'none!important', py: '10px' }}>
                 <Text
                   as="a"
@@ -110,7 +122,7 @@ const Woodbury = () => {
                   Make A Reservation
                 </Text>
               </Button>
-            </Box>
+            </Box> */}
           </Flex>
           <AboutText location="Woodbury"></AboutText>
         </Box>
@@ -141,7 +153,9 @@ const Woodbury = () => {
             color: 'white',
           }}
         >
-          <Heading sx={{ marginBottom: '1rem' }}>Mix prime is serving CT</Heading>
+          <Heading sx={{ marginBottom: '1rem' }}>
+            Mix prime is serving CT
+          </Heading>
           <Text sx={{ marginBottom: '2rem' }}>
             Find out how local business are vital to the economy
           </Text>

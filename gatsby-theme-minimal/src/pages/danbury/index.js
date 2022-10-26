@@ -40,7 +40,9 @@ const Danbury = () => {
       }
     }
   `);
-  const site = data.allSiteData.edges.filter(el => el.node.data.city === 'Woodbury')[0].node.data;
+  const site = data.allSiteData.edges.filter(
+    el => el.node.data.city === 'Danbury'
+  )[0].node.data;
   const contentShowcaseData = [
     {
       img: cloudinaryHelper(
@@ -86,25 +88,38 @@ const Danbury = () => {
     >
       <Layout pageTitle="home">
         <Box sx={{ maxWidth: '730px', margin: 'auto' }}>
-          <Flex sx={{ display: ['flex', 'none'], flexWrap: 'wrap', padding: 2 }}>
+          <Flex
+            sx={{ display: ['flex', 'none'], flexWrap: 'wrap', padding: 2 }}
+          >
             <Box sx={{ flex: '1 1 50%', pr: 2 }}>
               <Button variant="blackTransparent">
-                <FullPhone data={site} txt="Call" st={{ color: '#111!important' }} />
+                <FullPhone
+                  data={site}
+                  txt="Call"
+                  st={{ color: '#111!important' }}
+                />
               </Button>
             </Box>
             <Box sx={{ flex: '1 1 50%', pl: 2 }}>
               <Button variant="blackTransparent">
-                <FullAddress data={site} text="Directions" st={{ color: '#111!important' }} />
+                <FullAddress
+                  data={site}
+                  text="Directions"
+                  st={{ color: '#111!important' }}
+                />
               </Button>
             </Box>
             <Box sx={{ flex: '1 1 100%', pt: '8px' }}>
-              <Button variant="blackFull" sx={{ border: 'none!important', py: '10px' }}>
+              <Button
+                variant="blackFull"
+                sx={{ border: 'none!important', py: '10px' }}
+              >
                 <Text
                   as="a"
                   sx={{ color: 'white', letterSpacing: '.75px' }}
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="https://www.opentable.com/r/mix-prime-steakhouse-fish-and-sushi-bar-woodbury"
+                  href="https://www.opentable.com/r/mix-prime-steakhouse-fish-and-sushi-bar-danbury"
                 >
                   Make A Reservation
                 </Text>
@@ -144,7 +159,9 @@ const Danbury = () => {
             color: 'white',
           }}
         >
-          <Heading sx={{ marginBottom: '1rem' }}>Mix prime is serving CT</Heading>
+          <Heading sx={{ marginBottom: '1rem' }}>
+            Mix prime is serving CT
+          </Heading>
           <Text sx={{ marginBottom: '2rem' }}>
             Find out how local business are vital to the economy
           </Text>
