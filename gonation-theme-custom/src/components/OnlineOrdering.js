@@ -13,7 +13,7 @@ const OnlineOrdering = ({ location }) => {
   const links = {
     Newtown: {
       doordash:
-        'https://www.doordash.com/store/red-rooster-pub-newtown-588921/en-US/?pickup=true',
+        'https://order.online/business/red-rooster-pub-86940',
       uberEats: `https://www.ubereats.com/connecticut/food-delivery/red-rooster-pub-newtown/nVk1BEWIQ6qwAlCHPcsD2A`,
       grubhub: `https://www.grubhub.com/restaurant/red-rooster-pub---newtown-160-s-main-st-newtown/2695395`,
     },
