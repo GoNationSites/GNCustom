@@ -1,42 +1,57 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text, Heading, Link, Image } from 'theme-ui';
-import React from 'react';
-import slugify from 'slugify';
-import Layout from '../components/Layout';
-import HomeHero from '../components/HomeHero';
-import SimpleHero from '../components/SimpleHero';
-import Menu from '../components/Menu';
-import HomeRenderer from '../components/HomeRenderer';
-import ButtonRow from '../components/ButtonRow';
-import ContactPage from '../components/ContactPage';
-import AboutPage from '../components/AboutPage';
-import EventsPage from '../components/EventsPage';
-import GalleryPage from '../components/GalleryPage';
-import OnlineOrdering from '../components/OnlineOrdering';
-import cloudinaryOptimize from '../helpers/cloudinaryHelper';
+import { jsx, Box, Flex, Text, Heading, Link, Image } from "theme-ui";
+import React, { useEffect } from "react";
+import slugify from "slugify";
+import Layout from "../components/Layout";
+import HomeHero from "../components/HomeHero";
+import SimpleHero from "../components/SimpleHero";
+import Menu from "../components/Menu";
+import HomeRenderer from "../components/HomeRenderer";
+import ButtonRow from "../components/ButtonRow";
+import ContactPage from "../components/ContactPage";
+import AboutPage from "../components/AboutPage";
+import EventsPage from "../components/EventsPage";
+import GalleryPage from "../components/GalleryPage";
+import OnlineOrdering from "../components/OnlineOrdering";
+import cloudinaryOptimize from "../helpers/cloudinaryHelper";
+import Modal from "../components/Modal";
 
 const BasicPageTemplate = ({ pageContext }) => {
   const { curPage, id } = pageContext;
+  const [showModal, setShowModal] = React.useState(false);
+
+  useEffect(() => {
+    if (pageContext.data.city === "Ridgefield") {
+      setShowModal(true);
+    }
+  }, []);
   const renderHero = () => {
-    if (curPage.title === 'Home') {
-      return <HomeHero withShout id={id} location={pageContext.data.city} />;
+    if (curPage.title === "Home") {
+      return (
+        <>
+          {showModal ? <Modal toggle={setShowModal}/> : null}
+          <HomeHero withShout id={id} location={pageContext.data.city} />;
+        </>
+      );
     } else
       return (
-        <SimpleHero
-          id={id}
-          location={pageContext.data.city}
-          pageTitle={curPage.title}
-        />
+        <>
+          <SimpleHero
+            id={id}
+            location={pageContext.data.city}
+            pageTitle={curPage.title}
+          />
+        </>
       );
   };
 
   const routes = pageContext.pages;
 
-  const renderComponent = title => {
+  const renderComponent = (title) => {
     switch (title) {
-      case 'Menu':
+      case "Menu":
         return <Menu id={id} poweredList="1" />;
-      case 'Home':
+      case "Home":
         return (
           <>
             <HomeRenderer data={pageContext} location={pageContext.data.city} />
@@ -44,16 +59,16 @@ const BasicPageTemplate = ({ pageContext }) => {
               as="section"
               sx={{
                 padding: [2, 3, 5],
-                background: 'white',
+                background: "white",
                 mt: [4, 5, 6],
-                justifyContent: 'center',
-                alignItems: 'center',
-                flexDirection: 'column',
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
               }}
             >
               <Text
                 as="h3"
-                sx={{ color: 'primary', fontSize: [3, 4, 5], mb: [3, 4] }}
+                sx={{ color: "primary", fontSize: [3, 4, 5], mb: [3, 4] }}
               >
                 Order Online
               </Text>
@@ -63,28 +78,28 @@ const BasicPageTemplate = ({ pageContext }) => {
               <ButtonRow
                 data={pageContext}
                 location={pageContext.data.city}
-                pages={['menu', 'gallery', 'contact']}
+                pages={["menu", "gallery", "contact"]}
               />
 
               <Box
                 sx={{
                   backgroundImage: `url('${cloudinaryOptimize(
-                    'https://res.cloudinary.com/gonation/image/upload/v1617388779/sites/mix-prime/serving-ct-image.jpg',
+                    "https://res.cloudinary.com/gonation/image/upload/v1617388779/sites/mix-prime/serving-ct-image.jpg",
                     900
                   )}')`,
-                  backgroundSize: 'cover',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  padding: '25vh 2rem',
-                  color: 'white',
+                  backgroundSize: "cover",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "25vh 2rem",
+                  color: "white",
                 }}
               >
-                <Heading sx={{ marginBottom: '1rem' }}>
+                <Heading sx={{ marginBottom: "1rem" }}>
                   Red Rooster is serving CT
                 </Heading>
-                <Text sx={{ marginBottom: '2rem' }}>
+                <Text sx={{ marginBottom: "2rem" }}>
                   Find out how local business are vital to the economy
                 </Text>
 
@@ -94,10 +109,10 @@ const BasicPageTemplate = ({ pageContext }) => {
                 >
                   <Image
                     sx={{
-                      maxWidth: '300px',
-                      transition: 'all ease-in-out 0.5s',
-                      ':hover': {
-                        transform: 'scale(1.2)',
+                      maxWidth: "300px",
+                      transition: "all ease-in-out 0.5s",
+                      ":hover": {
+                        transform: "scale(1.2)",
                       },
                     }}
                     src="https://res.cloudinary.com/gonation/image/upload/v1617388067/sites/mix-prime/logo-hero.png"
@@ -116,7 +131,7 @@ const BasicPageTemplate = ({ pageContext }) => {
       //         id={id}
       //       />
       //     );
-      case 'About':
+      case "About":
         return (
           <AboutPage
             data={pageContext}
@@ -124,7 +139,7 @@ const BasicPageTemplate = ({ pageContext }) => {
           />
         );
 
-      case 'Events':
+      case "Events":
         return (
           <EventsPage
             data={pageContext}
@@ -132,7 +147,7 @@ const BasicPageTemplate = ({ pageContext }) => {
             id={id}
           />
         );
-      case 'Gallery':
+      case "Gallery":
         return (
           <GalleryPage
             data={pageContext}
@@ -141,20 +156,20 @@ const BasicPageTemplate = ({ pageContext }) => {
           />
         );
       default:
-        console.log('in default');
-        return '';
+        console.log("in default");
+        return "";
     }
   };
 
   const renderHours = () => {
     const titleStyle = {
-      textAlign: 'center',
-      fontSize: '1.75rem',
-      margin: '1rem 0',
-      color: 'primary',
+      textAlign: "center",
+      fontSize: "1.75rem",
+      margin: "1rem 0",
+      color: "primary",
     };
     const hoursText = {
-      textAlign: 'center',
+      textAlign: "center",
     };
     return (
       <section id="hours">
@@ -163,7 +178,7 @@ const BasicPageTemplate = ({ pageContext }) => {
             Hours Of Operation
           </Text>
           <Text
-            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
+            sx={{ ...titleStyle, marginBottom: "1rem", color: "dark" }}
             as="h3"
             variant="heading"
           >
@@ -173,7 +188,7 @@ const BasicPageTemplate = ({ pageContext }) => {
             11:30 AM - TIL
           </Text>
           <Text
-            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
+            sx={{ ...titleStyle, marginBottom: "1rem", color: "dark" }}
             as="h3"
             variant="heading"
           >
@@ -188,7 +203,7 @@ const BasicPageTemplate = ({ pageContext }) => {
             Kitchen Hours
           </Text>
           <Text
-            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
+            sx={{ ...titleStyle, marginBottom: "1rem", color: "dark" }}
             as="h3"
             variant="heading"
           >
@@ -199,7 +214,7 @@ const BasicPageTemplate = ({ pageContext }) => {
           </Text>
 
           <Text
-            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
+            sx={{ ...titleStyle, marginBottom: "1rem", color: "dark" }}
             as="h3"
             variant="heading"
           >
@@ -210,7 +225,7 @@ const BasicPageTemplate = ({ pageContext }) => {
           </Text>
 
           <Text
-            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
+            sx={{ ...titleStyle, marginBottom: "1rem", color: "dark" }}
             as="h3"
             variant="heading"
           >
@@ -225,7 +240,7 @@ const BasicPageTemplate = ({ pageContext }) => {
             Brunch Served From
           </Text>
           <Text
-            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
+            sx={{ ...titleStyle, marginBottom: "1rem", color: "dark" }}
             as="h3"
             variant="heading"
           >
@@ -237,9 +252,9 @@ const BasicPageTemplate = ({ pageContext }) => {
         </Box>
         <Text
           sx={{
-            fontSize: '1.25rem',
-            fontWeight: 'bold',
-            color: 'primary',
+            fontSize: "1.25rem",
+            fontWeight: "bold",
+            color: "primary",
           }}
         >
           Last seating for the kitchen -- 30 minutes prior to closing.
@@ -254,30 +269,30 @@ const BasicPageTemplate = ({ pageContext }) => {
       <Box
         sx={{
           paddingY: 5,
-          bg: 'background',
-          pt: curPage.title === 'Menu' ? 0 : [4, 5],
+          bg: "background",
+          pt: curPage.title === "Menu" ? 0 : [4, 5],
         }}
       >
         <Box
           sx={{
             paddingY: 4,
-            paddingX: curPage.title === 'Events' ? 0 : 3,
-            pt: curPage.title === 'Menu' ? 0 : 4,
+            paddingX: curPage.title === "Events" ? 0 : 3,
+            pt: curPage.title === "Menu" ? 0 : 4,
           }}
         >
           <Box
             sx={{
               maxWidth:
-                curPage.title !== 'Menu' && curPage.title !== 'Events'
-                  ? '1200px'
-                  : '',
-              margin: 'auto',
+                curPage.title !== "Menu" && curPage.title !== "Events"
+                  ? "1200px"
+                  : "",
+              margin: "auto",
             }}
           >
             {renderComponent(curPage.title)}
           </Box>
         </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
           {renderHours()}
         </Box>
       </Box>
