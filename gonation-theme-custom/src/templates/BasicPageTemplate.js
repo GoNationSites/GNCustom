@@ -22,7 +22,7 @@ const BasicPageTemplate = ({ pageContext }) => {
 
   useEffect(() => {
     if (pageContext.data.city === "Ridgefield") {
-      setShowModal(true);
+      setShowModal(false);
     }
   }, []);
   const renderHero = () => {
