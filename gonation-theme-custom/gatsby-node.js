@@ -79,6 +79,11 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
       path: '/contact',
       template: '',
     },
+    {
+      title: 'Join Our Team',
+      path: '/join-our-team',
+      template: '',
+    },
     // {
     //   title: 'Uber Eats',
     //   path:

@@ -15,6 +15,7 @@ import GalleryPage from "../components/GalleryPage";
 import OnlineOrdering from "../components/OnlineOrdering";
 import cloudinaryOptimize from "../helpers/cloudinaryHelper";
 import Modal from "../components/Modal";
+import JoinOurTeamForm from "../components/JoinOurTeam";
 
 const BasicPageTemplate = ({ pageContext }) => {
   const { curPage, id } = pageContext;
@@ -123,14 +124,14 @@ const BasicPageTemplate = ({ pageContext }) => {
             </Box>
           </>
         );
-      //   case 'Contact':
-      //     return (
-      //       <ContactPage
-      //         data={pageContext}
-      //         location={slugify(pageContext.data.city, { lower: true })}
-      //         id={id}
-      //       />
-      //     );
+        case 'Join Our Team':
+          return (
+            <JoinOurTeamForm
+              data={pageContext}
+              location={slugify(pageContext.data.city, { lower: true })}
+              id={id}
+            />
+          );
       case "About":
         return (
           <AboutPage

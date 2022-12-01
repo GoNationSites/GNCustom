@@ -8,7 +8,10 @@ import cloudinaryOptimize from '../helpers/cloudinaryHelper';
 import Img from 'react-cloudinary-lazy-image';
 
 const SimpleHero = ({ pageTitle, location }) => {
+  console.log(pageTitle)
   return (
+    <>
+    { pageTitle !== "Join Our Team" ?
     <Box sx={{ height: '75vh', position: 'relative' }}>
       <Img
         cloudName={'gonation'}
@@ -73,7 +76,57 @@ const SimpleHero = ({ pageTitle, location }) => {
           </Box>
         </Flex>
       </Box>
-    </Box>
+    </Box> : 
+     <Box sx={{ height: '25vh', position: 'relative' }}>
+     <Box
+       sx={{
+         position: 'absolute',
+         height: '100%',
+         width: '100%',
+         top: 0,
+         left: 0,
+         padding: 3,
+       }}>
+       <Text
+         sx={{
+           color: 'black',
+           ml: 3,
+           fontFamily: 'heading',
+           fontSize: [2, 3],
+           fontWeight: 'bold',
+           textTransform: 'uppercase',
+           width: '100%',
+           textAlign: 'right',
+           paddingRight: 5,
+           mb: 0,
+         }}>
+         {location}
+         <br />{' '}
+         <Text
+           as='span'
+           sx={{ fontSize: 0, fontWeight: '400', color: 'white' }}>
+           <Link to='/' style={{ color: 'black' }}>
+             Change Location
+           </Link>
+         </Text>
+       </Text>
+       <Flex sx={{ flexDirection: 'column', height: '100%' }}>
+         <Box>
+           <Link to={`/${slugify(location, { lower: true })}`}>
+           </Link>
+         </Box>
+         <Box sx={{ marginTop: 'auto', mb: [4, 5], textAlign: 'center' }}>
+           <Text
+             variant='heading'
+             sx={{ color: 'black', fontSize: [4, 5, 6] }}>
+             Inquire About Open Positions
+           </Text>
+         </Box>
+       </Flex>
+     </Box>
+   </Box>
+    }
+    </>
   );
 };
 
