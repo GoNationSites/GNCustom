@@ -14,7 +14,7 @@ const JoinOurTeamForm = ({ location }) => {
   }
   return (
     <form
-      name={`Red Rooster ${location} Contact Form`}
+      name={`Red Rooster ${location} Contact Form Join Our Team`}
       method="POST"
       data-netlify="true"
       style={formStyle}
