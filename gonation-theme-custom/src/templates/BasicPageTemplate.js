@@ -19,18 +19,17 @@ import JoinOurTeamForm from "../components/JoinOurTeam";
 
 const BasicPageTemplate = ({ pageContext }) => {
   const { curPage, id } = pageContext;
-  const [showModal, setShowModal] = React.useState(false);
+  const [showGiftCardContainer, setShowGiftCardContainer] = React.useState(false);
 
   useEffect(() => {
-    if (pageContext.data.city === "Ridgefield") {
-      setShowModal(false);
+    if (pageContext.data.city === "Newtown") {
+      setShowGiftCardContainer(true)
     }
   }, []);
   const renderHero = () => {
     if (curPage.title === "Home") {
       return (
         <>
-          {showModal ? <Modal toggle={setShowModal}/> : null}
           <HomeHero withShout id={id} location={pageContext.data.city} />;
         </>
       );
@@ -82,6 +81,36 @@ const BasicPageTemplate = ({ pageContext }) => {
                 pages={["menu", "gallery", "contact"]}
               />
 
+
+            {showGiftCardContainer ?
+              <Box
+                sx={{
+                  backgroundImage: `url('${cloudinaryOptimize(
+                    "https://res.cloudinary.com/gonation/image/upload/v1671046595/sites/red-rooster/Red_Rooster_Gift.png",
+                    900
+                  )}')`,
+                  backgroundPosition: "5px -75px",
+                  backgroundSize: "cover",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "32vh 2rem",
+                  color: "white",
+                  position: "relative",
+                }}
+              >
+                <Box sx={{position: 'absolute', top: '2rem', textAlign: 'center'}}>
+                  <Heading sx={{ marginBottom: "1rem", color: "secondary", fontSize: '1.9rem' }}>
+                    Give the Gift of Red Rooster Pub
+                  </Heading>
+                  <Text sx={{ marginBottom: "2rem", color: "secondary" }}>
+                    Red Rooster is serving CT
+                  </Text>
+                </Box>
+              </Box>
+          :
+          <>
               <Box
                 sx={{
                   backgroundImage: `url('${cloudinaryOptimize(
@@ -121,17 +150,19 @@ const BasicPageTemplate = ({ pageContext }) => {
                   />
                 </Link>
               </Box>
+              </>
+              }
             </Box>
           </>
         );
-        case 'Join Our Team':
-          return (
-            <JoinOurTeamForm
-              data={pageContext}
-              location={slugify(pageContext.data.city, { lower: true })}
-              id={id}
-            />
-          );
+      case "Join Our Team":
+        return (
+          <JoinOurTeamForm
+            data={pageContext}
+            location={slugify(pageContext.data.city, { lower: true })}
+            id={id}
+          />
+        );
       case "About":
         return (
           <AboutPage
