@@ -227,7 +227,7 @@ const BasicPageTemplate = ({ pageContext }) => {
             Sunday
           </Text>
           <Text sx={hoursText} as="p">
-            11:30 AM - TIL
+            {pageContext.data.city === "Newtown" ? `11:00 AM` : '11:30 AM' }- TIL
           </Text>
         </Box>
         <Box sx={{ pb: 3 }}>
@@ -264,7 +264,7 @@ const BasicPageTemplate = ({ pageContext }) => {
             Sunday
           </Text>
           <Text sx={hoursText} as="p">
-            11:30 AM - 10:00 PM
+          {pageContext.data.city === "Newtown" ? `11:00 AM` : '11:30 AM' } - 10:00 PM
           </Text>
         </Box>
         <Box sx={{ pb: 3 }}>
