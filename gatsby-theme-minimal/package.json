@@ -24,6 +24,7 @@
     "react-helmet": "^6.1.0",
     "react-horizontal-scrolling-menu": "^0.7.7",
     "react-image-lightbox": "^5.1.1",
+    "react-mailchimp-form": "^1.0.2",
     "react-responsive-carousel": "^3.2.9",
     "react-reveal": "^1.2.2",
     "react-scroll": "^1.8.1",

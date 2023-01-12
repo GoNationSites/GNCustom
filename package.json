@@ -12,5 +12,6 @@
     "example",
     "gonation-theme-custom",
     "rooster"
-  ]
+  ],
+  "dependencies": {}
 }
