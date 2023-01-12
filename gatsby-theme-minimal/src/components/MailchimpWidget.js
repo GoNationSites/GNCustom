@@ -16,7 +16,7 @@ const MailchimpWidget = () => {
     <>
       <Box sx={formStyles.container}>
         {/* <!-- Begin Mailchimp Signup Form --> */}
-        <Text css={{fontSize: '2rem', marginLeft: '2rem'}}>Join Our Mailing List</Text>
+        <Text css={{fontSize: '2rem', textAlign: 'center'}}>Join Our Mailing List</Text>
         <link
           href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css"
           rel="stylesheet"
@@ -32,6 +32,7 @@ const MailchimpWidget = () => {
             class="validate"
             target="_blank"
             novalidate
+            style={{maxWidth: '400px', margin: '0 auto'}}
           >
             <div id="mc_embed_signup_scroll">
               <div class="indicates-required">
