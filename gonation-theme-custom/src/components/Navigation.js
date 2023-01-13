@@ -47,7 +47,7 @@ const Navigation = ({ routes, pageContext }) => {
   const getDoordashLink = () => {
     switch (curCity) {
       case 'Newtown':
-        return 'https://order.online/business/red-rooster-pub-86940';
+        return 'https://www.doordash.com/store/red-rooster-pub-newtown-588921/';
       case 'Ridgefield':
         return 'https://www.doordash.com/store/red-rooster-pub-ridgefield-588921/en-US';
       case 'Wilton':
