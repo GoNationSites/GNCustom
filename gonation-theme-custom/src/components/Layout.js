@@ -29,6 +29,8 @@ const Layout = ({ children, routes, pageContext, pageTitle }) => {
   useEffect(() => {
     const script = document.createElement("script");
     const location = slugify(pageContext.data.city, { lower: true });
+    const sliceContainer = document.querySelector("#slice-container");
+
     if (location === "newtown") {
       script.textContent = ` 
       (function (w, d, s, o, f, js, fjs) {
@@ -63,10 +65,26 @@ const Layout = ({ children, routes, pageContext, pageTitle }) => {
           })(window, document, 'script', 'SliceWidgets', 'https://restaurant-widgets-integrations.slicelife.com/widget.js');
           SliceWidgets({ shopUuid: 'cdffe44d-4980-4eb6-ac98-5989fd81048c' });
       `;
+      if (location === "/") {
+        script.textContent = `  
+      ""`;
+      }
     }
-    document.body.appendChild(script);
+    if (
+      location === "wilton" ||
+      location === "ridgefield" ||
+      location === "newtown"
+    ) {
+      sliceContainer.appendChild(script);
+    }
     return () => {
-      document.body.removeChild(script);
+      if (
+        location === "wilton" ||
+        location === "ridgefield" ||
+        location === "newtown"
+      ) {
+        sliceContainer.removeChild(script);
+      }
     };
   }, []);
 
@@ -128,6 +146,7 @@ const Layout = ({ children, routes, pageContext, pageTitle }) => {
 
   return (
     <Box as="main" sx={{ marginRight: ["unset", "53px"] }}>
+      <div id="slice-container"></div>
       <SEO pageTitle={pageTitle} siteMetaData={pageContext.data} />
       <Navigation routes={routes} pageContext={pageContext} />
       {children}
