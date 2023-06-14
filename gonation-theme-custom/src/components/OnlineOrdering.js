@@ -15,7 +15,7 @@ const OnlineOrdering = ({ location }) => {
       doordash:
         "https://www.doordash.com/store/red-rooster-pub-newtown-588921/ ",
       uberEats: `https://www.ubereats.com/connecticut/food-delivery/red-rooster-pub-newtown/nVk1BEWIQ6qwAlCHPcsD2A`,
-      // grubhub: `https://www.grubhub.com/restaurant/red-rooster-pub---newtown-160-s-main-st-newtown/2695395`,
+      grubhub: `https://www.grubhub.com/restaurant/red-rooster-pub---newtown-160-s-main-st-newtown/2695395`,
     },
     Ridgefield: {
       doordash:
