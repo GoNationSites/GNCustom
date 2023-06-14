@@ -3,7 +3,7 @@
 }
 
 .modal-container {
-  position:fixed;
+  position: fixed;
   height: 100vh;
   width: 100vw;
   z-index: 100;
@@ -33,7 +33,15 @@
 }
 .close-btn button {
   font-size: 1.3rem;
-  padding: .5rem .7rem;
+  padding: 0.5rem 0.7rem;
   cursor: pointer;
+}
 
+@media (max-width: 768px) {
+  #SliceWidgets a {
+    bottom: 70vh;
+  }
+  #SliceWidgets svg {
+    display: none;
+  }
 }

@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text } from 'theme-ui';
-import React, { useState } from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import slugify from 'slugify';
-import HamburgerMenu from 'react-hamburger-menu';
-import { Animated } from 'react-animated-css';
+import { jsx, Box, Flex, Text } from "theme-ui";
+import React, { useState } from "react";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import slugify from "slugify";
+import HamburgerMenu from "react-hamburger-menu";
+import { Animated } from "react-animated-css";
 
-import ClickableAddress from './ClickableAddress';
+import ClickableAddress from "./ClickableAddress";
 
 const Navigation = ({ routes, pageContext }) => {
   const locations = useStaticQuery(graphql`
@@ -27,31 +27,42 @@ const Navigation = ({ routes, pageContext }) => {
 
   const [open, setOpen] = useState(false);
   const styleObj = {
-    color: 'text',
-    fontWeight: '700',
-    textTransform: 'uppercase',
-    fontFamily: 'heading',
-    letterSpacing: '2px',
+    color: "text",
+    fontWeight: "700",
+    textTransform: "uppercase",
+    fontFamily: "heading",
+    letterSpacing: "2px",
     fontSize: 1,
   };
 
   const getHeight = () => {
-    if (curCity === 'Newtown') {
-      return '-501px';
-    } else if (curCity === 'Ridgefield') {
-      return '-455px';
+    if (curCity === "Newtown") {
+      return "-501px";
+    } else if (curCity === "Ridgefield") {
+      return "-455px";
     }
-    return '-455px';
+    return "-455px";
   };
 
   const getDoordashLink = () => {
     switch (curCity) {
-      case 'Newtown':
-        return 'https://www.doordash.com/store/red-rooster-pub-newtown-588921/';
-      case 'Ridgefield':
-        return 'https://www.doordash.com/store/red-rooster-pub-ridgefield-588921/en-US';
-      case 'Wilton':
-        return 'https://www.doordash.com/store/red-rooster-pub-wilton-1102750/en-US';
+      case "Newtown":
+        return "https://www.doordash.com/store/red-rooster-pub-newtown-588921/";
+      case "Ridgefield":
+        return "https://www.doordash.com/store/red-rooster-pub-ridgefield-1102799/";
+      case "Wilton":
+        return "https://www.doordash.com/store/red-rooster-pub-wilton-1102750/en-US";
+    }
+  };
+
+  const getUberLink = () => {
+    switch (curCity) {
+      case "Newtown":
+        return "https://www.doordash.com/store/red-rooster-pub-newtown-588921/";
+      case "Ridgefield":
+        return "https://www.ubereats.com/store/red-rooster-pub-ridgefield/Px38jnYHQPqZa3MsiPsmGQ?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMlN0cmF0Zm9yZCUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUotUzE0RDRrTTZJa1JpM2NlVEViMXc5WSUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E0MS4xODQ1NDE0OTk5OTk5OSUyQyUyMmxvbmdpdHVkZSUyMiUzQS03My4xMzMxNjUxJTdE";
+      case "Wilton":
+        return "https://www.ubereats.com/store/red-rooster-pub-wilton/pOk7xeanRu-acBXeA5AxyA?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMlN0cmF0Zm9yZCUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUotUzE0RDRrTTZJa1JpM2NlVEViMXc5WSUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E0MS4xODQ1NDE0OTk5OTk5OSUyQyUyMmxvbmdpdHVkZSUyMiUzQS03My4xMzMxNjUxJTdE";
     }
   };
 
@@ -59,37 +70,37 @@ const Navigation = ({ routes, pageContext }) => {
     <Box
       onClick={() => setOpen(!open)}
       sx={{
-        cursor: 'pointer!important',
-        background: 'white',
-        boxShadow: '0px -1px 12px rgba(0,0,0,.48)',
-        position: 'fixed',
+        cursor: "pointer!important",
+        background: "white",
+        boxShadow: "0px -1px 12px rgba(0,0,0,.48)",
+        position: "fixed",
         zIndex: 99,
-        bottom: open ? '0px' : getHeight(),
-        width: ['100%', 'auto'],
+        bottom: open ? "0px" : getHeight(),
+        width: ["100%", "auto"],
         padding: 3,
-        borderTopLeftRadius: ['30px', 0],
-        borderTopRightRadius: ['30px', 0],
-        transition: 'all .25s',
-        right: ['unset', !open ? '-352px' : '0'],
-        height: ['auto', '100vh'],
-        top: ['unset', 0],
-        display: ['block', 'flex'],
+        borderTopLeftRadius: ["30px", 0],
+        borderTopRightRadius: ["30px", 0],
+        transition: "all .25s",
+        right: ["unset", !open ? "-352px" : "0"],
+        height: ["auto", "100vh"],
+        top: ["unset", 0],
+        display: ["block", "flex"],
       }}
     >
       <Flex
         sx={{
-          alignItems: 'center',
-          borderBottom: ['2px solid', 'none'],
-          borderColor: 'primary',
+          alignItems: "center",
+          borderBottom: ["2px solid", "none"],
+          borderColor: "primary",
           pb: 3,
           mb: 3,
-          flexDirection: ['row', 'column'],
-          height: ['auto', '100%'],
-          justifyContent: ['unset', 'space-evenly'],
+          flexDirection: ["row", "column"],
+          height: ["auto", "100%"],
+          justifyContent: ["unset", "space-evenly"],
         }}
       >
-        <Box sx={{ flex: 1, textAlign: 'center', order: ['unset', 0] }}>
-          <Box sx={{ display: ['block', 'none'] }}>
+        <Box sx={{ flex: 1, textAlign: "center", order: ["unset", 0] }}>
+          <Box sx={{ display: ["block", "none"] }}>
             <ClickableAddress
               data={pageContext.data}
               title="Directions"
@@ -101,13 +112,13 @@ const Navigation = ({ routes, pageContext }) => {
         <Box
           sx={{
             flex: 1,
-            textAlign: 'center',
-            order: ['unset', 3],
-            display: ['block', 'flex'],
-            alignItems: 'center',
+            textAlign: "center",
+            order: ["unset", 3],
+            display: ["block", "flex"],
+            alignItems: "center",
           }}
         >
-          <Box sx={{ display: ['block', 'none'] }}>
+          <Box sx={{ display: ["block", "none"] }}>
             <Text sx={styleObj} as="a" href={`tel:${pageContext.data.phone}`}>
               Call
             </Text>
@@ -115,11 +126,11 @@ const Navigation = ({ routes, pageContext }) => {
         </Box>
         <Flex
           sx={{
-            width: ['25%', 'auto'],
-            textAlign: 'center',
-            justifyContent: 'center',
-            order: ['unset', 1],
-            cursor: 'pointer',
+            width: ["25%", "auto"],
+            textAlign: "center",
+            justifyContent: "center",
+            order: ["unset", 1],
+            cursor: "pointer",
           }}
         >
           <HamburgerMenu
@@ -138,29 +149,29 @@ const Navigation = ({ routes, pageContext }) => {
 
       <Box
         sx={{
-          display: ['block', 'flex'],
-          flexDirection: 'column',
+          display: ["block", "flex"],
+          flexDirection: "column",
           pl: [0, 4],
         }}
       >
-        {routes.map(route => (
+        {routes.map((route) => (
           <Box sx={{ paddingY: 2 }}>
             <Text
               as="a"
               sx={{
-                color: 'text',
+                color: "text",
                 fontSize: [3, 4, 5],
-                fontFamily: 'heading',
-                textTransform: 'uppercase',
+                fontFamily: "heading",
+                textTransform: "uppercase",
               }}
             >
               <Link
-                activeStyle={{ color: '#EE1C25' }}
+                activeStyle={{ color: "#EE1C25" }}
                 sx={{
-                  fontWeight: 'bold',
-                  '&:hover': {
-                    color: 'primary',
-                    transition: 'all .5s',
+                  fontWeight: "bold",
+                  "&:hover": {
+                    color: "primary",
+                    transition: "all .5s",
                   },
                 }}
                 to={`/${slugify(curCity, { lower: true })}${route.path}`}
@@ -170,19 +181,19 @@ const Navigation = ({ routes, pageContext }) => {
             </Text>
           </Box>
         ))}
-        {curCity === 'Newtown' ? (
+        {curCity === "Newtown" ? (
           <Box sx={{ paddingY: 2 }}>
             <Text
               sx={{
-                fontWeight: 'bold',
-                fontFamily: 'heading',
-                color: 'text',
+                fontWeight: "bold",
+                fontFamily: "heading",
+                color: "text",
                 fontSize: [3, 4, 5],
-                fontFamily: 'heading',
-                textTransform: 'uppercase',
-                '&:hover': {
-                  color: 'primary',
-                  transition: 'all .5s',
+                fontFamily: "heading",
+                textTransform: "uppercase",
+                "&:hover": {
+                  color: "primary",
+                  transition: "all .5s",
                 },
               }}
               rel="noopener noreferrer"
@@ -194,22 +205,22 @@ const Navigation = ({ routes, pageContext }) => {
             </Text>
           </Box>
         ) : (
-          ''
+          ""
         )}
 
-        {curCity === 'Newtown' ? (
+        {curCity === "Newtown" ? (
           <Box sx={{ paddingY: 2 }}>
             <Text
               sx={{
-                fontWeight: 'bold',
-                fontFamily: 'heading',
-                color: 'text',
+                fontWeight: "bold",
+                fontFamily: "heading",
+                color: "text",
                 fontSize: [3, 4, 5],
-                fontFamily: 'heading',
-                textTransform: 'uppercase',
-                '&:hover': {
-                  color: 'primary',
-                  transition: 'all .5s',
+                fontFamily: "heading",
+                textTransform: "uppercase",
+                "&:hover": {
+                  color: "primary",
+                  transition: "all .5s",
                 },
               }}
               rel="noopener noreferrer"
@@ -220,21 +231,21 @@ const Navigation = ({ routes, pageContext }) => {
             </Text>
           </Box>
         ) : (
-          ''
+          ""
         )}
 
         <Box sx={{ paddingY: 2 }}>
           <Text
             sx={{
-              fontWeight: 'bold',
-              fontFamily: 'heading',
-              color: 'text',
+              fontWeight: "bold",
+              fontFamily: "heading",
+              color: "text",
               fontSize: [3, 4, 5],
-              fontFamily: 'heading',
-              textTransform: 'uppercase',
-              '&:hover': {
-                color: 'primary',
-                transition: 'all .5s',
+              fontFamily: "heading",
+              textTransform: "uppercase",
+              "&:hover": {
+                color: "primary",
+                transition: "all .5s",
               },
             }}
             rel="noopener noreferrer"
@@ -245,23 +256,46 @@ const Navigation = ({ routes, pageContext }) => {
             DoorDash
           </Text>
         </Box>
+        <Box sx={{ paddingY: 2 }}>
+          <Text
+            sx={{
+              display: curCity === "Newtown" && "none",
+              fontWeight: "bold",
+              fontFamily: "heading",
+              color: "text",
+              fontSize: [3, 4, 5],
+              fontFamily: "heading",
+              textTransform: "uppercase",
+              "&:hover": {
+                color: "primary",
+                transition: "all .5s",
+              },
+            }}
+            rel="noopener noreferrer"
+            as="a"
+            href={getUberLink()}
+            target="_blank"
+          >
+            Uber Eats
+          </Text>
+        </Box>
 
-        <Box sx={{ mt: ['unset', 'auto'] }}>
-          <Text sx={{ textAlign: ['center', 'left'], fontSize: 1, my: 4 }}>
+        <Box sx={{ mt: ["unset", "auto"] }}>
+          <Text sx={{ textAlign: ["center", "left"], fontSize: 1, my: 4 }}>
             View a different location
           </Text>
-          <Flex sx={{ justifyContent: 'center' }}>
+          <Flex sx={{ justifyContent: "center" }}>
             {locations.allSiteData.edges.map(({ node }, idx) => (
               <Box sx={{ marginX: 3, marginLeft: idx === 0 ? 0 : 3 }}>
                 <Text
                   variant="heading"
                   sx={{
-                    textTransform: 'uppercase',
+                    textTransform: "uppercase",
                   }}
                 >
                   <Link
                     sx={{
-                      color: curCity === node.data.city ? 'primary' : 'text',
+                      color: curCity === node.data.city ? "primary" : "text",
                     }}
                     to={`/${slugify(node.data.city, { lower: true })}`}
                   >
