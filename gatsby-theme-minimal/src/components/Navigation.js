@@ -46,7 +46,7 @@ const Navigation = ({ location }) => {
     axios({
       url: shoutURL,
       adapter: jsonpAdapter,
-    }).then(res => {
+    }).then((res) => {
       setShoutData(res.data);
     });
   }, []);
@@ -178,13 +178,15 @@ const Navigation = ({ location }) => {
           transition: 'all .3s',
           py: 2,
           borderBottom: '1px solid #eee',
-        }}>
+        }}
+      >
         <Flex sx={{ alignItems: 'center', paddingX: 3 }}>
-          <Box sx={{ width: ['20%', '33%'] }}>
+          <Flex sx={{ width: ['20%', '33%'] }}>
             <Flex
               onClick={() => setShowShout(!showShout)}
               sx={{ alignItems: 'center', cursor: 'pointer' }}
-              className='animate__animated animate__pulse animate__repeat-3	'>
+              className='animate__animated animate__pulse animate__repeat-3	'
+            >
               <Announcement width={'25px'} />
               <Text
                 as='span'
@@ -194,17 +196,69 @@ const Navigation = ({ location }) => {
                   color: '#111',
                   fontFamily: 'heading',
                   display: ['none', 'block'],
-                }}>
+                }}
+              >
                 NEW SHOUT
               </Text>
             </Flex>
-          </Box>
+            {location === 'Danbury' ? (
+              <Text
+                sx={{
+                  fontFamily: 'heading',
+                  textTransform: 'uppercase',
+                  marginRight: 3,
+                  display: ['none', 'inline'],
+                  border: '1px solid white',
+                  borderRadius: '3px',
+                  mx: 3,
+                  mr: 4,
+                  paddingY: 2,
+                  color: '#111',
+                  '&:hover': {
+                    color: 'primary',
+                    transition: 'all .5s',
+                  },
+                }}
+                as='a'
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.opentable.com/restref/client/?rid=141181&restref=141181&corrid=f6b19c54-a302-4aa3-b674-4111b5f2233c'
+              >
+                Reserve A Table
+              </Text>
+            ) : (
+              <Text
+                sx={{
+                  fontFamily: 'heading',
+                  textTransform: 'uppercase',
+                  marginRight: 4,
+                  display: ['none', 'inline'],
+                  border: '1px solid white',
+                  borderRadius: '3px',
+                  paddingX: [2, 4],
+                  paddingY: 2,
+                  color: '#111',
+                  '&:hover': {
+                    bg: 'color',
+                    transition: 'all .5s',
+                  },
+                }}
+                as='a'
+                target='_blank'
+                rel='noopener noreferrer'
+                href='https://www.opentable.com/r/mix-prime-steakhouse-fish-and-sushi-bar-woodbury'
+              >
+                Reserve A Table
+              </Text>
+            )}
+          </Flex>
           <Box
             sx={{
               width: ['60%', '33%'],
               fontFamily: 'heading',
               textAlign: 'center',
-            }}>
+            }}
+          >
             <Text as='p' sx={{ fontSize: 1 }}>
               <Text
                 as='span'
@@ -215,7 +269,8 @@ const Navigation = ({ location }) => {
                   // mr: 3,
                   fontFamily: 'heading',
                   textTransform: 'uppercase',
-                }}>
+                }}
+              >
                 {location === 'Danbury' ? (
                   <Link sx={{ color: '#111' }} to='/woodbury'>
                     Danbury
@@ -235,7 +290,8 @@ const Navigation = ({ location }) => {
                 a: {
                   color: '#111',
                 },
-              }}>
+              }}
+            >
               {location === 'Danbury' ? (
                 <Link to='/woodbury'>Change location</Link>
               ) : (
@@ -250,34 +306,34 @@ const Navigation = ({ location }) => {
               justifyContent: 'flex-end',
               color: '#111',
               alignItems: 'center',
-            }}>
-            {location === 'Danbury' ? (
-              <Link
-                to='/danbury/menu'
-                sx={{
-                  fontFamily: 'heading',
-                  mr: 3,
-                  color: '#111',
-                  textTransform: 'uppercase',
-                  display: ['none', 'inline'],
-                }}>
-                Menu
-              </Link>
-            ) : (
-              <Link
-                to='/woodbury/menu'
-                sx={{
-                  fontFamily: 'heading',
-                  mr: 3,
-                  color: '#111',
-                  textTransform: 'uppercase',
-                  display: ['none', 'inline'],
-                }}>
-                Menu
-              </Link>
-            )}
+            }}
+          >
             {location === 'Danbury' ? (
               <>
+                <Link
+                  to='/danbury/menu'
+                  sx={{
+                    fontFamily: 'heading',
+                    mr: 3,
+                    color: '#111',
+                    textTransform: 'uppercase',
+                    display: ['none', 'inline'],
+                  }}
+                >
+                  Menu
+                </Link>
+                <Link
+                  to='https://www.ubereats.com/store/mix-prime-steakhouse-danbury/5227YJIKSVawN5q75D2aYA?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjk1MyUyMEtpbmdzdG9uJTIwUmQlMjIlMkMlMjJyZWZlcmVuY2UlMjIlM0ElMjJDaElKUDYtYnE2Zk8xSWtScV9OaEtIUEFWTUklMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyZ29vZ2xlX3BsYWNlcyUyMiUyQyUyMmxhdGl0dWRlJTIyJTNBNDMuNjgwMzQyMSUyQyUyMmxvbmdpdHVkZSUyMiUzQS03OS4yODc2MDc5JTdE&utm_source=wok'
+                  sx={{
+                    fontFamily: 'heading',
+                    mx: 3,
+                    color: '#111',
+                    textTransform: 'uppercase',
+                    display: ['none', 'inline'],
+                  }}
+                >
+                  UberEats
+                </Link>
                 <Text
                   sx={{
                     fontFamily: 'heading',
@@ -285,7 +341,7 @@ const Navigation = ({ location }) => {
                     display: ['none', 'inline'],
                     border: '1px solid white',
                     borderRadius: '3px',
-                    paddingX: [2, 4],
+                    mx: 3,
                     paddingY: 2,
                     paddingRight: 0,
                     color: '#111',
@@ -297,55 +353,38 @@ const Navigation = ({ location }) => {
                   as='a'
                   target='_blank'
                   rel='noopener noreferrer'
-                  href='https://www.doordash.com/store/max-40-restaurant-and-bar-danbury-147354/en-US'>
+                  href='https://www.doordash.com/store/max-40-restaurant-and-bar-danbury-147354/en-US'
+                >
                   Doordash
-                </Text>
-                <Text
-                  sx={{
-                    fontFamily: 'heading',
-                    textTransform: 'uppercase',
-                    marginRight: 3,
-                    display: ['none', 'inline'],
-                    border: '1px solid white',
-                    borderRadius: '3px',
-                    paddingX: [2, 4],
-                    paddingY: 2,
-                    color: '#111',
-                    '&:hover': {
-                      color: 'primary',
-                      transition: 'all .5s',
-                    },
-                  }}
-                  as='a'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  href='https://www.opentable.com/restref/client/?rid=141181&restref=141181&corrid=f6b19c54-a302-4aa3-b674-4111b5f2233c'>
-                  Reserve A Table
                 </Text>
               </>
             ) : (
-              <Text
-                sx={{
-                  fontFamily: 'heading',
-                  textTransform: 'uppercase',
-                  marginRight: 3,
-                  display: ['none', 'inline'],
-                  border: '1px solid white',
-                  borderRadius: '3px',
-                  paddingX: [2, 4],
-                  paddingY: 2,
-                  color: '#111',
-                  '&:hover': {
-                    bg: 'color',
-                    transition: 'all .5s',
-                  },
-                }}
-                as='a'
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://www.opentable.com/r/mix-prime-steakhouse-fish-and-sushi-bar-woodbury'>
-                Reserve A Table
-              </Text>
+              <>
+                <Link
+                  to='/woodbury/menu'
+                  sx={{
+                    fontFamily: 'heading',
+                    mr: 3,
+                    color: '#111',
+                    textTransform: 'uppercase',
+                    display: ['none', 'inline'],
+                  }}
+                >
+                  Menu
+                </Link>
+                <Link
+                  to='https://www.ubereats.com/store/mix-prime-steakhouse-fish-%26-sushi-bar/yCCCxWfXSe6_Rio06aSkYQ?utm_source=wok'
+                  sx={{
+                    fontFamily: 'heading',
+                    mx: 3,
+                    color: '#111',
+                    textTransform: 'uppercase',
+                    display: ['none', 'inline'],
+                  }}
+                >
+                  UberEats
+                </Link>
+              </>
             )}
 
             <HamburgerMenu
@@ -365,7 +404,8 @@ const Navigation = ({ location }) => {
       <NavMenu
         location={location}
         routes={location === 'Woodbury' ? woodburyRoutes : routes}
-        open={open}></NavMenu>
+        open={open}
+      ></NavMenu>
       {showShout ? (
         <Box
           sx={{
@@ -375,7 +415,8 @@ const Navigation = ({ location }) => {
             left: '0',
             paddingX: 4,
             width: '100%',
-          }}>
+          }}
+        >
           {shoutData ? (
             <ShoutCard setShowShout={setShowShout} data={shoutData}></ShoutCard>
           ) : (
