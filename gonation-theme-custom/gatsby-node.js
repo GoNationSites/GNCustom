@@ -12,7 +12,7 @@ exports.sourceNodes = async (
 
   const fetchSiteData = async () => {
     const data = await Promise.all(
-      businessIDs.map(id => {
+      businessIDs.map((id) => {
         return axios.get(
           `https://data.prod.gonation.com/profile/getname/?profile_id=${id}`
         );
@@ -70,6 +70,11 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
       template: '',
     },
     {
+      title: 'Spirits',
+      path: '/spirits',
+      template: '',
+    },
+    {
       title: 'Events',
       path: '/events',
       template: '',
@@ -95,7 +100,7 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
 
   const fetchSiteData = async () => {
     const data = await Promise.all(
-      businessIDs.map(id => {
+      businessIDs.map((id) => {
         return axios.get(
           `https://data.prod.gonation.com/profile/getname/?profile_id=${id}`
         );
@@ -106,7 +111,7 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
 
   const dualSiteData = await fetchSiteData();
 
-  const getGoogleMapLink = city => {
+  const getGoogleMapLink = (city) => {
     switch (city) {
       case 'Ridgefield':
         return 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11991.337072428223!2d-73.4973287!3d41.2907113!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9cccd74766f5848e!2sRed%20Rooster%20Pub!5e0!3m2!1sen!2sus!4v1598538003539!5m2!1sen!2sus';
@@ -120,7 +125,7 @@ exports.createPages = async ({ graphql, actions, reporter }, options) => {
   };
 
   dualSiteData.forEach((item, idx) => {
-    pageArray.forEach(page => {
+    pageArray.forEach((page) => {
       if (page.path.includes('contact')) {
         // ! Hacky. We check to see if it's a contact page, and statically generatre a template that does NOT use any dynamic rendering
 

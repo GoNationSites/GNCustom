@@ -1,36 +1,34 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text, Heading, Link, Image } from 'theme-ui'
-import React, { useEffect } from 'react'
-import slugify from 'slugify'
-import Layout from '../components/Layout'
-import HomeHero from '../components/HomeHero'
-import SimpleHero from '../components/SimpleHero'
-import Menu from '../components/Menu'
-import HomeRenderer from '../components/HomeRenderer'
-import ButtonRow from '../components/ButtonRow'
-import ContactPage from '../components/ContactPage'
-import AboutPage from '../components/AboutPage'
-import EventsPage from '../components/EventsPage'
-import GalleryPage from '../components/GalleryPage'
-import OnlineOrdering from '../components/OnlineOrdering'
-import cloudinaryOptimize from '../helpers/cloudinaryHelper'
-import Modal from '../components/Modal'
-import JoinOurTeamForm from '../components/JoinOurTeam'
-import MailchimpWidget from '../../../gatsby-theme-minimal/src/components/MailchimpWidget'
+import { jsx, Box, Flex, Text, Heading, Link, Image } from 'theme-ui';
+import React, { useEffect } from 'react';
+import slugify from 'slugify';
+import Layout from '../components/Layout';
+import HomeHero from '../components/HomeHero';
+import SimpleHero from '../components/SimpleHero';
+import Menu from '../components/Menu';
+import HomeRenderer from '../components/HomeRenderer';
+import ButtonRow from '../components/ButtonRow';
+import ContactPage from '../components/ContactPage';
+import AboutPage from '../components/AboutPage';
+import EventsPage from '../components/EventsPage';
+import GalleryPage from '../components/GalleryPage';
+import OnlineOrdering from '../components/OnlineOrdering';
+import cloudinaryOptimize from '../helpers/cloudinaryHelper';
+import Modal from '../components/Modal';
+import JoinOurTeamForm from '../components/JoinOurTeam';
+import MailchimpWidget from '../../../gatsby-theme-minimal/src/components/MailchimpWidget';
 
 const BasicPageTemplate = ({ pageContext }) => {
-  const { curPage, id } = pageContext
+  const { curPage, id } = pageContext;
   const [showGiftCardContainer, setShowGiftCardContainer] = React.useState(
-    false,
-  )
+    false
+  );
 
   useEffect(() => {
     if (pageContext.data.city === 'Newtown') {
-      setShowGiftCardContainer(true)
+      setShowGiftCardContainer(true);
     }
-  }, [])
-
-
+  }, []);
 
   const renderHero = () => {
     if (curPage.title === 'Home') {
@@ -38,7 +36,7 @@ const BasicPageTemplate = ({ pageContext }) => {
         <>
           <HomeHero withShout id={id} location={pageContext.data.city} />;
         </>
-      )
+      );
     } else
       return (
         <>
@@ -48,21 +46,21 @@ const BasicPageTemplate = ({ pageContext }) => {
             pageTitle={curPage.title}
           />
         </>
-      )
-  }
+      );
+  };
 
-  const routes = pageContext.pages
+  const routes = pageContext.pages;
 
   const renderComponent = (title) => {
     switch (title) {
       case 'Menu':
-        return <Menu id={id} poweredList="1" />
+        return <Menu id={id} poweredList='1' />;
       case 'Home':
         return (
           <>
             <HomeRenderer data={pageContext} location={pageContext.data.city} />
             <Flex
-              as="section"
+              as='section'
               sx={{
                 padding: [2, 3, 5],
                 background: 'white',
@@ -73,7 +71,7 @@ const BasicPageTemplate = ({ pageContext }) => {
               }}
             >
               <Text
-                as="h3"
+                as='h3'
                 sx={{ color: 'primary', fontSize: [3, 4, 5], mb: [3, 4] }}
               >
                 Order Online
@@ -81,9 +79,7 @@ const BasicPageTemplate = ({ pageContext }) => {
               <OnlineOrdering location={pageContext.data.city} />
             </Flex>
             <Box>
-              { pageContext.data.city === 'Newtown' &&
-                <MailchimpWidget />
-              }
+              {pageContext.data.city === 'Newtown' && <MailchimpWidget />}
             </Box>
             <Box sx={{ paddingY: 5 }}>
               <ButtonRow
@@ -97,7 +93,7 @@ const BasicPageTemplate = ({ pageContext }) => {
                   sx={{
                     backgroundImage: `url('${cloudinaryOptimize(
                       'https://res.cloudinary.com/gonation/image/upload/v1671046595/sites/red-rooster/Red_Rooster_Gift.png',
-                      900,
+                      900
                     )}')`,
                     backgroundPosition: '5px -75px',
                     backgroundSize: 'cover',
@@ -137,7 +133,7 @@ const BasicPageTemplate = ({ pageContext }) => {
                     sx={{
                       backgroundImage: `url('${cloudinaryOptimize(
                         'https://res.cloudinary.com/gonation/image/upload/v1617388779/sites/mix-prime/serving-ct-image.jpg',
-                        900,
+                        900
                       )}')`,
                       backgroundSize: 'cover',
                       display: 'flex',
@@ -156,8 +152,8 @@ const BasicPageTemplate = ({ pageContext }) => {
                     </Text>
 
                     <Link
-                      href="https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fservingconnecticut.com%2f&c=E,1,hA45iW0GZJdGWU2_lp0BOlPA2MbuJCyCSHBrRznoiP5v2BNJNsn5x0h4ADkZlBLeOHr2HP5RMLme4LozPT9vTxNK1gc3p9-xVDwmWt19f7h14J2cmx2_Ag,,&typo=1"
-                      target="_blank"
+                      href='https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fservingconnecticut.com%2f&c=E,1,hA45iW0GZJdGWU2_lp0BOlPA2MbuJCyCSHBrRznoiP5v2BNJNsn5x0h4ADkZlBLeOHr2HP5RMLme4LozPT9vTxNK1gc3p9-xVDwmWt19f7h14J2cmx2_Ag,,&typo=1'
+                      target='_blank'
                     >
                       <Image
                         sx={{
@@ -167,8 +163,8 @@ const BasicPageTemplate = ({ pageContext }) => {
                             transform: 'scale(1.2)',
                           },
                         }}
-                        src="https://res.cloudinary.com/gonation/image/upload/v1617388067/sites/mix-prime/logo-hero.png"
-                        alt="reseturants serving connecticut"
+                        src='https://res.cloudinary.com/gonation/image/upload/v1617388067/sites/mix-prime/logo-hero.png'
+                        alt='reseturants serving connecticut'
                       />
                     </Link>
                   </Box>
@@ -176,7 +172,7 @@ const BasicPageTemplate = ({ pageContext }) => {
               )}
             </Box>
           </>
-        )
+        );
       case 'Join Our Team':
         return (
           <JoinOurTeamForm
@@ -184,14 +180,16 @@ const BasicPageTemplate = ({ pageContext }) => {
             location={slugify(pageContext.data.city, { lower: true })}
             id={id}
           />
-        )
+        );
+      case 'Spirits':
+        return <Menu id={id} poweredList='2' />;
       case 'About':
         return (
           <AboutPage
             data={pageContext}
             location={slugify(pageContext.data.city, { lower: true })}
           />
-        )
+        );
 
       case 'Events':
         return (
@@ -200,7 +198,7 @@ const BasicPageTemplate = ({ pageContext }) => {
             location={slugify(pageContext.data.city, { lower: true })}
             id={id}
           />
-        )
+        );
       case 'Gallery':
         return (
           <GalleryPage
@@ -208,12 +206,12 @@ const BasicPageTemplate = ({ pageContext }) => {
             location={slugify(pageContext.data.city, { lower: true })}
             id={id}
           />
-        )
+        );
       default:
-        console.log('in default')
-        return ''
+        console.log('in default');
+        return '';
     }
-  }
+  };
 
   const renderHours = () => {
     const titleStyle = {
@@ -221,87 +219,87 @@ const BasicPageTemplate = ({ pageContext }) => {
       fontSize: '1.75rem',
       margin: '1rem 0',
       color: 'primary',
-    }
+    };
     const hoursText = {
       textAlign: 'center',
-    }
+    };
     return (
-      <section id="hours">
+      <section id='hours'>
         <Box sx={{ pb: 3 }}>
-          <Text sx={titleStyle} as="h3" variant="heading">
+          <Text sx={titleStyle} as='h3' variant='heading'>
             Hours Of Operation
           </Text>
           <Text
             sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
-            as="h3"
-            variant="heading"
+            as='h3'
+            variant='heading'
           >
             Monday - Saturday
           </Text>
-          <Text sx={hoursText} as="p">
+          <Text sx={hoursText} as='p'>
             11:30 AM - TIL
           </Text>
           <Text
             sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
-            as="h3"
-            variant="heading"
+            as='h3'
+            variant='heading'
           >
             Sunday
           </Text>
-          <Text sx={hoursText} as="p">
+          <Text sx={hoursText} as='p'>
             {pageContext.data.city === 'Newtown' ? `11:00 AM` : '11:30 AM'}- TIL
           </Text>
         </Box>
         <Box sx={{ pb: 3 }}>
-          <Text sx={titleStyle} as="h3" variant="heading">
+          <Text sx={titleStyle} as='h3' variant='heading'>
             Kitchen Hours
           </Text>
           <Text
             sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
-            as="h3"
-            variant="heading"
+            as='h3'
+            variant='heading'
           >
             Monday - Thursday
           </Text>
-          <Text sx={hoursText} as="p">
+          <Text sx={hoursText} as='p'>
             11:30 AM - 10:00 PM
           </Text>
 
           <Text
             sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
-            as="h3"
-            variant="heading"
+            as='h3'
+            variant='heading'
           >
             Friday & Saturday
           </Text>
-          <Text sx={hoursText} as="p">
+          <Text sx={hoursText} as='p'>
             11:30 AM - 11:00 PM
           </Text>
 
           <Text
             sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
-            as="h3"
-            variant="heading"
+            as='h3'
+            variant='heading'
           >
             Sunday
           </Text>
-          <Text sx={hoursText} as="p">
+          <Text sx={hoursText} as='p'>
             {pageContext.data.city === 'Newtown' ? `11:00 AM` : '11:30 AM'} -
             10:00 PM
           </Text>
         </Box>
         <Box sx={{ pb: 3 }}>
-          <Text sx={titleStyle} as="h3" variant="heading">
+          <Text sx={titleStyle} as='h3' variant='heading'>
             Brunch Served From
           </Text>
           <Text
             sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
-            as="h3"
-            variant="heading"
+            as='h3'
+            variant='heading'
           >
             Sunday
           </Text>
-          <Text sx={hoursText} as="p">
+          <Text sx={hoursText} as='p'>
             {pageContext.data.city === 'Newtown' ? `11:00 AM` : '11:30 AM'} -
             3:00 PM
           </Text>
@@ -316,8 +314,8 @@ const BasicPageTemplate = ({ pageContext }) => {
           Last seating for the kitchen -- 30 minutes prior to closing.
         </Text>
       </section>
-    )
-  }
+    );
+  };
 
   return (
     <Layout pageTitle={curPage.title} routes={routes} pageContext={pageContext}>
@@ -353,7 +351,7 @@ const BasicPageTemplate = ({ pageContext }) => {
         </Box>
       </Box>
     </Layout>
-  )
-}
+  );
+};
 
-export default BasicPageTemplate
+export default BasicPageTemplate;
