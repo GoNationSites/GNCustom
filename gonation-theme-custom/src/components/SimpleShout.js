@@ -13,10 +13,10 @@ const SimpleShout = ({ id }) => {
       url: `https://data.prod.gonation.com/profile/shoutsnew/${id}`,
       adapter: jsonpAdapter,
     })
-      .then(res => {
+      .then((res) => {
         setShout(res.data);
       })
-      .catch(e => console.log('e => ', e));
+      .catch((e) => console.log('e => ', e));
   }, []);
 
   if (shout && shout.shout) {
@@ -34,19 +34,21 @@ const SimpleShout = ({ id }) => {
           height: '100%',
           borderTopRightRadius: '30px',
           borderBottomRightRadius: '30px',
-        }}>
+        }}
+      >
         <Box
           sx={{
             width: '33%',
             height: '100%',
-          }}>
+          }}
+        >
           {!shout.shout.image.isDefault ? (
             <Box sx={{ height: '100%' }}>
               <Image
                 sx={{
                   height: '100%',
                   objectFit: 'cover',
-                  minHeight: '195px',
+                  minHeight: '120px',
                   display: 'flex',
                 }}
                 src={`${shout.imageBaseUrl}/${shout.shout.image.image.cloudinaryId}`}
@@ -65,7 +67,8 @@ const SimpleShout = ({ id }) => {
               fontWeight: 'bold',
               letterSpacing: '3px',
               mb: 2,
-            }}>
+            }}
+          >
             Recent Shout
           </Text>
           <Text as='p' sx={{ fontSize: [1, 2], mb: 2 }}>

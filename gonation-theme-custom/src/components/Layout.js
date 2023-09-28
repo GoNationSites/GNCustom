@@ -100,10 +100,10 @@ const Layout = ({ children, routes, pageContext, pageTitle }) => {
       case 'wilton':
         return (
           <iframe
-            src="https://cdn.lightwidget.com/widgets/22c8aff3d6515bcc9ba42e9b27337e03.html"
-            scrolling="no"
-            allowtransparency="true"
-            class="lightwidget-widget"
+            src='https://cdn.lightwidget.com/widgets/22c8aff3d6515bcc9ba42e9b27337e03.html'
+            scrolling='no'
+            allowtransparency='true'
+            class='lightwidget-widget'
             style={{
               width: '100%',
               border: 0,
@@ -114,10 +114,10 @@ const Layout = ({ children, routes, pageContext, pageTitle }) => {
       case 'ridgefield':
         return (
           <iframe
-            src="https://cdn.lightwidget.com/widgets/1e722e3325b75cd9b120646609569842.html"
-            scrolling="no"
-            allowtransparency="true"
-            class="lightwidget-widget"
+            src='https://cdn.lightwidget.com/widgets/1e722e3325b75cd9b120646609569842.html'
+            scrolling='no'
+            allowtransparency='true'
+            class='lightwidget-widget'
             style={{
               width: '100%',
               border: 0,
@@ -128,10 +128,10 @@ const Layout = ({ children, routes, pageContext, pageTitle }) => {
       case 'newtown':
         return (
           <iframe
-            src="https://cdn.lightwidget.com/widgets/834c2a22b71956d2a5c72ed80d7bdde0.html"
-            scrolling="no"
-            allowtransparency="true"
-            class="lightwidget-widget"
+            src='https://cdn.lightwidget.com/widgets/834c2a22b71956d2a5c72ed80d7bdde0.html'
+            scrolling='no'
+            allowtransparency='true'
+            class='lightwidget-widget'
             style={{
               width: '100%',
               border: 0,
@@ -149,28 +149,28 @@ const Layout = ({ children, routes, pageContext, pageTitle }) => {
       case 'newtown':
         return (
           <a
-            href="https://slicelife.com/restaurants/ct/newtown/06470/red-rooster-pub-newtown/menu?utm_campaign=order_now_button&utm_medium=referral&utm_source="
-            target="_blank"
+            href='https://slicelife.com/restaurants/ct/newtown/06470/red-rooster-pub-newtown/menu?utm_campaign=order_now_button&utm_medium=referral&utm_source='
+            target='_blank'
           >
-            <img src="https://slicelink-assets-production.imgix.net/partner-buttons/slice-button-medium-ivory-start-order.png" />
+            <img src='https://slicelink-assets-production.imgix.net/partner-buttons/slice-button-medium-ivory-start-order.png' />
           </a>
         );
       case 'wilton':
         return (
           <a
-            href="https://slicelife.com/restaurants/ct/wilton/06897/red-rooster-pub-wilton/menu?utm_campaign=order_now_button&utm_medium=referral&utm_source="
-            target="_blank"
+            href='https://slicelife.com/restaurants/ct/wilton/06897/red-rooster-pub-wilton/menu?utm_campaign=order_now_button&utm_medium=referral&utm_source='
+            target='_blank'
           >
-            <img src="https://slicelink-assets-production.imgix.net/partner-buttons/slice-button-medium-ivory-start-order.png" />
+            <img src='https://slicelink-assets-production.imgix.net/partner-buttons/slice-button-medium-ivory-start-order.png' />
           </a>
         );
       case 'ridgefield':
         return (
           <a
-            href="https://slicelife.com/restaurants/ct/ridgefield/06877/red-rooster-pub-ridgefield/menu?utm_campaign=order_now_button&utm_medium=referral&utm_source="
-            target="_blank"
+            href='https://slicelife.com/restaurants/ct/ridgefield/06877/red-rooster-pub-ridgefield/menu?utm_campaign=order_now_button&utm_medium=referral&utm_source='
+            target='_blank'
           >
-            <img src="https://slicelink-assets-production.imgix.net/partner-buttons/slice-button-medium-ivory-start-order.png" />
+            <img src='https://slicelink-assets-production.imgix.net/partner-buttons/slice-button-medium-ivory-start-order.png' />
           </a>
         );
       default:
@@ -179,14 +179,15 @@ const Layout = ({ children, routes, pageContext, pageTitle }) => {
   };
 
   return (
-    <Box as="main" sx={{ marginRight: ['unset', '53px'] }}>
+    <Box as='main' sx={{ marginRight: ['unset', '53px'], overflowX: 'hidden' }}>
       <Box
-        id="help"
+        id='help'
         sx={{
           position: 'absolute',
           top: 128,
           right: 12,
           zIndex: 99,
+          width: ['175px', '200px'],
           '@media (min-width: 768px)': {
             position: 'fixed',
             top: 'unset',
@@ -208,8 +209,8 @@ const Layout = ({ children, routes, pageContext, pageTitle }) => {
       </Box>
       <Box>
         <Text
-          as="h4"
-          variant="title"
+          as='h4'
+          variant='title'
           sx={{
             fontSize: [3, 4, 6],
             textAlign: 'center',

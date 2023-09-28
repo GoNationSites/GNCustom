@@ -1,10 +1,11 @@
-import { Box, Flex, Text, Image } from 'theme-ui'
-import React from 'react'
-import HeroSlider, { Slide } from 'hero-slider'
-import { Link } from 'gatsby'
+import { Box, Flex, Text, Image } from 'theme-ui';
+import React from 'react';
+import HeroSlider, { Slide } from 'hero-slider';
+import { Link } from 'gatsby';
 
-import cloudinaryHelper from '../helpers/cloudinaryHelper'
-import SimpleShout from '../components/SimpleShout'
+import cloudinaryHelper from '../helpers/cloudinaryHelper';
+import SimpleShout from '../components/SimpleShout';
+import VideoHero from './VideoHero';
 
 const HomeHero = ({ withShout, id, location }) => {
   const ridgefieldPhotos = [
@@ -13,35 +14,41 @@ const HomeHero = ({ withShout, id, location }) => {
     'https://res.cloudinary.com/gonation/image/upload/v1598460035/sites/red-rooster/ridgefield/Chopped_Cobb_Salad_7.jpg',
     // 'https://res.cloudinary.com/gonation/image/upload/v1598460315/sites/red-rooster/ridgefield/Dining_Room_6.jpg',
     'https://res.cloudinary.com/gonation/image/upload/v1601503161/sites/red-rooster/hero-4.jpg',
-  ]
+  ];
 
   return (
-    <Box sx={{ position: 'relative' }}>
-      <HeroSlider
-        orientation='horizontal'
-        initialSlide={1}
-        style={{
-          color: '#FFF',
-        }}
-        settings={{
-          slidingDuration: 500,
-          slidingDelay: 500,
-          shouldAutoplay: true,
-          shouldDisplayButtons: false,
-          autoplayDuration: 12000,
-          height: '99vh',
-        }}
-      >
-        {ridgefieldPhotos.map((photo) => (
-          <Slide
-            background={{
-              backgroundImage: cloudinaryHelper(photo, 2000),
-              backgroundAnimation: 'zoom',
-            }}
-            alt={'Red Rooster Pub'}
-          />
-        ))}
-      </HeroSlider>
+    <Box sx={{ position: 'relative', height: '100vh' }}>
+      {location === 'Newtown' ? (
+        <Box sx={{ height: '95vh' }}>
+          <VideoHero videoId='UBoAqkH1u-0' />
+        </Box>
+      ) : (
+        <HeroSlider
+          orientation='horizontal'
+          initialSlide={1}
+          style={{
+            color: '#FFF',
+          }}
+          settings={{
+            slidingDuration: 500,
+            slidingDelay: 500,
+            shouldAutoplay: true,
+            shouldDisplayButtons: false,
+            autoplayDuration: 12000,
+            height: '99vh',
+          }}
+        >
+          {ridgefieldPhotos.map((photo) => (
+            <Slide
+              background={{
+                backgroundImage: cloudinaryHelper(photo, 2000),
+                backgroundAnimation: 'zoom',
+              }}
+              alt={'Red Rooster Pub'}
+            />
+          ))}
+        </HeroSlider>
+      )}
       <Flex
         sx={{
           position: 'absolute',
@@ -109,7 +116,7 @@ const HomeHero = ({ withShout, id, location }) => {
         </Box>
       </Flex>
     </Box>
-  )
-}
+  );
+};
 
-export default HomeHero
+export default HomeHero;
