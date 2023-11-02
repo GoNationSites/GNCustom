@@ -50,6 +50,11 @@ const YouTubeEmbed = ({
     autoplay ? 1 : 0
   }&mute=${muted ? 1 : 0}&loop=1&playlist=${videoId}`;
 
+  console.log(
+    'https://www.youtube.com/embed/_xGz5NnvnEc?autoplay=1&mute=1&loop=1&playlist=_xGz5NnvnEc'
+  );
+  console.log(src);
+
   const videoContainer = useRef();
   const videoFrame = useRef();
 

@@ -14,6 +14,7 @@ import doordash from '../../components/icons/doordash-logo.png';
 
 import FullAddress from '../../components/FullAddress';
 import FullPhone from '../../components/FullPhone';
+import Popup from '../../components/Popup';
 
 const Danbury = () => {
   const data = useStaticQuery(graphql`
@@ -41,7 +42,7 @@ const Danbury = () => {
     }
   `);
   const site = data.allSiteData.edges.filter(
-    el => el.node.data.city === 'Danbury'
+    (el) => el.node.data.city === 'Danbury'
   )[0].node.data;
   const contentShowcaseData = [
     {
@@ -86,53 +87,53 @@ const Danbury = () => {
       }}
       transitionTime={500}
     >
-      <Layout pageTitle="home">
+      <Layout pageTitle='home'>
         <Box sx={{ maxWidth: '730px', margin: 'auto' }}>
           <Flex
             sx={{ display: ['flex', 'none'], flexWrap: 'wrap', padding: 2 }}
           >
             <Box sx={{ flex: '1 1 50%', pr: 2 }}>
-              <Button variant="blackTransparent">
+              <Button variant='blackTransparent'>
                 <FullPhone
                   data={site}
-                  txt="Call"
+                  txt='Call'
                   st={{ color: '#111!important' }}
                 />
               </Button>
             </Box>
             <Box sx={{ flex: '1 1 50%', pl: 2 }}>
-              <Button variant="blackTransparent">
+              <Button variant='blackTransparent'>
                 <FullAddress
                   data={site}
-                  text="Directions"
+                  text='Directions'
                   st={{ color: '#111!important' }}
                 />
               </Button>
             </Box>
             <Box sx={{ flex: '1 1 100%', pt: '8px' }}>
               <Button
-                variant="blackFull"
+                variant='blackFull'
                 sx={{ border: 'none!important', py: '10px' }}
               >
                 <Text
-                  as="a"
+                  as='a'
                   sx={{ color: 'white', letterSpacing: '.75px' }}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.opentable.com/r/mix-prime-steakhouse-fish-and-sushi-bar-danbury"
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  href='https://www.opentable.com/r/mix-prime-steakhouse-fish-and-sushi-bar-danbury'
                 >
                   Make A Reservation
                 </Text>
               </Button>
             </Box>
           </Flex>
-          <AboutText location="Danbury"></AboutText>
+          <AboutText location='Danbury'></AboutText>
         </Box>
         <Box sx={{ textAlign: 'center' }}>
           <a
-            href="https://www.doordash.com/store/max-40-restaurant-and-bar-danbury-147354/en-US"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='https://www.doordash.com/store/max-40-restaurant-and-bar-danbury-147354/en-US'
+            target='_blank'
+            rel='noopener noreferrer'
           >
             <Image sx={{ maxWidth: '300px' }} src={doordash} />
           </a>
@@ -141,10 +142,10 @@ const Danbury = () => {
           <ContentShowcase data={contentShowcaseData} />
         </Box>
 
-        <MenuShowcaseSlider id="bzn-vBPQfZmCTC2V2Y_BpE6SPw" pl="1" />
+        <MenuShowcaseSlider id='bzn-vBPQfZmCTC2V2Y_BpE6SPw' pl='1' />
 
         <Box
-          className="testin"
+          className='testin'
           sx={{
             backgroundImage: `url('${cloudinaryOptimize(
               'https://res.cloudinary.com/gonation/image/upload/v1617388779/sites/mix-prime/serving-ct-image.jpg',
@@ -167,19 +168,21 @@ const Danbury = () => {
           </Text>
 
           <Link
-            href="https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fservingconnecticut.com%2f&c=E,1,hA45iW0GZJdGWU2_lp0BOlPA2MbuJCyCSHBrRznoiP5v2BNJNsn5x0h4ADkZlBLeOHr2HP5RMLme4LozPT9vTxNK1gc3p9-xVDwmWt19f7h14J2cmx2_Ag,,&typo=1"
-            target="_blank"
+            href='https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fservingconnecticut.com%2f&c=E,1,hA45iW0GZJdGWU2_lp0BOlPA2MbuJCyCSHBrRznoiP5v2BNJNsn5x0h4ADkZlBLeOHr2HP5RMLme4LozPT9vTxNK1gc3p9-xVDwmWt19f7h14J2cmx2_Ag,,&typo=1'
+            target='_blank'
           >
             <Image
               sx={{
                 maxWidth: '300px',
               }}
-              src="https://res.cloudinary.com/gonation/image/upload/v1617388067/sites/mix-prime/logo-hero.png"
-              alt="reseturants serving connecticut"
+              src='https://res.cloudinary.com/gonation/image/upload/v1617388067/sites/mix-prime/logo-hero.png'
+              alt='reseturants serving connecticut'
             />
           </Link>
         </Box>
       </Layout>
+
+      <Popup />
     </PageTransition>
   );
 };

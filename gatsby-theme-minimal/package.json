@@ -16,6 +16,7 @@
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-theme-ui": "^0.3.0",
     "hero-slider": "^2.0.3",
+    "local-storage": "^2.0.0",
     "moment": "^2.27.0",
     "react-animated-css": "^1.2.1",
     "react-awesome-slider": "^4.1.0",
