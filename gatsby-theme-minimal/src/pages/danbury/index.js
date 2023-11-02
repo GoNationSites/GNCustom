@@ -14,7 +14,6 @@ import doordash from '../../components/icons/doordash-logo.png';
 
 import FullAddress from '../../components/FullAddress';
 import FullPhone from '../../components/FullPhone';
-import Popup from '../../components/Popup';
 
 const Danbury = () => {
   const data = useStaticQuery(graphql`
@@ -181,8 +180,6 @@ const Danbury = () => {
           </Link>
         </Box>
       </Layout>
-
-      <Popup />
     </PageTransition>
   );
 };

@@ -14,6 +14,7 @@ import doordash from '../../components/icons/doordash-logo.png';
 
 import FullAddress from '../../components/FullAddress';
 import FullPhone from '../../components/FullPhone';
+import Popup from '../../components/Popup';
 
 const Woodbury = () => {
   const data = useStaticQuery(graphql`
@@ -41,7 +42,7 @@ const Woodbury = () => {
     }
   `);
   const site = data.allSiteData.edges.filter(
-    el => el.node.data.city === 'Woodbury'
+    (el) => el.node.data.city === 'Woodbury'
   )[0].node.data;
 
   const contentShowcaseData = [
@@ -87,25 +88,25 @@ const Woodbury = () => {
       }}
       transitionTime={500}
     >
-      <Layout pageTitle="home">
+      <Layout pageTitle='home'>
         <Box sx={{ maxWidth: '900px', margin: 'auto' }}>
           <Flex
             sx={{ display: ['flex', 'none'], flexWrap: 'wrap', padding: 2 }}
           >
             <Box sx={{ flex: '1 1 50%', pr: 2 }}>
-              <Button variant="blackTransparent">
+              <Button variant='blackTransparent'>
                 <FullPhone
-                  txt="Call"
+                  txt='Call'
                   data={site}
                   st={{ color: '#111!important' }}
                 />
               </Button>
             </Box>
             <Box sx={{ flex: '1 1 50%', pl: 2 }}>
-              <Button variant="blackTransparent">
+              <Button variant='blackTransparent'>
                 <FullAddress
                   data={site}
-                  text="Directions"
+                  text='Directions'
                   st={{ color: '#111!important' }}
                 />
               </Button>
@@ -124,10 +125,10 @@ const Woodbury = () => {
               </Button>
             </Box> */}
           </Flex>
-          <AboutText location="Woodbury"></AboutText>
+          <AboutText location='Woodbury'></AboutText>
         </Box>
         <Box sx={{ textAlign: 'center' }}>
-          <a href="" target="_blank" rel="noopener noreferrer">
+          <a href='' target='_blank' rel='noopener noreferrer'>
             <Image sx={{ maxWidth: '300px' }} src={doordash} />
           </a>
         </Box>
@@ -135,10 +136,10 @@ const Woodbury = () => {
           <ContentShowcase data={contentShowcaseData} />
         </Box>
 
-        <MenuShowcaseSlider id="bzn-mmT_2ynbR4eGFehR2VEi8g" pl="1" />
+        <MenuShowcaseSlider id='bzn-mmT_2ynbR4eGFehR2VEi8g' pl='1' />
 
         <Box
-          className="testin"
+          className='testin'
           sx={{
             backgroundImage: `url('${cloudinaryOptimize(
               'https://res.cloudinary.com/gonation/image/upload/v1617388779/sites/mix-prime/serving-ct-image.jpg',
@@ -161,19 +162,20 @@ const Woodbury = () => {
           </Text>
 
           <Link
-            href="https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fservingconnecticut.com%2f&c=E,1,hA45iW0GZJdGWU2_lp0BOlPA2MbuJCyCSHBrRznoiP5v2BNJNsn5x0h4ADkZlBLeOHr2HP5RMLme4LozPT9vTxNK1gc3p9-xVDwmWt19f7h14J2cmx2_Ag,,&typo=1"
-            target="_blank"
+            href='https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fservingconnecticut.com%2f&c=E,1,hA45iW0GZJdGWU2_lp0BOlPA2MbuJCyCSHBrRznoiP5v2BNJNsn5x0h4ADkZlBLeOHr2HP5RMLme4LozPT9vTxNK1gc3p9-xVDwmWt19f7h14J2cmx2_Ag,,&typo=1'
+            target='_blank'
           >
             <Image
               sx={{
                 maxWidth: '300px',
               }}
-              src="https://res.cloudinary.com/gonation/image/upload/v1617388067/sites/mix-prime/logo-hero.png"
-              alt="reseturants serving connecticut"
+              src='https://res.cloudinary.com/gonation/image/upload/v1617388067/sites/mix-prime/logo-hero.png'
+              alt='reseturants serving connecticut'
             />
           </Link>
         </Box>
       </Layout>
+      <Popup />
     </PageTransition>
   );
 };
