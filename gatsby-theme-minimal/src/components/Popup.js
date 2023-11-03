@@ -54,7 +54,7 @@ const Popup = () => {
           <br></br>
 
           <Text as='p'>
-            "For reservations please call the restaurant 203-586-1788
+            For reservations please call the restaurant 203-586-1788
           </Text>
           <br></br>
           <br></br>
