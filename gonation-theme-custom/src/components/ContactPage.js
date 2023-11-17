@@ -19,12 +19,12 @@ const ContactPage = ({ data, location, id }) => {
       <Box>
         <iframe
           src={googleMapLink}
-          width="100%"
-          height="350"
-          frameborder="0"
-          allowfullscreen=""
-          aria-hidden="false"
-          tabindex="0"
+          width='100%'
+          height='350'
+          frameborder='0'
+          allowfullscreen=''
+          aria-hidden='false'
+          tabindex='0'
         ></iframe>
       </Box>
       <Flex sx={{ flexWrap: 'wrap', alignItems: 'stretch' }}>
@@ -45,13 +45,13 @@ const ContactPage = ({ data, location, id }) => {
               height: '100%',
             }}
           >
-            <Text variant="heading" sx={{ fontSize: 4, mb: 3 }}>
+            <Text variant='heading' sx={{ fontSize: 4, mb: 3 }}>
               Contact Details
             </Text>
-            <Text as="h4" variant="heading" sx={{ fontSize: 3 }}>
+            <Text as='h4' variant='heading' sx={{ fontSize: 3 }}>
               Address
             </Text>
-            <Text as="p" sx={{ mb: 3 }}>
+            <Text as='p' sx={{ mb: 3 }}>
               <ClickableAddress
                 data={data.data}
                 style={{
@@ -62,10 +62,10 @@ const ContactPage = ({ data, location, id }) => {
                 }}
               />
             </Text>
-            <Text as="h4" variant="heading" sx={{ fontSize: 3 }}>
+            <Text as='h4' variant='heading' sx={{ fontSize: 3 }}>
               Phone
             </Text>
-            <Text as="p" sx={{ mb: 3 }}>
+            <Text as='p' sx={{ mb: 3 }}>
               <ClickablePhone
                 tel={data.data.phone}
                 style={{
@@ -76,10 +76,10 @@ const ContactPage = ({ data, location, id }) => {
                 }}
               ></ClickablePhone>
             </Text>
-            <Text as="h4" variant="heading" sx={{ fontSize: 3 }}>
+            <Text as='h4' variant='heading' sx={{ fontSize: 3 }}>
               Social
             </Text>
-            <Text as="p" sx={{ mb: 3, maxWidth: '200px', marginRight: 'auto' }}>
+            <Text as='p' sx={{ mb: 3, maxWidth: '200px', marginRight: 'auto' }}>
               <SocialIcons
                 links={data.data.links}
                 slug={data.data.slug}
@@ -97,7 +97,7 @@ const ContactPage = ({ data, location, id }) => {
           }}
         >
           <Box sx={{ bg: 'white', padding: 3, borderRadius: '5px' }}>
-            <Text variant="heading" sx={{ fontSize: 4, mb: 3 }}>
+            <Text variant='heading' sx={{ fontSize: 4, mb: 3 }}>
               Get in touch
             </Text>
             <ContactForm location={location} />
@@ -121,7 +121,7 @@ const ContactPage = ({ data, location, id }) => {
                 height: '100%',
               }}
             >
-              <Text variant="heading" sx={{ fontSize: 4, mb: 3 }}>
+              <Text variant='heading' sx={{ fontSize: 4, mb: 3 }}>
                 Hours
               </Text>
               <HoursComponent id={id} location={location} />
