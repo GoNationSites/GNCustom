@@ -216,8 +216,8 @@ const BasicPageTemplate = ({ pageContext }) => {
   const renderHours = () => {
     const titleStyle = {
       textAlign: 'center',
-      fontSize: '1.75rem',
-      margin: '1rem 0',
+      fontSize: '1.25rem',
+      margin: '1rem 0rem 0rem',
       color: 'primary',
     };
     const hoursText = {
@@ -226,24 +226,23 @@ const BasicPageTemplate = ({ pageContext }) => {
     return (
       <section id='hours'>
         <Box sx={{ pb: 3 }}>
-          <Text sx={titleStyle} as='h3' variant='heading'>
-            Hours Of Operation
-          </Text>
-          <Text
-            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
-            as='h3'
-            variant='heading'
+          <Heading
+            sx={{
+              textAlign: 'center',
+              fontSize: '2rem',
+              mt: 5,
+              borderBottom: '2px solid',
+            }}
           >
+            Hours Of Operation
+          </Heading>
+          <Text sx={{ ...titleStyle }} as='h3' variant='heading'>
             Monday - Saturday
           </Text>
           <Text sx={hoursText} as='p'>
             11:30 AM - TIL
           </Text>
-          <Text
-            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
-            as='h3'
-            variant='heading'
-          >
+          <Text sx={{ ...titleStyle }} as='h3' variant='heading'>
             Sunday
           </Text>
           <Text sx={hoursText} as='p'>
@@ -251,36 +250,31 @@ const BasicPageTemplate = ({ pageContext }) => {
           </Text>
         </Box>
         <Box sx={{ pb: 3 }}>
-          <Text sx={titleStyle} as='h3' variant='heading'>
-            Kitchen Hours
-          </Text>
-          <Text
-            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
-            as='h3'
-            variant='heading'
+          <Heading
+            sx={{
+              textAlign: 'center',
+              fontSize: '2rem',
+              mt: 5,
+              borderBottom: '2px solid',
+            }}
           >
+            Kitchen Hours
+          </Heading>
+          <Text sx={{ ...titleStyle }} as='h3' variant='heading'>
             Monday - Thursday
           </Text>
           <Text sx={hoursText} as='p'>
             11:30 AM - 10:00 PM
           </Text>
 
-          <Text
-            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
-            as='h3'
-            variant='heading'
-          >
+          <Text sx={{ ...titleStyle }} as='h3' variant='heading'>
             Friday & Saturday
           </Text>
           <Text sx={hoursText} as='p'>
             11:30 AM - 11:00 PM
           </Text>
 
-          <Text
-            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
-            as='h3'
-            variant='heading'
-          >
+          <Text sx={{ ...titleStyle }} as='h3' variant='heading'>
             Sunday
           </Text>
           <Text sx={hoursText} as='p'>
@@ -292,11 +286,7 @@ const BasicPageTemplate = ({ pageContext }) => {
           <Text sx={titleStyle} as='h3' variant='heading'>
             Brunch Served From
           </Text>
-          <Text
-            sx={{ ...titleStyle, marginBottom: '1rem', color: 'dark' }}
-            as='h3'
-            variant='heading'
-          >
+          <Text sx={{ ...titleStyle }} as='h3' variant='heading'>
             Sunday
           </Text>
           <Text sx={hoursText} as='p'>
@@ -313,6 +303,55 @@ const BasicPageTemplate = ({ pageContext }) => {
         >
           Last seating for the kitchen -- 30 minutes prior to closing.
         </Text>
+
+        {pageContext.data.city === 'Newtown' ? (
+          <>
+            <Heading
+              sx={{
+                textAlign: 'center',
+                fontSize: '2rem',
+                mt: 5,
+                borderBottom: '2px solid',
+              }}
+            >
+              Holiday Hours{' '}
+            </Heading>
+            <br></br>
+            <Text sx={{ ...titleStyle }} as='h5' variant='heading'>
+              {' '}
+              Thanksgiving Eve
+            </Text>
+            <Text sx={hoursText} as='p'>
+              11:30am- 1 am
+            </Text>
+            <Text sx={{ ...titleStyle }} as='h5' variant='heading'>
+              Thanksgiving Day 
+            </Text>
+            <Text sx={hoursText} as='p'>
+              Closed
+            </Text>
+            <Text sx={{ ...titleStyle }} as='h5' variant='heading'>
+              Christmas Eve
+            </Text>
+            <Text sx={hoursText} as='p'>
+              Closing at 11:30am - 6pm
+            </Text>
+            <Text sx={{ ...titleStyle }} as='h5' variant='heading'>
+              Christmas Day
+            </Text>
+            <Text sx={hoursText} as='p'>
+              Closed
+            </Text>
+            <Text sx={{ ...titleStyle }} as='h5' variant='heading'>
+              New Years Eve and New Years Day
+            </Text>
+            <Text sx={hoursText} as='p'>
+              Regular Hours
+            </Text>
+          </>
+        ) : (
+          ''
+        )}
       </section>
     );
   };
