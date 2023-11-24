@@ -40,6 +40,8 @@ const Popup = () => {
       JSON.parse(localStorage.getItem('popUpExpires')).expireDate
     ).getTime() < Date.now();
 
+  return null;
+
   if (!showPopup || (hasSeenPopup && !isExpiredPopup)) {
     return '';
   } else {
