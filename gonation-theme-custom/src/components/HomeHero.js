@@ -16,15 +16,27 @@ const HomeHero = ({ withShout, id, location }) => {
     'https://res.cloudinary.com/gonation/image/upload/v1601503161/sites/red-rooster/hero-4.jpg',
   ];
 
+  const newtownPhoto =
+    'https://res.cloudinary.com/gonation/image/upload/c_scale,w_1792/v1701875313/sites/red-rooster/DSC08019.jpg';
+
   return (
     <Box sx={{ position: 'relative', height: '100vh' }}>
       {location === 'Newtown' ? (
-        <Box sx={{ height: '95vh' }}>
-          <VideoHero videoId='UBoAqkH1u-0' />
-        </Box>
+        //  todo change this to newtown when ready
+        // <Box sx={{ height: '95vh' }}>
+        //   <VideoHero videoId="UBoAqkH1u-0" />
+        // </Box>
+        <Box
+          sx={{
+            height: '99vh',
+            backgroundImage: `url(${cloudinaryHelper(newtownPhoto, 2000)})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
       ) : (
         <HeroSlider
-          orientation='horizontal'
+          orientation="horizontal"
           initialSlide={1}
           style={{
             color: '#FFF',
@@ -38,7 +50,7 @@ const HomeHero = ({ withShout, id, location }) => {
             height: '99vh',
           }}
         >
-          {ridgefieldPhotos.map((photo) => (
+          {ridgefieldPhotos.map(photo => (
             <Slide
               background={{
                 backgroundImage: cloudinaryHelper(photo, 2000),
@@ -82,10 +94,10 @@ const HomeHero = ({ withShout, id, location }) => {
             {location}
             <br />{' '}
             <Text
-              as='span'
+              as="span"
               sx={{ fontSize: 0, fontWeight: '400', color: 'white' }}
             >
-              <Link to='/' style={{ color: 'white' }}>
+              <Link to="/" style={{ color: 'white' }}>
                 Change Location
               </Link>
             </Text>
@@ -96,7 +108,7 @@ const HomeHero = ({ withShout, id, location }) => {
             src={
               'https://res.cloudinary.com/gonation/image/upload/v1598969035/sites/red-rooster/logo-solid-white.png'
             }
-            alt='Red Rooster'
+            alt="Red Rooster"
           />
         </Flex>
         <Box sx={{ mt: ['auto', 'auto'] }}>
@@ -104,7 +116,7 @@ const HomeHero = ({ withShout, id, location }) => {
         </Box>
         <Box sx={{ mt: 'auto' }}>
           <Text
-            variant='heading'
+            variant="heading"
             sx={{
               fontSize: [4, 6, '80px'],
               display: ['none', 'inline'],
