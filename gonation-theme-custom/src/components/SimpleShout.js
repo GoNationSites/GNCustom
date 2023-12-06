@@ -7,17 +7,50 @@ import moment from 'moment';
 
 const SimpleShout = ({ id }) => {
   const [shout, setShout] = useState(null);
+  const [lightboxVisible, setLightboxVisible] = useState(false);
+
+  const toggleLightbox = () => {
+    setLightboxVisible(!lightboxVisible);
+  };
 
   useEffect(() => {
     axios({
       url: `https://data.prod.gonation.com/profile/shoutsnew/${id}`,
       adapter: jsonpAdapter,
     })
-      .then((res) => {
+      .then(res => {
         setShout(res.data);
       })
-      .catch((e) => console.log('e => ', e));
+      .catch(e => console.log('e => ', e));
   }, []);
+
+  const Lightbox = () => (
+    <Box
+      sx={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        zIndex: 1000,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 100000,
+      }}
+      onClick={toggleLightbox}
+    >
+      <Image
+        src={`${shout.imageBaseUrl}/${shout.shout.image.image.cloudinaryId}`}
+        sx={{
+          maxWidth: '90%',
+          maxHeight: '90%',
+          objectFit: 'contain',
+        }}
+      />
+    </Box>
+  );
 
   if (shout && shout.shout) {
     return (
@@ -36,6 +69,8 @@ const SimpleShout = ({ id }) => {
           borderBottomRightRadius: '30px',
         }}
       >
+        {lightboxVisible && <Lightbox />}
+
         <Box
           sx={{
             width: '33%',
@@ -43,7 +78,7 @@ const SimpleShout = ({ id }) => {
           }}
         >
           {!shout.shout.image.isDefault ? (
-            <Box sx={{ height: '100%' }}>
+            <Box sx={{ height: '100%' }} onClick={toggleLightbox}>
               <Image
                 sx={{
                   height: '100%',
@@ -60,8 +95,8 @@ const SimpleShout = ({ id }) => {
         </Box>
         <Box sx={{ flex: 1, padding: [3, 4] }}>
           <Text
-            variant='heading'
-            as='h3'
+            variant="heading"
+            as="h3"
             sx={{
               fontSize: [3, 4],
               fontWeight: 'bold',
@@ -71,7 +106,7 @@ const SimpleShout = ({ id }) => {
           >
             Recent Shout
           </Text>
-          <Text as='p' sx={{ fontSize: [1, 2], mb: 2 }}>
+          <Text as="p" sx={{ fontSize: [1, 2], mb: 2 }}>
             {shout.shout.text}
           </Text>
           <Text sx={{ fontSize: [0, 1], color: 'primary' }}>
