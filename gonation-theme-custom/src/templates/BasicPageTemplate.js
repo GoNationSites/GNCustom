@@ -51,16 +51,16 @@ const BasicPageTemplate = ({ pageContext }) => {
 
   const routes = pageContext.pages;
 
-  const renderComponent = (title) => {
+  const renderComponent = title => {
     switch (title) {
       case 'Menu':
-        return <Menu id={id} poweredList='1' />;
+        return <Menu id={id} poweredList="1" />;
       case 'Home':
         return (
           <>
             <HomeRenderer data={pageContext} location={pageContext.data.city} />
             <Flex
-              as='section'
+              as="section"
               sx={{
                 padding: [2, 3, 5],
                 background: 'white',
@@ -71,7 +71,7 @@ const BasicPageTemplate = ({ pageContext }) => {
               }}
             >
               <Text
-                as='h3'
+                as="h3"
                 sx={{ color: 'primary', fontSize: [3, 4, 5], mb: [3, 4] }}
               >
                 Order Online
@@ -152,8 +152,8 @@ const BasicPageTemplate = ({ pageContext }) => {
                     </Text>
 
                     <Link
-                      href='https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fservingconnecticut.com%2f&c=E,1,hA45iW0GZJdGWU2_lp0BOlPA2MbuJCyCSHBrRznoiP5v2BNJNsn5x0h4ADkZlBLeOHr2HP5RMLme4LozPT9vTxNK1gc3p9-xVDwmWt19f7h14J2cmx2_Ag,,&typo=1'
-                      target='_blank'
+                      href="https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fservingconnecticut.com%2f&c=E,1,hA45iW0GZJdGWU2_lp0BOlPA2MbuJCyCSHBrRznoiP5v2BNJNsn5x0h4ADkZlBLeOHr2HP5RMLme4LozPT9vTxNK1gc3p9-xVDwmWt19f7h14J2cmx2_Ag,,&typo=1"
+                      target="_blank"
                     >
                       <Image
                         sx={{
@@ -163,8 +163,8 @@ const BasicPageTemplate = ({ pageContext }) => {
                             transform: 'scale(1.2)',
                           },
                         }}
-                        src='https://res.cloudinary.com/gonation/image/upload/v1617388067/sites/mix-prime/logo-hero.png'
-                        alt='reseturants serving connecticut'
+                        src="https://res.cloudinary.com/gonation/image/upload/v1617388067/sites/mix-prime/logo-hero.png"
+                        alt="reseturants serving connecticut"
                       />
                     </Link>
                   </Box>
@@ -182,7 +182,7 @@ const BasicPageTemplate = ({ pageContext }) => {
           />
         );
       case 'Spirits':
-        return <Menu id={id} poweredList='2' />;
+        return <Menu id={id} poweredList="2" />;
       case 'About':
         return (
           <AboutPage
@@ -224,7 +224,7 @@ const BasicPageTemplate = ({ pageContext }) => {
       textAlign: 'center',
     };
     return (
-      <section id='hours'>
+      <section id="hours">
         <Box sx={{ pb: 3 }}>
           <Heading
             sx={{
@@ -236,16 +236,16 @@ const BasicPageTemplate = ({ pageContext }) => {
           >
             Hours Of Operation
           </Heading>
-          <Text sx={{ ...titleStyle }} as='h3' variant='heading'>
+          <Text sx={{ ...titleStyle }} as="h3" variant="heading">
             Monday - Saturday
           </Text>
-          <Text sx={hoursText} as='p'>
+          <Text sx={hoursText} as="p">
             11:30 AM - TIL
           </Text>
-          <Text sx={{ ...titleStyle }} as='h3' variant='heading'>
+          <Text sx={{ ...titleStyle }} as="h3" variant="heading">
             Sunday
           </Text>
-          <Text sx={hoursText} as='p'>
+          <Text sx={hoursText} as="p">
             {pageContext.data.city === 'Newtown' ? `11:00 AM` : '11:30 AM'}- TIL
           </Text>
         </Box>
@@ -260,36 +260,36 @@ const BasicPageTemplate = ({ pageContext }) => {
           >
             Kitchen Hours
           </Heading>
-          <Text sx={{ ...titleStyle }} as='h3' variant='heading'>
+          <Text sx={{ ...titleStyle }} as="h3" variant="heading">
             Monday - Thursday
           </Text>
-          <Text sx={hoursText} as='p'>
+          <Text sx={hoursText} as="p">
             11:30 AM - 10:00 PM
           </Text>
 
-          <Text sx={{ ...titleStyle }} as='h3' variant='heading'>
+          <Text sx={{ ...titleStyle }} as="h3" variant="heading">
             Friday & Saturday
           </Text>
-          <Text sx={hoursText} as='p'>
+          <Text sx={hoursText} as="p">
             11:30 AM - 11:00 PM
           </Text>
 
-          <Text sx={{ ...titleStyle }} as='h3' variant='heading'>
+          <Text sx={{ ...titleStyle }} as="h3" variant="heading">
             Sunday
           </Text>
-          <Text sx={hoursText} as='p'>
+          <Text sx={hoursText} as="p">
             {pageContext.data.city === 'Newtown' ? `11:00 AM` : '11:30 AM'} -
             10:00 PM
           </Text>
         </Box>
         <Box sx={{ pb: 3 }}>
-          <Text sx={titleStyle} as='h3' variant='heading'>
+          <Text sx={titleStyle} as="h3" variant="heading">
             Brunch Served From
           </Text>
-          <Text sx={{ ...titleStyle }} as='h3' variant='heading'>
+          <Text sx={{ ...titleStyle }} as="h3" variant="heading">
             Sunday
           </Text>
-          <Text sx={hoursText} as='p'>
+          <Text sx={hoursText} as="p">
             {pageContext.data.city === 'Newtown' ? `11:00 AM` : '11:30 AM'} -
             3:00 PM
           </Text>
@@ -304,7 +304,8 @@ const BasicPageTemplate = ({ pageContext }) => {
           Last seating for the kitchen -- 30 minutes prior to closing.
         </Text>
 
-        {pageContext.data.city === 'Newtown' ? (
+        {/* ! spell Newtown right to bring back holiday hours */}
+        {pageContext.data.city === 'Newtownnn' ? (
           <>
             <Heading
               sx={{
@@ -317,35 +318,35 @@ const BasicPageTemplate = ({ pageContext }) => {
               Holiday Hours{' '}
             </Heading>
             <br></br>
-            <Text sx={{ ...titleStyle }} as='h5' variant='heading'>
+            <Text sx={{ ...titleStyle }} as="h5" variant="heading">
               {' '}
               Thanksgiving Eve
             </Text>
-            <Text sx={hoursText} as='p'>
+            <Text sx={hoursText} as="p">
               11:30am- 1 am
             </Text>
-            <Text sx={{ ...titleStyle }} as='h5' variant='heading'>
+            <Text sx={{ ...titleStyle }} as="h5" variant="heading">
               Thanksgiving Day 
             </Text>
-            <Text sx={hoursText} as='p'>
+            <Text sx={hoursText} as="p">
               Closed
             </Text>
-            <Text sx={{ ...titleStyle }} as='h5' variant='heading'>
+            <Text sx={{ ...titleStyle }} as="h5" variant="heading">
               Christmas Eve
             </Text>
-            <Text sx={hoursText} as='p'>
+            <Text sx={hoursText} as="p">
               Closing at 11:30am - 6pm
             </Text>
-            <Text sx={{ ...titleStyle }} as='h5' variant='heading'>
+            <Text sx={{ ...titleStyle }} as="h5" variant="heading">
               Christmas Day
             </Text>
-            <Text sx={hoursText} as='p'>
+            <Text sx={hoursText} as="p">
               Closed
             </Text>
-            <Text sx={{ ...titleStyle }} as='h5' variant='heading'>
+            <Text sx={{ ...titleStyle }} as="h5" variant="heading">
               New Years Eve and New Years Day
             </Text>
-            <Text sx={hoursText} as='p'>
+            <Text sx={hoursText} as="p">
               Regular Hours
             </Text>
           </>
