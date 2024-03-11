@@ -15,7 +15,7 @@ const Popup = () => {
 
   // this is an automatic remover for a pop up.
   const today = new Date();
-  const popupRemovalDate = new Date('31 July 2050');
+  const popupRemovalDate = new Date('1 April 2024');
   const dateIsPast = dateInPast(popupRemovalDate, today);
 
   if (dateIsPast) return null;
@@ -40,7 +40,7 @@ const Popup = () => {
       JSON.parse(localStorage.getItem('popUpExpires')).expireDate
     ).getTime() < Date.now();
 
-  return null;
+  //   return null;
 
   if (!showPopup || (hasSeenPopup && !isExpiredPopup)) {
     return '';
@@ -50,19 +50,19 @@ const Popup = () => {
         <Box sx={background} onClick={closePopup} />
         <Box sx={innerBox}>
           <Box onClick={closePopup} sx={closeBox}>
-            <MdClose size={'24px'} color='white' />
+            <MdClose size={'24px'} color="white" />
           </Box>
-          <Text as='h1'>Happy Thanksgiving</Text>
+          <Text as="h1">Join Us For Easter Sunday Buffet</Text>
           <br></br>
 
-          <Text as='p'>
+          {/* <Text as="p">
             For reservations please call the restaurant 203-586-1788
-          </Text>
+          </Text> */}
           <br></br>
           <br></br>
 
-          <a href='https://res.cloudinary.com/gonation/image/upload/v1698946515/sites/mix-prime/thanksgiving-menu.pdf'>
-            <Button variant='primary'>View Menu</Button>
+          <a href="https://res.cloudinary.com/gonation/image/upload/v1709911640/gonation.data.prod/business/bzn-mmT_2ynbR4eGFehR2VEi8g/pdfs/Easter_Sunday.pdf">
+            <Button variant="primary">View Menu</Button>
           </a>
         </Box>
       </Box>
