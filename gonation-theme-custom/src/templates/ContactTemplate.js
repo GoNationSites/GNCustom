@@ -246,7 +246,7 @@ const ContactTemplate = ({ pageContext }) => {
         </Text>
 
         {/* ! spell Newtown right to bring back holiday hours */}
-        {pageContext.data.city === 'Newtownnn' ? (
+        {pageContext.data.city === 'Newtown' ? (
           <>
             <Heading
               sx={{
@@ -256,39 +256,17 @@ const ContactTemplate = ({ pageContext }) => {
                 borderBottom: '2px solid',
               }}
             >
-              Holiday Hours{' '}
+              Holiday Hours
             </Heading>
             <br></br>
             <Text sx={{ ...titleStyle }} as="h5" variant="heading">
-              {' '}
-              Thanksgiving Eve
+              Easter Sunday
             </Text>
             <Text sx={hoursText} as="p">
-              11:30am- 1 am
-            </Text>
-            <Text sx={{ ...titleStyle }} as="h5" variant="heading">
-              Thanksgiving Day 
+              11:00am- 6pm
             </Text>
             <Text sx={hoursText} as="p">
-              Closed
-            </Text>
-            <Text sx={{ ...titleStyle }} as="h5" variant="heading">
-              Christmas Eve
-            </Text>
-            <Text sx={hoursText} as="p">
-              Closing at 11:30am - 6pm
-            </Text>
-            <Text sx={{ ...titleStyle }} as="h5" variant="heading">
-              Christmas Day
-            </Text>
-            <Text sx={hoursText} as="p">
-              Closed
-            </Text>
-            <Text sx={{ ...titleStyle }} as="h5" variant="heading">
-              New Years Eve and New Years Day
-            </Text>
-            <Text sx={hoursText} as="p">
-              Regular Hours
+              Last seating for the kitchen is 4:30pm
             </Text>
           </>
         ) : (
