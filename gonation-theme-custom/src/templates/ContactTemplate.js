@@ -248,7 +248,7 @@ const ContactTemplate = ({ pageContext }) => {
         {/* ! spell Newtown right to bring back holiday hours */}
         {pageContext.data.city === 'Newtown' ? (
           <>
-            <Heading
+            {/* <Heading
               sx={{
                 textAlign: 'center',
                 fontSize: '2rem',
@@ -257,7 +257,7 @@ const ContactTemplate = ({ pageContext }) => {
               }}
             >
               Holiday Hours
-            </Heading>
+            </Heading> */}
             <br></br>
             {/* <Text sx={{ ...titleStyle }} as="h5" variant="heading">
               Easter Sunday
