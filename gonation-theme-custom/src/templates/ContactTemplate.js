@@ -259,7 +259,7 @@ const ContactTemplate = ({ pageContext }) => {
               Holiday Hours
             </Heading>
             <br></br>
-            <Text sx={{ ...titleStyle }} as="h5" variant="heading">
+            {/* <Text sx={{ ...titleStyle }} as="h5" variant="heading">
               Easter Sunday
             </Text>
             <Text sx={hoursText} as="p">
@@ -267,7 +267,7 @@ const ContactTemplate = ({ pageContext }) => {
             </Text>
             <Text sx={hoursText} as="p">
               Last seating for the kitchen is 4:30pm
-            </Text>
+            </Text> */}
           </>
         ) : (
           ''

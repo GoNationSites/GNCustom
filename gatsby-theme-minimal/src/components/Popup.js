@@ -61,9 +61,9 @@ const Popup = () => {
           <br></br>
           <br></br>
 
-          <a href="https://res.cloudinary.com/gonation/image/upload/v1709911640/gonation.data.prod/business/bzn-mmT_2ynbR4eGFehR2VEi8g/pdfs/Easter_Sunday.pdf">
+          {/* <a href="https://res.cloudinary.com/gonation/image/upload/v1709911640/gonation.data.prod/business/bzn-mmT_2ynbR4eGFehR2VEi8g/pdfs/Easter_Sunday.pdf">
             <Button variant="primary">View Menu</Button>
-          </a>
+          </a> */}
         </Box>
       </Box>
     );
