@@ -56,5 +56,4 @@ https://www.redroosterpubwilton.com/* https://www.redroosterct.com/wilton 301!
 http://redroosterpubwilton.com/* https://www.redroosterct.com/ridgefield 301!
 https://redroosterpubwilton.com/* https://www.redroosterct.com/ridgefield 301!
 
-<!-- another redirect so that anyone who goes to redrooster.com/wilton is redirected to redrooster.com -->
 redrooster.com/wilton/* https://www.redroosterct.com/ 301!
