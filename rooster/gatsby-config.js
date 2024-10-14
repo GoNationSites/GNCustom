@@ -4,7 +4,7 @@ module.exports = {
       resolve: `gonation-theme-custom`,
       options: {
         businessIDs: [
-          'bzn-jq28r4gkRgCKHRgpAp6laA',
+          //   'bzn-jq28r4gkRgCKHRgpAp6laA',
           'bzn-OCbyCpJiRNqjZQKEOL39Mw',
           //   'bzn-N-9mvF1WRCGg83IHC-oXKA',
         ],

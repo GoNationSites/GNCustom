@@ -23,16 +23,20 @@ const VerticalSplash = ({ locations }) => {
           paddingY: 5,
           paddingX: 4,
           backgroundColor: '#fff',
+          maxWidth: '800px',
+          margin: '0 auto',
           // backgroundImage: `url("https://www.transparenttextures.com/patterns/tileable-wood-colored.png")`,
           /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-        }}>
+        }}
+      >
         <Box
           sx={{
             position: 'absolute',
             width: '100%',
             left: 0,
             top: 0,
-          }}>
+          }}
+        >
           <Box sx={{ textAlign: 'center' }}>
             {/* <Text
             variant='heading'
@@ -51,13 +55,15 @@ const VerticalSplash = ({ locations }) => {
                 color: 'white',
                 textShadow: '2px 2px 3px rgba(0,0,0.4)',
                 transition: 'display 3.25s',
-              }}>
+              }}
+            >
               <Image
                 sx={{ maxWidth: '240px' }}
                 src={cloudinaryOptimize(
                   'https://res.cloudinary.com/gonation/image/upload/v1598377918/sites/red-rooster/logo-black.png',
                   420
-                )}></Image>
+                )}
+              ></Image>
             </Text>
           </Box>
         </Box>
@@ -76,8 +82,9 @@ const VerticalSplash = ({ locations }) => {
               flexDirection: 'column',
               justifyContent: 'flex-end',
               alignItems: 'center',
-            }}>
-            <Box sx={{ width: '100%' }}>
+            }}
+          >
+            <Box sx={{ width: '100%', maxWidth: '600px' }}>
               <Box
                 sx={{
                   background: 'white',
@@ -91,9 +98,10 @@ const VerticalSplash = ({ locations }) => {
                   color: 'text',
                   transition: 'all .5s',
                   transitionTimingFunction: 'cubic-bezier(0,1,.5,1)',
-                }}>
+                }}
+              >
                 <Text
-                  variant='heading'
+                  variant="heading"
                   sx={{
                     color: 'text',
                     marginBottom: 3,
@@ -102,7 +110,8 @@ const VerticalSplash = ({ locations }) => {
                     borderBottom: '2px solid',
                     borderColor: 'primary',
                     pb: 1,
-                  }}>
+                  }}
+                >
                   {node.data.city}
                 </Text>
                 <Flex sx={{ alignItems: 'center' }}>
@@ -111,29 +120,33 @@ const VerticalSplash = ({ locations }) => {
                       src={cloudinaryOptimize(
                         'https://res.cloudinary.com/gonation/image/upload/v1598377918/sites/red-rooster/logo-black.png',
                         420
-                      )}></Image>
+                      )}
+                    ></Image>
                   </Box>
                   <Box sx={{ paddingX: 3, pt: 2 }}>
-                    <Text as='p' sx={{ mb: 2 }}>
+                    <Text as="p" sx={{ mb: 2 }}>
                       <Text
-                        as='span'
-                        sx={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
+                        as="span"
+                        sx={{ fontWeight: 'bold', textTransform: 'uppercase' }}
+                      >
                         Phone:{' '}
                       </Text>
                       {node.data.phone}
                     </Text>
-                    <Text as='p' sx={{ mb: 2 }}>
+                    <Text as="p" sx={{ mb: 2 }}>
                       <Text
-                        as='span'
-                        sx={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
+                        as="span"
+                        sx={{ fontWeight: 'bold', textTransform: 'uppercase' }}
+                      >
                         Address:{' '}
                       </Text>
                       <Text
-                        as='a'
+                        as="a"
                         sx={{ color: 'text' }}
                         href={getGoogleStr(node.data)}
-                        target='_blank'
-                        rel='noopener noreferrer'>
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         {printAddressString(node.data)}
                       </Text>
                     </Text>
@@ -142,11 +155,13 @@ const VerticalSplash = ({ locations }) => {
                         color: 'primary',
                         fontWeight: 'bold',
                         textTransform: 'uppercase',
-                      }}>
+                      }}
+                    >
                       <Text sx={{ mb: 2 }}>
                         <Link
                           sx={{ color: 'primary' }}
-                          to={`/${slugify(node.data.city, { lower: true })}`}>
+                          to={`/${slugify(node.data.city, { lower: true })}`}
+                        >
                           Enter The Website
                         </Link>
                       </Text>
@@ -155,7 +170,8 @@ const VerticalSplash = ({ locations }) => {
                           sx={{ color: 'primary' }}
                           to={`/${slugify(node.data.city, {
                             lower: true,
-                          })}/menu`}>
+                          })}/menu`}
+                        >
                           Enter The Menu
                         </Link>
                       </Text>
@@ -173,21 +189,23 @@ const VerticalSplash = ({ locations }) => {
           justifyContent: 'space-between',
           paddingX: 5,
           alignItems: 'center',
-        }}>
+        }}
+      >
         <Box>
-          <Text as='p' variant='heading'>
+          <Text as="p" variant="heading">
             Red Rooster {new Date().getFullYear()}
           </Text>
         </Box>
         <Box>
           <a
-            href='https://www.gonation.com/'
-            target='_blank'
-            rel='noopener noreferrer'>
+            href="https://www.gonation.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               sx={{ maxWidth: ['200px', '225px'] }}
-              src='https://www.gonationsites.com/GNSE/gn-sites/images/gn-power-black.svg'
-              alt='GoNation'
+              src="https://www.gonationsites.com/GNSE/gn-sites/images/gn-power-black.svg"
+              alt="GoNation"
             />
           </a>
         </Box>
