@@ -1,9 +1,13 @@
 /** @jsx jsx */
 import { jsx, Flex, Card, Image, Text, Box } from 'theme-ui';
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 const ShoutCard = ({ data, setShowShout, isHome }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const addHTTP = url => {
     var prefix = 'https://';
     if (url.substr(0, prefix.length) !== prefix) {
@@ -19,9 +23,10 @@ const ShoutCard = ({ data, setShowShout, isHome }) => {
       .map(button => {
         return (
           <a
-            target='_blank'
-            rel='noopener noreferrer'
-            href={addHTTP(data.shout.ctas[button])}>
+            target="_blank"
+            rel="noopener noreferrer"
+            href={addHTTP(data.shout.ctas[button])}
+          >
             {button}
           </a>
         );
@@ -34,6 +39,8 @@ const ShoutCard = ({ data, setShowShout, isHome }) => {
   const getShoutImage = () => {
     return `https://res.cloudinary.com/gonation/w_800/${data.shout.image.image.cloudinaryId}`;
   };
+
+  const imageSrc = data.shout.image.isDefault ? getAvatar() : getShoutImage();
 
   if (isHome) {
     return (
@@ -50,17 +57,18 @@ const ShoutCard = ({ data, setShowShout, isHome }) => {
               borderBottom: '2px solid',
               borderColor: 'primary',
               boxShadow: `1px 3px 20px 2px rgba(0,0,0,0)`,
-            }}>
+            }}
+          >
             <Box>
               <Image
                 alt={data.shout.text}
-                sx={{ width: '100%' }}
-                src={
-                  data.shout.image.isDefault ? getAvatar() : getShoutImage()
-                }></Image>
+                sx={{ width: '100%', maxHeight: 250, objectFit: 'contain' }}
+                src={imageSrc}
+                onClick={() => setIsOpen(true)}
+              ></Image>
             </Box>
             <Box sx={{ padding: 3 }}>
-              <Text as='p' sx={{ mb: 3 }}>
+              <Text as="p" sx={{ mb: 3 }}>
                 {data.shout.text}
               </Text>
               <Text sx={{ fontFamily: 'heading', textTransform: 'uppercase' }}>
@@ -68,6 +76,12 @@ const ShoutCard = ({ data, setShowShout, isHome }) => {
               </Text>
             </Box>
           </Card>
+          {isOpen && (
+            <Lightbox
+              mainSrc={imageSrc}
+              onCloseRequest={() => setIsOpen(false)}
+            />
+          )}
         </>
       </>
     );
@@ -85,7 +99,8 @@ const ShoutCard = ({ data, setShowShout, isHome }) => {
           height: '100vh',
           background: 'rgba(0,0,0,.5)',
           zIndex: 999,
-        }}></Box>
+        }}
+      ></Box>
       <Card
         sx={{
           background: 'white',
@@ -96,17 +111,18 @@ const ShoutCard = ({ data, setShowShout, isHome }) => {
           marginX: 'auto',
           borderBottom: '2px solid',
           borderColor: 'primary',
-        }}>
+        }}
+      >
         <Box>
           <Image
             alt={data.shout.text}
             sx={{ width: '100%' }}
-            src={
-              data.shout.image.isDefault ? getAvatar() : getShoutImage()
-            }></Image>
+            src={imageSrc}
+            onClick={() => setIsOpen(true)}
+          ></Image>
         </Box>
         <Box sx={{ padding: 3 }}>
-          <Text as='p' sx={{ mb: 3 }}>
+          <Text as="p" sx={{ mb: 3 }}>
             {data.shout.text}
           </Text>
           <Text sx={{ fontFamily: 'heading', textTransform: 'uppercase' }}>
@@ -114,6 +130,9 @@ const ShoutCard = ({ data, setShowShout, isHome }) => {
           </Text>
         </Box>
       </Card>
+      {isOpen && (
+        <Lightbox mainSrc={imageSrc} onCloseRequest={() => setIsOpen(false)} />
+      )}
     </>
   );
 };
