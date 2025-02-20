@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Flex, Box, Text, Image, Button } from 'theme-ui';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql, Link } from 'gatsby';
 
 import MobileRevealSplash from '../components/MobileRevealSplash';
@@ -10,6 +10,12 @@ const Index = ({ data }) => {
   const [activeLocation, setActiveLocation] = useState(null);
   const locations = data.allSiteData.edges;
 
+  //   Redirect the user to /wilton
+
+  useEffect(() => {
+    window.location.href = '/wilton';
+  }, []);
+
   return (
     <>
       <Box
@@ -18,7 +24,8 @@ const Index = ({ data }) => {
           backgroundColor: '#ffffff',
           backgroundImage: `url("https://www.transparenttextures.com/patterns/concrete-wall-3.png")`,
           height: '100vh',
-        }}>
+        }}
+      >
         <MobileRevealSplash
           locations={locations}
           logo={

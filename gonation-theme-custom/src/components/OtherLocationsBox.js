@@ -19,7 +19,13 @@ const OtherLocationsBox = () => {
   };
 
   const renderRoosterLocations = () => (
-    <Flex sx={{ justifyContent: 'center', flexDirection: ['column', 'row'] }}>
+    <Flex
+      sx={{
+        display: 'none',
+        justifyContent: 'center',
+        flexDirection: ['column', 'row'],
+      }}
+    >
       <Box sx={{ paddingX: 3, paddingY: 2 }}>
         <a href="https://www.redroosterct.com/ridgefield">
           <Button sx={buttonStyle} variant="filll">
@@ -71,7 +77,7 @@ const OtherLocationsBox = () => {
   );
 
   return (
-    <Box sx={{ padding: 3 }}>
+    <Box sx={{ padding: 3, display: 'none' }}>
       <Text variant="heading" sx={{ textAlign: 'center' }}>
         View Our Other Locations
       </Text>
